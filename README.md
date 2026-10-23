@@ -3,6 +3,14 @@
 Native Berechnungen zu Rechenregeln des Bürgerlichen Gesetzbuchs (BGB).
 Version 0.1.0; 552 Funktionen mit deutschen Parametern.
 
+## Installation
+
+Veröffentlicht auf [PyPI](https://pypi.org/project/bgbcalc/0.1.0/):
+
+```sh
+python -m pip install bgbcalc==0.1.0
+```
+
 ## Umfang und Stand
 
 Diese Bibliothek enthält kalenderbezogene und numerische Rechenregeln.

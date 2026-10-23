@@ -1,0 +1,22 @@
+{
+  "status": "VEROEFFENTLICHT_UND_INSTALLATION_GEPRUEFT",
+  "version": "0.1.0",
+  "url": "https://pypi.org/project/bgbcalc/0.1.0/",
+  "workflow": "https://github.com/rds0001/bgbcalc-python/actions/runs/40028674162",
+  "source_commit": "da2205c5f64de39e0db816c86ce46038eb5cf956",
+  "installation": "Isolierte Python-3.10-Umgebung; pip install von https://pypi.org/simple ohne Cache bestanden",
+  "referenzfaelle": 15718,
+  "vollstaendige_ergebnisparitaet": true,
+  "dateien": [
+    {
+      "name": "bgbcalc-0.1.0-py3-none-any.whl",
+      "sha256": "7bd7d32a72ccfe5c3815f59bf87c747b9fce5a799e69237b88e22e3d16c6e880",
+      "bytes": 1723995
+    },
+    {
+      "name": "bgbcalc-0.1.0.tar.gz",
+      "sha256": "f42d25a31fa2da155c3b8a5ab2972ad37d8ff4b8525397bef46084f2f78c6bc1",
+      "bytes": 1524297
+    }
+  ]
+}
