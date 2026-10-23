@@ -28,7 +28,7 @@ def test_gesamtschuld(fall):
 
 
 def test_referenzmatrix_gegen_unabhaengiges_orakel():
-    pfad = Path(__file__).parents[1] / "pruefungen/gesamtschuld_orakel.py"
+    pfad = Path(__file__).parents[1] / "tests/helpers/gesamtschuld_orakel.py"
     spez = importlib.util.spec_from_file_location("gesamtschuld_orakel", pfad)
     modul = importlib.util.module_from_spec(spez)
     spez.loader.exec_module(modul)
