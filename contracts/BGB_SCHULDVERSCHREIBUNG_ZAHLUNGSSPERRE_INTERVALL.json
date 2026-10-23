@@ -1,0 +1,33 @@
+{
+  "regel_id": "BGB_SCHULDVERSCHREIBUNG_ZAHLUNGSSPERRE_INTERVALL",
+  "regelversion": "1",
+  "bezeichnung": "schuldverschreibung_zahlungssperre_intervall",
+  "fundstelle_ids": [
+    "BGB_802_T0001",
+    "BGB_802_T0002",
+    "BGB_802_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "antrag_zahlungssperre_am: Tag des rechtlich wirksamen Antrags auf die tatsächlich einschlägige Zahlungssperre; erster normalisierter Hemmungstag. zahlungssperre_vor_verfahrenseinleitung: Wahrheitswert des802Satz2-Sonderfalls vor Verfahrenseinleitung. sechsmonatsfrist_letzter_tag: Nur bei Sonderfall: aus Hindernisbeseitigung und206/210/211berechneter letzter Sechsmonatsfristtag. Sonst zwingend None/NULL. einleitungsantrag_am: Tatsächlich erfolgter rechtlich wirksamer Einleitungsantrag; None/NULL bedeutet bis Beobachtung nicht erfolgt, nicht unbekannt. verfahren_erledigt_am: Tatsächliche rechtlich maßgebliche Erledigung; None/NULL bedeutet bis Beobachtung nicht erfolgt, nicht bloß unbekannt. beobachtung_bis: Letzter betrachteter ganzer Tag; ohne feststehendes Ende nur beobachtetes Intervall, kein fiktiver endgültiger Fristablauf. einordnungsnachweis: 802Anwendbarkeit und wirksame Zahlungssperre, vollständige Antrags-/Erledigungsdaten und auf ganze Tage normalisierte Hemmung qualifizieren.",
+  "rechenschritte": "Tatsächliche Erledigung und gegebenenfalls unwahrte Sechsmonatsfrist vergleichen; frühestes bekanntes Hemmungsende oder ausdrücklich begrenztes Beobachtungsintervall bilden.",
+  "ausnahmen": "802: Beginn mit Zahlungssperrenantrag. Ende mit tatsächlicher Verfahrenserledigung; im qualifizierten Vorverfahren zusätzlich Ablauf der korrigierten Sechsmonatsfrist, sofern bis dahin kein wirksamer Einleitungsantrag gestellt war. Früheres Endereignis maßgeblich. Einleitungsantrag am letzten Fristtag wahrt; späterer Antrag belebt bereits beendete Hemmung nicht rückwirkend wieder. Bei laufender Hemmung nur bis Beobachtung rechnen und Abschluss ausdrücklich verneinen. Keine künstliche Verfahrenserledigung. Hemmung beeinflusst auch Beginn der Vorlegungsfrist; entsprechende Weiterrechnung mit209unter rechtlicher Qualifikation und ohne doppelte Tage. Sechsmonatsgrundfrist/206/210/211werden vorgelagert mit vorhandenen Kernen berechnet. Datumstage sind rechtlich normalisierte eingeschlossene Hemmungstage; untertägige Sonderfälle nicht pauschal runden.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/schuldverschreibung_zahlungssperre_intervall.json",
+  "gesamtabnahme": false,
+  "einheit": "daten_und_intervalle",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "antrag_zahlungssperre_am": "Tag des rechtlich wirksamen Antrags auf die tatsächlich einschlägige Zahlungssperre; erster normalisierter Hemmungstag.",
+    "zahlungssperre_vor_verfahrenseinleitung": "Wahrheitswert des802Satz2-Sonderfalls vor Verfahrenseinleitung.",
+    "sechsmonatsfrist_letzter_tag": "Nur bei Sonderfall: aus Hindernisbeseitigung und206/210/211berechneter letzter Sechsmonatsfristtag. Sonst zwingend None/NULL.",
+    "einleitungsantrag_am": "Tatsächlich erfolgter rechtlich wirksamer Einleitungsantrag; None/NULL bedeutet bis Beobachtung nicht erfolgt, nicht unbekannt.",
+    "verfahren_erledigt_am": "Tatsächliche rechtlich maßgebliche Erledigung; None/NULL bedeutet bis Beobachtung nicht erfolgt, nicht bloß unbekannt.",
+    "beobachtung_bis": "Letzter betrachteter ganzer Tag; ohne feststehendes Ende nur beobachtetes Intervall, kein fiktiver endgültiger Fristablauf.",
+    "einordnungsnachweis": "802Anwendbarkeit und wirksame Zahlungssperre, vollständige Antrags-/Erledigungsdaten und auf ganze Tage normalisierte Hemmung qualifizieren."
+  },
+  "ergebnisvertrag": "Optionales feststehendes Hemmungsende, Abschlussmerkmal und ein auf Beobachtung begrenztes Hemmungsintervall für209-Kern."
+}

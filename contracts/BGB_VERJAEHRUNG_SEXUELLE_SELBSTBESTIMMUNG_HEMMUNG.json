@@ -1,0 +1,33 @@
+{
+  "regel_id": "BGB_VERJAEHRUNG_SEXUELLE_SELBSTBESTIMMUNG_HEMMUNG",
+  "regelversion": "1",
+  "bezeichnung": "verjaehrung_sexuelle_selbstbestimmung_hemmung",
+  "fundstelle_ids": [
+    "BGB_208_T0001",
+    "BGB_208_T0002",
+    "BGB_207_T0011"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "geburtsdatum: ISO-Geburtsdatum des Gläubigers, nicht nach Stichtag. Vollendung21 nach§§187/188, einschließlich Schaltjahrregeln; berechnete Altersgrenze muss0001..9999 sein. stichtag: ISO-Datum0001..9999, für das der Hemmungstatbestand geprüft wird. Anspruch und Verjährungslage rechtlich vorab einordnen; kein automatischer Beginn oder Ablauf der Frist. anspruch_wegen_sexueller_selbstbestimmung: Wahrheitswert zur rechtlichen Anspruchseinordnung gerade wegen Verletzung sexueller Selbstbestimmung. FALSE schließt nur den Tatbestand des§208 aus, nicht sämtliche Hemmungsgründe. gemeinschaft_bei_verjaehrungsbeginn: Wahrheitswert, ob Gläubiger bei Beginn der betreffenden Verjährung mit Schuldner in häuslicher Gemeinschaft lebte. Später erstmals begründete Gemeinschaft hier nicht einsetzen. gemeinschaft_ununterbrochen_bis_stichtag: Wahrheitswert, ob dieselbe bei Verjährungsbeginn bestehende Gemeinschaft am Stichtag noch nicht beendet ist. Erneutes Zusammenleben nach Beendigung nicht als ununterbrochene Fortsetzung behandeln. Nur zusammen mit gemeinschaft_bei_verjaehrungsbeginn maßgeblich; keine Gleichsetzung mit bloßer Ehe. einordnungsnachweis: Nichtleere Beschreibung von Anspruchsart, Geburtsdatum, maßgeblichem Verjährungsbeginn und Bestand beziehungsweise Beendigung derselben häuslichen Gemeinschaft. Rechtliche Normalisierung untertägiger Änderungen gesondert.",
+  "rechenschritte": "Bei qualifiziertem Anspruch Hemmung bis Vollendung21 ODER solange die bereits bei Verjährungsbeginn bestehende häusliche Gemeinschaft noch ununterbrochen fortbesteht. Beide Gründe einzeln und als Vereinigung ausweisen.",
+  "ausnahmen": "Keine automatische Tatsachenbewertung, keine Addition überlappender Hemmungen, kein endgültiger Verjährungstag. Wiederaufnahme einer beendeten Gemeinschaft nicht als durchgehende Hemmung behandeln. Andere Gründe wie§207 bleiben gesondert.",
+  "rundung": "Keine; Kalenderaltersgrenze und Wahrheitsverknüpfungen.",
+  "wertebereich": "ISO-Daten0001..9999; explizite Wahrheitswerte; nichtleerer Nachweis. Fehlende Pflichtwerte EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/hemmungsschutz.json",
+  "gesamtabnahme": false,
+  "einheit": "wahrheitswerte",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "geburtsdatum": "ISO-Geburtsdatum des Gläubigers, nicht nach Stichtag. Vollendung21 nach§§187/188, einschließlich Schaltjahrregeln; berechnete Altersgrenze muss0001..9999 sein.",
+    "stichtag": "ISO-Datum0001..9999, für das der Hemmungstatbestand geprüft wird. Anspruch und Verjährungslage rechtlich vorab einordnen; kein automatischer Beginn oder Ablauf der Frist.",
+    "anspruch_wegen_sexueller_selbstbestimmung": "Wahrheitswert zur rechtlichen Anspruchseinordnung gerade wegen Verletzung sexueller Selbstbestimmung. FALSE schließt nur den Tatbestand des§208 aus, nicht sämtliche Hemmungsgründe.",
+    "gemeinschaft_bei_verjaehrungsbeginn": "Wahrheitswert, ob Gläubiger bei Beginn der betreffenden Verjährung mit Schuldner in häuslicher Gemeinschaft lebte. Später erstmals begründete Gemeinschaft hier nicht einsetzen.",
+    "gemeinschaft_ununterbrochen_bis_stichtag": "Wahrheitswert, ob dieselbe bei Verjährungsbeginn bestehende Gemeinschaft am Stichtag noch nicht beendet ist. Erneutes Zusammenleben nach Beendigung nicht als ununterbrochene Fortsetzung behandeln. Nur zusammen mit gemeinschaft_bei_verjaehrungsbeginn maßgeblich; keine Gleichsetzung mit bloßer Ehe.",
+    "einordnungsnachweis": "Nichtleere Beschreibung von Anspruchsart, Geburtsdatum, maßgeblichem Verjährungsbeginn und Bestand beziehungsweise Beendigung derselben häuslichen Gemeinschaft. Rechtliche Normalisierung untertägiger Änderungen gesondert."
+  },
+  "ergebnisvertrag": "wert enthält altershemmung, gemeinschaftshemmung und hemmungstatbestand_am_stichtag als Wahrheitswerte; fehlende Anspruchsqualifikation ergibt alle FALSE.",
+  "regelart": "TATBESTANDSAUSWAHL"
+}

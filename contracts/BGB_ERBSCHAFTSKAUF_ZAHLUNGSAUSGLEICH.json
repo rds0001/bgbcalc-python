@@ -1,0 +1,33 @@
+{
+  "regel_id": "BGB_ERBSCHAFTSKAUF_ZAHLUNGSAUSGLEICH",
+  "regelversion": "1",
+  "bezeichnung": "erbschaftskauf_zahlungsausgleich",
+  "fundstelle_ids": [
+    "BGB_2378_T0001",
+    "BGB_2378_T0002",
+    "BGB_2379_T0001",
+    "BGB_2379_T0002",
+    "BGB_2379_T0003",
+    "BGB_2380_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "abrechnungsposten: Liste0..1000 eindeutiger Posten mit genau posten_id,postenart,zeitbezug,betrag,tatsaechliche_partei. Arten:nutzungen,gewoehnliche_lasten,schuldzinsen,erbschaftsabgaben,ausserordentliche_stammwertlasten,nachlassschuldtilgung. Zeitbezug:vor_kauf/ab_kauf, bereits rechtlich zeitanteilig abgegrenzt. Betrag nichtnegativ exakter EUR-Wert. Partei:kaeufer/verkaeufer, bei Nutzungen Empfänger, sonst tatsächlicher Zahler. gesetzliche_lastenverteilung_qualifiziert: Pflichtwahrheitswert für gesetzlichen Erbschaftskauffall ohne abweichende Vereinbarung; Tilgungen nur soweit Käuferpflicht2378 besteht, keine2376-Verkäuferhaftung. FALSE NICHT_ANWENDBAR. abrechnungsnachweis: Nichtleerer Nachweis tatsächlicher Zahlungen/Empfänge, zeitlicher Zuordnung und Lastenarten. Regelmäßige grenzüberschreitende Posten zuvor mit bestehendem Zeitanteilskern aufteilen.",
+  "rechenschritte": "Nutzungen/gewöhnliche Lasten/Zinsen vor Kauf Verkäufer, ab Kauf Käufer; Erbschaftsabgaben/Stammwertlasten/Tilgungen Käufer. Tatsächliche Partei mit Zuordnung vergleichen; gegenläufige Erstattungsbeträge summieren und signierten Saldo bilden.",
+  "ausnahmen": "Keine automatische Zeitbewertung oder Aufrechnung. Kaufpreis,2375/2381 und unberechtigte Zahlungen getrennt. Sonderlasten nur rechtlich qualifiziert.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/erbschaftskauf_abrechnung.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "abrechnungsposten": "Liste0..1000 eindeutiger Posten mit genau posten_id,postenart,zeitbezug,betrag,tatsaechliche_partei. Arten:nutzungen,gewoehnliche_lasten,schuldzinsen,erbschaftsabgaben,ausserordentliche_stammwertlasten,nachlassschuldtilgung. Zeitbezug:vor_kauf/ab_kauf, bereits rechtlich zeitanteilig abgegrenzt. Betrag nichtnegativ exakter EUR-Wert. Partei:kaeufer/verkaeufer, bei Nutzungen Empfänger, sonst tatsächlicher Zahler.",
+    "gesetzliche_lastenverteilung_qualifiziert": "Pflichtwahrheitswert für gesetzlichen Erbschaftskauffall ohne abweichende Vereinbarung; Tilgungen nur soweit Käuferpflicht2378 besteht, keine2376-Verkäuferhaftung. FALSE NICHT_ANWENDBAR.",
+    "abrechnungsnachweis": "Nichtleerer Nachweis tatsächlicher Zahlungen/Empfänge, zeitlicher Zuordnung und Lastenarten. Regelmäßige grenzüberschreitende Posten zuvor mit bestehendem Zeitanteilskern aufteilen."
+  },
+  "ergebnisvertrag": "wert enthält rechnerischer_ausgleich_kaeufer_an_verkaeufer,rechnerischer_ausgleich_verkaeufer_an_kaeufer und vorzeichenbehafteten saldo_zugunsten_verkaeufer als exakte EUR-Brüche.",
+  "regelart": "BETRAGSOPERATION"
+}

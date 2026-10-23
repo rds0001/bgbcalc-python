@@ -1,0 +1,27 @@
+{
+  "regel_id": "BGB_LIQUIDATOREN_EINSTIMMIGKEITSGRENZE",
+  "regelversion": "1",
+  "bezeichnung": "liquidatoren_einstimmigkeitsgrenze",
+  "fundstelle_ids": [
+    "BGB_48_T0004"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "anzahl_liquidatoren: Ganze Zahl1..2^53−1 des qualifizierten Liquidatorenkreises. zustimmende_liquidatoren: Ganze Zahl0..AnzahlLiquidatoren der tatsächlich anrechenbaren Zustimmungen.",
+  "rechenschritte": "ErforderlicheStimmen=AnzahlLiquidatoren; Fehlbetrag=Anzahl−Zustimmungen; erreicht genau bei Gleichheit.",
+  "ausnahmen": "Nur gesetzlicher Grundfall ohne abweichende Bestimmung. Keine Beschluss-/Vertretungswirksamkeitsentscheidung.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/gesetzliche_zahlengrenzen.json",
+  "gesamtabnahme": false,
+  "einheit": "anzahl_und_wahrheitswert",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "anzahl_liquidatoren": "Ganze Zahl1..2^53−1 des qualifizierten Liquidatorenkreises.",
+    "zustimmende_liquidatoren": "Ganze Zahl0..AnzahlLiquidatoren der tatsächlich anrechenbaren Zustimmungen."
+  },
+  "ergebnisvertrag": "wert enthält erforderliche_zustimmungen, fehlende_zustimmungen und einstimmigkeit_erreicht.",
+  "regelart": "NUMERISCHE_SCHWELLE"
+}

@@ -1,0 +1,30 @@
+{
+  "regel_id": "BGB_ADOPTION_ERSETZUNGSWARTEFRIST",
+  "regelversion": "1",
+  "bezeichnung": "adoption_ersetzungswartefrist",
+  "fundstelle_ids": [
+    "BGB_1748_T0003",
+    "BGB_1748_T0004",
+    "BGB_1748_T0005"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "geburt_am: ISO-Geburtsdatum des Kindes für Fünfmonatsmindestende. belehrung_oder_erste_handlung_am: Qualifiziertes ISO-Ereignisdatum der Belehrung oder bei gesetzlichem Ausnahmefall ersten einschlägigen Handlung des Jugendamts. fristbeginnnachweis: Nichtleerer Nachweis der einschlägigen Alternative und rechtlichen Qualifikation des Dreimonatsbeginns.",
+  "rechenschritte": "Dreimonatsfrist ab qualifiziertem Beginn, Fünfmonatsgrenze ab Geburt, Maximum beider Endtage.",
+  "ausnahmen": "§1748II betrifft Gleichgültigkeit ohne zugleich anhaltende gröbliche Pflichtverletzung. Beginn ist wirksame Belehrung oder im gesetzlich qualifizierten Ausnahmefall erste Handlung des Jugendamts zur Belehrung/Beratung oder Aufenthaltsermittlung. Beratung, Nachforschungen und Ausnahmevoraussetzungen vorqualifiziert. Ergebnisse sind Ablaufdaten; Ersetzung frühestens nach Ablauf, keine automatische Ersetzungsbefugnis. Keine§193-Verlängerung der bloßen Wartezeit. Andere Ersetzungsgründe nachAbsätzen1/3/4 nicht auf diese Wartezeit reduzieren.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/adoptionsfristen.json",
+  "gesamtabnahme": false,
+  "einheit": "daten",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "geburt_am": "ISO-Geburtsdatum des Kindes für Fünfmonatsmindestende.",
+    "belehrung_oder_erste_handlung_am": "Qualifiziertes ISO-Ereignisdatum der Belehrung oder bei gesetzlichem Ausnahmefall ersten einschlägigen Handlung des Jugendamts.",
+    "fristbeginnnachweis": "Nichtleerer Nachweis der einschlägigen Alternative und rechtlichen Qualifikation des Dreimonatsbeginns."
+  },
+  "ergebnisvertrag": "wert enthält dreimonatsfristende, fuenfmonatsmindestende und wartefristende als ISO-Daten. Wartezeit läuft erst mit Ablauf des letzten Endtages ab.",
+  "regelart": "FRISTBERECHNUNG"
+}

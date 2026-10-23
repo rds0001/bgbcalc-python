@@ -1,0 +1,29 @@
+{
+  "regel_id": "BGB_DARLEHENSVERMITTLUNG_AUSLAGENOBERGRENZE",
+  "regelversion": "1",
+  "bezeichnung": "darlehensvermittlung_auslagenobergrenze",
+  "fundstelle_ids": [
+    "BGB_655d_T0002",
+    "BGB_655d_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "entstandene_erforderliche_auslagen: Nichtnegativer exakter qualifizierter Dezimalwert/Bruch; Beträge in EUR, vertragliche Wertbeteiligung/Zinsen als Quote (0.05=5Prozent). vorab_mitgeteilter_hoechstbetrag: Nichtnegativer exakter qualifizierter Dezimalwert/Bruch; Beträge in EUR, vertragliche Wertbeteiligung/Zinsen als Quote (0.05=5Prozent). einordnungsnachweis: Nichtleerer Nachweis des jeweiligen Darlehens-/Vermittlungs-/Teilzahlungsfalls und rechtlich qualifizierter Wert-, Kosten- oder Zinsgrundlage.",
+  "rechenschritte": "Qualifiziert vereinbarte entstandene erforderliche Vermittlerauslagen auf vorab mitgeteilten Höchstbetrag begrenzen",
+  "ausnahmen": "Nur §655d Satz2/3: wirksame Vereinbarung über tatsächlich entstandene erforderliche Auslagen vorausgesetzt; nicht Maklervergütung oder Beratungsentgelt. Mitgeteilte Höhe/Höchstgrenze rechtlich bestimmen; bei getrennten Einzelkategorien jede passende Grenze separat anwenden, kein Austausch ungenutzter Grenzen ohne Rechtsgrundlage. Keine automatische Erforderlichkeits- oder Anspruchsprüfung.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/darlehenssonderbetraege.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "entstandene_erforderliche_auslagen": "Nichtnegativer exakter qualifizierter Dezimalwert/Bruch; Beträge in EUR, vertragliche Wertbeteiligung/Zinsen als Quote (0.05=5Prozent).",
+    "vorab_mitgeteilter_hoechstbetrag": "Nichtnegativer exakter qualifizierter Dezimalwert/Bruch; Beträge in EUR, vertragliche Wertbeteiligung/Zinsen als Quote (0.05=5Prozent).",
+    "einordnungsnachweis": "Nichtleerer Nachweis des jeweiligen Darlehens-/Vermittlungs-/Teilzahlungsfalls und rechtlich qualifizierter Wert-, Kosten- oder Zinsgrundlage."
+  },
+  "ergebnisvertrag": "wert ist der exakt berechnete EUR-Betrag als Bruchobjekt.",
+  "regelart": "BETRAGSOPERATION"
+}

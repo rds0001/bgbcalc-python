@@ -1,0 +1,41 @@
+{
+  "regel_id": "BGB_KINDLEISTUNG_ANRECHNUNG",
+  "regelversion": "1",
+  "bezeichnung": "kindbezogene_leistung_anrechnen",
+  "fundstelle_ids": [
+    "BGB_1606_T0001",
+    "BGB_1606_T0002",
+    "BGB_1606_T0003",
+    "BGB_1606_T0004",
+    "BGB_1612b_T0001",
+    "BGB_1612b_T0002",
+    "BGB_1612b_T0003",
+    "BGB_1612b_T0004",
+    "BGB_1612b_T0005",
+    "BGB_1612c_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlich ausgewählter Fall und ausdrücklich belegte externe Parameter.",
+  "eingabevertrag": "barbedarf, leistungsbetrag, erhoehung_nichtgemeinschaftliches_kind: nichtnegative EUR-Dezimalzeichenfolgen; Erhöhung höchstens Leistungsbetrag. betreuung_durch_elternteil, regelmaessig_wiederkehrend, kindergeld_ausgeschlossen: bool. leistungsart: kindergeld|ersatzleistung. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+  "rechenschritte": "Leistung um Erhöhung wegen nicht gemeinschaftlichen Kindes vermindern, bei Erfüllung durch Betreuung Hälfte, sonst volle Summe auf Barbedarf anrechnen. Bedarf mindestens null. Ersatzleistung nur bei regelmäßigem Wiederkehren und Ausschluss von Kindergeld.",
+  "ausnahmen": "betreuung_durch_elternteil bezeichnet rechtlich bewertete Erfüllung nach § 1606 Abs. 3 Satz 2, nicht jede tatsächliche Betreuungszeit. Wechselmodell nicht ohne Einordnung als Halbfall behandeln. Ersatzleistungen nur soweit sie Kindergeld ausschließen; anteilig betroffene Leistung vorab abgrenzen. Keine automatische Verteilung unter mehreren Unterhaltspflichtigen und keine Behandlung sonstiger Sozialleistungen.",
+  "rundung": "KEINE",
+  "wertebereich": "Gemeinsamer Zahlenvertrag NUMERIK.md; fehlend EINGABE_FEHLT, falscher Typ/Bereich EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/unterhalt.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "barbedarf": "Nichtnegative Dezimalzeichenfolge des bewerteten Barbedarfs vor dieser Anrechnung in EUR. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+    "leistungsbetrag": "Nichtnegative Dezimalzeichenfolge des auf das Kind entfallenden Kindergelds oder der einschlägigen Ersatzleistung in EUR. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+    "erhoehung_nichtgemeinschaftliches_kind": "Nichtnegative Dezimalzeichenfolge des Erhöhungsanteils wegen Berücksichtigung eines nicht gemeinschaftlichen Kindes; höchstens Leistungsbetrag. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+    "betreuung_durch_elternteil": "Expliziter Wahrheitswert: Ein Elternteil erfüllt seine Unterhaltspflicht durch Betreuung nach § 1606 Abs. 3 Satz 2. Keine bloße Angabe, ob Betreuung tatsächlich stattfindet.",
+    "leistungsart": "kindergeld oder ersatzleistung. Andere Leistungsarten sind nicht erfasst.",
+    "regelmaessig_wiederkehrend": "Expliziter Wahrheitswert, ob die Ersatzleistung regelmäßig wiederkehrt. Im Kindergeldzweig keine zusätzliche Berechnungsbedingung.",
+    "kindergeld_ausgeschlossen": "Expliziter Wahrheitswert: Die angegebene Ersatzleistung schließt Kindergeld aus. Für Kindergeld selbst muss FALSE angegeben werden."
+  },
+  "ergebnisvertrag": "wert enthält bedarfsrelevante_leistung, bedarfsdeckung und verbleibender_barbedarf, jeweils als exakten EUR-Bruch. Bedarfsdeckung ist auf den Bedarf begrenzt; die bedarfsrelevante Leistung kann höher sein.",
+  "exakte_bruchobjekte_als_dezimaleingaben": true
+}

@@ -1,0 +1,32 @@
+{
+  "regel_id": "BGB_GUETERGEMEINSCHAFT_FREISTELLUNGSBETRAG",
+  "regelversion": "1",
+  "bezeichnung": "guetergemeinschaft_freistellungsbetrag",
+  "fundstelle_ids": [
+    "BGB_1481_T0001",
+    "BGB_1481_T0002",
+    "BGB_1481_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "verbindlichkeit: Nichtnegativer Betrag eines konsistent abgegrenzten noch unberichtigten Schuldpostens einschließlich zugeordneter Nebenforderungen in EUR. inanspruchnahme: Nichtnegative vom Gläubiger geltend gemachte Belastung des geschützten Ehegatten für denselben Posten, höchstens Verbindlichkeit, EUR. verwaltungsfall: Rechtlich qualifizierte Zuordnung: alleinverwaltung_anderer fürAbsatz1, gemeinschaftlich fürAbsatz2, alleinlast_anderer fürAbsatz3. Keine freie Rechtswahl. aus_gesamtgut_erlangt: Nichtnegativer aus Gesamtgut erlangter Betrag des geschützten Ehegatten in EUR. Zusätzliche Grenze nur beiAbsatz1; auch in anderen Fällen numerisch validiert. zuordnungsnachweis: Nichtleerer Nachweis zu Gesamtgutsteilung vor Berichtigung, interner Lastzuordnung und Verwaltungssituation.",
+  "rechenschritte": "Grenze=Schuld/2 bei gemeinschaftlicher Verwaltung; bei Alleinverwaltung des anderen min(Schuld/2,Erlangtes); bei Alleinlast des anderen0. Freistellung=max(Inanspruchnahme−Grenze,0).",
+  "ausnahmen": "Ein einzelner noch unberichtigter, vor Berichtigung geteiltem Gesamtgut zugeordneter Schuldposten. Beträge einschließlich rechtlich zugeordneter Nebenforderungen konsistent abgrenzen. alleinverwaltung_anderer bezeichnet den Schutz des nicht allein verwaltenden Ehegatten nachAbsatz1; gemeinschaftlich Absatz2. alleinlast_anderer bezeichnet ausschließlich interne Alleinlast des anderen Ehegatten nachAbsatz3 und geht Verwaltungssituation vor. Qualifizierte Zuordnung ist keine freie Wahl. Erlangtes wird nur inAbsatz1 als zusätzliche Grenze verwendet; inAbsätzen2/3 nicht automatisch anrechnen. Keine Änderung der Außenhaftung gegenüber Gläubigern und keine Mehrschuld-/Gesamthaftungsverrechnung.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/guetergemeinschaftbetraege.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "verbindlichkeit": "Nichtnegativer Betrag eines konsistent abgegrenzten noch unberichtigten Schuldpostens einschließlich zugeordneter Nebenforderungen in EUR.",
+    "inanspruchnahme": "Nichtnegative vom Gläubiger geltend gemachte Belastung des geschützten Ehegatten für denselben Posten, höchstens Verbindlichkeit, EUR.",
+    "verwaltungsfall": "Rechtlich qualifizierte Zuordnung: alleinverwaltung_anderer fürAbsatz1, gemeinschaftlich fürAbsatz2, alleinlast_anderer fürAbsatz3. Keine freie Rechtswahl.",
+    "aus_gesamtgut_erlangt": "Nichtnegativer aus Gesamtgut erlangter Betrag des geschützten Ehegatten in EUR. Zusätzliche Grenze nur beiAbsatz1; auch in anderen Fällen numerisch validiert.",
+    "zuordnungsnachweis": "Nichtleerer Nachweis zu Gesamtgutsteilung vor Berichtigung, interner Lastzuordnung und Verwaltungssituation."
+  },
+  "ergebnisvertrag": "wert enthält interne_belastungsgrenze und freistellungsbetrag als EUR-Brüche.",
+  "regelart": "BETRAGSOPERATION"
+}

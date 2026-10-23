@@ -1,0 +1,29 @@
+{
+  "regel_id": "BGB_DELIKT_RESTBEREICHERUNG_VERJAEHRUNGSGRUNDFRIST",
+  "regelversion": "1",
+  "bezeichnung": "delikt_restbereicherung_verjaehrungsgrundfrist",
+  "fundstelle_ids": [
+    "BGB_852_T0001",
+    "BGB_852_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "anspruch_entstanden_am: Rechtlich maßgebliches ISO-Datum0001..9999 des benannten Ereignisses; kein bloßes Kenntnis-/Anzeigedatum. verletzungsereignis_am: Rechtlich maßgebliches ISO-Datum0001..9999 des benannten Ereignisses; kein bloßes Kenntnis-/Anzeigedatum. einordnungsnachweis: Nichtleerer Nachweis des gesetzlichen Anspruchsfalls und beider maßgeblicher Ereignisse; Hemmung/Korrekturen separat.",
+  "rechenschritte": "Früheres Ende aus Entstehung des Restbereicherungsanspruchs plus zehn Jahre und Verletzungshandlung/sonstigem auslösendem Ereignis plus dreißig Jahre",
+  "ausnahmen": "Nur§852 Restbereicherung nach deliktischem Erlangen auf Kosten des Verletzten, keine allgemeine Schadensersatzverjährung oder Anspruchshöhe. Maßgebliches auslösendes Ereignis rechtlich qualifizieren; Entstehung nicht vor Ereignis. Kenntnis ist hier kein Beginnparameter. Herausgabeumfang nachBereicherungsrecht gesondert. Nur Grundfristen vor Hemmung/Ablaufhemmung/Neubeginn/Feiertagskorrekturen.",
+  "rundung": "Keine.",
+  "wertebereich": "ISO-Daten und Ergebnisse0001..9999;852EntstehungnichtvorVerletzungsereignis.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/schuldrechtliche_verjaehrungskompositionen.json",
+  "gesamtabnahme": false,
+  "einheit": "daten",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "anspruch_entstanden_am": "Rechtlich maßgebliches ISO-Datum0001..9999 des benannten Ereignisses; kein bloßes Kenntnis-/Anzeigedatum.",
+    "verletzungsereignis_am": "Rechtlich maßgebliches ISO-Datum0001..9999 des benannten Ereignisses; kein bloßes Kenntnis-/Anzeigedatum.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des gesetzlichen Anspruchsfalls und beider maßgeblicher Ereignisse; Hemmung/Korrekturen separat."
+  },
+  "ergebnisvertrag": "wert enthält beide Teilfristenden und verknüpftes Ende; bei Grundfristfunktionen verknuepftes_grundfristende, beim Nachlauf verknuepftes_fristende; alle letzten eingeschlossenen Tage bisTagesablauf.",
+  "regelart": "FRISTBERECHNUNG"
+}

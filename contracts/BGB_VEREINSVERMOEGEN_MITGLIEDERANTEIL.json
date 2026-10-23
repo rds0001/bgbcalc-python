@@ -1,0 +1,33 @@
+{
+  "regel_id": "BGB_VEREINSVERMOEGEN_MITGLIEDERANTEIL",
+  "regelversion": "1",
+  "bezeichnung": "vereinsvermoegen_mitgliederanteil",
+  "fundstelle_ids": [
+    "BGB_45_T0001",
+    "BGB_45_T0002",
+    "BGB_45_T0003",
+    "BGB_45_T0004"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "verteilbarer_ueberschuss: Nichtnegativer rechtlich verteilbarer Liquidationsüberschuss in EUR. Nicht ungeprüft Bruttovermögen oder bloßes Ergebnis einer Bestandsrechnung; Gläubigerbefriedigung, Sperrjahr und Sicherheiten separat erfüllen. mitglieder_bei_aufloesung: Positive ganze Zahl bis2^53-1 der zur Zeit der Auflösung beziehungsweise Entziehung der Rechtsfähigkeit vorhandenen maßgeblichen Mitglieder. Nicht einen späteren oder nur teilnehmenden Mitgliederkreis einsetzen. anfallberechtigte_anderweitig_bestimmt: Wahrheitswert einer rechtlich maßgeblichen anderen Bestimmung der Anfallberechtigten gemäß§45 Absätze1/2. TRUE schließt diese gesetzliche Gleichverteilung aus, ohne die andere Verteilung hier zu berechnen. ausschliessliche_mitgliederinteressen: Wahrheitswert, ob der Verein nach seiner Satzung ausschließlich den Interessen seiner Mitglieder diente. Nicht mit irgendeinem Mitgliedervorteil gleichsetzen. FALSE führt in dieser Funktion zu NICHT_ANWENDBAR; Fiskalanfall separat bestimmen. verteilungsnachweis: Nichtleere Beschreibung des verteilbaren Überschusses, maßgeblichen Mitgliederkreises, fehlender anderer Anfallbestimmung und satzungsmäßiger ausschließlicher Mitgliederinteressen.",
+  "rechenschritte": "Nur ohne anderweitige Anfallbestimmung und bei ausschließlichen Mitgliederinteressen: Überschuss geteilt durch maßgebliche Mitgliederzahl. Sonst NICHT_ANWENDBAR.",
+  "ausnahmen": "Keine fiktive Gleichverteilung im Fiskalfall oder bei anderer Anfallbestimmung. Tatsächliche Ausantwortungsreife wird nicht aus Zahlen allein abgeleitet. Bruchteile bleiben exakt, keine willkürliche Verteilung von Centresten.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/vereinsliquidation.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "verteilbarer_ueberschuss": "Nichtnegativer rechtlich verteilbarer Liquidationsüberschuss in EUR. Nicht ungeprüft Bruttovermögen oder bloßes Ergebnis einer Bestandsrechnung; Gläubigerbefriedigung, Sperrjahr und Sicherheiten separat erfüllen.",
+    "mitglieder_bei_aufloesung": "Positive ganze Zahl bis2^53-1 der zur Zeit der Auflösung beziehungsweise Entziehung der Rechtsfähigkeit vorhandenen maßgeblichen Mitglieder. Nicht einen späteren oder nur teilnehmenden Mitgliederkreis einsetzen.",
+    "anfallberechtigte_anderweitig_bestimmt": "Wahrheitswert einer rechtlich maßgeblichen anderen Bestimmung der Anfallberechtigten gemäß§45 Absätze1/2. TRUE schließt diese gesetzliche Gleichverteilung aus, ohne die andere Verteilung hier zu berechnen.",
+    "ausschliessliche_mitgliederinteressen": "Wahrheitswert, ob der Verein nach seiner Satzung ausschließlich den Interessen seiner Mitglieder diente. Nicht mit irgendeinem Mitgliedervorteil gleichsetzen. FALSE führt in dieser Funktion zu NICHT_ANWENDBAR; Fiskalanfall separat bestimmen.",
+    "verteilungsnachweis": "Nichtleere Beschreibung des verteilbaren Überschusses, maßgeblichen Mitgliederkreises, fehlender anderer Anfallbestimmung und satzungsmäßiger ausschließlicher Mitgliederinteressen."
+  },
+  "ergebnisvertrag": "wert ist der exakte EUR-Anteil je maßgeblichem Mitglied; sonst null und NICHT_ANWENDBAR.",
+  "regelart": "BETRAGSOPERATION"
+}

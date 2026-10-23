@@ -1,0 +1,36 @@
+{
+  "regel_id": "BGB_PFLICHTTEILSERGAENZUNG_MEHRERE_EIGENGESCHENKE",
+  "regelversion": "1",
+  "bezeichnung": "pflichtteilsergaenzung_mehrere_eigengeschenke",
+  "fundstelle_ids": [
+    "BGB_2327_T0001",
+    "BGB_2327_T0002",
+    "BGB_2327_T0003",
+    "BGB_2315_T0001",
+    "BGB_2315_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "pflichtteilsnachlass: Vorzeichenbehaftete exakte EUR-Nettobasis; vor Hinzurechnungen nicht aufnull kürzen. drittschenkungen_ergaenzungswert: Nichtnegative Summe rechtlich bewerteter ggf.abgeschmolzener ergänzungsrelevanter Drittschenkungen. eigengeschenke: Liste0..1000 mit genau geschenk_id (eindeutig),einheitlicher_wert (nichtnegativer exakter EUR-Wert für sämtliche Schritte dieses Geschenks),anrechnung_nach_2315 (Pflichtwahrheitswert der rechtlich wirksamen Anrechnungsbestimmung). Keine Doppelzählung. gesetzliche_erbquote_zaehler: Ganzzahl0..Nenner der gesetzlichen Erbquote, Pflichtteilshälfte wird intern angewandt. gesetzliche_erbquote_nenner: Ganzzahl1..2^53−1. kombination_ohne_ausgleichung_qualifiziert: Pflichtwahrheitswert des gemeinsamen2315/2327-Modells ohne2316-Ausgleichung,2326-Mehrhinterlassung oder unterschiedliche Werte desselben Geschenks; FALSE NICHT_ANWENDBAR. bewertungsnachweis: Nichtleerer Nachweis jeder Bewertung und Anrechnungsbestimmung; Eigengeschenke nicht ungeprüft abschmelzen.",
+  "rechenschritte": "A=Summe2315-Geschenke,B=SummeübrigeEigengeschenke;q=halbeGesetzquote. Ordentlich=max(q×max(N+A,0)−A,0);Ergänzung=max(q×max(N+D+A+B,0)−A−B−ordentlich,0);Gesamt=ordentlich+Ergänzung.",
+  "ausnahmen": "Je Geschenk identischer Wert für alle Rechenschritte. Unterschiedliche Bewertungen desselben Geschenks,2316 und2326 nicht mitumgesetzt. Nur2327-Geschenke dürfen ordentlichen Pflichtteil nicht mindern.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG. Pflichtteilsnachlass darf negativ sein; übrige Geldwerte nichtnegativ.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/pflichtteilseigengeschenke.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "pflichtteilsnachlass": "Vorzeichenbehaftete exakte EUR-Nettobasis; vor Hinzurechnungen nicht aufnull kürzen.",
+    "drittschenkungen_ergaenzungswert": "Nichtnegative Summe rechtlich bewerteter ggf.abgeschmolzener ergänzungsrelevanter Drittschenkungen.",
+    "eigengeschenke": "Liste0..1000 mit genau geschenk_id (eindeutig),einheitlicher_wert (nichtnegativer exakter EUR-Wert für sämtliche Schritte dieses Geschenks),anrechnung_nach_2315 (Pflichtwahrheitswert der rechtlich wirksamen Anrechnungsbestimmung). Keine Doppelzählung.",
+    "gesetzliche_erbquote_zaehler": "Ganzzahl0..Nenner der gesetzlichen Erbquote, Pflichtteilshälfte wird intern angewandt.",
+    "gesetzliche_erbquote_nenner": "Ganzzahl1..2^53−1.",
+    "kombination_ohne_ausgleichung_qualifiziert": "Pflichtwahrheitswert des gemeinsamen2315/2327-Modells ohne2316-Ausgleichung,2326-Mehrhinterlassung oder unterschiedliche Werte desselben Geschenks; FALSE NICHT_ANWENDBAR.",
+    "bewertungsnachweis": "Nichtleerer Nachweis jeder Bewertung und Anrechnungsbestimmung; Eigengeschenke nicht ungeprüft abschmelzen."
+  },
+  "ergebnisvertrag": "wert enthält eigengeschenke_mit_2315,eigengeschenke_ohne_2315,ordentlicher_pflichtteil,pflichtteilsergaenzung und gesamtanspruch als exakte EUR-Brüche.",
+  "regelart": "BETRAGSOPERATION"
+}

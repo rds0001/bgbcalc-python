@@ -1,0 +1,36 @@
+{
+  "regel_id": "BGB_VERGLEICHSWOHNUNGEN_MINDESTZAHL",
+  "regelversion": "1",
+  "bezeichnung": "vergleichswohnungen_mindestzahl",
+  "fundstelle_ids": [
+    "BGB_558a_T0001",
+    "BGB_558a_T0002",
+    "BGB_558a_T0003",
+    "BGB_558a_T0004",
+    "BGB_558a_T0005",
+    "BGB_558a_T0006",
+    "BGB_558a_T0007",
+    "BGB_558a_T0008",
+    "BGB_558a_T0009",
+    "BGB_558a_T0010"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "anzahl_vergleichswohnungen: Nichtnegative ganze Anzahl im gemeinsamen exakten Zahlenbereich. einordnungsnachweis: Nichtleerer Nachweis zu maßgeblicher Vergleichsbasis und rechtlicher Einordnung; keine Gesamtentscheidung allein aus Zahlen.",
+  "rechenschritte": "Anzahl qualifizierter Vergleichswohnungen mit drei vergleichen und fehlende Anzahl bestimmen.",
+  "ausnahmen": "Nur numerische Mindestzahl nach558aII Nummer4. Wohnungen müssen tatsächlich verschieden und rechtlich vergleichbar sein; Benennung und entsprechende Entgelte vorqualifizieren. Drei Wohnungen genügen als dieser Begründungsweg, entscheiden aber keine materielle Mieterhöhung. Kein Ersatz für notwendige Mietspiegelangaben nachAbsatz3.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Nichtnegative Eingaben; Kostendifferenz kann negativ sein. Keine automatische Rundung.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/mietzahlengrenzen.json",
+  "gesamtabnahme": false,
+  "einheit": "zahlen_und_wahrheitswerte",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "anzahl_vergleichswohnungen": "Nichtnegative ganze Anzahl im gemeinsamen exakten Zahlenbereich.",
+    "einordnungsnachweis": "Nichtleerer Nachweis zu maßgeblicher Vergleichsbasis und rechtlicher Einordnung; keine Gesamtentscheidung allein aus Zahlen."
+  },
+  "ergebnisvertrag": "wert enthält mindestzahl, fehlende_wohnungen, mindestzahl_erreicht. Beträge als exakte Brüche, Anzahlen als Ganzzahlen, Vergleiche als Wahrheitswerte.",
+  "regelart": "NUMERISCHE_SCHWELLE"
+}

@@ -1,0 +1,28 @@
+{
+  "regel_id": "BGB_UNTERHALT_ANTEILSBETRAEGE",
+  "regelversion": "1",
+  "bezeichnung": "unterhalt_anteilsbetraege",
+  "fundstelle_ids": [
+    "BGB_1606_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "verteilbarer_barunterhalt: Nichtnegativer qualifizierter Barunterhaltsbetrag in EUR für identischen Zeitraum; Anspruch/Bereinigung bereits bestimmt. unterhaltspflichtige: Vollständige Liste1..1000 qualifizierter gleich naher Barunterhaltspflichtiger, je genau person_id und verteilungsgewicht. ID nichtleer/eindeutig, Gewicht positive exakte Zahl auf einheitlicher rechtlich qualifizierter Erwerbs-/Vermögensbasis; nicht ungeprüft Bruttoeinkommen. Persönliche Leistungsfähigkeitsgrenzen dürfen bei Grundverteilung nicht eingreifen. verteilungsnachweis: Nichtleerer Nachweis zu Rang, Personenkreis, Zeitraum, bewerteten Gewichten und nicht eingreifenden individuellen Grenzen. Keine freie Methodenwahl.",
+  "rechenschritte": "Quote=Gewicht/Summe aller Gewichte, Unterhaltsbetrag=verteilbarer Barunterhalt×Quote.",
+  "ausnahmen": "Grundverteilung nach§1606III1 für denselben Zeitraum und denselben qualifizierten Barunterhaltsbedarf. Kreis der tatsächlich gleich nahen barunterhaltspflichtigen Verwandten sowie Rang, Erwerbs-/Vermögensbewertung und Verteilungsgewichte rechtlich vorqualifiziert. Gewichte sind keine ungeprüften Bruttoeinkommen und nicht notwendig normierte Quoten. Keine Ermittlung von Selbstbehalt, gesteigerter Haftung, Bedarfsrang, Wechselmodell oder Naturalunterhalt nachSatz2. Nur wenn individuelle Leistungsfähigkeitsgrenzen bei den errechneten Anteilen nicht eingreifen; Mangelfall-/Deckelungsumverteilung gesondert. Nichtpflichtige oder mit Gewicht null ausgeschiedene Personen außerhalb dieses qualifizierten Kreises behandeln.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/unterhaltsanteile.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "verteilbarer_barunterhalt": "Nichtnegativer qualifizierter Barunterhaltsbetrag in EUR für identischen Zeitraum; Anspruch/Bereinigung bereits bestimmt.",
+    "unterhaltspflichtige": "Vollständige Liste1..1000 qualifizierter gleich naher Barunterhaltspflichtiger, je genau person_id und verteilungsgewicht. ID nichtleer/eindeutig, Gewicht positive exakte Zahl auf einheitlicher rechtlich qualifizierter Erwerbs-/Vermögensbasis; nicht ungeprüft Bruttoeinkommen. Persönliche Leistungsfähigkeitsgrenzen dürfen bei Grundverteilung nicht eingreifen.",
+    "verteilungsnachweis": "Nichtleerer Nachweis zu Rang, Personenkreis, Zeitraum, bewerteten Gewichten und nicht eingreifenden individuellen Grenzen. Keine freie Methodenwahl."
+  },
+  "ergebnisvertrag": "wert ist Liste in Eingabereihenfolge mit person_id, anteilsquote als dimensionslosem Bruch und unterhaltsbetrag als EUR-Bruch.",
+  "regelart": "BETRAGSOPERATION"
+}

@@ -1,0 +1,38 @@
+{
+  "regel_id": "BGB_UNTERHALT_EXISTENZMINIMUM",
+  "regelversion": "1",
+  "bezeichnung": "mindestunterhalt_aus_existenzminimum",
+  "fundstelle_ids": [
+    "BGB_1612a_T0001",
+    "BGB_1612a_T0002",
+    "BGB_1612a_T0003",
+    "BGB_1612a_T0004",
+    "BGB_1612a_T0005",
+    "BGB_1612a_T0006",
+    "BGB_1612a_T0007",
+    "BGB_1612a_T0008",
+    "BGB_1612a_T0009",
+    "BGB_1612a_T0010",
+    "BGB_1612a_T0011"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlich ausgewählter Fall und ausdrücklich belegte externe Parameter.",
+  "eingabevertrag": "jaehrliches_existenzminimum: positive EUR-Dezimalzeichenfolge des maßgeblichen sächlichen Existenzminimums; altersstufe: Ganzzahl 1..3; quellenangabe: nichtleer mit Zeitraum/Herkunft. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+  "rechenschritte": "Jahresbetrag durch 12 teilen, mit 87/100/117 Prozent je Altersstufe multiplizieren und auf volle EUR aufrunden.",
+  "ausnahmen": "Rechenrelation aus § 1612a Abs. 1/2; liefert keine amtliche Festsetzung nach Abs. 4. Für konkrete dynamische Titel gilt der einschlägige Mindestunterhalt der Rechtsverordnung, als externe Eingabe mit Fassung/Zeitraum. Jahresbetrag weder Grundfreibetrag noch beliebige Einkommensgröße.",
+  "rundung": "AUF_VOLLE_EURO_AM_ENDE",
+  "wertebereich": "Gemeinsamer Zahlenvertrag NUMERIK.md; fehlend EINGABE_FEHLT, falscher Typ/Bereich EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/unterhalt.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "jaehrliches_existenzminimum": "Positive Dezimalzeichenfolge des maßgeblichen jährlichen sächlichen Existenzminimums in EUR; externe fachliche Eingabe, kein Grundfreibetrag. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+    "altersstufe": "Ganze Zahl 1, 2 oder 3; Zuordnung nach § 1612a Abs. 1 und 3.",
+    "quellenangabe": "Nichtleerer Herkunfts- und Gültigkeitsnachweis der Jahresgrundlage."
+  },
+  "ergebnisvertrag": "wert enthält den auf volle EUR aufgerundeten Betrag als Bruch mit zaehler und nenner als Ganzzahlzeichenfolgen; nenner ist 1.",
+  "exakte_bruchobjekte_als_dezimaleingaben": true
+}

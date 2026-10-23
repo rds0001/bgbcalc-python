@@ -1,0 +1,35 @@
+{
+  "regel_id": "BGB_VATERSCHAFTSANFECHTUNG_GRUNDFRIST",
+  "regelversion": "1",
+  "bezeichnung": "vaterschaftsanfechtung_grundfrist",
+  "fundstelle_ids": [
+    "BGB_1600b_T0001",
+    "BGB_1600b_T0002",
+    "BGB_1600b_T0004",
+    "BGB_1600b_T0005",
+    "BGB_1600b_T0006"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "kenntnis_am: ISO-Datum qualifizierter Kenntnis der gegen Vaterschaft sprechenden Umstände; bei eigener Minderjährigenfrist eigene Kenntnis. kind_geboren_am: ISO-Geburtsdatum des betroffenen Kindes. fristfall: allgemein oder minderjaehriger_selbst: rechtlich qualifizierter Anwendungsfall; Vertreteranfechtung Minderjähriger nicht enthalten. berechtigter_geboren_am: ISO-Geburtsdatum des selbst anfechtenden früher Minderjährigen; hierfür erforderlich, im allgemeinen Fall zwingend null. anerkennung_wirksam_am: Optionales ISO-Datum der maßgeblichen wirksamen Anerkennung; sonst null, nicht bloß Abgabe der Erklärung. fristbeginnnachweis: Nichtleerer Nachweis von Kenntnis, maßgeblicher Vaterschaftszuordnung und Fristvariante.",
+  "rechenschritte": "Zweijahresfrist ab spätestem maßgeblichem Ereignis; eigene Minderjährigenfrist zusätzlich nicht vor Volljährigkeit und Ablauf nicht vor Vollendung21. Bestehenden Kalenderkern mit Ereignis-/Tagesbeginnmodus verwenden.",
+  "ausnahmen": "§1600bI/II der lokalen Fassung: ungestörte Grundfrist, keine abschließende Anfechtungszulässigkeit. allgemein setzt rechtlich qualifiziert voraus, dass die besondere eigene Minderjährigenfrist nicht eingreift. minderjaehriger_selbst erfasst die eigene Anfechtung nach Absatz2Sätze2/3; Kenntnis ist eigene Kenntnis, nicht Vertreterkenntnis. Die Auswahl ersetzt keine Prüfung der gesetzlichen Fallvoraussetzungen. anerkennung_wirksam_am nur bei maßgeblicher Anerkennung; bei anderweitiger Vaterschaftszuordnung null. Kindesgeburt und Kenntnis können vor Wirksamkeit der Anerkennung liegen. Altersgrenzen nach§187II2 ab Tagesbeginn: Ablauf am Vortag des21.Geburtstags bedeutet Vollendung21 mit Ablauf dieses Tages, nicht einen Tag früher. Geburtsdaten/Wirksamkeitszeitpunkte rechtlich qualifiziert. Vertreteranfechtung Minderjähriger, Wiederanfechtung nach Geschäftsunfähigkeit(Absatz3), Neubeginn bei Unzumutbarkeit(Absatz5), sämtliche Hemmungen/§§204,206,210 und§193-Korrekturen nicht berechnet. Fristende daher nicht ungeprüft als tatsächlichen letzten Antragstag verwenden.",
+  "rundung": "Keine Rundung; Kalenderablauftage nach bestehendem Kern.",
+  "wertebereich": "ISO-Daten0001..9999, qualifizierter Auswahltext und Nachweis. Fehlende Pflichtangaben EINGABE_FEHLT; unzulässige Typen, Daten, Auswahl und Bereichsüberschreitung EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/vaterschaftsgrundfrist.json",
+  "gesamtabnahme": false,
+  "einheit": "daten",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "kenntnis_am": "ISO-Datum qualifizierter Kenntnis der gegen Vaterschaft sprechenden Umstände; bei eigener Minderjährigenfrist eigene Kenntnis.",
+    "kind_geboren_am": "ISO-Geburtsdatum des betroffenen Kindes.",
+    "fristfall": "allgemein oder minderjaehriger_selbst: rechtlich qualifizierter Anwendungsfall; Vertreteranfechtung Minderjähriger nicht enthalten.",
+    "berechtigter_geboren_am": "ISO-Geburtsdatum des selbst anfechtenden früher Minderjährigen; hierfür erforderlich, im allgemeinen Fall zwingend null.",
+    "anerkennung_wirksam_am": "Optionales ISO-Datum der maßgeblichen wirksamen Anerkennung; sonst null, nicht bloß Abgabe der Erklärung.",
+    "fristbeginnnachweis": "Nichtleerer Nachweis von Kenntnis, maßgeblicher Vaterschaftszuordnung und Fristvariante."
+  },
+  "ergebnisvertrag": "wert enthält Ereignisbeginn-Datum, optional Volljährigkeitsbeginn, Zweijahresgrundfristende, optional Mindestablauf Vollendung21 und kombiniertes Anfechtungsgrundfristende. Keine Hemmungs-/Feiertagskorrektur.",
+  "regelart": "KALENDERREGEL"
+}

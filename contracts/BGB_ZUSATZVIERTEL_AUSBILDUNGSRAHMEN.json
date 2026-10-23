@@ -1,0 +1,29 @@
+{
+  "regel_id": "BGB_ZUSATZVIERTEL_AUSBILDUNGSRAHMEN",
+  "regelversion": "1",
+  "bezeichnung": "zusatzviertel_ausbildungsrahmen",
+  "fundstelle_ids": [
+    "BGB_1371_T0001",
+    "BGB_1371_T0004"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "viertelbemessungsgrundlage: Nichtnegative rechtlich bewertete Grundlage des tatsächlich nach§1371I zusätzlich gewährten Erbschaftsviertels in EUR. Keine ungeprüfte Bruttonachlasssumme. qualifizierter_ausbildungsgesamtbedarf: Nichtnegativer rechtlich qualifizierter bedürftigkeitsabhängiger angemessener Gesamtausbildungsbedarf des vollständig abgegrenzten berechtigten Abkömmlingskreises in EUR. bewertungsnachweis: Nichtleerer Nachweis von tatsächlich gewährtem Zusatzviertel, Bewertungsbasis und qualifiziertem Gesamtbedarf; keine mehrfache Ausschöpfung für bereits gedeckte Bedarfe.",
+  "rechenschritte": "Zusatzviertel=qualifizierte Bemessungsgrundlage/4; aggregierter Ausbildungsrahmen=min(Zusatzviertel,qualifizierter Gesamtausbildungsbedarf); ungedeckten Bedarf und unbenötigten Viertelrest ausweisen.",
+  "ausnahmen": "§1371IV setzt tatsächlich nachAbsatz1 zusätzlich gewährtes Viertel und bedürftige erbberechtigte Abkömmlinge voraus, die nicht aus der aufgelösten Ehe stammen. Bemessungsgrundlage und angemessener bedürftigkeitsabhängiger Gesamtausbildungsbedarf rechtlich qualifiziert, keine pauschalen Bruttonachlass- oder Ausbildungskostenannahmen. Aggregierte Rahmenrechnung für vollständig abgegrenzten Kreis/Bedarfsumfang; keine Einzelverteilung, Rangregel oder Priorität nach zeitlicher Geltendmachung erfunden. Vergangene Leistungen/Verbrauch des Viertels, Wertänderungen, abweichende Nachlassbindungen und Wiederverwendung desselben Viertels für neue Bedarfsrunden gesondert rechtlich abgrenzen; dieser Rahmen darf nicht wiederholt ohne Anrechnung ausgeschöpft werden. Keine autonome Prüfung von Erbberechtigung, Abstammung, Bedürftigkeit oder Angemessenheit.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/ausbildungsviertel.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "viertelbemessungsgrundlage": "Nichtnegative rechtlich bewertete Grundlage des tatsächlich nach§1371I zusätzlich gewährten Erbschaftsviertels in EUR. Keine ungeprüfte Bruttonachlasssumme.",
+    "qualifizierter_ausbildungsgesamtbedarf": "Nichtnegativer rechtlich qualifizierter bedürftigkeitsabhängiger angemessener Gesamtausbildungsbedarf des vollständig abgegrenzten berechtigten Abkömmlingskreises in EUR.",
+    "bewertungsnachweis": "Nichtleerer Nachweis von tatsächlich gewährtem Zusatzviertel, Bewertungsbasis und qualifiziertem Gesamtbedarf; keine mehrfache Ausschöpfung für bereits gedeckte Bedarfe."
+  },
+  "ergebnisvertrag": "wert enthält zusaetzliches_viertel, ausbildungsrahmen, nicht_aus_viertel_gedeckter_bedarf und nicht_fuer_diesen_gesamtbedarf_benoetigtes_viertel als EUR-Brüche.",
+  "regelart": "BETRAGSOPERATION"
+}

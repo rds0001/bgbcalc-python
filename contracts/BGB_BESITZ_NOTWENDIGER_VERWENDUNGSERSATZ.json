@@ -1,0 +1,36 @@
+{
+  "regel_id": "BGB_BESITZ_NOTWENDIGER_VERWENDUNGSERSATZ",
+  "regelversion": "1",
+  "bezeichnung": "besitz_notwendiger_verwendungsersatz",
+  "fundstelle_ids": [
+    "BGB_994_T0001",
+    "BGB_994_T0002",
+    "BGB_994_T0003",
+    "BGB_995_T0001",
+    "BGB_995_T0002",
+    "BGB_999_T0001",
+    "BGB_999_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "notwendige_eigene_verwendungen: Nichtnegative eigene notwendige BruttoverwendungenEUR einschließlich Lasten nach995, ohne Vorgängerbetrag. ausgeschlossene_erhaltungskosten: In eigener Bruttosumme enthaltene gewöhnliche Erhaltungskosten für Zeit verbleibender Nutzungen. ausgeschlossene_lasten: Nicht ersatzfähige Lasten für Zeit verbleibender Nutzungen, nicht außergewöhnliche auf Stammwert gelegte Lasten. Keine Überschneidung mit Erhaltungskosten. ersatzfaehige_vorgaengerverwendungen: Separater rechtlich bereinigter ersatzfähiger Vorgängerbetrag nach999; nicht nochmals in eigenen Kosten enthalten. zuordnungsnachweis: Nichtleerer Nachweis994I-Fall, notwendige Verwendung, Zeitzuordnung/Lastenart und etwaige Rechtsnachfolge.",
+  "rechenschritte": "EigeneVerwendungen−ausgeschlosseneErhaltung−ausgeschlosseneLasten+bereinigteVorgängeransprüche.",
+  "ausnahmen": "Ausgeschlossene Posten müssen überschneidungsfreie Teile eigener Verwendungen sein.994II-GoA separat, keine automatische Prüfung997–1003 oder Fälligkeit.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/besitzverwendungsersatz.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "notwendige_eigene_verwendungen": "Nichtnegative eigene notwendige BruttoverwendungenEUR einschließlich Lasten nach995, ohne Vorgängerbetrag.",
+    "ausgeschlossene_erhaltungskosten": "In eigener Bruttosumme enthaltene gewöhnliche Erhaltungskosten für Zeit verbleibender Nutzungen.",
+    "ausgeschlossene_lasten": "Nicht ersatzfähige Lasten für Zeit verbleibender Nutzungen, nicht außergewöhnliche auf Stammwert gelegte Lasten. Keine Überschneidung mit Erhaltungskosten.",
+    "ersatzfaehige_vorgaengerverwendungen": "Separater rechtlich bereinigter ersatzfähiger Vorgängerbetrag nach999; nicht nochmals in eigenen Kosten enthalten.",
+    "zuordnungsnachweis": "Nichtleerer Nachweis994I-Fall, notwendige Verwendung, Zeitzuordnung/Lastenart und etwaige Rechtsnachfolge."
+  },
+  "ergebnisvertrag": "wert ist bereinigter Ersatzbetrag als exakterEUR-Bruch.",
+  "regelart": "BETRAGSOPERATION"
+}

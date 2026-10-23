@@ -1,0 +1,30 @@
+{
+  "regel_id": "BGB_PAUSCHALREISE_ABSICHERUNGSANTEIL",
+  "regelversion": "1",
+  "bezeichnung": "pauschalreise_absicherungsanteil",
+  "fundstelle_ids": [
+    "BGB_651r_T0013",
+    "BGB_651r_T0014"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "eigener_leistungsanspruch: Nichtnegativer exakter EUR-Betrag als Dezimalzeichenfolge oder Bruchobjekt. Eigener Anspruch höchstens Gesamtansprüche desselben vollständigen Insolvenzleistungskreises, Vorjahresumsatz strikt unter drei Millionen EUR. gesamtleistungsansprueche: Nichtnegativer exakter EUR-Betrag als Dezimalzeichenfolge oder Bruchobjekt. Eigener Anspruch höchstens Gesamtansprüche desselben vollständigen Insolvenzleistungskreises, Vorjahresumsatz strikt unter drei Millionen EUR. jahresumsatz_veranstalter: Nichtnegativer exakter EUR-Betrag als Dezimalzeichenfolge oder Bruchobjekt. Eigener Anspruch höchstens Gesamtansprüche desselben vollständigen Insolvenzleistungskreises, Vorjahresumsatz strikt unter drei Millionen EUR. einordnungsnachweis: Nichtleerer Nachweis qualifizierter Versicherung/Bankabsicherung nach §651r Absatz2 Satz2, wirksamer Ein-Million-EUR-Begrenzung je Insolvenz, gesetzlicher Vorjahresumsatzbasis und vollständig gleichbezogener Leistungsansprüche. Kein Reisesicherungsfonds.",
+  "rechenschritte": "Im qualifiziert vereinbarten Ein-Million-Euro-Deckelfall Einzelanspruch mit min(1, eine Million Euro geteilt durch Gesamtleistungsansprüche) multiplizieren",
+  "ausnahmen": "Nur §651r Absatz3 Satz3/4: qualifiziert wirksam vereinbarte Begrenzung auf genau eine Million EUR je Insolvenz bei Versicherer oder Kreditinstitut nach Absatz2 Satz2 und Vorjahresumsatz strikt unter drei Millionen EUR. Kein Deckel für Reisesicherungsfonds; größere freiwillige Deckungsgrenzen separat qualifizieren. Eigener und Gesamtanspruch betreffen denselben vollständigen Insolvenz-Leistungskreis nach Absatz1, nicht nur die gerade bekannten Anmeldungen; keine Doppelzählung. Gesamtanspruch mindestens Einzelanspruch. Null Gesamtansprüche ergeben null. Keine Bestimmung des versicherten Schadens oder Prüfung der Insolvenz.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/reiseabsicherungsquote.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "eigener_leistungsanspruch": "Nichtnegativer exakter EUR-Betrag als Dezimalzeichenfolge oder Bruchobjekt. Eigener Anspruch höchstens Gesamtansprüche desselben vollständigen Insolvenzleistungskreises, Vorjahresumsatz strikt unter drei Millionen EUR.",
+    "gesamtleistungsansprueche": "Nichtnegativer exakter EUR-Betrag als Dezimalzeichenfolge oder Bruchobjekt. Eigener Anspruch höchstens Gesamtansprüche desselben vollständigen Insolvenzleistungskreises, Vorjahresumsatz strikt unter drei Millionen EUR.",
+    "jahresumsatz_veranstalter": "Nichtnegativer exakter EUR-Betrag als Dezimalzeichenfolge oder Bruchobjekt. Eigener Anspruch höchstens Gesamtansprüche desselben vollständigen Insolvenzleistungskreises, Vorjahresumsatz strikt unter drei Millionen EUR.",
+    "einordnungsnachweis": "Nichtleerer Nachweis qualifizierter Versicherung/Bankabsicherung nach §651r Absatz2 Satz2, wirksamer Ein-Million-EUR-Begrenzung je Insolvenz, gesetzlicher Vorjahresumsatzbasis und vollständig gleichbezogener Leistungsansprüche. Kein Reisesicherungsfonds."
+  },
+  "ergebnisvertrag": "wert ist der quotierte eigene Leistungsanspruch in EUR als exaktes Bruchobjekt.",
+  "regelart": "BETRAGSOPERATION"
+}

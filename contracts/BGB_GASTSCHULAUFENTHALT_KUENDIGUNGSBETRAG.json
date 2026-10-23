@@ -1,0 +1,33 @@
+{
+  "regel_id": "BGB_GASTSCHULAUFENTHALT_KUENDIGUNGSBETRAG",
+  "regelversion": "1",
+  "bezeichnung": "gastschulaufenthalt_kuendigungsbetrag",
+  "fundstelle_ids": [
+    "BGB_651u_T0009",
+    "BGB_651u_T0010",
+    "BGB_651u_T0011",
+    "BGB_651u_T0012",
+    "BGB_651u_T0013"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "vereinbarter_reisepreis: Nichtnegativer exakter vereinbarter EUR-Preis. ersparte_aufwendungen: Nichtnegative ersparte EUR-Aufwendungen, höchstens der vereinbarte Preis. notwendige_mehrkosten: Nichtnegative rechtlich zugeordnete notwendige Mehrkosten der Kündigungsmaßnahmen in EUR. einordnungsnachweis: Nichtleerer Nachweis des §651uIV-Falls; Kündigung nach §651l ausdrücklich ausgeschlossen.",
+  "rechenschritte": "Vereinbarten Reisepreis um ersparte Aufwendungen mindern und notwendige Mehrkosten hinzufügen.",
+  "ausnahmen": "Nur §651uIV außerhalb einer Kündigung nach §651l. Ersparnis und notwendige Mehrkosten rechtlich bewerten, ohne doppelte Kostenpositionen. Ergebnis ist der Anspruch vor bereits geleisteten Zahlungen, kein automatischer Zahlungssaldo. Bei Ersparnis über dem Preis ist dieser abgegrenzte Fall nicht modelliert; keine erfundene negative Preisforderung.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Nichtnegative Eingangswerte, exakter nichtnegativer EUR-Bruch im sicheren gemeinsamen Zahlenbereich.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/reiseabrechnungsbetraege.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "vereinbarter_reisepreis": "Nichtnegativer exakter vereinbarter EUR-Preis.",
+    "ersparte_aufwendungen": "Nichtnegative ersparte EUR-Aufwendungen, höchstens der vereinbarte Preis.",
+    "notwendige_mehrkosten": "Nichtnegative rechtlich zugeordnete notwendige Mehrkosten der Kündigungsmaßnahmen in EUR.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des §651uIV-Falls; Kündigung nach §651l ausdrücklich ausgeschlossen."
+  },
+  "ergebnisvertrag": "wert ist der exakte EUR-Bruch.",
+  "regelart": "BETRAGSOPERATION"
+}

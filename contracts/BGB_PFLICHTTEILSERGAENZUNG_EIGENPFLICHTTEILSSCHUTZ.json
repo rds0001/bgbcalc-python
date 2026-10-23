@@ -1,0 +1,31 @@
+{
+  "regel_id": "BGB_PFLICHTTEILSERGAENZUNG_EIGENPFLICHTTEILSSCHUTZ",
+  "regelversion": "1",
+  "bezeichnung": "pflichtteilsergaenzung_eigenpflichtteilsschutz",
+  "fundstelle_ids": [
+    "BGB_2328_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "verfuegbarer_nachlassanteil: Nichtnegativer rechtlich bestimmter EUR-Wert des verfügbaren Nachlassanteils des Erben vor der betrachteten fremden Ergänzungsforderung, nach sonstigen relevanten Belastungen. Einheitliche Bewertungsbasis; nicht pauschal Gesamtnachlass bei mehreren Erben. eigener_pflichtteil: Nichtnegativer rechtlich berechneter eigener Pflichtteil in EUR einschließlich zutreffender Anrechnungen; nicht Erbquote oder gesamter Erbteil. eigene_pflichtteilsergaenzung: Nichtnegative rechtlich berechnete dem Erben selbst gebührende Pflichtteilsergänzung in EUR, anrechnungsbereinigt. Nicht gesamter Wert früherer Schenkungen und nicht bereits im eigenen Pflichtteil enthaltener Betrag. fremde_ergaenzungsforderung: Nichtnegative fremde Pflichtteilsergänzungsforderung in EUR vor Prüfung§2328. Bei mehreren Berechtigten konsistent aggregieren; keine wiederholte Nutzung desselben Deckungsbetrags und keine automatische Verteilung der verbleibenden Haftung. erbe_selbst_pflichtteilsberechtigt: Wahrheitswert des rechtlich geprüften Tatbestands§2328: in Anspruch genommener Erbe ist selbst pflichtteilsberechtigt. FALSE ergibt NICHT_ANWENDBAR für dieses Schutzmodell. bewertungsnachweis: Nichtleere Begründung eigener Pflichtteilsberechtigung, eigener Ansprüche, verfügbarem Nachlassanteil und betrachteter fremder Ergänzung; Bewertungen und Anrechnungen belegen.",
+  "rechenschritte": "Eigenen Schutzbetrag aus Pflichtteil plus eigener Ergänzung bilden. Deckung=max(0,verfügbarer Nachlassanteil minus Schutzbetrag). Nicht nach§2328 verweigerbarer Betrag=min(fremde Forderung,Deckung), Verweigerungsbetrag als verbleibende Differenz.",
+  "ausnahmen": "Nur Umfang des gesetzlichen Verweigerungsrechts, keine automatische Ausübung. Vorberechnung eigener Ansprüche, Nachlassbelastungen, Verteilung unter mehreren Gläubigern und Rückgriff§2329 separat. Nicht verweigerbar bedeutet nicht automatisch geschuldet.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/pflichtteilseigenbedarf.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "verfuegbarer_nachlassanteil": "Nichtnegativer rechtlich bestimmter EUR-Wert des verfügbaren Nachlassanteils des Erben vor der betrachteten fremden Ergänzungsforderung, nach sonstigen relevanten Belastungen. Einheitliche Bewertungsbasis; nicht pauschal Gesamtnachlass bei mehreren Erben.",
+    "eigener_pflichtteil": "Nichtnegativer rechtlich berechneter eigener Pflichtteil in EUR einschließlich zutreffender Anrechnungen; nicht Erbquote oder gesamter Erbteil.",
+    "eigene_pflichtteilsergaenzung": "Nichtnegative rechtlich berechnete dem Erben selbst gebührende Pflichtteilsergänzung in EUR, anrechnungsbereinigt. Nicht gesamter Wert früherer Schenkungen und nicht bereits im eigenen Pflichtteil enthaltener Betrag.",
+    "fremde_ergaenzungsforderung": "Nichtnegative fremde Pflichtteilsergänzungsforderung in EUR vor Prüfung§2328. Bei mehreren Berechtigten konsistent aggregieren; keine wiederholte Nutzung desselben Deckungsbetrags und keine automatische Verteilung der verbleibenden Haftung.",
+    "erbe_selbst_pflichtteilsberechtigt": "Wahrheitswert des rechtlich geprüften Tatbestands§2328: in Anspruch genommener Erbe ist selbst pflichtteilsberechtigt. FALSE ergibt NICHT_ANWENDBAR für dieses Schutzmodell.",
+    "bewertungsnachweis": "Nichtleere Begründung eigener Pflichtteilsberechtigung, eigener Ansprüche, verfügbarem Nachlassanteil und betrachteter fremder Ergänzung; Bewertungen und Anrechnungen belegen."
+  },
+  "ergebnisvertrag": "wert enthält eigener_schutzbetrag, nicht_nach_2328_verweigerbarer_betrag und verweigerungsbetrag als exakte EUR-Brüche. Ohne eigenen Pflichtteilsstatus NICHT_ANWENDBAR/null.",
+  "regelart": "BETRAGSOPERATION"
+}

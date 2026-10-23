@@ -1,0 +1,30 @@
+{
+  "regel_id": "BGB_NIESSBRAUCH_EINLOESUNGSKAPITAL",
+  "regelversion": "1",
+  "bezeichnung": "niessbrauch_einloesungskapital",
+  "fundstelle_ids": [
+    "BGB_1083_T0002",
+    "BGB_1083_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "tilgungskapital: Nichtnegativer rechtlich bewerteter Betrag in EUR, qualifizierte Bedeutung gemäß Abgrenzung. einloesungspraemie: Nichtnegativer rechtlich bewerteter Vergleichs-/Abzugs-/Zusatzbetrag in EUR für denselben Gegenstand und konsistente Bewertungsbasis. anwendungsfall_qualifiziert: Explizite Bestätigung des im Fachvertrag abgegrenzten Normfalls. FALSE ergibt NICHT_ANWENDBAR. bewertungsnachweis: Nichtleere Herkunft und rechtliche Begründung beider Beträge, Bewertungszeitpunkte und Anwendbarkeit.",
+  "rechenschritte": "Tilgungskapital und Einlösungsprämie zu Kapitalbetrag addieren.",
+  "ausnahmen": "Nur Einlösung des vom Nießbrauch betroffenen Papiers. Einlösungsprämie wird als Kapital, nicht Zinsertrag behandelt; separat fällige Zinsen nicht als Prämie eingeben. Keine Bewertung oder automatische Auszahlung an den Nießbraucher.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/sachenrecht_ersatzbetraege.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "tilgungskapital": "Nichtnegativer rechtlich bewerteter Betrag in EUR, qualifizierte Bedeutung gemäß Abgrenzung.",
+    "einloesungspraemie": "Nichtnegativer rechtlich bewerteter Vergleichs-/Abzugs-/Zusatzbetrag in EUR für denselben Gegenstand und konsistente Bewertungsbasis.",
+    "anwendungsfall_qualifiziert": "Explizite Bestätigung des im Fachvertrag abgegrenzten Normfalls. FALSE ergibt NICHT_ANWENDBAR.",
+    "bewertungsnachweis": "Nichtleere Herkunft und rechtliche Begründung beider Beträge, Bewertungszeitpunkte und Anwendbarkeit."
+  },
+  "ergebnisvertrag": "wert ist exakter EUR-Bruch, keine automatische Rundung.",
+  "regelart": "BETRAGSOPERATION"
+}

@@ -1,0 +1,28 @@
+{
+  "regel_id": "BGB_FORTSETZUNG_NICHTGEMEINSAME_ABKOEMMLINGE_GESAMTGUT",
+  "regelversion": "1",
+  "bezeichnung": "fortsetzung_nichtgemeinsame_abkoemmlinge_gesamtgut",
+  "fundstelle_ids": [
+    "BGB_1483_T0004",
+    "BGB_1476_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "teilungsfaehiges_gesamtgut: Nichtnegativer Netto-Teilungswert des ursprünglichen Gesamtguts in EUR nach gesonderter Schuldenberichtigung, Rückbehalten und internen Ausgleichspositionen. Gesetzlicher hälftiger Teilungsfall nach §1476I. erbquoten_nichtgemeinsamer_abkoemmlinge: Liste0..1000 eindeutiger Objekte mit abkoemmling_id und erbquote. Rechtlich bestimmte Erbquoten am hypothetischen Nachlass ohne Fortsetzung; keine Quote am gesamten Gesamtgut. Summe höchstens1. Erbquoten können durch vorhandene Erbquotenfunktionen vorbereitet werden. einordnungsnachweis: Nichtleere Qualifikation von §1483II, gesetzlicher Halbteilung und vollständiger Liste der nichtgemeinschaftlichen Abkömmlinge; keine abweichende Teilungsregel.",
+  "rechenschritte": "Gesamtgut halbieren, nichtgemeinschaftliche Erbquoten auf Nachlasshälfte anwenden und Gesamtgutrest bestimmen.",
+  "ausnahmen": "§1483II: ursprünglichen, bereits bereinigten Gesamtgutwert hälftig dem hypothetischen Nachlass zuordnen; Erbquoten der nichtgemeinschaftlichen Abkömmlinge auf diese Hälfte anwenden und aus dem Gesamtgut herausrechnen. Nur Gesamtgutkomponente ihrer Erbteile; Sondergut/Vorbehaltsgut und sonstige Nachlasspositionen gesondert. Keine automatische Güterstands-, Abstammungs-, Erbquoten- oder Bewertungsentscheidung. Keine erneute Schuldenberichtigung bereits bereinigter Werte, kein negativer Nachlass und keine pauschale Kappung tatsächlicher Außenhaftung. Abweichende ehevertragliche Teilungsverhältnisse nicht mit Halbteilung vermischen.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/fortsetzung_fremdabkoemmlinge.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "teilungsfaehiges_gesamtgut": "Nichtnegativer Netto-Teilungswert des ursprünglichen Gesamtguts in EUR nach gesonderter Schuldenberichtigung, Rückbehalten und internen Ausgleichspositionen. Gesetzlicher hälftiger Teilungsfall nach §1476I.",
+    "erbquoten_nichtgemeinsamer_abkoemmlinge": "Liste0..1000 eindeutiger Objekte mit abkoemmling_id und erbquote. Rechtlich bestimmte Erbquoten am hypothetischen Nachlass ohne Fortsetzung; keine Quote am gesamten Gesamtgut. Summe höchstens1. Erbquoten können durch vorhandene Erbquotenfunktionen vorbereitet werden.",
+    "einordnungsnachweis": "Nichtleere Qualifikation von §1483II, gesetzlicher Halbteilung und vollständiger Liste der nichtgemeinschaftlichen Abkömmlinge; keine abweichende Teilungsregel."
+  },
+  "ergebnisvertrag": "wert enthält hypothetischer_nachlassanteil_gesamtgut, herauszurechnende_anteile mit abkoemmling_id/betrag, herauszurechnender_gesamtbetrag und verbleibendes_gesamtgut. Geldwerte als exakte EUR-Brüche."
+}

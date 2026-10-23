@@ -1,0 +1,29 @@
+{
+  "regel_id": "BGB_VERJAEHRUNG_ABHAENGIGE_NEBENLEISTUNG",
+  "regelversion": "1",
+  "bezeichnung": "verjaehrung_abhaengige_nebenleistung",
+  "fundstelle_ids": [
+    "BGB_217_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "hauptanspruch_letzter_tag: ISO-Datum0001..9999 des rechtlich maßgeblichen letzten Tages vor Verjährung des Hauptanspruchs, einschließlich aller für ihn geltenden Fristveränderungen. Nicht bloß seine unmodifizierte Grundfrist. nebenleistung_eigener_letzter_tag: ISO-Datum0001..9999 des rechtlich maßgeblichen letzten Tages vor der eigenen Verjährung dieser Nebenleistung, unabhängig von der zusätzlichen Grenze§217. Frühere eigene Verjährung bleibt erhalten. nebenleistung_abhaengig: Wahrheitswert der rechtlichen Abhängigkeit der konkreten Nebenleistung vom bezeichneten Hauptanspruch im Sinne§217. Nicht jede andere Forderung zwischen denselben Parteien ist abhängig. FALSE ergibt NICHT_ANWENDBAR. fristnachweis: Nichtleere Beschreibung der rechtlichen Abhängigkeit und beider vollständig bestimmten Fristläufe. Hemmungen/Neubeginne je Anspruch korrekt berücksichtigen, nicht erst nach Auswahl dieses Minimums pauschal addieren.",
+  "rechenschritte": "Bei abhängiger Nebenleistung früheren letzten Tag aus Hauptanspruchsverjährung und eigener Nebenleistungsverjährung wählen.",
+  "ausnahmen": "Nur Kombination zweier zuvor rechtlich bestimmter Fristgrenzen. Keine automatische Abhängigkeit, Einredeerhebung oder Berechnung der einzelnen Fristläufe. Frühere eigene Nebenleistungsverjährung nicht auf späteren Haupttermin verlängern.",
+  "rundung": "Keine; Vergleich rechtlich vorgegebener Kalendertage.",
+  "wertebereich": "ISO-Daten0001..9999, explizite Auswahl/Wahrheitswerte und nichtleerer Nachweis.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/verjaehrungsfolgen.json",
+  "gesamtabnahme": false,
+  "einheit": "datum",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "hauptanspruch_letzter_tag": "ISO-Datum0001..9999 des rechtlich maßgeblichen letzten Tages vor Verjährung des Hauptanspruchs, einschließlich aller für ihn geltenden Fristveränderungen. Nicht bloß seine unmodifizierte Grundfrist.",
+    "nebenleistung_eigener_letzter_tag": "ISO-Datum0001..9999 des rechtlich maßgeblichen letzten Tages vor der eigenen Verjährung dieser Nebenleistung, unabhängig von der zusätzlichen Grenze§217. Frühere eigene Verjährung bleibt erhalten.",
+    "nebenleistung_abhaengig": "Wahrheitswert der rechtlichen Abhängigkeit der konkreten Nebenleistung vom bezeichneten Hauptanspruch im Sinne§217. Nicht jede andere Forderung zwischen denselben Parteien ist abhängig. FALSE ergibt NICHT_ANWENDBAR.",
+    "fristnachweis": "Nichtleere Beschreibung der rechtlichen Abhängigkeit und beider vollständig bestimmten Fristläufe. Hemmungen/Neubeginne je Anspruch korrekt berücksichtigen, nicht erst nach Auswahl dieses Minimums pauschal addieren."
+  },
+  "ergebnisvertrag": "wert ist ISO-Datum des maßgeblichen letzten unverjährten Tages der abhängigen Nebenleistung. Ohne Abhängigkeit NICHT_ANWENDBAR/null.",
+  "regelart": "FRISTVERGLEICH"
+}

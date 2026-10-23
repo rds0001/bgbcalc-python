@@ -1,0 +1,38 @@
+{
+  "regel_id": "BGB_PFLICHTTEIL_NACH_AUSGLEICHUNG",
+  "regelversion": "1",
+  "bezeichnung": "pflichtteil_nach_ausgleichung",
+  "fundstelle_ids": [
+    "BGB_2316_T0001",
+    "BGB_2316_T0002",
+    "BGB_2316_T0003",
+    "BGB_2316_T0004",
+    "BGB_2316_T0005",
+    "BGB_2303_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "gruppennachlass: Nichtnegativer exakter EUR-Wert des Nachlassanteils der hypothetischen gesetzlichen Ausgleichungsgruppe. ausgleichungsart: zuwendungen oder leistungen; gleichzeitige Zuwendungs-/Leistungsausgleichung außerhalb dieses Modells. miterben: Liste2..1000. Bei zuwendungen: genau person_id,erbquote_zaehler,erbquote_nenner,ausgleichungswert wie erb_zuwendungen_ausgleichen. Bei leistungen: genau miterbe_id,relative_erbquote,leistungs_ausgleichsbetrag wie erbteilung_leistungsausgleich. Relative positive Quoten summieren sich auf eins; Erbverzichtspersonen2316I2 ausgeschlossen, Ausstattungswerte2316III rechtlich qualifiziert. berechtigter_id: Nichtleere ID eines Gruppenmitglieds, dessen Pflichtteil berechnet wird. zugleich_anrechenbarer_zuwendungswert: Nichtnegativer exakter EUR-Wert einer bereits im eigenen Ausgleichungswert enthaltenen und zugleich nach2315 anzurechnenden Zuwendung. Gleiche Wertgrundlage, höchstens eigener Ausgleichungswert; bei Leistungen null. Keine reine2315-Zuwendung hinzufügen. hinterlassener_erbteilwert: Nichtnegativer rechtlich maßgeblicher EUR-Erbteilwert; bei enterbtem Berechtigten null. Mehrbetrag unabhängig von nomineller Halbquote berechnen. fall_nach_2316_qualifiziert: Pflichtwahrheitswert zu berechtigtem Abkömmling und rechtlich korrekt bestimmter hypothetischer gesetzlicher Ausgleichungsgruppe; FALSE ergibt NICHT_ANWENDBAR. bewertungsnachweis: Nichtleerer Nachweis der Gruppe, Wertansätze und Anrechnung.",
+  "rechenschritte": "Hypothetische Teilung mit vorhandenem2055/2056- oder2057a-Kern; individuellen Erbteil halbieren; halben zugleich2315-anrechenbaren Zuwendungswert abziehen, mindestens null; positiven Mehrbetrag gegenüber hinterlassenem Erbteil berechnen.",
+  "ausnahmen": "Keine simultane Zuwendungs-/Leistungsausgleichung, keine weiteren reinen2315-Zuwendungen oder2325-Ergänzung. Erbverzicht und Ausstattungsschutz rechtlich vorqualifizieren.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/pflichtteilsausgleich.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "gruppennachlass": "Nichtnegativer exakter EUR-Wert des Nachlassanteils der hypothetischen gesetzlichen Ausgleichungsgruppe.",
+    "ausgleichungsart": "zuwendungen oder leistungen; gleichzeitige Zuwendungs-/Leistungsausgleichung außerhalb dieses Modells.",
+    "miterben": "Liste2..1000. Bei zuwendungen: genau person_id,erbquote_zaehler,erbquote_nenner,ausgleichungswert wie erb_zuwendungen_ausgleichen. Bei leistungen: genau miterbe_id,relative_erbquote,leistungs_ausgleichsbetrag wie erbteilung_leistungsausgleich. Relative positive Quoten summieren sich auf eins; Erbverzichtspersonen2316I2 ausgeschlossen, Ausstattungswerte2316III rechtlich qualifiziert.",
+    "berechtigter_id": "Nichtleere ID eines Gruppenmitglieds, dessen Pflichtteil berechnet wird.",
+    "zugleich_anrechenbarer_zuwendungswert": "Nichtnegativer exakter EUR-Wert einer bereits im eigenen Ausgleichungswert enthaltenen und zugleich nach2315 anzurechnenden Zuwendung. Gleiche Wertgrundlage, höchstens eigener Ausgleichungswert; bei Leistungen null. Keine reine2315-Zuwendung hinzufügen.",
+    "hinterlassener_erbteilwert": "Nichtnegativer rechtlich maßgeblicher EUR-Erbteilwert; bei enterbtem Berechtigten null. Mehrbetrag unabhängig von nomineller Halbquote berechnen.",
+    "fall_nach_2316_qualifiziert": "Pflichtwahrheitswert zu berechtigtem Abkömmling und rechtlich korrekt bestimmter hypothetischer gesetzlicher Ausgleichungsgruppe; FALSE ergibt NICHT_ANWENDBAR.",
+    "bewertungsnachweis": "Nichtleerer Nachweis der Gruppe, Wertansätze und Anrechnung."
+  },
+  "ergebnisvertrag": "wert enthält hypothetischer_gesetzlicher_erbteil, pflichtteil_vor_doppelanrechnung, halber_anrechnungswert, pflichtteilswert, mehrbetrag_gegenueber_hinterlassenem_erbteil als exakte EUR-Brüche.",
+  "regelart": "BETRAGSOPERATION"
+}

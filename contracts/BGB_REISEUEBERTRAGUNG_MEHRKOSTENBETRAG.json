@@ -1,0 +1,29 @@
+{
+  "regel_id": "BGB_REISEUEBERTRAGUNG_MEHRKOSTENBETRAG",
+  "regelversion": "1",
+  "bezeichnung": "reiseuebertragung_mehrkostenbetrag",
+  "fundstelle_ids": [
+    "BGB_651e_T0004",
+    "BGB_651e_T0005",
+    "BGB_651e_T0006"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "tatsaechliche_mehrkosten: Nachweislich durch Eintritt des Dritten tatsächlich entstandene zusätzliche Kosten in Euro; kein Reisepreis, keine bloße Pauschale. angemessener_hoechstbetrag: Rechtlich bewerteter angemessener Höchstbetrag für genau dieselben Mehrkosten in Euro; keine erfundene Tarifgrenze. einordnungsnachweis: Nichtleerer Nachweis von tatsächlichem Eintritt, Kausalität, Angemessenheit und betragsmäßigem Nachweis651eIV.",
+  "rechenschritte": "Tatsächlich entstandene Übertragungsmehrkosten auf rechtlich angemessenen Höchstbetrag begrenzen.",
+  "ausnahmen": "§651eIII2/IV: nur kleinere Zahl aus tatsächlichen nachgewiesenen Mehrkosten und rechtlich angemessener Betragsgrenze. Keine Gebührentabelle oder automatische Angemessenheitsprüfung. Reisepreis nicht nochmals als Mehrkosten zählen. Gesamtschuld von Reisendem und Drittem rechtlich vorausgesetzt; Betrag nicht verdoppeln und nicht automatisch nach Köpfen aufteilen. Andere Zahlungs-/Erfüllungsvorgänge separat.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/reiseuebertragung.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "tatsaechliche_mehrkosten": "Nachweislich durch Eintritt des Dritten tatsächlich entstandene zusätzliche Kosten in Euro; kein Reisepreis, keine bloße Pauschale.",
+    "angemessener_hoechstbetrag": "Rechtlich bewerteter angemessener Höchstbetrag für genau dieselben Mehrkosten in Euro; keine erfundene Tarifgrenze.",
+    "einordnungsnachweis": "Nichtleerer Nachweis von tatsächlichem Eintritt, Kausalität, Angemessenheit und betragsmäßigem Nachweis651eIV."
+  },
+  "ergebnisvertrag": "wert als exakter nichtnegativer Eurobruch mit zaehler und nenner."
+}

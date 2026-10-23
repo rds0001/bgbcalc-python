@@ -1,0 +1,35 @@
+{
+  "regel_id": "BGB_VERBRAUCHERDARLEHEN_KUENDIGUNGSNACHFRIST",
+  "regelversion": "1",
+  "bezeichnung": "verbraucherdarlehen_kuendigungsnachfrist",
+  "fundstelle_ids": [
+    "BGB_498_T0001",
+    "BGB_498_T0005",
+    "BGB_187_T0001",
+    "BGB_188_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung, Verbraucherdarlehensfall, bewertete Fristsetzung und rechtlich bestimmter Fristablauf.",
+  "eingabevertrag": "zugang_fristsetzung: ISO-Datum des rechtlich maßgeblichen Zugangs der konkreten Fristsetzung. Ereignistag wird nach §187 Abs.1 nicht mitgezählt; keine Gleichsetzung mit Versanddatum. massgebliches_nachfristende: ISO-Datum des rechtlich maßgeblichen Ablaufs der tatsächlich gewährten Nachfrist, einschließlich erforderlicher Sonnabend-, Sonn- und Feiertagskorrekturen sowie sonstiger anwendbarer Regeln. Darf nicht vor Zugang liegen. Ein bloß im Schreiben genanntes Datum ohne Prüfung einer erforderlichen Korrektur genügt nicht. Bei einschlägigem §193 kann die vorhandene Funktion werktagsverschiebung mit einem belegten Ortskalender vorgeschaltet werden. prueftag: ISO-Datum der taggenauen Prüfung, nicht vor Zugang. Erst ein Tag nach dem maßgeblichen Fristende gilt die Frist hier als abgelaufen. Keine Aussage zum untertägigen Zeitpunkt einer Kündigung. nachfristende_nachweis: Nichtleere Beschreibung der Ermittlung des rechtlich maßgeblichen Fristendes einschließlich etwaiger Kalender-/Ortskorrekturen. Das rechnerische Mindestende dieser Funktion ersetzt diesen Nachweis nicht. fristsetzung_erfolglos: Expliziter Wahrheitswert zur rechtlich und tatsächlich bewerteten Erfolglosigkeit der konkreten Zahlungsfrist. Maßgebliche Erfüllung und etwaige verspätete Zahlungen sind extern einzuordnen; keine automatische Auswertung eines Zahlungsledgers. Wirkt im Ergebnis nur zusammen mit Mindestdauer und bereits eingetretenem Fristablauf. restschuldandrohung_erklaert: Expliziter Wahrheitswert, ob mit der Fristsetzung erklärt wurde, bei Nichtzahlung innerhalb der Frist die gesamte Restschuld zu verlangen. Eine allgemeine Zahlungserinnerung genügt nicht automatisch. teilzahlungsdarlehen: Expliziter Wahrheitswert zum Verbraucherdarlehen, das in Teilzahlungen zu tilgen ist. FALSE ergibt NICHT_ANWENDBAR. Materiellen Anwendungsbereich des Verbraucherdarlehensrechts vorab bestimmen.",
+  "rechenschritte": "Rechnerisches Mindestende aus Zugang plus zwei Ereigniswochen bestimmen. Vorgegebenes rechtlich maßgebliches Ende muss mindestens dieses Ende erreichen; Prüftag muss nach diesem maßgeblichen Ende liegen. Nummer2 ist in dieser Teilprüfung nur bei ausreichender Dauer, eingetretenem Ablauf, vorgegebener Erfolglosigkeit und erklärter Restschuldandrohung erfüllt.",
+  "ausnahmen": "Teilprüfung des §498 Abs.1 Satz1 Nr.2. Rückstandsvoraussetzungen nach Nr.1, Gesprächsangebot nach Satz2, Kündigungserklärung und sonstige Wirksamkeitsfragen bleiben getrennt. Keine automatische Anwendung von §193; rechtlich maßgeblichen Ablauf mit belegtem Ortskalender vorab bestimmen. Rechenmindestende ist kein alleiniger Nachweis eines abgelaufenen gesetzlichen Zahlungszeitraums. Keine automatische Feststellung von Erfolglosigkeit oder Rechtsfolgen verspäteter Zahlung. Kein vollständiges Kündigungsrecht oder Restschuldbetrag.",
+  "rundung": "Keine; Kalenderdatum und Wahrheitswerte.",
+  "wertebereich": "Proleptischer gregorianischer Kalender0001..9999 einschließlich des rechnerischen Mindestendes. Fehlend EINGABE_FEHLT, falscher Typ/Bereich EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/darlehensnachfrist.json",
+  "gesamtabnahme": false,
+  "einheit": "datum_und_wahrheitswerte",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "zugang_fristsetzung": "ISO-Datum des rechtlich maßgeblichen Zugangs der konkreten Fristsetzung. Ereignistag wird nach §187 Abs.1 nicht mitgezählt; keine Gleichsetzung mit Versanddatum.",
+    "massgebliches_nachfristende": "ISO-Datum des rechtlich maßgeblichen Ablaufs der tatsächlich gewährten Nachfrist, einschließlich erforderlicher Sonnabend-, Sonn- und Feiertagskorrekturen sowie sonstiger anwendbarer Regeln. Darf nicht vor Zugang liegen. Ein bloß im Schreiben genanntes Datum ohne Prüfung einer erforderlichen Korrektur genügt nicht. Bei einschlägigem §193 kann die vorhandene Funktion werktagsverschiebung mit einem belegten Ortskalender vorgeschaltet werden.",
+    "prueftag": "ISO-Datum der taggenauen Prüfung, nicht vor Zugang. Erst ein Tag nach dem maßgeblichen Fristende gilt die Frist hier als abgelaufen. Keine Aussage zum untertägigen Zeitpunkt einer Kündigung.",
+    "nachfristende_nachweis": "Nichtleere Beschreibung der Ermittlung des rechtlich maßgeblichen Fristendes einschließlich etwaiger Kalender-/Ortskorrekturen. Das rechnerische Mindestende dieser Funktion ersetzt diesen Nachweis nicht.",
+    "fristsetzung_erfolglos": "Expliziter Wahrheitswert zur rechtlich und tatsächlich bewerteten Erfolglosigkeit der konkreten Zahlungsfrist. Maßgebliche Erfüllung und etwaige verspätete Zahlungen sind extern einzuordnen; keine automatische Auswertung eines Zahlungsledgers. Wirkt im Ergebnis nur zusammen mit Mindestdauer und bereits eingetretenem Fristablauf.",
+    "restschuldandrohung_erklaert": "Expliziter Wahrheitswert, ob mit der Fristsetzung erklärt wurde, bei Nichtzahlung innerhalb der Frist die gesamte Restschuld zu verlangen. Eine allgemeine Zahlungserinnerung genügt nicht automatisch.",
+    "teilzahlungsdarlehen": "Expliziter Wahrheitswert zum Verbraucherdarlehen, das in Teilzahlungen zu tilgen ist. FALSE ergibt NICHT_ANWENDBAR. Materiellen Anwendungsbereich des Verbraucherdarlehensrechts vorab bestimmen."
+  },
+  "ergebnisvertrag": "wert enthält rechnerisches_mindestende als ISO-Datum sowie nachfrist_mindestdauer_eingehalten, nachfrist_am_prueftag_abgelaufen und voraussetzungen_nummer_2_erfuellt als Wahrheitswerte. BERECHNET bedeutet durchgeführte Teilprüfung, auch wenn Voraussetzungen FALSE sind. Bei NICHT_ANWENDBAR ist wert null.",
+  "regelart": "RECHENRELEVANTE_BEDINGUNG"
+}

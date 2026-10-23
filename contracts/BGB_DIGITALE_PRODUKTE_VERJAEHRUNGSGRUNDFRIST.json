@@ -1,0 +1,36 @@
+{
+  "regel_id": "BGB_DIGITALE_PRODUKTE_VERJAEHRUNGSGRUNDFRIST",
+  "regelversion": "1",
+  "bezeichnung": "digitale_produkte_verjaehrungsgrundfrist",
+  "fundstelle_ids": [
+    "BGB_327j_T0001",
+    "BGB_327j_T0002",
+    "BGB_327j_T0003",
+    "BGB_327j_T0004",
+    "BGB_327j_T0005",
+    "BGB_327j_T0006"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "bereitstellung_am: ISO-Datum der maßgeblichen Bereitstellung für den konkreten Anspruch nach327i Nummer1/3. bereitstellungsende_am: ISO-Enddatum des dauerhaften Bereitstellungszeitraums für diesen Anspruch; NULL bedeutet nicht einschlägig, nicht unbekannt. aktualisierungsende_am: ISO-Enddatum des rechtlich bestimmten Aktualisierungspflicht-Zeitraums, nur bei Anspruch wegenVerletzung dieser Pflicht. NULL=nicht einschlägig. mangel_gezeigt_am: Erstmaliges Zeigen des betrachteten Mangels als ISO-Datum, NULL wenn kein solches Ereignis zu berücksichtigen. Zeitpunkt am vorherigen Fristendtag noch innerhalb. unveraenderter_anwendungsfall: Explizite Bestätigung gesetzlicher327j-Fristberechnung ohne zusätzliche Hemmung/Neubeginn/Arglist-/Übergangs-/Kalenderkorrektur oder wirksame Abweichung. einordnungsnachweis: Nichtleerer Nachweis des konkreten Anspruchs, der relevanten Zeiträume und des Mangelzeitpunkts.",
+  "rechenschritte": "2Jahre ab Bereitstellung; Maximum mit einschlägigen12Monaten nach Dauerbereitstellung/Aktualisierung. Bei innerhalb dieser Frist gezeigtem Mangel zusätzlich Maximum mit4Monaten ab erstmaligem Zeigen.",
+  "ausnahmen": "Nur327i Nummer1/3; RechteNummer2 und218 separat. Keine sonstigen Friständerungen. Optionale Enddaten dürfen bei unbekanntem benötigtem Ende nicht weggelassen werden.",
+  "rundung": "Keine; taggenaue Kalenderberechnung.",
+  "wertebereich": "ISO-Daten im Bereich0001..9999, feste Fallauswahl, Wahrheitswert und nichtleerer Nachweis.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/schuldrechtzeitgrenzen.json",
+  "gesamtabnahme": false,
+  "einheit": "daten",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "bereitstellung_am": "ISO-Datum der maßgeblichen Bereitstellung für den konkreten Anspruch nach327i Nummer1/3.",
+    "bereitstellungsende_am": "ISO-Enddatum des dauerhaften Bereitstellungszeitraums für diesen Anspruch; NULL bedeutet nicht einschlägig, nicht unbekannt.",
+    "aktualisierungsende_am": "ISO-Enddatum des rechtlich bestimmten Aktualisierungspflicht-Zeitraums, nur bei Anspruch wegenVerletzung dieser Pflicht. NULL=nicht einschlägig.",
+    "mangel_gezeigt_am": "Erstmaliges Zeigen des betrachteten Mangels als ISO-Datum, NULL wenn kein solches Ereignis zu berücksichtigen. Zeitpunkt am vorherigen Fristendtag noch innerhalb.",
+    "unveraenderter_anwendungsfall": "Explizite Bestätigung gesetzlicher327j-Fristberechnung ohne zusätzliche Hemmung/Neubeginn/Arglist-/Übergangs-/Kalenderkorrektur oder wirksame Abweichung.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des konkreten Anspruchs, der relevanten Zeiträume und des Mangelzeitpunkts."
+  },
+  "ergebnisvertrag": "wert enthält zweijahresende, mindestende_dauerbereitstellung, mindestende_aktualisierung, ende_vor_mangelablaufhemmung, mindestende_mangel, verjaehrungsgrundfristende; nicht einschlägige Mindestenden=null.",
+  "regelart": "FRISTBERECHNUNG"
+}

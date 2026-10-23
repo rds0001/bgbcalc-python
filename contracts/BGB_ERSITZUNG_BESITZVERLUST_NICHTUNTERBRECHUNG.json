@@ -1,0 +1,34 @@
+{
+  "regel_id": "BGB_ERSITZUNG_BESITZVERLUST_NICHTUNTERBRECHUNG",
+  "regelversion": "1",
+  "bezeichnung": "ersitzung_besitzverlust_nichtunterbrechung",
+  "fundstelle_ids": [
+    "BGB_940_T0001",
+    "BGB_940_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "eigenbesitzverlust_am: ISO-Datum des qualifizierten Verlusts des Eigenbesitzes, nicht bloße Störung oder vorübergehendes tatsächliches Hindernis ohne Besitzverlust. prueftag: ISO-Datum ab Eigenbesitzverlust; tatsächliche Wiedererlangung und Klageerhebung dürfen nicht danach liegen. massgebliches_jahresfristende: ISO-Datum des rechtlich maßgeblichen Jahresfristendes, mindestens kalendarisches Ereignisfristende. Ohne gesondert begründete gesetzliche Korrektur genau dieses Ende eingeben. Keine automatische Feiertagsverlängerung. wiedererlangung_am: Optionales ISO-Datum tatsächlicher Wiedererlangung gerade des Eigenbesitzes zwischen Verlust und Prüftag. NULL bedeutet noch nicht eingetreten, nicht unbekannt. klageerhebung_am: Optionales rechtlich maßgebliches ISO-Datum wirksamer Klageerhebung zwischen Verlust und Prüftag. Nicht unbesehen Versand oder Eingang einsetzen; prozessuale Wirkungen gesondert beurteilen. NULL bedeutet noch nicht eingetreten. eigenbesitz_ohne_willen_verloren: Expliziter Wahrheitswert des unfreiwilligen Verlusts; freiwilliger Verlust erfüllt Absatz2 auch bei rascher Wiedererlangung nicht. wiedererlangung_mittels_klage: Expliziter Wahrheitswert, dass die tatsächliche Wiedererlangung mittels der eingegebenen Klage erfolgt ist. TRUE erfordert beide Ereignisse mit Klage spätestens bei Wiedererlangung; rechtzeitige Klage ohne Wiedererlangung genügt nicht. einordnungsnachweis: Nichtleere rechtliche Begründung von Eigenbesitz, Unfreiwilligkeit, Wiedererlangung, wirksamer Klage und maßgeblichem Jahresfristende; untertägige Ereignisreihenfolge bei gleichen Daten bestätigen.",
+  "rechenschritte": "Jahresfrist ab Eigenbesitzverlust als Ereignisfrist. Unfreiwilliger Verlust und entweder tatsächliche Wiedererlangung spätestens am maßgeblichen Fristende oder Wiedererlangung mittels spätestens dann erhobener Klage. Spätere Wiedererlangung auf rechtzeitige Klage möglich.",
+  "ausnahmen": "Keine automatische Eigentumsbehauptung. Nur Ausnahme zur Besitzverlustunterbrechung§940; Hemmung§939, Vollstreckungsunterbrechung§941 und Folgen§942 sowie Voraussetzungen§937 separat. Fehlende bisherige Wiedererlangung kann künftig noch eintreten; FALSE ist keine abschließende Prognose.",
+  "rundung": "Keine; Kalenderdaten taggenau.",
+  "wertebereich": "ISO-Daten und berechnete Grenzen0001..9999, explizite Wahrheitswerte und nichtleerer Nachweis.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/ersitzungsbesitzverlust.json",
+  "gesamtabnahme": false,
+  "einheit": "daten_und_wahrheitswerte",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "eigenbesitzverlust_am": "ISO-Datum des qualifizierten Verlusts des Eigenbesitzes, nicht bloße Störung oder vorübergehendes tatsächliches Hindernis ohne Besitzverlust.",
+    "prueftag": "ISO-Datum ab Eigenbesitzverlust; tatsächliche Wiedererlangung und Klageerhebung dürfen nicht danach liegen.",
+    "massgebliches_jahresfristende": "ISO-Datum des rechtlich maßgeblichen Jahresfristendes, mindestens kalendarisches Ereignisfristende. Ohne gesondert begründete gesetzliche Korrektur genau dieses Ende eingeben. Keine automatische Feiertagsverlängerung.",
+    "wiedererlangung_am": "Optionales ISO-Datum tatsächlicher Wiedererlangung gerade des Eigenbesitzes zwischen Verlust und Prüftag. NULL bedeutet noch nicht eingetreten, nicht unbekannt.",
+    "klageerhebung_am": "Optionales rechtlich maßgebliches ISO-Datum wirksamer Klageerhebung zwischen Verlust und Prüftag. Nicht unbesehen Versand oder Eingang einsetzen; prozessuale Wirkungen gesondert beurteilen. NULL bedeutet noch nicht eingetreten.",
+    "eigenbesitz_ohne_willen_verloren": "Expliziter Wahrheitswert des unfreiwilligen Verlusts; freiwilliger Verlust erfüllt Absatz2 auch bei rascher Wiedererlangung nicht.",
+    "wiedererlangung_mittels_klage": "Expliziter Wahrheitswert, dass die tatsächliche Wiedererlangung mittels der eingegebenen Klage erfolgt ist. TRUE erfordert beide Ereignisse mit Klage spätestens bei Wiedererlangung; rechtzeitige Klage ohne Wiedererlangung genügt nicht.",
+    "einordnungsnachweis": "Nichtleere rechtliche Begründung von Eigenbesitz, Unfreiwilligkeit, Wiedererlangung, wirksamer Klage und maßgeblichem Jahresfristende; untertägige Ereignisreihenfolge bei gleichen Daten bestätigen."
+  },
+  "ergebnisvertrag": "wert enthält kalendarisches_jahresfristende, massgebliches_jahresfristende, wiedererlangung_binnen_jahresfrist, wiedererlangung_durch_rechtzeitige_klage, unterbrechung_gilt_als_nicht_erfolgt. Letzter Wert ist auf§940 Absatz2 und den aktuellen Ereignisstand begrenzt.",
+  "regelart": "FRISTBERECHNUNG"
+}

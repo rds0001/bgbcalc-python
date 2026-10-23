@@ -1,0 +1,30 @@
+{
+  "regel_id": "BGB_VERBRAUCHERDARLEHEN_KOSTENABSCHNITTE_ERMAESSIGEN",
+  "regelversion": "1",
+  "bezeichnung": "verbraucherdarlehen_kostenabschnitte_ermaessigen",
+  "fundstelle_ids": [
+    "BGB_501_T0001",
+    "BGB_501_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "kostenabschnitte: Liste1..1000 eindeutig benannter position_id mit beginn_am/ende_am einschließlich, nichtnegativem exaktem kostenbetrag und kostenart zinsen/laufzeitabhaengige_kosten/sonstige_kosten. Innerhalb jeder Position gleichmäßige rechtlich qualifizierte Verteilung je tatsächlichem Kalendertag. ermaessigung_ab: ISO-Datum des rechtlich bestimmten ersten zu kürzenden Tages; bei Kündigung nach Fälligkeit. ermaessigungsfall: vorzeitige_erfuellung oder kuendigung; bereits qualifizierter501-Fall. einordnungsnachweis: Nichtleerer Nachweis der Kosten-/Zeitzuordnung, Homogenität jeder Position und bei Teilerfüllung ausschließlich betroffenen Kostenanteile. Andere Zeitkonventionen vorher getrennt behandeln.",
+  "rechenschritte": "Kostenabschnitte taganteilig ab qualifiziertem Kürzungsbeginn ermäßigen; Kündigung beschränkt auf Zinsen/laufzeitabhängige Kosten.",
+  "ausnahmen": "Nur qualifizierte §501-Abschnitte mit ausdrücklich gleichmäßiger Zuordnung je tatsächlichem Kalendertag innerhalb jeder Position. Beginn/Ende inklusive; ermaessigung_ab ist der rechtlich bestimmte erste zu kürzende Tag, bei Absatz2 nach Fälligkeit, nicht automatisch der Kündigungszugangstag. Andere Zins-/Zeitkonventionen und nichtlinear innerhalb einer Position gestaffelte Kosten sind nicht erfasst; rechtlich passende kleinere homogene Positionen bilden. Bei vorzeitiger Teilerfüllung ausschließlich Kosten des rechtlich zugeordneten erfüllten Teils eingeben, kein pauschaler Schuldquotenabschlag. Absatz1 umfasst qualifiziert zugeordnete Zinsen/Kosten; Absatz2 nur Zinsen und sonstige laufzeitabhängige Kosten. Identische wirtschaftliche Kosten dürfen nicht mehrfach vorkommen; parallele unterschiedliche Kostenarten sind zulässig. Keine Berechnung des Effektivzinses, keine Tilgungsplan-Neuberechnung, keine Vorfälligkeitsentschädigung und keine automatische Einstufung einer Kostenart. §507 Absatz3 gesetzliche Zinsbasis separat bestimmen.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/darlehenskostenermaessigung.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "kostenabschnitte": "Liste1..1000 eindeutig benannter position_id mit beginn_am/ende_am einschließlich, nichtnegativem exaktem kostenbetrag und kostenart zinsen/laufzeitabhaengige_kosten/sonstige_kosten. Innerhalb jeder Position gleichmäßige rechtlich qualifizierte Verteilung je tatsächlichem Kalendertag.",
+    "ermaessigung_ab": "ISO-Datum des rechtlich bestimmten ersten zu kürzenden Tages; bei Kündigung nach Fälligkeit.",
+    "ermaessigungsfall": "vorzeitige_erfuellung oder kuendigung; bereits qualifizierter501-Fall.",
+    "einordnungsnachweis": "Nichtleerer Nachweis der Kosten-/Zeitzuordnung, Homogenität jeder Position und bei Teilerfüllung ausschließlich betroffenen Kostenanteile. Andere Zeitkonventionen vorher getrennt behandeln."
+  },
+  "ergebnisvertrag": "wert enthält je Kostenposition Ermäßigung/Rest sowie ursprüngliche Kostensumme, Gesamtermäßigung und verbleibende Kostensumme als exakte EUR-Brüche.",
+  "regelart": "BETRAGSOPERATION"
+}

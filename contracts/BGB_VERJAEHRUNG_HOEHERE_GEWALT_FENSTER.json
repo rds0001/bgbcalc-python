@@ -1,0 +1,31 @@
+{
+  "regel_id": "BGB_VERJAEHRUNG_HOEHERE_GEWALT_FENSTER",
+  "regelversion": "1",
+  "bezeichnung": "verjaehrung_hoehere_gewalt_fenster",
+  "fundstelle_ids": [
+    "BGB_206_T0001",
+    "BGB_209_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "fristlauf_erster_tag: Erster rechtlich zum Fristlauf gehörender TagYYYY-MM-DD. grundfrist_letzter_tag: Letzter Tag der ohne diese206-Hemmung maßgeblichen FristYYYY-MM-DD; andere Hemmungen nicht doppelt berücksichtigen. fenster_erster_tag: Erster einschließlich maßgeblicher Tag des rechtlich bestimmten206-Sechsmonatsfensters; bei kürzerem Fristlauf gegebenenfalls kürzeres Fenster. fenster_letzter_tag: Letzter einschließlich maßgeblicher Tag des rechtlich bestimmten Fensters. Lage/Grenzen vollständig vorqualifizieren; höchstens sechs zusammenhängende Kalendermonate. verhinderungszeitraeume: Unbenannte Liste0..10000 abgeschlossener Intervalle, je genau erster_verhinderter_tag und letzter_verhinderter_tagYYYY-MM-DD; rechtlich als höhere Gewalt und Verfolgungshindernis qualifiziert. einordnungsnachweis: Nichtleerer Nachweis von206-Anwendbarkeit, rechtlich bestimmter Fensterlage und eingeschlossenen Tagen. Keine automatische Auswahl zwischen Auslegungen eines festen oder fortgeschriebenen Fensters.",
+  "rechenschritte": "Qualifiziertes206-Fenster mit Verhinderungsintervallen schneiden und vorhandenen209-Hemmungskern auf die Schnittintervalle anwenden.",
+  "ausnahmen": "§206 mit209: nur Schnittmenge rechtlich qualifizierter Verfolgungshindernisse mit einem ausdrücklich vorgegebenen vollständigen Sechsmonatsfenster; vorhandener209-Kern vereinigt Überschneidungen und rechnet Hemmungstage heraus. Das Fenster wird weder eigenständig rückwärts aus dem Enddatum ermittelt noch dynamisch verschoben. Seine richtige rechtliche Lage und die Anwendbarkeit eines einzelnen abgeschlossenen Fensters sind Voraussetzungen dieser Funktion. Bei ungeklärten, fortdauernden oder mehrfach zu korrigierenden Fensterlagen keine abschließende Verjährung behaupten. Kein allgemeiner Nachlauf von sechs Monaten nach Wegfall des Hindernisses. Höhere Gewalt, Zumutbarkeit und Kausalität sind Rechts-/Tatsachenbewertungen. Alle Grenzen einschließlich, keine untertägige Rundung und keine doppelte Erfassung bereits berücksichtigter Hemmungen. Ablaufhemmung und Neubeginn getrennt.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/hoehere_gewalt_fenster.json",
+  "gesamtabnahme": false,
+  "einheit": "datum_und_tage",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "fristlauf_erster_tag": "Erster rechtlich zum Fristlauf gehörender TagYYYY-MM-DD.",
+    "grundfrist_letzter_tag": "Letzter Tag der ohne diese206-Hemmung maßgeblichen FristYYYY-MM-DD; andere Hemmungen nicht doppelt berücksichtigen.",
+    "fenster_erster_tag": "Erster einschließlich maßgeblicher Tag des rechtlich bestimmten206-Sechsmonatsfensters; bei kürzerem Fristlauf gegebenenfalls kürzeres Fenster.",
+    "fenster_letzter_tag": "Letzter einschließlich maßgeblicher Tag des rechtlich bestimmten Fensters. Lage/Grenzen vollständig vorqualifizieren; höchstens sechs zusammenhängende Kalendermonate.",
+    "verhinderungszeitraeume": "Unbenannte Liste0..10000 abgeschlossener Intervalle, je genau erster_verhinderter_tag und letzter_verhinderter_tagYYYY-MM-DD; rechtlich als höhere Gewalt und Verfolgungshindernis qualifiziert.",
+    "einordnungsnachweis": "Nichtleerer Nachweis von206-Anwendbarkeit, rechtlich bestimmter Fensterlage und eingeschlossenen Tagen. Keine automatische Auswahl zwischen Auslegungen eines festen oder fortgeschriebenen Fensters."
+  },
+  "ergebnisvertrag": "wert.rechnerischer_letzter_tag und wert.beruecksichtigte_hemmungstage; nur unter Voraussetzung des rechtlich zutreffenden vollständig bestimmten Eingabefensters."
+}

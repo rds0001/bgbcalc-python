@@ -1,0 +1,30 @@
+{
+  "regel_id": "BGB_SCHENKUNGSVERSPRECHEN_DECKUNGSVERTEILUNG",
+  "regelversion": "1",
+  "bezeichnung": "schenkungsversprechen_deckungsverteilung",
+  "fundstelle_ids": [
+    "BGB_519_T0001",
+    "BGB_519_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "verfuegbare_mittel: Nichtnegative rechtlich verfügbare Mittel in EUR als Dezimalzeichenfolge/Bruchobjekt. geschuetzter_mittelbedarf: Qualifizierter EUR-Gesamtbedarf für sonstige Verpflichtungen, angemessenen Eigenunterhalt und gesetzliche Unterhaltspflichten, nichtnegativ und ohne Doppelzählung. schenkungsansprueche: Liste höchstens1000 Objekte: eindeutige anspruch_id, eindeutiger ganzzahliger entstehungsrang1..1000000 (höher bedeutet später), nichtnegativer exakter anspruchsbetrag. Nur noch offene Geldansprüche gleicher Bewertungsbasis. einordnungsnachweis: Nichtleerer Nachweis des §519-Tatbestands, der Mittel-/Bedarfsbewertung und eindeutigen Anspruchsentstehungsrangfolge.",
+  "rechenschritte": "Positiver Mittelüberschuss über Schutzbedarf; frühere Schenkungsansprüche vor späteren bis zur Anspruchshöhe decken.",
+  "ausnahmen": "Nur §519 für zusammentreffende qualifizierte noch nicht erfüllte Geldansprüche aus Schenkungsversprechen. Geschützter Mittelbedarf umfasst ohne Doppelzählung sonstige Verpflichtungen, angemessenen Eigenunterhalt und gesetzliche Unterhaltspflichten; alle Werte gleiche rechtlich bestimmte Bewertungsbasis. Höherer Rang bedeutet später entstandener Anspruch, frühere Ansprüche gehen vor. Keine automatische Bestimmung von Bedürftigkeit, Vermögensverwertbarkeit, Leistungszeit oder gesetzlichem Unterhalt. Gleichzeitige Anspruchsentstehung und Sachleistungsbewertung nicht erfasst. Fehlbetrag bezeichnet den bei qualifiziertem §519-Tatbestand verweigerbaren Teil, keine automatische Erlöschung der Forderung. Bereits erfüllte Schenkungen fallen gegebenenfalls unter §528/529, dort umgekehrte Rangfolge.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/schenkungsversprechen.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "verfuegbare_mittel": "Nichtnegative rechtlich verfügbare Mittel in EUR als Dezimalzeichenfolge/Bruchobjekt.",
+    "geschuetzter_mittelbedarf": "Qualifizierter EUR-Gesamtbedarf für sonstige Verpflichtungen, angemessenen Eigenunterhalt und gesetzliche Unterhaltspflichten, nichtnegativ und ohne Doppelzählung.",
+    "schenkungsansprueche": "Liste höchstens1000 Objekte: eindeutige anspruch_id, eindeutiger ganzzahliger entstehungsrang1..1000000 (höher bedeutet später), nichtnegativer exakter anspruchsbetrag. Nur noch offene Geldansprüche gleicher Bewertungsbasis.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des §519-Tatbestands, der Mittel-/Bedarfsbewertung und eindeutigen Anspruchsentstehungsrangfolge."
+  },
+  "ergebnisvertrag": "wert enthält verfuegbare_deckung, verteilung je Anspruch mit deckungsbetrag/verweigerbarer_fehlbetrag, gesamtdeckungsbetrag und unverbrauchte_deckung als EUR-Brüche.",
+  "regelart": "BETRAGSOPERATION"
+}

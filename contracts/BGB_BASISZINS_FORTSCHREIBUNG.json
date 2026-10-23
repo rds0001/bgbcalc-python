@@ -1,0 +1,34 @@
+{
+  "regel_id": "BGB_BASISZINS_FORTSCHREIBUNG",
+  "regelversion": "1",
+  "bezeichnung": "basiszinssatz_fortschreibung",
+  "fundstelle_ids": [
+    "BGB_247_T0001",
+    "BGB_247_T0002",
+    "BGB_247_T0003",
+    "BGB_247_T0004",
+    "BGB_247_T0005",
+    "BGB_247_T0006"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlich ausgewählter Fall und ausdrücklich belegte externe Parameter.",
+  "eingabevertrag": "bisheriger_basiszinssatz_prozent, bisheriger_bezugszinssatz_prozent, neuer_bezugszinssatz_prozent: Dezimalzeichenfolgen in Prozent pro Jahr; anpassungsdatum: ISO-Datum 1.1. oder 1.7.; quellenangabe: nichtleer mit Zeitreihen-/Bezugsgrößenbeleg. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+  "rechenschritte": "Neuer Basiszinssatz = bisheriger Basiszinssatz + neuer Bezugszinssatz - bisheriger Bezugszinssatz. Anpassung nur zum 1. Januar oder 1. Juli; keine Rundung oder automatische Nulluntergrenze.",
+  "ausnahmen": "Keine Behauptung eines aktuellen amtlichen Basiszinssatzes; 3,62 Prozent aus dem Normtext ist kein zeitlos geltender Satz. Bezugswerte müssen genau die maßgeblichen Hauptrefinanzierungsoperationen und vorherigen Anpassungsstand bezeichnen.",
+  "rundung": "Keine. Ausgabe exakter Bruch als Ganzzahlzeichenfolgen; Jahreszinssätze in Prozent, Geldbeträge in EUR.",
+  "wertebereich": "Gemeinsamer Zahlenvertrag NUMERIK.md; fehlend EINGABE_FEHLT, falscher Typ/Bereich EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/zinsen.json",
+  "gesamtabnahme": false,
+  "einheit": "prozent_pro_jahr",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "exakte_bruchobjekte_als_dezimaleingaben": true,
+  "parameter_dokumentation": {
+    "bisheriger_basiszinssatz_prozent": "Bisheriger Basiszinssatz als Dezimalzeichenfolge in Prozent pro Jahr. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+    "bisheriger_bezugszinssatz_prozent": "Bezugszinssatz des vorherigen Anpassungsstands als Dezimalzeichenfolge in Prozent. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+    "neuer_bezugszinssatz_prozent": "Maßgeblicher neuer Hauptrefinanzierungszinssatz als Dezimalzeichenfolge in Prozent. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+    "anpassungsdatum": "ISO-Datum der Anpassung, ausschließlich 1. Januar oder 1. Juli.",
+    "quellenangabe": "Nichtleerer Beleg der vorgegebenen Bezugsgrößen und ihrer zeitlichen Zuordnung."
+  }
+}

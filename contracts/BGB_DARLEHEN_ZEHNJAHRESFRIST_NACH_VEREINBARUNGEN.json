@@ -1,0 +1,29 @@
+{
+  "regel_id": "BGB_DARLEHEN_ZEHNJAHRESFRIST_NACH_VEREINBARUNGEN",
+  "regelversion": "1",
+  "bezeichnung": "darlehen_zehnjahresfrist_nach_vereinbarungen",
+  "fundstelle_ids": [
+    "BGB_489_T0001",
+    "BGB_489_T0002",
+    "BGB_489_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "vollstaendiger_empfang_am: ISO-Datum des vollständigen Darlehensempfangs, nicht bloß erster Teilauszahlung. neue_vereinbarungen_am: Liste0..1000 ISO-Daten tatsächlich nach vollständigem Empfang geschlossener, rechtlich nach489I2 berücksichtigungsfähiger neuer Vereinbarungen über Rückzahlungszeit oder Sollzinssatz. Leere Liste nur bei festgestellt keiner solchen Vereinbarung. einordnungsnachweis: Nichtleerer Nachweis489I2, gebundener Sollzins und tatsächliche rechtlich qualifizierte Bezugsereignisse. Eine bloße einseitige Mitteilung oder Teilzahlung ist keine neue Vereinbarung.",
+  "rechenschritte": "Jüngsten qualifizierten Bezugsakt auswählen und zehn Kalenderjahre berechnen.",
+  "ausnahmen": "§489I2: Vollständiger Empfang als Ausgangspunkt, bei späteren qualifizierten Vereinbarungen jüngstes Vereinbarungsdatum; ab diesem Ereignistag zehn Kalenderjahre berechnen. Gleichdatierte Vereinbarungen verändern den Ausgangspunkt nicht mehrfach. Sechsmonatige Kündigungsfrist und Zweiwochenrückzahlung489III separat ab ihren jeweils tatsächlichen Auslösern. Keine automatische Fälligkeit, Kündigungserklärung oder Einstufung beliebiger Vertragsänderungen als Fristneustart.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/darlehen_zehnjahresfrist.json",
+  "gesamtabnahme": false,
+  "einheit": "daten",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "vollstaendiger_empfang_am": "ISO-Datum des vollständigen Darlehensempfangs, nicht bloß erster Teilauszahlung.",
+    "neue_vereinbarungen_am": "Liste0..1000 ISO-Daten tatsächlich nach vollständigem Empfang geschlossener, rechtlich nach489I2 berücksichtigungsfähiger neuer Vereinbarungen über Rückzahlungszeit oder Sollzinssatz. Leere Liste nur bei festgestellt keiner solchen Vereinbarung.",
+    "einordnungsnachweis": "Nichtleerer Nachweis489I2, gebundener Sollzins und tatsächliche rechtlich qualifizierte Bezugsereignisse. Eine bloße einseitige Mitteilung oder Teilzahlung ist keine neue Vereinbarung."
+  },
+  "ergebnisvertrag": "wert.massgeblicher_bezugstag und zehnjahresfrist_letzter_tag als ISO-Daten."
+}

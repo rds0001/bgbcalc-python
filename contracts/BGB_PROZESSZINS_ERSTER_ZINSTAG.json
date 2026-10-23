@@ -1,0 +1,32 @@
+{
+  "regel_id": "BGB_PROZESSZINS_ERSTER_ZINSTAG",
+  "regelversion": "1",
+  "bezeichnung": "prozesszins_erster_zinstag",
+  "fundstelle_ids": [
+    "BGB_187_T0001",
+    "BGB_187_T0002",
+    "BGB_187_T0003",
+    "BGB_291_T0001",
+    "BGB_291_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "rechtshaengigkeit_am: Rechtlich maßgeblicher Tag der Rechtshängigkeit der konkreten GeldforderungYYYY-MM-DD, nicht bloßer Eingang der Klageschrift. Maßgebliche Zustellung oder sonstigen Rechtshängigkeitsakt vorqualifizieren. faelligkeits_zinsbeginn_am: Bereits rechtlich bestimmter erster möglicher Zinstag aufgrund der FälligkeitYYYY-MM-DD. Dies ist ausdrücklich der normalisierte erste Zinstag, nicht ungeprüft ein beliebiger Rechnungs-/Fälligkeitstag; einschlägige Tagesanfangs-/Ereignisregeln vorqualifizieren. einordnungsnachweis: Nichtleerer Nachweis der konkreten Geldforderung, ihres Rechtshängigkeitsereignisses und des zutreffend normalisierten fälligkeitsbezogenen ersten Zinstags. Zinsbasis, Satz und Zinseszinsverbot gesondert.",
+  "rechenschritte": "Folgetag der Rechtshängigkeit mit dem qualifizierten fälligkeitsbezogenen ersten Zinstag vergleichen und den späteren Tag wählen.",
+  "ausnahmen": "§291: kein Schuldnerverzug für Prozesszinsen erforderlich. Rechtshängigkeitsbezogener Beginn am Folgetag entsprechend187I, primär belegt durchBAG6AZR237/15Rn43. Spätere Fälligkeit begrenzt den Beginn zusätzlich; deren erster Zinstag muss bereits rechtlich bestimmt sein, keine pauschale ungeprüfte Behandlung jedes Fälligkeitstags als Ereignis oder Tagesbeginn. Verschiedene Forderungs-/Ratenanteile mit verschiedenen Fälligkeiten getrennt rechnen. Für Betrag vorhandenen Verzugszins-Satzkern entsprechend291/288 verwenden, ohne tatsächlichen Verzug zu unterstellen; Zinsforderungen gemäß289Satz1 nicht einfach mitverzinsen. Andere früher beginnende Zinsansprüche bleiben separat.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Kalenderdaten0001..9999 einschließlich Grenz- und Folgedaten; keine Rundung.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/prozesszinsbeginn.json",
+  "gesamtabnahme": false,
+  "einheit": "daten",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "rechtshaengigkeit_am": "Rechtlich maßgeblicher Tag der Rechtshängigkeit der konkreten GeldforderungYYYY-MM-DD, nicht bloßer Eingang der Klageschrift. Maßgebliche Zustellung oder sonstigen Rechtshängigkeitsakt vorqualifizieren.",
+    "faelligkeits_zinsbeginn_am": "Bereits rechtlich bestimmter erster möglicher Zinstag aufgrund der FälligkeitYYYY-MM-DD. Dies ist ausdrücklich der normalisierte erste Zinstag, nicht ungeprüft ein beliebiger Rechnungs-/Fälligkeitstag; einschlägige Tagesanfangs-/Ereignisregeln vorqualifizieren.",
+    "einordnungsnachweis": "Nichtleerer Nachweis der konkreten Geldforderung, ihres Rechtshängigkeitsereignisses und des zutreffend normalisierten fälligkeitsbezogenen ersten Zinstags. Zinsbasis, Satz und Zinseszinsverbot gesondert."
+  },
+  "ergebnisvertrag": "wert: rechtshaengigkeits_zinsbeginn und erster_prozesszinstag alsYYYY-MM-DD; keine automatische Zinsbetragsentscheidung.",
+  "regelart": "BETRAGSOPERATION"
+}

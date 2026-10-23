@@ -1,0 +1,35 @@
+{
+  "regel_id": "BGB_VEREINSBESCHLUSS_STIMMENMEHRHEIT",
+  "regelversion": "1",
+  "bezeichnung": "vereinsbeschluss_stimmenmehrheit",
+  "fundstelle_ids": [
+    "BGB_32_T0003",
+    "BGB_33_T0001",
+    "BGB_34_T0001",
+    "BGB_40_T0001",
+    "BGB_40_T0002",
+    "BGB_41_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "beschlussart: Auswahl ordentlich (§32 Absatz1 Satz3), satzungsaenderung (§33 Absatz1 Satz1) oder aufloesung (§41 Satz2). Zweckänderung nicht als gewöhnliche Satzungsänderung einordnen. massgebliche_abgegebene_stimmen: Nichtnegative ganze Zahl bis2^53-1 der rechtlich zählenden gültigen abgegebenen Stimmen. Stimmrechtsausschlüsse§34 sowie Behandlung ungültiger Stimmen und Enthaltungen bereits zutreffend bestimmen. Keine automatische Zählung aller anwesenden Personen als abgegebene Stimme. ja_stimmen: Ganze Zahl0..massgebliche_abgegebene_stimmen der rechtlich zählenden Zustimmungen zum konkreten Beschluss. Mehrfachstimmen nur im rechtlich zulässigen Bezugsmaßstab erfassen. abweichende_satzungsregel: Wahrheitswert einer wirksamen maßgeblichen abweichenden Satzungsregel. TRUE ergibt NICHT_ANWENDBAR. §40 erlaubt insbesondere keine Abbedingung des Stimmrechtsausschlusses§34. stimmen_nachweis: Nichtleere Beschreibung von Beschlussart, gültiger Bezugsmenge, ausgeschlossenen/ungültigen Stimmen, Enthaltungen und Satzungslage. Sonstige Wirksamkeitsanforderungen gesondert prüfen.",
+  "rechenschritte": "Ordentlicher Beschluss: mehr als die Hälfte, mindestens floor(n/2)+1 Ja-Stimmen. Satzungsänderung/Auflösung: mindestens ceil(3n/4). Ohne abgegebene Stimmen kein positiver Beschluss; mindestens1Ja-Stimme notwendig. Satzungsabweichung separat.",
+  "ausnahmen": "Keine Prüfung von Einberufung, Bezeichnung des Gegenstands, Beschlussfähigkeit, behördlicher Genehmigung oder Stimmrechtsausschluss aus Personenmerkmalen. Zweckänderung und Umlaufbeschluss sind gesondert. Rechnerisch erreichte Mehrheit bestätigt keine umfassende Wirksamkeit.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/vereinsmehrheiten.json",
+  "gesamtabnahme": false,
+  "einheit": "stimmen_und_wahrheitswerte",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "beschlussart": "Auswahl ordentlich (§32 Absatz1 Satz3), satzungsaenderung (§33 Absatz1 Satz1) oder aufloesung (§41 Satz2). Zweckänderung nicht als gewöhnliche Satzungsänderung einordnen.",
+    "massgebliche_abgegebene_stimmen": "Nichtnegative ganze Zahl bis2^53-1 der rechtlich zählenden gültigen abgegebenen Stimmen. Stimmrechtsausschlüsse§34 sowie Behandlung ungültiger Stimmen und Enthaltungen bereits zutreffend bestimmen. Keine automatische Zählung aller anwesenden Personen als abgegebene Stimme.",
+    "ja_stimmen": "Ganze Zahl0..massgebliche_abgegebene_stimmen der rechtlich zählenden Zustimmungen zum konkreten Beschluss. Mehrfachstimmen nur im rechtlich zulässigen Bezugsmaßstab erfassen.",
+    "abweichende_satzungsregel": "Wahrheitswert einer wirksamen maßgeblichen abweichenden Satzungsregel. TRUE ergibt NICHT_ANWENDBAR. §40 erlaubt insbesondere keine Abbedingung des Stimmrechtsausschlusses§34.",
+    "stimmen_nachweis": "Nichtleere Beschreibung von Beschlussart, gültiger Bezugsmenge, ausgeschlossenen/ungültigen Stimmen, Enthaltungen und Satzungslage. Sonstige Wirksamkeitsanforderungen gesondert prüfen."
+  },
+  "ergebnisvertrag": "wert enthält mindestens_ja_stimmen und stimmenmehrheit_erreicht; ohne Stimmen Mindestwert1 bei FALSE. Bei Satzungsabweichung NICHT_ANWENDBAR mit null.",
+  "regelart": "DIREKT_RECHENBAR"
+}

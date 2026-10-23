@@ -1,0 +1,31 @@
+{
+  "regel_id": "BGB_BESITZER_LANDWIRTSCHAFTLICHER_VERWENDUNGSERSATZ",
+  "regelversion": "1",
+  "bezeichnung": "besitzer_landwirtschaftlicher_verwendungsersatz",
+  "fundstelle_ids": [
+    "BGB_998_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "ordnungsgemaesse_fruchtkosten: Nichtnegative Kosten in EUR der konkret betrachteten noch ungetrennten Früchte, soweit ordnungsmäßiger Wirtschaft entsprechend; keine erfundene Kürzungsquote. wert_noch_ungetrennter_fruechte: Nichtnegativer Wert in EUR derselben noch ungetrennten Früchte. Keine automatische Gleichsetzung mit prognostiziertem Umsatz. landwirtschaftliches_grundstueck_herauszugeben: Wahrheitswert: landwirtschaftliches Grundstück ist herauszugeben. fruechte_noch_ungetrennt: Wahrheitswert: die betrachteten Früchte sind noch nicht getrennt. trennung_vor_wirtschaftsjahresende_ordnungsgemaess: Wahrheitswert: Früchte sind nach Regeln ordnungsmäßiger Wirtschaft vor Ende des Wirtschaftsjahrs zu trennen. Wirtschaftsjahr nicht automatisch Kalenderjahr; fachliche Einordnung erforderlich. bewertungsnachweis: Nichtleere Begründung von Kosten-/Fruchtzuordnung, Wert und ordnungsmäßiger Wirtschaft einschließlich Trennbarkeit vor Wirtschaftsjahresende.",
+  "rechenschritte": "Bei kumulativ erfüllten Voraussetzungen Minimum aus qualifizierten Verwendungskosten und gesetzlicher Wertgrenze bilden.",
+  "ausnahmen": "Andere Anspruchsgrundlagen, Geltendmachung nach§1001 und Erlöschen nach§1002 gesondert prüfen. Keine doppelte Erstattung desselben Aufwands. Bewertungen sind belegte Nutzervorgaben.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/verwendungsersatz.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "ordnungsgemaesse_fruchtkosten": "Nichtnegative Kosten in EUR der konkret betrachteten noch ungetrennten Früchte, soweit ordnungsmäßiger Wirtschaft entsprechend; keine erfundene Kürzungsquote.",
+    "wert_noch_ungetrennter_fruechte": "Nichtnegativer Wert in EUR derselben noch ungetrennten Früchte. Keine automatische Gleichsetzung mit prognostiziertem Umsatz.",
+    "landwirtschaftliches_grundstueck_herauszugeben": "Wahrheitswert: landwirtschaftliches Grundstück ist herauszugeben.",
+    "fruechte_noch_ungetrennt": "Wahrheitswert: die betrachteten Früchte sind noch nicht getrennt.",
+    "trennung_vor_wirtschaftsjahresende_ordnungsgemaess": "Wahrheitswert: Früchte sind nach Regeln ordnungsmäßiger Wirtschaft vor Ende des Wirtschaftsjahrs zu trennen. Wirtschaftsjahr nicht automatisch Kalenderjahr; fachliche Einordnung erforderlich.",
+    "bewertungsnachweis": "Nichtleere Begründung von Kosten-/Fruchtzuordnung, Wert und ordnungsmäßiger Wirtschaft einschließlich Trennbarkeit vor Wirtschaftsjahresende."
+  },
+  "ergebnisvertrag": "wert ist exakter EUR-Bruch des begrenzten Ersatzbetrags; bei nicht erfülltem Anwendungsbereich NICHT_ANWENDBAR/null.",
+  "regelart": "BETRAGSOPERATION"
+}

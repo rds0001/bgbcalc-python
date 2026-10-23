@@ -1,0 +1,29 @@
+{
+  "regel_id": "BGB_VERJAEHRUNG_AUFRECHNUNG_ZURUECKBEHALTUNG",
+  "regelversion": "1",
+  "bezeichnung": "verjaehrung_aufrechnung_zurueckbehaltung",
+  "fundstelle_ids": [
+    "BGB_215_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "letzter_tag_vor_verjaehrung: ISO-Datum0001..9999 des rechtlich maßgeblichen letzten unverjährten Tages zum Tagesschluss. Alle einschlägigen Hemmungen, Ablaufhemmungen, Neubeginne und gegebenenfalls Werktagsverschiebungen zuvor bestimmen; keine ungeprüfte Grundfrist. erstmals_ausuebbar_am: ISO-Datum0001..9999, an dem das ausgewählte Recht erstmals rechtlich ausgeübt werden konnte. Bei Aufrechnung erstmalige geeignete Gegenüberstellung nach allen Voraussetzungen, nicht bloß Entstehung der eigenen Forderung. Taggenaue rechtliche Normalisierung; untertägige Besonderheiten gesondert. rechtsart: Auswahl aufrechnung oder zurueckbehaltung. Bei Zurückbehaltung maßgeblichen Zeitpunkt erstmaliger Leistungsverweigerungsmöglichkeit eingeben, nicht automatisch Aufrechnungslage übernehmen. einordnungsnachweis: Nichtleere Beschreibung des Anspruchs, abschließend bestimmten Verjährungstags und rechtlich ersten Ausübbarkeitszeitpunkts des ausgewählten Rechts. Weitere Ausschlüsse separat.",
+  "rechenschritte": "Prüfen, ob erstmalige rechtliche Ausübbarkeit spätestens am letzten unverjährten Tag lag. Dann schließt spätere Verjährung das gewählte Recht nach§215 nicht aus.",
+  "ausnahmen": "Nur gesetzliches Erhaltungsprivileg, keine Prüfung aller Aufrechnungsvoraussetzungen oder sonstiger Zurückbehaltungsausschlüsse. Kein Wiederaufleben eines bereits vor erster Ausübbarkeit verjährten Anspruchs durch diese Funktion.",
+  "rundung": "Keine; Vergleich rechtlich vorgegebener Kalendertage.",
+  "wertebereich": "ISO-Daten0001..9999, explizite Auswahl/Wahrheitswerte und nichtleerer Nachweis.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/verjaehrungsfolgen.json",
+  "gesamtabnahme": false,
+  "einheit": "wahrheitswert",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "letzter_tag_vor_verjaehrung": "ISO-Datum0001..9999 des rechtlich maßgeblichen letzten unverjährten Tages zum Tagesschluss. Alle einschlägigen Hemmungen, Ablaufhemmungen, Neubeginne und gegebenenfalls Werktagsverschiebungen zuvor bestimmen; keine ungeprüfte Grundfrist.",
+    "erstmals_ausuebbar_am": "ISO-Datum0001..9999, an dem das ausgewählte Recht erstmals rechtlich ausgeübt werden konnte. Bei Aufrechnung erstmalige geeignete Gegenüberstellung nach allen Voraussetzungen, nicht bloß Entstehung der eigenen Forderung. Taggenaue rechtliche Normalisierung; untertägige Besonderheiten gesondert.",
+    "rechtsart": "Auswahl aufrechnung oder zurueckbehaltung. Bei Zurückbehaltung maßgeblichen Zeitpunkt erstmaliger Leistungsverweigerungsmöglichkeit eingeben, nicht automatisch Aufrechnungslage übernehmen.",
+    "einordnungsnachweis": "Nichtleere Beschreibung des Anspruchs, abschließend bestimmten Verjährungstags und rechtlich ersten Ausübbarkeitszeitpunkts des ausgewählten Rechts. Weitere Ausschlüsse separat."
+  },
+  "ergebnisvertrag": "wert ist Wahrheitswert: TRUE erfüllt zeitliche Erhaltungsbedingung§215. FALSE ist keine umfassende Entscheidung über andere Rechtsgrundlagen.",
+  "regelart": "FRISTVERGLEICH"
+}

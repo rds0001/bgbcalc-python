@@ -1,0 +1,37 @@
+{
+  "regel_id": "BGB_NACHLASS_SPAETGLAEUBIGER",
+  "regelversion": "1",
+  "bezeichnung": "nachlass_spaetglaeubiger",
+  "fundstelle_ids": [
+    "BGB_1974_T0001",
+    "BGB_1974_T0002",
+    "BGB_1974_T0004",
+    "BGB_1971_T0001",
+    "BGB_1971_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "erbfall_am: ISO-Datum des rechtlich bestimmten Erbfalls. geltendmachung_am: ISO-Datum der maßgeblichen Geltendmachung der Nachlassforderung gegenüber dem Erben, frühestens Erbfall; für bereits früher geltend gemachte Forderungen das rechtlich maßgebliche frühere Datum verwenden. todeserklaerung_oder_todeszeitfeststellung: Expliziter Wahrheitswert: qualifizierte Todeserklärung oder Todeszeitfeststellung nach Verschollenheitsgesetz; TRUE erfordert rechtskraft_am. rechtskraft_am: Optionales ISO-Datum der Rechtskraft dieses Beschlusses, erforderlich bei entsprechender Todeserklärung/Feststellung, sonst NULL. Frist beginnt nicht vor diesem Tag; noch nicht rechtskräftige Fälle außerhalb dieses Modells. erbenkenntnis_am: Optionales ISO-Datum, an dem dem Erben die Forderung rechtlich relevant bekannt wurde, spätestens Geltendmachung. NULL bedeutet bis dahin keine Kenntnis, nicht unbekannte Aktenlage. Kenntnis spätestens am letzten Fristtag genügt. qualifizierte_anmeldung_im_aufgebot: Expliziter Wahrheitswert einer die Ausnahme des§1974 Absatz1 tragenden Anmeldung im Aufgebotsverfahren, einschließlich rechtlich geprüfter zeitlicher Anforderungen; nicht bloß beliebiger Schriftsatz. glaeubiger_nach_1971_ausgenommen: Expliziter Wahrheitswert: Forderung im konkret betrachteten Umfang gemäß§1971 vom Aufgebot nicht betroffen. Nur soweit Befriedigung aus dem geschützten Gegenstand betroffen, keine pauschale Befreiung einer ungesicherten Restforderung. einordnungsnachweis: Nichtleerer Nachweis zu Erbfall, Rechtskraft, maßgeblicher Geltendmachung, Kenntnis, Aufgebotsanmeldung und gegenstandsbezogenem Schutz.",
+  "rechenschritte": "Fünf Jahre ab Erbfall, frühestens Rechtskraft der qualifizierten Todeserklärung/Feststellung. Nur spätere Geltendmachung ohne rechtzeitige Erbenkenntnis und ohne qualifizierte Aufgebotsanmeldung führt zur Gleichstellung.",
+  "ausnahmen": "§1971 führt im geschützten Umfang zu NICHT_ANWENDBAR. Kein Erlöschen/Verjähren, keine Einredeausübung, keine Rangfolgen aus Absatz2 und keine Vermögensverteilung nach§1973. Keine automatische Hemmung oder Wochenendverschiebung.",
+  "rundung": "Keine; Kalenderdaten taggenau.",
+  "wertebereich": "ISO-Daten und berechnete Grenzen0001..9999, explizite Wahrheitswerte und nichtleerer Nachweis.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/spaetglaeubiger.json",
+  "gesamtabnahme": false,
+  "einheit": "daten_und_wahrheitswerte",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "erbfall_am": "ISO-Datum des rechtlich bestimmten Erbfalls.",
+    "geltendmachung_am": "ISO-Datum der maßgeblichen Geltendmachung der Nachlassforderung gegenüber dem Erben, frühestens Erbfall; für bereits früher geltend gemachte Forderungen das rechtlich maßgebliche frühere Datum verwenden.",
+    "todeserklaerung_oder_todeszeitfeststellung": "Expliziter Wahrheitswert: qualifizierte Todeserklärung oder Todeszeitfeststellung nach Verschollenheitsgesetz; TRUE erfordert rechtskraft_am.",
+    "rechtskraft_am": "Optionales ISO-Datum der Rechtskraft dieses Beschlusses, erforderlich bei entsprechender Todeserklärung/Feststellung, sonst NULL. Frist beginnt nicht vor diesem Tag; noch nicht rechtskräftige Fälle außerhalb dieses Modells.",
+    "erbenkenntnis_am": "Optionales ISO-Datum, an dem dem Erben die Forderung rechtlich relevant bekannt wurde, spätestens Geltendmachung. NULL bedeutet bis dahin keine Kenntnis, nicht unbekannte Aktenlage. Kenntnis spätestens am letzten Fristtag genügt.",
+    "qualifizierte_anmeldung_im_aufgebot": "Expliziter Wahrheitswert einer die Ausnahme des§1974 Absatz1 tragenden Anmeldung im Aufgebotsverfahren, einschließlich rechtlich geprüfter zeitlicher Anforderungen; nicht bloß beliebiger Schriftsatz.",
+    "glaeubiger_nach_1971_ausgenommen": "Expliziter Wahrheitswert: Forderung im konkret betrachteten Umfang gemäß§1971 vom Aufgebot nicht betroffen. Nur soweit Befriedigung aus dem geschützten Gegenstand betroffen, keine pauschale Befreiung einer ungesicherten Restforderung.",
+    "einordnungsnachweis": "Nichtleerer Nachweis zu Erbfall, Rechtskraft, maßgeblicher Geltendmachung, Kenntnis, Aufgebotsanmeldung und gegenstandsbezogenem Schutz."
+  },
+  "ergebnisvertrag": "wert enthält fristbeginnereignis_am, fuenfjahresfristende, geltendmachung_nach_fuenf_jahren, forderung_rechtzeitig_bekannt und ausgeschlossenem_glaeubiger_gleichgestellt; §1971 ergibt NULL.",
+  "regelart": "FRISTBERECHNUNG"
+}

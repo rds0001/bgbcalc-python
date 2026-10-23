@@ -1,0 +1,31 @@
+{
+  "regel_id": "BGB_SCHENKUNG_VERARMUNGSRUECKFORDERUNG_AUSSCHLUSS",
+  "regelversion": "1",
+  "bezeichnung": "schenkung_verarmungsrueckforderung_ausschluss",
+  "fundstelle_ids": [
+    "BGB_529_T0001",
+    "BGB_534_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "geschenk_geleistet_am: ISO-Datum0001..9999 der rechtlich fristauslösenden Leistung des geschenkten Gegenstands. Nicht bloß Schenkungsversprechen oder ungeprüfter Grundbuch-/Vertragstag. Mehrere Leistungen separat beurteilen. beduerftigkeit_eingetreten_am: ISO-Datum0001..9999 des rechtlich relevanten Eintritts der Bedürftigkeit des Schenkers, nicht Datum der späteren Rückforderung oder Klage. Vor Leistung liegende Bedürftigkeit führt hier nur zu keinem zeitlichen Ausschluss; Anspruchsvoraussetzungen§528 gesondert. beduerftigkeit_vorsaetzlich_oder_grob_fahrlaessig: Wahrheitswert, dass Schenker gerade seine Bedürftigkeit vorsätzlich oder grob fahrlässig herbeigeführt hat. Einfache Fahrlässigkeit oder allein freiwillige Schenkung nicht automatisch gleichsetzen. pflicht_oder_anstandsschenkung: Wahrheitswert der rechtlichen Privilegierung§534; sittliche Pflicht/Anstand bewerten, keine feste Betragsgrenze erfinden. einordnungsnachweis: Nichtleere Begründung von Schenkungsleistung, maßgeblichem Bedürftigkeitseintritt, schwerer Eigenverursachung und Schenkungsprivilegierung.",
+  "rechenschritte": "Zehnjahresereignisfrist ab Leistung. Bedürftigkeitseintritt nach Fristablauf ODER vorsätzliche/grob fahrlässige Herbeiführung ODER§534-Privilegierung schließt betrachtete Rückforderung aus.",
+  "ausnahmen": "Nur§529 Absatz1/§534; Schutz des Beschenkten§529 Absatz2, Anspruchsvoraussetzungen§528, Bereicherungsrecht und Mehrbeschenktenrangfolge nicht mitberechnet. Keine Schenkungsabschmelzung§2325 und keine Verjährungsprüfung der Rückforderung.",
+  "rundung": "Keine; Kalenderdaten taggenau.",
+  "wertebereich": "ISO-Daten und berechnete Grenzen0001..9999, explizite Wahrheitswerte und nichtleerer Nachweis.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/schenkungsrueckforderung.json",
+  "gesamtabnahme": false,
+  "einheit": "daten_und_wahrheitswerte",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "geschenk_geleistet_am": "ISO-Datum0001..9999 der rechtlich fristauslösenden Leistung des geschenkten Gegenstands. Nicht bloß Schenkungsversprechen oder ungeprüfter Grundbuch-/Vertragstag. Mehrere Leistungen separat beurteilen.",
+    "beduerftigkeit_eingetreten_am": "ISO-Datum0001..9999 des rechtlich relevanten Eintritts der Bedürftigkeit des Schenkers, nicht Datum der späteren Rückforderung oder Klage. Vor Leistung liegende Bedürftigkeit führt hier nur zu keinem zeitlichen Ausschluss; Anspruchsvoraussetzungen§528 gesondert.",
+    "beduerftigkeit_vorsaetzlich_oder_grob_fahrlaessig": "Wahrheitswert, dass Schenker gerade seine Bedürftigkeit vorsätzlich oder grob fahrlässig herbeigeführt hat. Einfache Fahrlässigkeit oder allein freiwillige Schenkung nicht automatisch gleichsetzen.",
+    "pflicht_oder_anstandsschenkung": "Wahrheitswert der rechtlichen Privilegierung§534; sittliche Pflicht/Anstand bewerten, keine feste Betragsgrenze erfinden.",
+    "einordnungsnachweis": "Nichtleere Begründung von Schenkungsleistung, maßgeblichem Bedürftigkeitseintritt, schwerer Eigenverursachung und Schenkungsprivilegierung."
+  },
+  "ergebnisvertrag": "wert enthält zehnjahreszeitraum_ende als ISO-Datum und zehnjahresfrist_bei_beduerftigkeit_abgelaufen sowie rueckforderung_nach_529_absatz_eins_oder_534_ausgeschlossen als Wahrheitswerte. FALSE bestätigt keinen Anspruch.",
+  "regelart": "FRISTVERGLEICH"
+}

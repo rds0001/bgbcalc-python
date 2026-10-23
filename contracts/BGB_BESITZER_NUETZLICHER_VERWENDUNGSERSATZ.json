@@ -1,0 +1,32 @@
+{
+  "regel_id": "BGB_BESITZER_NUETZLICHER_VERWENDUNGSERSATZ",
+  "regelversion": "1",
+  "bezeichnung": "besitzer_nuetzlicher_verwendungsersatz",
+  "fundstelle_ids": [
+    "BGB_996_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "verwendungskosten: Nichtnegative tatsächliche Kosten der betrachteten anderen als notwendigen Verwendungen in EUR; notwendige Verwendungen separat. fortbestehende_werterhoehung: Nichtnegative gerade durch diese Verwendungen verursachte Werterhöhung, die noch bei Wiedererlangung der Sache durch Eigentümer besteht. Keine Gleichsetzung mit Aufwand oder früherer Wertsteigerung. andere_als_notwendige_verwendung: Wahrheitswert der rechtlichen Abgrenzung gegenüber notwendigen Verwendungen nach§994/995. vor_rechtshaengigkeit_verwendet: Wahrheitswert: betrachtete Verwendungen vor Eintritt der Rechtshängigkeit gemacht. Zeitliche Reihenfolge fachlich feststellen; gleicher Kalendertag allein genügt nicht. vor_haftungsbeginn_990_verwendet: Wahrheitswert: betrachtete Verwendungen vor Beginn der Haftung nach§990 gemacht; zusätzlich zur Grenze der Rechtshängigkeit erforderlich. eigentuemer_besitzer_verhaeltnis_anwendbar: Wahrheitswert des geprüften Anwendungsbereichs des Eigentümer-Besitzer-Verhältnisses. bewertungsnachweis: Nichtleere Begründung von Anspruchsregime, Kosten, kausaler fortbestehender Werterhöhung und beiden zeitlichen Voraussetzungen.",
+  "rechenschritte": "Bei kumulativ erfüllten Voraussetzungen Minimum aus qualifizierten Verwendungskosten und gesetzlicher Wertgrenze bilden.",
+  "ausnahmen": "Andere Anspruchsgrundlagen, Geltendmachung nach§1001 und Erlöschen nach§1002 gesondert prüfen. Keine doppelte Erstattung desselben Aufwands. Bewertungen sind belegte Nutzervorgaben.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/verwendungsersatz.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "verwendungskosten": "Nichtnegative tatsächliche Kosten der betrachteten anderen als notwendigen Verwendungen in EUR; notwendige Verwendungen separat.",
+    "fortbestehende_werterhoehung": "Nichtnegative gerade durch diese Verwendungen verursachte Werterhöhung, die noch bei Wiedererlangung der Sache durch Eigentümer besteht. Keine Gleichsetzung mit Aufwand oder früherer Wertsteigerung.",
+    "andere_als_notwendige_verwendung": "Wahrheitswert der rechtlichen Abgrenzung gegenüber notwendigen Verwendungen nach§994/995.",
+    "vor_rechtshaengigkeit_verwendet": "Wahrheitswert: betrachtete Verwendungen vor Eintritt der Rechtshängigkeit gemacht. Zeitliche Reihenfolge fachlich feststellen; gleicher Kalendertag allein genügt nicht.",
+    "vor_haftungsbeginn_990_verwendet": "Wahrheitswert: betrachtete Verwendungen vor Beginn der Haftung nach§990 gemacht; zusätzlich zur Grenze der Rechtshängigkeit erforderlich.",
+    "eigentuemer_besitzer_verhaeltnis_anwendbar": "Wahrheitswert des geprüften Anwendungsbereichs des Eigentümer-Besitzer-Verhältnisses.",
+    "bewertungsnachweis": "Nichtleere Begründung von Anspruchsregime, Kosten, kausaler fortbestehender Werterhöhung und beiden zeitlichen Voraussetzungen."
+  },
+  "ergebnisvertrag": "wert ist exakter EUR-Bruch des begrenzten Ersatzbetrags; bei nicht erfülltem Anwendungsbereich NICHT_ANWENDBAR/null.",
+  "regelart": "BETRAGSOPERATION"
+}

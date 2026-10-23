@@ -1,0 +1,31 @@
+{
+  "regel_id": "BGB_UNTERHALT_RUECKWIRKUNGSBEGINN",
+  "regelversion": "1",
+  "bezeichnung": "unterhalt_rueckwirkungsbeginn",
+  "fundstelle_ids": [
+    "BGB_1613_T0001",
+    "BGB_1613_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "auskunftsaufforderung_am: Optionales ISO-Datum einer für Geltendmachung gerade dieses Unterhalts rechtlich wirksamen Auskunftsaufforderung, sonstNULL. verzug_am: Optionales ISO-Datum wirksamen Verzugs für denselben Anspruch, sonstNULL. rechtshaengigkeit_am: Optionales ISO-Datum einschlägiger Rechtshängigkeit, sonstNULL. Mindestens eines der drei qualifizierten Ereignisse erforderlich. anspruchsbeginn_am: ISO-Datum des rechtlich bestimmten Beginns eines danach durchgehend dem Grunde nach bestehenden Unterhaltsverhältnisses, keine bloße Betragsänderung. anlassnachweis: Nichtleerer Nachweis der Wirksamkeit/Anspruchszuordnung jedes angegebenen Ereignisses und des durchgehenden Anspruchsbeginns.",
+  "rechenschritte": "Anlass=min(angegebene qualifizierte Ereignisse). Wenn Anspruchsbeginn≤Anlassmonatsanfang: Rückwirkung ab Monatsanfang; sonst max(Anlass,Anspruchsbeginn).",
+  "ausnahmen": "§1613I für ein rechtlich abgegrenztes durchgehend bestehendes Unterhaltsverhältnis. Nur für Geltendmachung dieses Unterhalts wirksame Auskunftsaufforderung, wirksamen Verzug oder Rechtshängigkeit eingeben; unwirksame oder anders zugeordnete Ereignisse nicht eintragen. Anspruchsbeginn ist qualifizierter Beginn des dem Grunde nach bestehenden Anspruchs, nicht Beginn bloß einer späteren Betragsänderung. Besteht er am ersten Tag des Monats des frühesten Ereignisses, gilt dieser Monatsanfang; andernfalls keine pauschale Rückverlagerung auf Anspruchsentstehung vor dem Anlass. Ein rechtlich bereits vor Anspruchsbeginn wirksamer Anlass kann keinen Unterhalt vor Anspruchsentstehung erzeugen. Anspruchsunterbrechungen oder wechselnde Unterhaltsverhältnisse getrennt berechnen. Sonderbedarf/Hinderungsfälle nachAbsatz2, HärteregelAbsatz3, Erfüllung und Betragshöhe nicht berechnet.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/unterhaltsrueckwirkung.json",
+  "gesamtabnahme": false,
+  "einheit": "daten",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "auskunftsaufforderung_am": "Optionales ISO-Datum einer für Geltendmachung gerade dieses Unterhalts rechtlich wirksamen Auskunftsaufforderung, sonstNULL.",
+    "verzug_am": "Optionales ISO-Datum wirksamen Verzugs für denselben Anspruch, sonstNULL.",
+    "rechtshaengigkeit_am": "Optionales ISO-Datum einschlägiger Rechtshängigkeit, sonstNULL. Mindestens eines der drei qualifizierten Ereignisse erforderlich.",
+    "anspruchsbeginn_am": "ISO-Datum des rechtlich bestimmten Beginns eines danach durchgehend dem Grunde nach bestehenden Unterhaltsverhältnisses, keine bloße Betragsänderung.",
+    "anlassnachweis": "Nichtleerer Nachweis der Wirksamkeit/Anspruchszuordnung jedes angegebenen Ereignisses und des durchgehenden Anspruchsbeginns."
+  },
+  "ergebnisvertrag": "wert enthält fruehester_qualifizierter_anlass, anlassmonatsanfang und rueckwirkungsbeginn als ISO-Daten.",
+  "regelart": "FRISTBERECHNUNG"
+}

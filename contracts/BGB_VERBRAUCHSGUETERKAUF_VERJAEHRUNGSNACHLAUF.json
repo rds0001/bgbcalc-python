@@ -1,0 +1,33 @@
+{
+  "regel_id": "BGB_VERBRAUCHSGUETERKAUF_VERJAEHRUNGSNACHLAUF",
+  "regelversion": "1",
+  "bezeichnung": "verbrauchsgueterkauf_verjaehrungsnachlauf",
+  "fundstelle_ids": [
+    "BGB_475e_T0001",
+    "BGB_475e_T0002",
+    "BGB_475e_T0003",
+    "BGB_475e_T0004"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "nachlaufgrund: Auswahl ende_digitaler_bereitstellung (Absatz1,12Monate), ende_aktualisierungspflicht (Absatz2,12Monate), erstmaliges_zeigen_des_mangels (Absatz3,4Monate) oder rueckgabe_nach_nacherfuellung_garantie (Absatz4,2Monate). Diese Gründe haben verschiedene Anknüpfungsereignisse. anknuepfung_am: ISO-Datum0001..9999: je nach Auswahl Ende des rechtlichen Bereitstellungszeitraums, Ende des Zeitraums der Aktualisierungspflicht, erstmaliges Zeigen gerade dieses Mangels oder Übergabe der nachgebesserten/ersetzten Ware zurück an den Verbraucher. Nicht ursprüngliche Übergabe zur Reparatur mit Rückgabe verwechseln. Noch nicht feststehendes Schutzende nicht durch fiktives Datum ersetzen. bisheriger_letzter_tag: ISO-Datum0001..9999 des rechtlich maßgeblichen bisherigen letzten unverjährten Tags vor Anwendung dieses Nachlaufs. Einschlägige Frist und bereits wirksame andere Verlängerungen korrekt einordnen. Bei erstmaligem Zeigen wird zusätzlich geprüft, dass dieses spätestens an diesem Tag liegt. Keine zirkuläre Bestimmung der Voraussetzung mit dem hier neu berechneten Nachlauf. tatbestand_erfuellt: Wahrheitswert des vollständigen rechtlichen Tatbestands für den konkreten Verbrauchsgütermangel: Absatz1 dauerhafte digitale Bereitstellung§475c, Absatz2 Verletzung der Aktualisierungspflicht§475b, Absatz3 erstmaliges Zeigen, Absatz4 qualifizierte vorherige Übergabe zur Nacherfüllung/Garantie an Unternehmer oder von ihm veranlassten Dritten und Rückgabe. Kein Wiederaufleben bereits verjährter Ansprüche unterstellen. FALSE ergibt NICHT_ANWENDBAR. einordnungsnachweis: Nichtleere Begründung von Anspruch, Tatbestand, zugehörigem Anknüpfungsereignis und bisheriger Frist. Bei mehreren einschlägigen Nachläufen konkurrierende Grenzen rechtlich konsistent bestimmen.",
+  "rechenschritte": "Nachlauf von12/12/4/2Monaten ab gesetzlichem Ereignis berechnen und späteres Ende aus Nachlauf und bisheriger Frist wählen. Absatz3 zusätzlich erstes Zeigen innerhalb bisheriger Frist verlangen.",
+  "ausnahmen": "Kein pauschales Addieren zum bisherigen Fristende; keine automatische Wiederbelebung verjährter Ansprüche. Noch laufende unbestimmte Bereitstellung/Aktualisierungspflicht ohne feststehendes Ende kann mit dieser Datumsfunktion nicht abschließend berechnet werden. Hemmungen/Neubeginne/weitere Nachläufe/§193 gesondert.",
+  "rundung": "Keine; Kalenderdaten taggenau.",
+  "wertebereich": "ISO-Daten und berechnete Fristgrenzen0001..9999, explizite Auswahl/Wahrheitswerte und nichtleerer Nachweis.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/kaufverjaehrungsnachlauf.json",
+  "gesamtabnahme": false,
+  "einheit": "fristdaten",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "nachlaufgrund": "Auswahl ende_digitaler_bereitstellung (Absatz1,12Monate), ende_aktualisierungspflicht (Absatz2,12Monate), erstmaliges_zeigen_des_mangels (Absatz3,4Monate) oder rueckgabe_nach_nacherfuellung_garantie (Absatz4,2Monate). Diese Gründe haben verschiedene Anknüpfungsereignisse.",
+    "anknuepfung_am": "ISO-Datum0001..9999: je nach Auswahl Ende des rechtlichen Bereitstellungszeitraums, Ende des Zeitraums der Aktualisierungspflicht, erstmaliges Zeigen gerade dieses Mangels oder Übergabe der nachgebesserten/ersetzten Ware zurück an den Verbraucher. Nicht ursprüngliche Übergabe zur Reparatur mit Rückgabe verwechseln. Noch nicht feststehendes Schutzende nicht durch fiktives Datum ersetzen.",
+    "bisheriger_letzter_tag": "ISO-Datum0001..9999 des rechtlich maßgeblichen bisherigen letzten unverjährten Tags vor Anwendung dieses Nachlaufs. Einschlägige Frist und bereits wirksame andere Verlängerungen korrekt einordnen. Bei erstmaligem Zeigen wird zusätzlich geprüft, dass dieses spätestens an diesem Tag liegt. Keine zirkuläre Bestimmung der Voraussetzung mit dem hier neu berechneten Nachlauf.",
+    "tatbestand_erfuellt": "Wahrheitswert des vollständigen rechtlichen Tatbestands für den konkreten Verbrauchsgütermangel: Absatz1 dauerhafte digitale Bereitstellung§475c, Absatz2 Verletzung der Aktualisierungspflicht§475b, Absatz3 erstmaliges Zeigen, Absatz4 qualifizierte vorherige Übergabe zur Nacherfüllung/Garantie an Unternehmer oder von ihm veranlassten Dritten und Rückgabe. Kein Wiederaufleben bereits verjährter Ansprüche unterstellen. FALSE ergibt NICHT_ANWENDBAR.",
+    "einordnungsnachweis": "Nichtleere Begründung von Anspruch, Tatbestand, zugehörigem Anknüpfungsereignis und bisheriger Frist. Bei mehreren einschlägigen Nachläufen konkurrierende Grenzen rechtlich konsistent bestimmen."
+  },
+  "ergebnisvertrag": "wert enthält nachlauf_monate als ganze Zahl, mindestablauf und rechnerischer_letzter_tag als ISO-Daten. Ohne qualifizierten Tatbestand, auch bei verspätetem Erstzeigen, NICHT_ANWENDBAR/null.",
+  "regelart": "FRISTBERECHNUNG"
+}

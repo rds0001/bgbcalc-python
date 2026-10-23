@@ -1,0 +1,27 @@
+{
+  "regel_id": "BGB_UNTERHALT_SICHERHEITSREGELBETRAG",
+  "regelversion": "1",
+  "bezeichnung": "unterhalt_sicherheitsregelbetrag",
+  "fundstelle_ids": [
+    "BGB_1585a_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "monatsrente: Nichtnegative qualifizierte konstante Monatsunterhaltsrente in EUR. bewertungsnachweis: Nichtleerer Nachweis der rechtlichen Höhe und Konstanz der Monatsrente für einfachen Jahresbetrag.",
+  "rechenschritte": "Einfacher Jahresbetrag=12×konstante Monatsrente.",
+  "ausnahmen": "Rechnerische Regelsicherheitsgrenze nach§1585aI3 bei konstanter rechtlich qualifizierter Monatsrente. Keine automatische Sicherheitsleistungspflicht: Verlangen, Gefährdung, unbillige Belastung und Art der Sicherheit gesondert. Besondere Umstände können höhere Sicherheit rechtfertigen; dieser Regelbetrag ist keine ausnahmslose Höchstgrenze und keine freie gerichtliche Ermessensentscheidung. Wechselnde Rentenhöhen und zeitlich begrenzte Ansprüche außerhalb des konstanten Jahresansatzes separat bestimmen.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/familienvermoegensbetraege.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "monatsrente": "Nichtnegative qualifizierte konstante Monatsunterhaltsrente in EUR.",
+    "bewertungsnachweis": "Nichtleerer Nachweis der rechtlichen Höhe und Konstanz der Monatsrente für einfachen Jahresbetrag."
+  },
+  "ergebnisvertrag": "wert ist einfacher Jahresbetrag als exakter EUR-Bruch, keine zwingende endgültige Sicherheitsleistung.",
+  "regelart": "BETRAGSOPERATION"
+}

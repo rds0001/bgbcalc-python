@@ -1,0 +1,28 @@
+{
+  "regel_id": "BGB_DARLEHEN_WERTBETEILIGUNGSBETRAG",
+  "regelversion": "1",
+  "bezeichnung": "darlehen_wertbeteiligungsbetrag",
+  "fundstelle_ids": [
+    "BGB_492b_T0009"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "immobilienwert_bei_rueckzahlung: Nichtnegativer exakter qualifizierter Dezimalwert/Bruch; Beträge in EUR, vertragliche Wertbeteiligung/Zinsen als Quote (0.05=5Prozent). vertraglicher_wertanteil: Nichtnegativer exakter qualifizierter Dezimalwert/Bruch; Beträge in EUR, vertragliche Wertbeteiligung/Zinsen als Quote (0.05=5Prozent). einordnungsnachweis: Nichtleerer Nachweis des jeweiligen Darlehens-/Vermittlungs-/Teilzahlungsfalls und rechtlich qualifizierter Wert-, Kosten- oder Zinsgrundlage.",
+  "rechenschritte": "Qualifizierten Immobilienwert bei Rückzahlung mit vertraglich festgelegter Wertbeteiligungsquote multiplizieren",
+  "ausnahmen": "Nur Wertbeteiligungsdarlehen im Sinne §492b Absatz1 Nummer3. Immobilienwert für den maßgeblichen Rückzahlungszeitpunkt und vertraglichen Umfang extern bewerten; Quote als Jahres-unabhängiger Anteil (0.2=20Prozent), kein Zinssatz. Keine Bestimmung der Zulässigkeit des Kopplungsgeschäfts oder automatisches Hinzufügen einer ursprünglichen Darlehenssumme. Mehrere Rückzahlungen nach jeweils rechtlich bestimmtem Anteil/Umfang separat, keine Doppelzählung.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/darlehenssonderbetraege.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "immobilienwert_bei_rueckzahlung": "Nichtnegativer exakter qualifizierter Dezimalwert/Bruch; Beträge in EUR, vertragliche Wertbeteiligung/Zinsen als Quote (0.05=5Prozent).",
+    "vertraglicher_wertanteil": "Nichtnegativer exakter qualifizierter Dezimalwert/Bruch; Beträge in EUR, vertragliche Wertbeteiligung/Zinsen als Quote (0.05=5Prozent).",
+    "einordnungsnachweis": "Nichtleerer Nachweis des jeweiligen Darlehens-/Vermittlungs-/Teilzahlungsfalls und rechtlich qualifizierter Wert-, Kosten- oder Zinsgrundlage."
+  },
+  "ergebnisvertrag": "wert ist der exakt berechnete EUR-Betrag als Bruchobjekt.",
+  "regelart": "BETRAGSOPERATION"
+}

@@ -1,0 +1,35 @@
+{
+  "regel_id": "BGB_SACHENVERBINDUNG_EIGENTUMSQUOTEN",
+  "regelversion": "1",
+  "bezeichnung": "sachenverbindung_eigentumsquoten",
+  "fundstelle_ids": [
+    "BGB_947_T0001",
+    "BGB_947_T0002",
+    "BGB_948_T0001",
+    "BGB_948_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "eigentuemer_werte: Unbenannte Liste mit2..1000 Objekten, jeweils genau eigentuemer_id (eindeutige nichtleere Zeichenfolge) und sachenwert (nichtnegativer exakter EUR-Wert). Werte der beteiligten beweglichen Sachen je bisherigem Eigentümer im Zeitpunkt der Verbindung/Vermischung zusammenfassen. Gleiche Bewertungsbasis; Gesamtwert ohne Hauptsache positiv. Vorbestehende Miteigentumsstrukturen rechtlich zutreffend vorab auflösen; dieses Modell setzt bei Hauptsache einen einzelnen Eigentümer voraus. entstehungsart: Auswahl verbindung (§947) oder vermischung_vermengung (§948). Keine Grundstücksverbindung oder Verarbeitung zu neuer Sache ungeprüft hier einordnen. wesentliche_bestandteile: Wahrheitswert, ob die verbundenen beweglichen Sachen wesentliche Bestandteile einer einheitlichen Sache werden. Nur bei entstehungsart=verbindung maßgeblich. untrennbar_vermischt: Wahrheitswert einer untrennbaren Vermischung/Vermengung. Nur bei entstehungsart=vermischung_vermengung maßgeblich; bloßes Nebeneinanderlegen genügt nicht. trennungskosten_unverhaeltnismaessig: Wahrheitswert unverhältnismäßiger Trennungskosten bei Vermischung/Vermengung. Nach§948 Absatz2 der Untrennbarkeit gleichgestellt. Keine erfundene Kostenschwelle und nicht auf sonstige Verbindungsfälle übertragen. hauptsachen_eigentuemer: Optional eindeutige eigentuemer_id aus der Liste des Alleineigentümers einer rechtlich als Hauptsache eingeordneten Sache. None/NULL bedeutet keine solche Hauptsache, dann Wertquoten. Hauptsache nicht automatisch höchste Geldbewertung. Besteht daran Miteigentum, anderes erweitertes Modell erforderlich. bewertungsnachweis: Nichtleere Beschreibung der beteiligten beweglichen Sachen, rechtlichen Verbindung/Vermischung, Werte im Entstehungszeitpunkt, gegebenenfalls Trennungskostenbewertung und Hauptsacheneigenschaft.",
+  "rechenschritte": "Bei Verbindung wesentliche Bestandteile, bei Vermischung Untrennbarkeit oder unverhältnismäßige Trennungskosten prüfen. Mit rechtlich bestimmter Hauptsache Alleineigentumsquote1 für deren Eigentümer, sonst je Eigentümer Sachenwert/Summe der Werte.",
+  "ausnahmen": "Kein automatischer Schluss von höchstem Wert auf Hauptsache; kein bloßes Nebeneinander beweglicher Sachen. Hauptsachen-Miteigentum, Grundstücksverbindung§946, Verarbeitung§950 und Ausgleichsansprüche§951 gesondert. Quoten nach ursprünglichen Werten im Verbindungszeitpunkt, nicht nach beliebig späteren Werten.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/sachenverbindung.json",
+  "gesamtabnahme": false,
+  "einheit": "eigentumsquoten",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "eigentuemer_werte": "Unbenannte Liste mit2..1000 Objekten, jeweils genau eigentuemer_id (eindeutige nichtleere Zeichenfolge) und sachenwert (nichtnegativer exakter EUR-Wert). Werte der beteiligten beweglichen Sachen je bisherigem Eigentümer im Zeitpunkt der Verbindung/Vermischung zusammenfassen. Gleiche Bewertungsbasis; Gesamtwert ohne Hauptsache positiv. Vorbestehende Miteigentumsstrukturen rechtlich zutreffend vorab auflösen; dieses Modell setzt bei Hauptsache einen einzelnen Eigentümer voraus.",
+    "entstehungsart": "Auswahl verbindung (§947) oder vermischung_vermengung (§948). Keine Grundstücksverbindung oder Verarbeitung zu neuer Sache ungeprüft hier einordnen.",
+    "wesentliche_bestandteile": "Wahrheitswert, ob die verbundenen beweglichen Sachen wesentliche Bestandteile einer einheitlichen Sache werden. Nur bei entstehungsart=verbindung maßgeblich.",
+    "untrennbar_vermischt": "Wahrheitswert einer untrennbaren Vermischung/Vermengung. Nur bei entstehungsart=vermischung_vermengung maßgeblich; bloßes Nebeneinanderlegen genügt nicht.",
+    "trennungskosten_unverhaeltnismaessig": "Wahrheitswert unverhältnismäßiger Trennungskosten bei Vermischung/Vermengung. Nach§948 Absatz2 der Untrennbarkeit gleichgestellt. Keine erfundene Kostenschwelle und nicht auf sonstige Verbindungsfälle übertragen.",
+    "hauptsachen_eigentuemer": "Optional eindeutige eigentuemer_id aus der Liste des Alleineigentümers einer rechtlich als Hauptsache eingeordneten Sache. None/NULL bedeutet keine solche Hauptsache, dann Wertquoten. Hauptsache nicht automatisch höchste Geldbewertung. Besteht daran Miteigentum, anderes erweitertes Modell erforderlich.",
+    "bewertungsnachweis": "Nichtleere Beschreibung der beteiligten beweglichen Sachen, rechtlichen Verbindung/Vermischung, Werte im Entstehungszeitpunkt, gegebenenfalls Trennungskostenbewertung und Hauptsacheneigenschaft."
+  },
+  "ergebnisvertrag": "wert ist Liste in Eingabereihenfolge mit eigentuemer_id und eigentumsquote als exaktem Bruch. Quoten summieren sich zu1. Nicht einschlägiger Entstehungstatbestand ergibt NICHT_ANWENDBAR mit null.",
+  "regelart": "QUOTENVERTEILUNG"
+}

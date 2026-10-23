@@ -1,0 +1,30 @@
+{
+  "regel_id": "BGB_PACHT_INVENTAR_AUSGLEICHSDIFFERENZ",
+  "regelversion": "1",
+  "bezeichnung": "pacht_inventar_ausgleichsdifferenz",
+  "fundstelle_ids": [
+    "BGB_582a_T0007",
+    "BGB_582a_T0008",
+    "BGB_590_T0008"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "uebernommener_gesamtschaetzwert_zu_endpreisen: Nichtnegativer exakter Dezimalwert/Bruch; Inventarwerte in EUR zu einheitlichen Endpreisen, Holzmengen in identischer Einheit/Qualität, Einheitswert in EUR je Mengeneinheit. zurueckzugewaehrender_gesamtschaetzwert_zu_endpreisen: Nichtnegativer exakter Dezimalwert/Bruch; Inventarwerte in EUR zu einheitlichen Endpreisen, Holzmengen in identischer Einheit/Qualität, Einheitswert in EUR je Mengeneinheit. einordnungsnachweis: Nichtleerer Nachweis des gesetzlichen Pachtfalls, rechtlich qualifizierter Bestände/Mengen und vergleichbarer Bewertung.",
+  "rechenschritte": "Gesamtschätzwert des übernommenen Inventars minus Gesamtschätzwert des zurückzugewährenden Inventars, beide zu Preisen bei Pachtende",
+  "ausnahmen": "§582a Absatz3 bei qualifizierter Inventarübernahme/-rückgewähr zum Schätzwert; entsprechend §590 Absatz3 bei qualifizierter wesentlicher Inventarverminderung während der Pachtzeit ohne gesetzliche Verwendungsausnahme. Im letzteren Fall sind Endpreise die einheitlichen Preise des rechtlich maßgeblichen Zwischenabrechnungszeitpunkts; der zweite Bestand ist das dort verbleibende Inventar, nicht ein erfundener künftiger Rückgabebestand. Positives Ergebnis bezeichnet Ausgleich vom Pächter an Verpächter, negatives Ergebnis den Betrag mit umgekehrter Richtung, null keinen Wertausgleich. Beide Inventarbestände mit Preisen desselben maßgeblichen Abrechnungszeitpunkts bewerten, nicht historische Anfangspreise gegen aktuelle Endpreise. Rechtlich wirksam abgelehnte überflüssige/überwertige Stücke zuvor aus dem zurückzugewährenden Bestand ausschließen. Keine Inventarbewertung, Eigentumsentscheidung oder zusätzliche Schadensersatzrechnung.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Nichtnegative Eingangswerte; exakte vorzeichenbehaftete Ausgleichsdifferenz im sicheren gemeinsamen Zahlenbereich.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/pachtsonderbetraege.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "uebernommener_gesamtschaetzwert_zu_endpreisen": "Nichtnegativer exakter Dezimalwert/Bruch; Inventarwerte in EUR zu einheitlichen Endpreisen, Holzmengen in identischer Einheit/Qualität, Einheitswert in EUR je Mengeneinheit. Bei entsprechender Anwendung590III beide Bestände zum rechtlich maßgeblichen Zwischenabrechnungszeitpunkt bewerten; Endpreise bezeichnet dann diesen gemeinsamen Zeitpunkt.",
+    "zurueckzugewaehrender_gesamtschaetzwert_zu_endpreisen": "Nichtnegativer exakter Dezimalwert/Bruch; Inventarwerte in EUR zu einheitlichen Endpreisen, Holzmengen in identischer Einheit/Qualität, Einheitswert in EUR je Mengeneinheit. Bei entsprechender Anwendung590III beide Bestände zum rechtlich maßgeblichen Zwischenabrechnungszeitpunkt bewerten; Endpreise bezeichnet dann diesen gemeinsamen Zeitpunkt.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des gesetzlichen Pachtfalls, rechtlich qualifizierter Bestände/Mengen und vergleichbarer Bewertung."
+  },
+  "ergebnisvertrag": "wert ist exakter EUR-Bruch. Bei Inventardifferenz positiv=Pächter zahlt Verpächter, negativ=umgekehrte Richtung; Holzwertersatz nichtnegativ.",
+  "regelart": "BETRAGSOPERATION"
+}

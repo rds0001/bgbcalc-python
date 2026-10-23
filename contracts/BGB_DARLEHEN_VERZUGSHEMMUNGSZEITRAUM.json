@@ -1,0 +1,36 @@
+{
+  "regel_id": "BGB_DARLEHEN_VERZUGSHEMMUNGSZEITRAUM",
+  "regelversion": "1",
+  "bezeichnung": "darlehen_verzugshemmungszeitraum",
+  "fundstelle_ids": [
+    "BGB_497_T0005",
+    "BGB_497_T0006",
+    "BGB_497_T0007",
+    "BGB_497_T0008",
+    "BGB_497_T0009",
+    "BGB_497_T0010",
+    "BGB_497_T0011",
+    "BGB_209_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "anspruch_entstanden_am: Entstehungstag des einzelnen rechtlich abgegrenzten Rueckzahlungs-/Zinsanspruchs; Zehnjahresgrenze laeuft hiervon, nicht erst vom Verzug. erster_verzugshemmungstag: Rechtlich auf volle Kalendertage normalisierter erster Hemmungstag aus Verzug497I. feststellung_letzter_hemmungstag: Optionaler rechtlich normalisierter letzter Hemmungstag bei qualifizierter Feststellung197I3bis5; None/NULL nur wenn bis Betrachtungsende keine solche Feststellung vorliegt. betrachtung_bis: Letzter tatsaechlich betrachteter Tag; keine Prognose einer kuenftigen Titulierung. einordnungsnachweis: 497III3Anwendbarkeit fuer einzelnen Anspruch, Verzug und Tagesnormalisierung belegen; keine bereits abgelaufene Verjaehrung wiederbeleben. Titel-Hauptforderung-Zinsen-Ausnahme beachten.",
+  "rechenschritte": "Zehnjahresgrenze ab Anspruchsentstehung berechnen und beobachtetes Verzugshemmungsintervall an Feststellung beziehungsweise Hoechstgrenze abschneiden.",
+  "ausnahmen": "§497III3: vom rechtlich normalisierten Verzugsbeginn bis qualifizierter Feststellung197I3bis5, hoechstens zehn Jahre ab Entstehung des einzelnen Anspruchs. Vorhandener Kalenderkern berechnet Zehnjahresgrenze, Intervall wird am fruehesten von Feststellung, Hoechstgrenze und Betrachtungsende abgeschnitten. Ohne Feststellung nur beobachtetes Intervall, kein behauptetes endgueltiges Verjaehrungsende. Unterschiedlich entstandene Einzelansprueche getrennt behandeln; Hemmung nach209 danach mit vorhandenem Kern kombinieren. Tagesnormalisierung einschliesslich Randtage rechtlich belegen; kein pauschales Aufrunden untertaegiger Ereignisse. Auch497IV nimmt III3nicht aus, wohingegen III5Titel-Hauptforderung-Zinsen-Ausnahme zu beachten ist. Keine persoenliche oder sachliche Anwendbarkeit automatisch feststellen, keine Hemmung einer schon abgelaufenen Frist.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/darlehen_verzugshemmungszeitraum.json",
+  "gesamtabnahme": false,
+  "einheit": "daten_und_intervalle",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "anspruch_entstanden_am": "Entstehungstag des einzelnen rechtlich abgegrenzten Rueckzahlungs-/Zinsanspruchs; Zehnjahresgrenze laeuft hiervon, nicht erst vom Verzug.",
+    "erster_verzugshemmungstag": "Rechtlich auf volle Kalendertage normalisierter erster Hemmungstag aus Verzug497I.",
+    "feststellung_letzter_hemmungstag": "Optionaler rechtlich normalisierter letzter Hemmungstag bei qualifizierter Feststellung197I3bis5; None/NULL nur wenn bis Betrachtungsende keine solche Feststellung vorliegt.",
+    "betrachtung_bis": "Letzter tatsaechlich betrachteter Tag; keine Prognose einer kuenftigen Titulierung.",
+    "einordnungsnachweis": "497III3Anwendbarkeit fuer einzelnen Anspruch, Verzug und Tagesnormalisierung belegen; keine bereits abgelaufene Verjaehrung wiederbeleben. Titel-Hauptforderung-Zinsen-Ausnahme beachten."
+  },
+  "ergebnisvertrag": "Zehnjahresgrenze und null oder ein auf beobachtete ganze Tage begrenztes Hemmungsintervall; kein endgueltiger Verjaehrungstag."
+}

@@ -1,0 +1,30 @@
+{
+  "regel_id": "BGB_REALLAST_PERSOENLICHER_FAELLIGKEITSBETRAG",
+  "regelversion": "1",
+  "bezeichnung": "reallast_persoenlicher_faelligkeitsbetrag",
+  "fundstelle_ids": [
+    "BGB_1108_T0001",
+    "BGB_1108_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "erster_haftungstag: Erster eingeschlossener rechtlich normalisierter Tag des Eigentums-/Haftungszeitraums, ISO-Datum. letzter_haftungstag: Letzter eingeschlossener Tag eines abgeschlossenen qualifizierten Zeitraums; kein fiktives Ende laufenden Eigentums. leistungen: Liste0..10000 mit genau leistung_id, faellig_am und betrag. Eindeutige IDs, ISO-Fälligkeit, nichtnegative exakte noch offene EUR-Beträge. einordnungsnachweis: Nichtleerer Nachweis des1108I-Grundfalls ohne abweichende Bestimmung; Fälligkeit und zeitliche Zuordnung vorqualifiziert, insbesondere bei Eigentumswechsel am Fälligkeitstag.",
+  "rechenschritte": "Beträge der im qualifizierten Eigentumszeitraum fälligen Leistungen addieren; keine zeitanteilige Kürzung.",
+  "ausnahmen": "§1108I-Grundfall ohne abweichende Bestimmung. Maßgeblich ist Fälligkeit während des Eigentums, nicht anteilige Dauer der Leistungsperiode. Erster und letzter eingeschlossener Haftungstag sind rechtlich normalisierte Grenzen eines abgeschlossenen Eigentumszeitraums; bei Eigentumswechsel am Fälligkeitstag muss die zeitliche Zuordnung eindeutig vorqualifiziert sein. Keine automatischen Grundbuch-/Eigentumsfeststellungen, keine intratägliche Zeitrechnung. Nur bereits bestimmte Geldleistungen; Naturalleistungen nicht eigenmächtig bewerten. Eingangsbeträge sind die rechtlich maßgeblichen noch offenen Leistungen ohne doppelte Positionen. Verjährung, Einreden, dingliche Verwertung und andere Haftungsgründe werden nicht entschieden. Teilgrundstückseigentümer nach1108II nicht durch freie Flächenquote entlasten; Gesamtschuld und Innenausgleich separat.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/reallastzeitbetrag.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR_und_Leistungszuordnung",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "erster_haftungstag": "Erster eingeschlossener rechtlich normalisierter Tag des Eigentums-/Haftungszeitraums, ISO-Datum.",
+    "letzter_haftungstag": "Letzter eingeschlossener Tag eines abgeschlossenen qualifizierten Zeitraums; kein fiktives Ende laufenden Eigentums.",
+    "leistungen": "Liste0..10000 mit genau leistung_id, faellig_am und betrag. Eindeutige IDs, ISO-Fälligkeit, nichtnegative exakte noch offene EUR-Beträge.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des1108I-Grundfalls ohne abweichende Bestimmung; Fälligkeit und zeitliche Zuordnung vorqualifiziert, insbesondere bei Eigentumswechsel am Fälligkeitstag."
+  },
+  "ergebnisvertrag": "Exakter persönlicher Haftungsbetrag und IDs der zeitlich einbezogenen/ausgenommenen Leistungen.",
+  "regelart": "VERBAL_RECHENBAR"
+}

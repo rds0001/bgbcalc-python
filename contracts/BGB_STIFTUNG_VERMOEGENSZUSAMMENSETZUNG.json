@@ -1,0 +1,39 @@
+{
+  "regel_id": "BGB_STIFTUNG_VERMOEGENSZUSAMMENSETZUNG",
+  "regelversion": "1",
+  "bezeichnung": "stiftung_vermoegenszusammensetzung",
+  "fundstelle_ids": [
+    "BGB_83b_T0001",
+    "BGB_83b_T0002",
+    "BGB_83b_T0003",
+    "BGB_83b_T0004",
+    "BGB_83b_T0005",
+    "BGB_83b_T0006",
+    "BGB_83b_T0007",
+    "BGB_83b_T0008",
+    "BGB_83b_T0009"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "gewidmetes_vermoegen: Bewerteter noch vorhandener Gesamtbestand der WidmungEUR, einschließlich separat sonstig gewidmetem Teil. davon_sonstig_gewidmet: Nach83bIII dem sonstigen Vermögen zugeordneter Teil, höchstens Gesamtwidmung. zustiftungen: Zusätzlicher zugeordneter Grundstockbestand, nicht bereits in Widmung erfasst. umgewidmeter_grundstock: Von Stiftung zusätzlich zum Grundstock bestimmter Bestand, nicht bereits in Widmung/Zustiftungen/sonstigem Rest erfasst. weiteres_sonstiges_vermoegen: Sonstiger Restbestand nach Abzug umgewidmeter Werte, ohne separat genannten sonstig gewidmeten Teil. zuordnungsnachweis: Nichtleere Bewertung und überschneidungsfreie Zuordnung der Bestände desselben Stichtags. Nur auf unbestimmte Zeit errichtete Stiftung.",
+  "rechenschritte": "Grundstock=Widmung−sonstigerWidmungsteil+Zustiftungen+Umwidmungen; sonstiges=sonstigerWidmungsteil+sonstigerRest; Gesamt=summe.",
+  "ausnahmen": "Keine Verbrauchsstiftung, keine unbereinigten historischen Zuflüsse, keine Doppelzählung einer internen Umwidmung. Erhaltung, Vermögensbewertung und Verwendbarkeit separat.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/stiftungsvermoegen.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "gewidmetes_vermoegen": "Bewerteter noch vorhandener Gesamtbestand der WidmungEUR, einschließlich separat sonstig gewidmetem Teil.",
+    "davon_sonstig_gewidmet": "Nach83bIII dem sonstigen Vermögen zugeordneter Teil, höchstens Gesamtwidmung.",
+    "zustiftungen": "Zusätzlicher zugeordneter Grundstockbestand, nicht bereits in Widmung erfasst.",
+    "umgewidmeter_grundstock": "Von Stiftung zusätzlich zum Grundstock bestimmter Bestand, nicht bereits in Widmung/Zustiftungen/sonstigem Rest erfasst.",
+    "weiteres_sonstiges_vermoegen": "Sonstiger Restbestand nach Abzug umgewidmeter Werte, ohne separat genannten sonstig gewidmeten Teil.",
+    "zuordnungsnachweis": "Nichtleere Bewertung und überschneidungsfreie Zuordnung der Bestände desselben Stichtags. Nur auf unbestimmte Zeit errichtete Stiftung."
+  },
+  "ergebnisvertrag": "wert enthält grundstockvermoegen, sonstiges_vermoegen und stiftungsvermoegen als EUR-Brüche.",
+  "regelart": "BETRAGSOPERATION"
+}

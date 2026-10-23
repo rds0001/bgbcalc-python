@@ -1,0 +1,40 @@
+{
+  "regel_id": "BGB_DIGITALE_VERTRAGSGRUNDFRIST",
+  "regelversion": "1",
+  "bezeichnung": "digitale_vertragsgrundfrist",
+  "fundstelle_ids": [
+    "BGB_327k_T0001",
+    "BGB_327n_T0008",
+    "BGB_327n_T0009",
+    "BGB_327o_T0007",
+    "BGB_327o_T0008",
+    "BGB_327r_T0009",
+    "BGB_327r_T0010",
+    "BGB_327r_T0011",
+    "BGB_327u_T0003",
+    "BGB_327u_T0005",
+    "BGB_327u_T0006",
+    "BGB_327u_T0007"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "fristfall: Genau einer der Fälle: minderung_erstattung: §327n Absatz4: Zugang der Minderungserklärung beim Unternehmer; Höchstfrist ersetzt nicht unverzügliche Erstattung.; beendigung_erstattung: §327o Absatz4 mit§327n Absatz4: Zugang der Beendigungserklärung; Höchstfrist ersetzt nicht unverzügliche Erstattung.; datentraeger_rueckforderung: §327o Absatz5: rechtlich wirksame Vertragsbeendigung; Frist für das Rücksendeverlangen des Unternehmers, nicht Rücksendefrist des Verbrauchers.; aenderung_beendigung: §327r Absatz3: Zugang der qualifizierten Änderungsinformation, bei späterer Änderung deren Zeitpunkt; AusnahmenAbsatz4/6 und Beeinträchtigung gesondert.; regress_nichtbereitstellung: §327u Absatz2 Nummer1: Ausübung des Verbraucherrechts nach§327c Absatz1 Satz1; nicht erst Erstattung oder spätere Beschwerde.; regress_nacherfuellung: §327u Absatz2 Nummer2: Erfüllung der Verbraucheransprüche nach§327l Absatz1; keine automatische Hemmung oder Neubeginn.; beweislast_einmalbereitstellung: §327k Absatz1: Bereitstellung an Verbraucher, auch im Rückgriff327u Absatz3; nur zeitliche Einjahresgrenze, keine Beweis-/Mangelentscheidung. DauerbereitstellungAbsatz2 gesondert. ereignis_am: ISO-Datum des qualifizierten Ereignisses nach Fall; im Änderungsfall Zugang der vorgeschriebenen Information. aenderung_am: Nur im Fall aenderung_beendigung zwingendes ISO-Datum der tatsächlichen/maßgeblichen Änderung; in anderen Fällen null/None. einordnungsnachweis: Nichtleerer Nachweis des digitalen Vertrags-/Regressfalls und rechtlich maßgeblicher Ereignisse; andere Fristkorrekturen separat.",
+  "rechenschritte": "14TageErstattungs-/Datenträgerverlangen;30TageÄnderungsbeendigung abmax(Information,Änderung);6MonateRegress abRechtsausübung/Nacherfüllung;1JahrBeweislastzeit abBereitstellung.",
+  "ausnahmen": "Nur rechnerische Grundfrist; keine vollständige Anspruchs-/Mangelprüfung, keine automatische Vertragsbeendigung/Verjährung. Dauerbereitstellungsbeweislast und Kalender-/Hemmungskorrekturen gesondert. Datenträgerfrist für Verlangen des Unternehmers, nicht Rücksendung des Verbrauchers.",
+  "rundung": "Keine.",
+  "wertebereich": "ISO-Daten/Ergebnis0001..9999; feste Fallliste; Änderungstag genau imÄnderungsfall erforderlich.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/digitale_vertragsfristen.json",
+  "gesamtabnahme": false,
+  "einheit": "daten",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "fristfall": "Genau einer der Fälle: minderung_erstattung: §327n Absatz4: Zugang der Minderungserklärung beim Unternehmer; Höchstfrist ersetzt nicht unverzügliche Erstattung.; beendigung_erstattung: §327o Absatz4 mit§327n Absatz4: Zugang der Beendigungserklärung; Höchstfrist ersetzt nicht unverzügliche Erstattung.; datentraeger_rueckforderung: §327o Absatz5: rechtlich wirksame Vertragsbeendigung; Frist für das Rücksendeverlangen des Unternehmers, nicht Rücksendefrist des Verbrauchers.; aenderung_beendigung: §327r Absatz3: Zugang der qualifizierten Änderungsinformation, bei späterer Änderung deren Zeitpunkt; AusnahmenAbsatz4/6 und Beeinträchtigung gesondert.; regress_nichtbereitstellung: §327u Absatz2 Nummer1: Ausübung des Verbraucherrechts nach§327c Absatz1 Satz1; nicht erst Erstattung oder spätere Beschwerde.; regress_nacherfuellung: §327u Absatz2 Nummer2: Erfüllung der Verbraucheransprüche nach§327l Absatz1; keine automatische Hemmung oder Neubeginn.; beweislast_einmalbereitstellung: §327k Absatz1: Bereitstellung an Verbraucher, auch im Rückgriff327u Absatz3; nur zeitliche Einjahresgrenze, keine Beweis-/Mangelentscheidung. DauerbereitstellungAbsatz2 gesondert.",
+    "ereignis_am": "ISO-Datum des qualifizierten Ereignisses nach Fall; im Änderungsfall Zugang der vorgeschriebenen Information.",
+    "aenderung_am": "Nur im Fall aenderung_beendigung zwingendes ISO-Datum der tatsächlichen/maßgeblichen Änderung; in anderen Fällen null/None.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des digitalen Vertrags-/Regressfalls und rechtlich maßgeblicher Ereignisse; andere Fristkorrekturen separat."
+  },
+  "ergebnisvertrag": "wert enthält massgeblicher_ausloesertag und rechnerisches_fristende, beide ISO-Datum.",
+  "regelart": "FRISTBERECHNUNG"
+}

@@ -1,0 +1,28 @@
+{
+  "regel_id": "BGB_ANWEISUNG_SCHULDREST_NACH_LEISTUNG",
+  "regelversion": "1",
+  "bezeichnung": "anweisung_schuldrest_nach_leistung",
+  "fundstelle_ids": [
+    "BGB_787_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "schuld_vor_leistung: Offene Schuld des Angewiesenen gegenüber dem Anweisenden vor tatsächlicher Leistung, in EUR. tatsaechlich_geleisteter_betrag: Tatsächlich bewirkte und dieser Anweisungsschuld zugeordnete Leistung in EUR; bloße Annahme der Anweisung zählt nicht. einordnungsnachweis: Nichtleerer Nachweis der Anweisung auf Schuld nach787I und tatsächlicher schuldbefreiender Leistung; eindeutige Zuordnung ohne Doppeltilgung.",
+  "rechenschritte": "Offene Anweisungsschuld um tatsächlich bewirkte zugeordnete Leistung mindern, mindestens null.",
+  "ausnahmen": "§787I: nur Betrag der Schuld des Angewiesenen gegenüber dem Anweisenden im qualifizierten Deckungsverhältnis. §788 trennt bloße Annahme von tatsächlicher Leistung im Valutaverhältnis; die Annahme allein wird nicht als Zahlung eingestellt. Andere Schuldverhältnisse nicht vermischen. Überschießende Zahlung begründet hier weder negative Schuld noch automatisch einen Rückforderungsanspruch.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Nichtnegative Eingangswerte, exakter nichtnegativer EUR-Bruch im sicheren gemeinsamen Zahlenbereich.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/schuldrechtliche_betragsreste.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "schuld_vor_leistung": "Offene Schuld des Angewiesenen gegenüber dem Anweisenden vor tatsächlicher Leistung, in EUR.",
+    "tatsaechlich_geleisteter_betrag": "Tatsächlich bewirkte und dieser Anweisungsschuld zugeordnete Leistung in EUR; bloße Annahme der Anweisung zählt nicht.",
+    "einordnungsnachweis": "Nichtleerer Nachweis der Anweisung auf Schuld nach787I und tatsächlicher schuldbefreiender Leistung; eindeutige Zuordnung ohne Doppeltilgung."
+  },
+  "ergebnisvertrag": "wert ist der exakte EUR-Bruch.",
+  "regelart": "BETRAGSOPERATION"
+}

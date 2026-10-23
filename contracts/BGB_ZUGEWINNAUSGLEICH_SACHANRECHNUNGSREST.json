@@ -1,0 +1,28 @@
+{
+  "regel_id": "BGB_ZUGEWINNAUSGLEICH_SACHANRECHNUNGSREST",
+  "regelversion": "1",
+  "bezeichnung": "zugewinnausgleich_sachanrechnungsrest",
+  "fundstelle_ids": [
+    "BGB_1383_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "ausgleichsforderung: Nichtnegative qualifizierte Ausgleichsforderung in EUR. gerichtlicher_anrechnungsbetrag: Nichtnegativer gerichtlich festgesetzter und rechtlich wirksam anzurechnender Betrag für bestimmte Gegenstände in EUR, kein selbst gewählter Marktwert. anrechnungsnachweis: Nichtleerer Beleg der gerichtlichen Festsetzung und tatsächlichen Anrechnungsvoraussetzung.",
+  "rechenschritte": "Rest=max(Ausgleichsforderung−gerichtlicher Anrechnungsbetrag,0).",
+  "ausnahmen": "Nur§1383I-Anrechnungsrechnung: Ausgleichsforderung bereits bestimmt, Anrechnungsbetrag gerichtlich festgesetzt und seine tatsächliche Anrechnungsvoraussetzung qualifiziert. Keinen Marktwert anstelle des festgesetzten Betrags einsetzen. Ob Anordnung/Übertragung/Erfüllung wirksam ist und wann anzurechnen ist, nicht automatisch entschieden. Übersteigt Anrechnungsbetrag die betrachtete Forderung, Rest0; kein automatisch festgestellter Überschuss-/Rückzahlungsanspruch. Keine erneute Zugewinn-, Sachwert- oder Billigkeitsbewertung.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/familienrestbetraege.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "ausgleichsforderung": "Nichtnegative qualifizierte Ausgleichsforderung in EUR.",
+    "gerichtlicher_anrechnungsbetrag": "Nichtnegativer gerichtlich festgesetzter und rechtlich wirksam anzurechnender Betrag für bestimmte Gegenstände in EUR, kein selbst gewählter Marktwert.",
+    "anrechnungsnachweis": "Nichtleerer Beleg der gerichtlichen Festsetzung und tatsächlichen Anrechnungsvoraussetzung."
+  },
+  "ergebnisvertrag": "wert ist exakter EUR-Restbruch.",
+  "regelart": "BETRAGSOPERATION"
+}

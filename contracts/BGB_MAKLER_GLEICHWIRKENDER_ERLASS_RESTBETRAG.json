@@ -1,0 +1,28 @@
+{
+  "regel_id": "BGB_MAKLER_GLEICHWIRKENDER_ERLASS_RESTBETRAG",
+  "regelversion": "1",
+  "bezeichnung": "makler_gleichwirkender_erlass_restbetrag",
+  "fundstelle_ids": [
+    "BGB_656c_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "bisheriger_gleicher_maklerlohn_je_partei: Nichtnegativer exakter rechtlich qualifizierter EUR-Betrag als Dezimalzeichenfolge/Bruchobjekt; einheitliche Kostenbasis ohne Doppelzählung. Erlass höchstens bisheriger Maklerlohn je Partei. qualifizierter_erlassbetrag: Nichtnegativer exakter rechtlich qualifizierter EUR-Betrag als Dezimalzeichenfolge/Bruchobjekt; einheitliche Kostenbasis ohne Doppelzählung. Erlass höchstens bisheriger Maklerlohn je Partei. einordnungsnachweis: Nichtleerer Nachweis des §656b-Verbraucher-/Immobilienfalls und wirksamer qualifizierter Maklerlohn-/Erlassbasis.",
+  "rechenschritte": "Von bisherigem gleichen Maklerlohn je Partei den qualifizierten gleichwirkenden Erlassbetrag abziehen",
+  "ausnahmen": "Nur §656c Absatz1 Satz3/4 bei zuvor wirksam gleich hohen Maklerlohnpflichten beider Parteien und Verbraucher-Käufer nach §656b; erlassene Geldsumme wirkt spiegelbildlich auf jeweils gleiche Pflicht. Erlassbetrag höchstens ursprünglicher je-Partei-Betrag. Bei verschiedenen/mehrfachen Erlassen deren rechtliche Wechselwirkung zuerst qualifizieren, nicht mehrfach denselben Erlass abziehen. Keine Heilung anfänglich ungleicher/unwirksamer Verpflichtungen; keine automatische Erstattung bereits gezahlter Provisionen. Entsprechende Anwendung nach §656d Absatz2 nur bei fachlich qualifizierter gleichartiger Berechnungsbasis.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/maklerbetragsgrenzen.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "bisheriger_gleicher_maklerlohn_je_partei": "Nichtnegativer exakter rechtlich qualifizierter EUR-Betrag als Dezimalzeichenfolge/Bruchobjekt; einheitliche Kostenbasis ohne Doppelzählung. Erlass höchstens bisheriger Maklerlohn je Partei.",
+    "qualifizierter_erlassbetrag": "Nichtnegativer exakter rechtlich qualifizierter EUR-Betrag als Dezimalzeichenfolge/Bruchobjekt; einheitliche Kostenbasis ohne Doppelzählung. Erlass höchstens bisheriger Maklerlohn je Partei.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des §656b-Verbraucher-/Immobilienfalls und wirksamer qualifizierter Maklerlohn-/Erlassbasis."
+  },
+  "ergebnisvertrag": "wert ist die Höchstbelastung der anderen Partei oder verbleibender gleicher Maklerlohn je Partei in EUR als exakter Bruch.",
+  "regelart": "BETRAGSOPERATION"
+}

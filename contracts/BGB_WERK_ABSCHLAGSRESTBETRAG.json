@@ -1,0 +1,31 @@
+{
+  "regel_id": "BGB_WERK_ABSCHLAGSRESTBETRAG",
+  "regelversion": "1",
+  "bezeichnung": "werk_abschlagsrestbetrag",
+  "fundstelle_ids": [
+    "BGB_632a_T0001",
+    "BGB_632a_T0002",
+    "BGB_632a_T0004"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "wert_geschuldeter_erbrachter_leistungen: Nichtnegativer exakter rechtlich qualifizierter EUR-Betrag als Dezimalzeichenfolge oder Bruchobjekt; einheitlicher Zeitraum und keine Doppelzählung. Jahresnutzungswert positiv und mindestens Vorenthaltungsnutzungswert. bereits_gezahlte_abschlaege: Nichtnegativer exakter rechtlich qualifizierter EUR-Betrag als Dezimalzeichenfolge oder Bruchobjekt; einheitlicher Zeitraum und keine Doppelzählung. Jahresnutzungswert positiv und mindestens Vorenthaltungsnutzungswert. qualifizierter_zurueckbehaltungsbetrag: Nichtnegativer exakter rechtlich qualifizierter EUR-Betrag als Dezimalzeichenfolge oder Bruchobjekt; einheitlicher Zeitraum und keine Doppelzählung. Jahresnutzungswert positiv und mindestens Vorenthaltungsnutzungswert. einordnungsnachweis: Nichtleerer Nachweis des gesetzlichen Anwendungsfalls, einheitlichen Abrechnungszeitraums und rechtlich qualifizierter Beträge.",
+  "rechenschritte": "Kumulierten Wert geschuldeter erbrachter Leistungen um bereits gezahlte Abschläge und qualifizierten Zurückbehaltungsbetrag vermindern, Rest mindestens null",
+  "ausnahmen": "Nur §632a kumulierte, nachgewiesene vertragsgeschuldete Leistungen derselben Abrechnung. Nicht bloß Rechnungsnennbetrag. Angemessenen Einbehalt, einschließlich entsprechend §641 Absatz3, extern qualifizieren (vorhandener werk_maengeleinbehalt-Kern). Stoffe/Bauteile nur bei qualifiziert erfüllten Sicherungs-/Eigentumsvoraussetzungen. Keine automatische Rückforderung bei Überzahlung und kein doppelter Abzug schon verrechneter Abschläge oder Mängel. Verbraucherbau-Gesamtgrenze und Herstellungssicherheit nach §650m zusätzlich gesondert anwenden.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/leistungsrestbetraege.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "wert_geschuldeter_erbrachter_leistungen": "Nichtnegativer exakter rechtlich qualifizierter EUR-Betrag als Dezimalzeichenfolge oder Bruchobjekt; einheitlicher Zeitraum und keine Doppelzählung. Jahresnutzungswert positiv und mindestens Vorenthaltungsnutzungswert.",
+    "bereits_gezahlte_abschlaege": "Nichtnegativer exakter rechtlich qualifizierter EUR-Betrag als Dezimalzeichenfolge oder Bruchobjekt; einheitlicher Zeitraum und keine Doppelzählung. Jahresnutzungswert positiv und mindestens Vorenthaltungsnutzungswert.",
+    "qualifizierter_zurueckbehaltungsbetrag": "Nichtnegativer exakter rechtlich qualifizierter EUR-Betrag als Dezimalzeichenfolge oder Bruchobjekt; einheitlicher Zeitraum und keine Doppelzählung. Jahresnutzungswert positiv und mindestens Vorenthaltungsnutzungswert.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des gesetzlichen Anwendungsfalls, einheitlichen Abrechnungszeitraums und rechtlich qualifizierter Beträge."
+  },
+  "ergebnisvertrag": "wert ist der exakt berechnete EUR-Betrag als Bruchobjekt.",
+  "regelart": "BETRAGSOPERATION"
+}

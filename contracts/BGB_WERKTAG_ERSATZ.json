@@ -1,0 +1,40 @@
+{
+  "regel_id": "BGB_WERKTAG_ERSATZ",
+  "regelversion": "1",
+  "bezeichnung": "werktagsverschiebung",
+  "fundstelle_ids": [
+    "BGB_186_T0001",
+    "BGB_193_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; anwendbare Fristbestimmung bereits ausgewählt. Speziellere gesetzliche Vorschriften/abweichende wirksame Bestimmung vorher prüfen.",
+  "eingabevertrag": "datum: ISO-Datum; anwendungsfall: leistung|willenserklaerung; feiertage: Liste von ISO-Daten, auch leere Liste ausdrücklich; ort/kalenderquelle: nichtleere Zeichenfolge; kalender_von/kalender_bis: ISO-Daten, geschlossener bestätigter Geltungsbereich. Suchbereich darf nicht verlassen werden. In R sind nur unbenannte Listen beziehungsweise unbenannte Zeichenvektoren zulässig; benannte Objekte sind keine geordneten Folgen.",
+  "rechenschritte": "Für Leistung/Willenserklärung Samstag, Sonntag und ausdrücklich übergebene örtliche gesetzliche Feiertage überspringen bis nächster zulässiger Tag. Keine Anwendung auf Lebensalter oder beliebige sonstige Fristen.",
+  "ausnahmen": "§ 193 ist ausschließlich separate explizite Operation. Keine automatische Feiertagsverschiebung. Keine historischen Fassungen behaupten.",
+  "wertebereich": "Proleptischer gregorianischer Kalender, Jahr 0001..9999. Ganze Anzahlen maximal 3652059 (technischer Schutz, keine gesetzliche Grenze); Überschreitung des Datumsbereichs als EINGABE_UNGUELTIG. Keine Uhrzeiten, keine Zeitzonen.",
+  "fehlende_werte": "Fehlend/null/NA -> EINGABE_FEHLT; falscher Typ, Float in Python, nichtganzzahlig in R, ungültiges Datum/Enum/Bereich -> EINGABE_UNGUELTIG. Keine skalare Vektorrecycling-API.",
+  "rundung": "Keine; ganzzahlige Tage/Monate/Jahre.",
+  "ausgabe": "Gemeinsame Ergebnisfelder gemäß Scaffold; Datum als exakt vierstelliges ISO-Jahr, ganzzahlige Tage für Zeitraum.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/kalender.json",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "referenzfall_ids": [
+    "KAL_039",
+    "KAL_040",
+    "KAL_041",
+    "KAL_042",
+    "KAL_049",
+    "KAL_050"
+  ],
+  "gesamtabnahme": false,
+  "parameter_dokumentation": {
+    "datum": "Ausgangsdatum der Leistung oder Willenserklärung als ISO-Zeichenfolge.",
+    "anwendungsfall": "Ausschließlich leistung oder willenserklaerung; keine automatische Übertragung auf Lebensalter, Kündigungsfristen oder andere Tatbestände.",
+    "feiertage": "Explizite Liste oder Zeichenfolge der am angegebenen Ort gesetzlich anerkannten allgemeinen Feiertage; character(0) beziehungsweise list() bedeutet ausdrücklich keine Feiertage im bestätigten Bereich. NULL bedeutet fehlend. Keine Netzanfrage. In R sind nur unbenannte Listen beziehungsweise unbenannte Zeichenvektoren zulässig; benannte Objekte sind keine geordneten Folgen.",
+    "ort": "Nichtleere Bezeichnung des Erklärungs- oder Leistungsorts; die Library ermittelt die Zuständigkeit nicht.",
+    "kalenderquelle": "Nichtleere Herkunfts- und Versionsangabe des Nutzerkalenders. Seine Vollständigkeit für den angegebenen Zeitraum wird vorausgesetzt und ausgewiesen.",
+    "kalender_von": "Erster eingeschlossener Tag des bestätigten Feiertagskalenders als ISO-Datum.",
+    "kalender_bis": "Letzter eingeschlossener Tag des bestätigten Feiertagskalenders. Reicht dieser nicht bis zum nächsten zulässigen Tag, wird die Berechnung abgebrochen."
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "regel_id": "BGB_SCHULDRECHT_VERTRAGSDAUERGRENZE",
+  "regelversion": "1",
+  "bezeichnung": "schuldrecht_vertragsdauergrenze",
+  "fundstelle_ids": [
+    "BGB_481_T0001",
+    "BGB_481_T0002",
+    "BGB_481a_T0001",
+    "BGB_481a_T0002",
+    "BGB_585a_T0001",
+    "BGB_594_T0001",
+    "BGB_594_T0002",
+    "BGB_594_T0003",
+    "BGB_594_T0004"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "regelfall: teilzeitwohnrecht_481, urlaubsprodukt_481a, landpacht_textform_585a oder landpacht_fortsetzung_594. vertragsbeginn_am: Qualifizierter Vertragsbeginn ab Tagesbeginn als ISO-Datum. vertragsende_am: Inklusiver letzter Vertragstag als ISO-Datum einschliesslich aller Optionen; nur481/481a alternativ unbegrenzt_verlaengerbar bei rechtlich qualifizierten ohne endliche Gesamtgrenze wiederholbaren Verlaengerungen. Kein Ersatz fuer unbekannte Daten. dauernachweis: Nichtleerer Nachweis des vollständigen betrachteten Zeitraums, einschließlich Verlängerungsoptionen; keine automatische Ermittlung aus Vertragstext.",
+  "rechenschritte": "Qualifizierte feste Vertragsdauer mit Ein-, Zwei- oder Dreijahresgrenze vergleichen.",
+  "ausnahmen": "Nur numerischer Dauervergleich, keine vollstaendige Vertragsqualifikation oder Formentscheidung. Beginn als rechtlich massgeblicher Tagesbeginn und endlichen letzten Vertragstag einschliesslich Tagesablauf vorgeben. Bei481/481a saemtliche rechtlich vorgesehenen Verlaengerungsmoeglichkeiten beruecksichtigen. Ein endlich bestimmbares maximales Enddatum kann auch aus gestaffelten oder alternativen Optionen stammen; kein automatisches Lesen beliebiger Vertragsklauseln. Nur bei481/481a bezeichnet vertragsende_am=unbegrenzt_verlaengerbar eine rechtlich qualifizierte ohne endliche Gesamtgrenze wiederholbare Verlaengerungsmoeglichkeit: die Einjahresgrenze ist dann ueberschreitbar und damit erfuellt, ohne ein fiktives Enddatum zu erfinden. Nicht gleichbedeutend mit unbekanntem Enddatum oder blosser Unklarheit der Vertragsauslegung. Bei585aTextform und bei594Anfrage/Ablehnungsfrist gesondert. Untertaegige Laufzeiten gesondert qualifizieren.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Kalenderdaten0001..9999 einschließlich Grenz- und Folgedaten; keine Rundung.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/vertragsdauergrenzen.json",
+  "gesamtabnahme": false,
+  "einheit": "datum_und_wahrheitswert",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "regelfall": "teilzeitwohnrecht_481, urlaubsprodukt_481a, landpacht_textform_585a oder landpacht_fortsetzung_594.",
+    "vertragsbeginn_am": "Qualifizierter Vertragsbeginn ab Tagesbeginn als ISO-Datum.",
+    "vertragsende_am": "Inklusiver letzter Vertragstag als ISO-Datum einschliesslich aller Optionen; nur481/481a alternativ unbegrenzt_verlaengerbar bei rechtlich qualifizierten ohne endliche Gesamtgrenze wiederholbaren Verlaengerungen. Kein Ersatz fuer unbekannte Daten.",
+    "dauernachweis": "Nichtleerer Nachweis des vollständigen betrachteten Zeitraums, einschließlich Verlängerungsoptionen; keine automatische Ermittlung aus Vertragstext."
+  },
+  "ergebnisvertrag": "wert: grenzdauer_jahre, ende_der_grenzdauer, vergleich (mehr_als oder mindestens) und dauergrenze_erfuellt.",
+  "regelart": "BETRAGSOPERATION"
+}

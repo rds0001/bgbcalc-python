@@ -1,0 +1,33 @@
+{
+  "regel_id": "BGB_MIETSPIEGEL_INDEXFORTSCHREIBUNG",
+  "regelversion": "1",
+  "bezeichnung": "mietspiegel_indexfortschreibung",
+  "fundstelle_ids": [
+    "BGB_558d_T0004",
+    "BGB_558d_T0005",
+    "BGB_558d_T0006",
+    "BGB_558d_T0007",
+    "BGB_558d_T0008"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "ausgangswert: Nichtnegativer qualifizierter Mietspiegelwert in EUR je explizit belegter Bezugseinheit; passend zum Ausgangsindex. ausgangsindex: Positiver amtlicher Ausgangsindex derselben Reihe und Basis wie der neue Index, als exakter Dezimalwert oder Bruch. neuer_index: Positiver neuer amtlicher Indexstand; auch Senkungen zulässig. indexnachweis: Nichtleerer Nachweis qualifizierter Indexfortschreibung558dII, amtlicher Reihe, gleicher Basis, Bezugszeitpunkte und Einheit des Mietspiegelwerts.",
+  "rechenschritte": "Qualifizierten Mietspiegelwert mit dem Verhältnis vergleichbarer Indexstände fortschreiben.",
+  "ausnahmen": "§558dII2: nur qualifizierte Indexanpassung, keine Stichprobenauswertung. Amtliche Indexreihe, identische Basis und rechtlich maßgebliche Bezugszeitpunkte vorgeben; Indexstände nicht selbst beschaffen oder schätzen. Ausgangswert und Ergebnis behalten dieselbe qualifizierte Mietspiegel-Bezugseinheit, beispielsweise EUR je Quadratmeter und Monat. Keine automatische Cent-Rundung, Gültigkeitsfeststellung oder konkrete Mieterhöhung; Anerkennung, Erstellungsmethode und einschlägige Verordnung gesondert. Indexsenkungen werden ebenfalls gerechnet; keine erneute Anwendung bereits berücksichtigter Änderungen.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Exakte nichtnegative Basis und positive Indexstände; sichere Ganzzahlen nach NUMERIK.md. Kalenderdaten0001..9999 einschließlich Folgestichtagen.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/mietspiegelfortschreibung.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR_je_qualifizierter_Bezugseinheit",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "ausgangswert": "Nichtnegativer qualifizierter Mietspiegelwert in EUR je explizit belegter Bezugseinheit; passend zum Ausgangsindex.",
+    "ausgangsindex": "Positiver amtlicher Ausgangsindex derselben Reihe und Basis wie der neue Index, als exakter Dezimalwert oder Bruch.",
+    "neuer_index": "Positiver neuer amtlicher Indexstand; auch Senkungen zulässig.",
+    "indexnachweis": "Nichtleerer Nachweis qualifizierter Indexfortschreibung558dII, amtlicher Reihe, gleicher Basis, Bezugszeitpunkte und Einheit des Mietspiegelwerts."
+  },
+  "ergebnisvertrag": "wert: indexverhaeltnis dimensionslos, fortgeschriebener_wert und wertveraenderung als exakte EUR-Brüche je qualifizierter Bezugseinheit. Veränderung kann negativ sein.",
+  "regelart": "BETRAGSOPERATION"
+}

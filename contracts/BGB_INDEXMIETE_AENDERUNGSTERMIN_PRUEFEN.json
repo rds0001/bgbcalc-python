@@ -1,0 +1,35 @@
+{
+  "regel_id": "BGB_INDEXMIETE_AENDERUNGSTERMIN_PRUEFEN",
+  "regelversion": "1",
+  "bezeichnung": "indexmiete_aenderungstermin_pruefen",
+  "fundstelle_ids": [
+    "BGB_557b_T0002",
+    "BGB_557b_T0005",
+    "BGB_557b_T0006",
+    "BGB_557b_T0007",
+    "BGB_187_T0002",
+    "BGB_188_T0002",
+    "BGB_188_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung und ausdrücklich belegte mietvertragliche beziehungsweise amtliche Eingabegrundlagen.",
+  "eingabevertrag": "zugang_erklaerung: ISO-Datum YYYY-MM-DD des nachgewiesenen Zugangs der Änderungserklärung. Kein Versanddatum und keine automatische Ermittlung des Zugangs. bisherige_indexmiete_ab: ISO-Datum des Tagesbeginns, seit dem die bisherige Indexmiete gilt; bei der ersten Anpassung der maßgebliche Beginn der Ausgangsmiete. Darf nicht nach dem Zugang liegen. Erhöhungen nach §§559 bis560 sind von der unveränderten Jahresdauer ausgenommen und setzen diesen Zeitpunkt nicht automatisch neu. erklaerung_formell_ordnungsgemaess: Expliziter Wahrheitswert zu Textform und erforderlichen Angaben nach §557b Abs.3 Sätze1/2: eingetretene Indexänderung und jeweilige Miete oder Erhöhungsbetrag. Hier keine Behauptung bereits eingehaltener Jahresfrist; diese wird berechnet. Wirksame Indexvereinbarung und Anwendungsbereich vorausgesetzt. FALSE ergibt NICHT_ANWENDBAR.",
+  "rechenschritte": "Beginn nach Zugang ist der erste Tag des übernächsten Kalendermonats. Frühester Beginn nach Jahresfrist ist der Tag nach Ablauf eines nach §§187 Abs.2/188 berechneten Jahres seit dem Tagesbeginn der bisherigen Indexmiete. Beide Termine werden verglichen.",
+  "ausnahmen": "Feste lokale BGB-Fassung. Teilbaustein der Indexmiete; keine automatische Beschaffung amtlicher Indizes oder Vertragsauslegung. Spezial- und Übergangsrecht einschließlich Anwendungsbereich vorab prüfen. Keine automatische Cent-Rundung. Es wird kein abschließend wirksamer Änderungstermin festgestellt. Insbesondere wird bei nicht eingehaltener Jahresfrist weder die Erklärung automatisch verschoben noch deren rechtliches Schicksal entschieden. Ausnahme für Erhöhungen nach §§559 bis560 bei Ermittlung des vorgegebenen Beginns berücksichtigen. Keine Zahlungsfälligkeit nach §556b und keine Feiertagsverschiebung des Mietbeginns.",
+  "rundung": "Keine; Geldwerte als exakte Brüche, Termine nach Kalender.",
+  "wertebereich": "NUMERIK.md; proleptischer gregorianischer Kalender0001..9999 einschließlich notwendiger Zwischenwerte. Fehlend EINGABE_FEHLT, falscher Typ/Bereich EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/indexmiete.json",
+  "gesamtabnahme": false,
+  "einheit": "datum_und_wahrheitswert",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "zugang_erklaerung": "ISO-Datum YYYY-MM-DD des nachgewiesenen Zugangs der Änderungserklärung. Kein Versanddatum und keine automatische Ermittlung des Zugangs.",
+    "bisherige_indexmiete_ab": "ISO-Datum des Tagesbeginns, seit dem die bisherige Indexmiete gilt; bei der ersten Anpassung der maßgebliche Beginn der Ausgangsmiete. Darf nicht nach dem Zugang liegen. Erhöhungen nach §§559 bis560 sind von der unveränderten Jahresdauer ausgenommen und setzen diesen Zeitpunkt nicht automatisch neu.",
+    "erklaerung_formell_ordnungsgemaess": "Expliziter Wahrheitswert zu Textform und erforderlichen Angaben nach §557b Abs.3 Sätze1/2: eingetretene Indexänderung und jeweilige Miete oder Erhöhungsbetrag. Hier keine Behauptung bereits eingehaltener Jahresfrist; diese wird berechnet. Wirksame Indexvereinbarung und Anwendungsbereich vorausgesetzt. FALSE ergibt NICHT_ANWENDBAR."
+  },
+  "ergebnisvertrag": "Ergebnis wert enthält beginn_nach_zugang und fruehester_beginn_nach_jahresfrist als ISO-Daten sowie jahresfrist_eingehalten als Wahrheitswert. BERECHNET bedeutet durchgeführte Teilprüfung, auch wenn der Wahrheitswert FALSE lautet. Bei NICHT_ANWENDBAR ist wert null.",
+  "exakte_bruchobjekte_als_dezimaleingaben": true,
+  "regelart": "VERBAL_RECHENBAR"
+}

@@ -1,0 +1,36 @@
+{
+  "regel_id": "BGB_DIENST_KRANKENFUERSORGE_ZEITRAUM",
+  "regelversion": "1",
+  "bezeichnung": "dienst_krankenfuersorge_zeitraum",
+  "fundstelle_ids": [
+    "BGB_617_T0001",
+    "BGB_617_T0004",
+    "BGB_617_T0005"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "erkrankungsbeginn_am: ISO-Datum0001..9999 des rechtlich maßgeblichen Beginns der konkreten Erkrankung während des Dienstverhältnisses. Keine ungeprüfte Zusammenfassung verschiedener Krankheitsfälle. beginnart: Auswahl tagesbeginn bei mitzuzählendem ersten Krankheitstag ab Tagesbeginn oder ereignis bei rechtlich einschlägigem Ereignisbeginn. Untertägige Tatsachen vorab rechtlich einordnen. dienstverhaeltnis_ende_am: ISO-Datum0001..9999 des rechtlich letzten Diensttags einschließlich, mindestens Erkrankungsbeginn. NULL/None bedeutet im betrachteten Zeitraum fortbestehendes Dienstverhältnis ohne früheren feststehenden Endtag; kein unbekanntes Ende fiktiv ersetzen. dauerndes_hauptdienstverhaeltnis: Wahrheitswert: dauerndes Dienstverhältnis, das Erwerbstätigkeit des Verpflichteten vollständig oder hauptsächlich in Anspruch nimmt. Dauernd/hauptsächlich rechtlich beurteilen, keine erfundene feste Wochenstundengrenze. in_haeusliche_gemeinschaft_aufgenommen: Wahrheitswert der Aufnahme in die häusliche Gemeinschaft des Dienstberechtigten. Bloßer Arbeitsort im Haushalt ist nicht ungeprüft ausreichend. erkrankung_vorsaetzlich_oder_grob_fahrlaessig: Wahrheitswert der vorsätzlichen oder grob fahrlässigen Herbeiführung der konkreten Erkrankung durch Dienstverpflichteten; einfache Fahrlässigkeit nicht gleichsetzen. versicherung_oder_oeffentliche_krankenpflege: Wahrheitswert, dass für gerade erforderliche Verpflegung und ärztliche Behandlung durch Versicherung oder öffentliche Krankenpflege Vorsorge getroffen ist. Nicht jede beliebige Versicherung genügt; dann tritt diese Verpflichtung nicht ein. krankheitskuendigung_626_durch_dienstberechtigten: Wahrheitswert, dass das angegebene Dienstende gerade durch Kündigung des Dienstberechtigten nach§626 wegen der Erkrankung herbeigeführt wurde. Nur dann Dienstende für Fürsorgegrenze außer Betracht lassen. einordnungsnachweis: Nichtleere Begründung von Dienst-/Wohnverhältnissen, Erkrankung/Beginnart, Verschulden, anderweitiger Vorsorge und gegebenenfalls genauer Kündigungsursache.",
+  "rechenschritte": "Qualifizierter Dienst-/Haushaltsfall ohne schweren Eigenverursachungs- oder Vorsorgeausschluss: Sechswochengrenze. Früheres Dienstende begrenzt, außer gerade krankheitsbedingter§626-Kündigung durch Dienstberechtigten.",
+  "ausnahmen": "Nur Höchstdauer erforderlicher Fürsorge; Genesung/Erforderlichkeitswegfall kann früher enden. Keine allgemeine Entgeltfortzahlung. Taggenaues Modell, keine automatische§193-Verlängerung.",
+  "rundung": "Keine; Kalenderdaten taggenau.",
+  "wertebereich": "ISO-Daten und berechnete Grenzen0001..9999, explizite Auswahl/Wahrheitswerte und nichtleerer Nachweis.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/dienstkrankheit.json",
+  "gesamtabnahme": false,
+  "einheit": "fristdaten",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "erkrankungsbeginn_am": "ISO-Datum0001..9999 des rechtlich maßgeblichen Beginns der konkreten Erkrankung während des Dienstverhältnisses. Keine ungeprüfte Zusammenfassung verschiedener Krankheitsfälle.",
+    "beginnart": "Auswahl tagesbeginn bei mitzuzählendem ersten Krankheitstag ab Tagesbeginn oder ereignis bei rechtlich einschlägigem Ereignisbeginn. Untertägige Tatsachen vorab rechtlich einordnen.",
+    "dienstverhaeltnis_ende_am": "ISO-Datum0001..9999 des rechtlich letzten Diensttags einschließlich, mindestens Erkrankungsbeginn. NULL/None bedeutet im betrachteten Zeitraum fortbestehendes Dienstverhältnis ohne früheren feststehenden Endtag; kein unbekanntes Ende fiktiv ersetzen.",
+    "dauerndes_hauptdienstverhaeltnis": "Wahrheitswert: dauerndes Dienstverhältnis, das Erwerbstätigkeit des Verpflichteten vollständig oder hauptsächlich in Anspruch nimmt. Dauernd/hauptsächlich rechtlich beurteilen, keine erfundene feste Wochenstundengrenze.",
+    "in_haeusliche_gemeinschaft_aufgenommen": "Wahrheitswert der Aufnahme in die häusliche Gemeinschaft des Dienstberechtigten. Bloßer Arbeitsort im Haushalt ist nicht ungeprüft ausreichend.",
+    "erkrankung_vorsaetzlich_oder_grob_fahrlaessig": "Wahrheitswert der vorsätzlichen oder grob fahrlässigen Herbeiführung der konkreten Erkrankung durch Dienstverpflichteten; einfache Fahrlässigkeit nicht gleichsetzen.",
+    "versicherung_oder_oeffentliche_krankenpflege": "Wahrheitswert, dass für gerade erforderliche Verpflegung und ärztliche Behandlung durch Versicherung oder öffentliche Krankenpflege Vorsorge getroffen ist. Nicht jede beliebige Versicherung genügt; dann tritt diese Verpflichtung nicht ein.",
+    "krankheitskuendigung_626_durch_dienstberechtigten": "Wahrheitswert, dass das angegebene Dienstende gerade durch Kündigung des Dienstberechtigten nach§626 wegen der Erkrankung herbeigeführt wurde. Nur dann Dienstende für Fürsorgegrenze außer Betracht lassen.",
+    "einordnungsnachweis": "Nichtleere Begründung von Dienst-/Wohnverhältnissen, Erkrankung/Beginnart, Verschulden, anderweitiger Vorsorge und gegebenenfalls genauer Kündigungsursache."
+  },
+  "ergebnisvertrag": "wert enthält sechswochengrenze und fuersorge_spaetestens_bis als ISO-Daten. Ohne gesetzlichen Tatbestand NICHT_ANWENDBAR/null.",
+  "regelart": "FRISTBERECHNUNG"
+}

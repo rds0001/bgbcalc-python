@@ -1,0 +1,31 @@
+{
+  "regel_id": "BGB_VERJAEHRUNG_HOEHERE_GEWALT_FESTES_ABLAUFFENSTER",
+  "regelversion": "1",
+  "bezeichnung": "verjaehrung_hoehere_gewalt_festes_ablauffenster",
+  "fundstelle_ids": [
+    "BGB_206_T0001",
+    "BGB_209_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "fristlauf_erster_tag: Erster rechtlich maßgeblicher ganzer Fristlauftag. fristende_ohne_diese_hemmung: Endtag der ohne diese206-Hemmung maßgeblichen Frist; sonstige rechtlich relevante Korrekturen bereits überschneidungsfrei berücksichtigt. verhinderungszeitraeume: Liste0..10000 abgeschlossener Intervalle mit erster_verhinderter_tag und letzter_verhinderter_tag. Tatsächliche rechtlich qualifizierte Verhinderungstage, nicht schon zugeschnittene Hemmungssummen. fenstermodell: Ausschließlich fester_ablauf_ohne_206: ausdrücklich rechtlich qualifiziertes festes Sechsmonatsfenster vor dem ohne diese206-Hemmung maßgeblichen Ablauf. Kein stiller Standard oder dynamisches Modell. monatsendregel: nur_taggleiche_monate oder letzter_monatstag gemäß rueckwaertsfrist_kalendergrenze; Monatsend-Ersatzregel ausdrücklich rechtlich begründen. methodennachweis: Nichtleere rechtliche Begründung dieses festen Fenstermodells, der Monatsendregel und vollständig abgeschlossener Verhinderungen. Erstinstanzlicher Beleg allein begründet keine universelle Rechtsregel.",
+  "rechenschritte": "Festes rechtlich ausgewähltes Sechsmonatsfenster aus Ausgangsablauf berechnen, auf tatsächlichen Fristlauf begrenzen und bestehende206/209-Schnittmengenrechnung anwenden.",
+  "ausnahmen": "Bedingte vollständige206-Fensterarithmetik für das ausdrücklich gewählte feste Ablaufmodell. Sechs Kalendermonate vom Tagesende der Ausgangsfrist rückwärts, Fensterbeginn ist Grenztagesbeginn, frühestens erster Fristlauftag. Verhinderungsintervalle schneiden, Überschneidungen vereinigen und209-Tage fortschreiben. Kein vom Nutzer vorberechneter Fensterbeginn erforderlich. LGRegensburg18.6.2026,45O1916/24,Rn35–37 stützt im dortigen Fall Begrenzung auf festen Zeitraum bis zum Ablauf ohne206; keine Behauptung höchstrichterlicher oder universeller Freigabe. Keine automatische dynamische Fensterverschiebung; deren ursprüngliche Inventarbezeichnung war eine offene Hypothese, kein belegter gesetzlicher Algorithmus. Hindernisse außerhalb des festen Fensters werden in diesem Modell nicht erfasst. Ein fortdauerndes Hindernis ohne rechtlich feststehendes Ende erlaubt keinen endgültigen Ablauf. Weitere Hemmungen nicht doppelt zählen;210/211,Neubeginn und gegebenenfalls193 anschließend gesondert qualifizieren.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/verjaehrung_hoehere_gewalt_festes_ablauffenster.json",
+  "gesamtabnahme": false,
+  "einheit": "daten_und_tage",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "fristlauf_erster_tag": "Erster rechtlich maßgeblicher ganzer Fristlauftag.",
+    "fristende_ohne_diese_hemmung": "Endtag der ohne diese206-Hemmung maßgeblichen Frist; sonstige rechtlich relevante Korrekturen bereits überschneidungsfrei berücksichtigt.",
+    "verhinderungszeitraeume": "Liste0..10000 abgeschlossener Intervalle mit erster_verhinderter_tag und letzter_verhinderter_tag. Tatsächliche rechtlich qualifizierte Verhinderungstage, nicht schon zugeschnittene Hemmungssummen.",
+    "fenstermodell": "Ausschließlich fester_ablauf_ohne_206: ausdrücklich rechtlich qualifiziertes festes Sechsmonatsfenster vor dem ohne diese206-Hemmung maßgeblichen Ablauf. Kein stiller Standard oder dynamisches Modell.",
+    "monatsendregel": "nur_taggleiche_monate oder letzter_monatstag gemäß rueckwaertsfrist_kalendergrenze; Monatsend-Ersatzregel ausdrücklich rechtlich begründen.",
+    "methodennachweis": "Nichtleere rechtliche Begründung dieses festen Fenstermodells, der Monatsendregel und vollständig abgeschlossener Verhinderungen. Erstinstanzlicher Beleg allein begründet keine universelle Rechtsregel."
+  },
+  "ergebnisvertrag": "Berechneter erster/letzter Fenstertag, fortgeschriebener letzter Fristtag und berücksichtigte Hemmungstage; nur für ausdrücklich qualifiziertes festes Modell."
+}

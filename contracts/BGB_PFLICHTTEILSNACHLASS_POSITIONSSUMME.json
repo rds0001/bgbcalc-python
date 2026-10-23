@@ -1,0 +1,33 @@
+{
+  "regel_id": "BGB_PFLICHTTEILSNACHLASS_POSITIONSSUMME",
+  "regelversion": "1",
+  "bezeichnung": "pflichtteilsnachlass_positionssumme",
+  "fundstelle_ids": [
+    "BGB_2311_T0001",
+    "BGB_2311_T0002",
+    "BGB_2313_T0001",
+    "BGB_2313_T0002",
+    "BGB_2313_T0004"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "nachlasspositionen: Liste0..1000 eindeutiger Positionen mit genau position_id (nichtleer), betrag (nichtnegativer exakter EUR-Wert), vermoegensseite (aktiv/passiv), ansatzart (unbedingt/aufloesend_offen/aufschiebend_offen/ungewiss_oder_unsicher). Vollständig, überschneidungsfrei und rechtlich qualifiziert. Nur erste zwei Ansatzarten zählen. ehegattenvoraus_wert: Nichtnegativer exakter Vorauswert, bereits in Aktiva enthalten und dort noch nicht abgezogen. berechtigter_abkoemmling_oder_elternteil: Pflichtwahrheitswert: nur bei TRUE Voraus nach2311I2 abziehen. bewertungsnachweis: Nichtleerer Nachweis rechtlicher Qualifizierung, Ansatzarten und gleicher maßgeblicher Bewertungsgrundlage. Geeigneter Ertragswert2312 darf qualifizierter Bewertungsinput sein.",
+  "rechenschritte": "Berücksichtigte Aktiv-/Passivpositionen getrennt addieren; Passiva und ggf.Voraus abziehen; negative Nettobasis erhalten.",
+  "ausnahmen": "Keine automatische Bewertung oder rechtliche Bedingungsprüfung; nach Bedingungseintritt Positionen neu qualifizieren. Keine Pflichtteilsquote, Kapitalisierung oder Zahlungsanspruch.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/pflichtteilsbemessung.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "nachlasspositionen": "Liste0..1000 eindeutiger Positionen mit genau position_id (nichtleer), betrag (nichtnegativer exakter EUR-Wert), vermoegensseite (aktiv/passiv), ansatzart (unbedingt/aufloesend_offen/aufschiebend_offen/ungewiss_oder_unsicher). Vollständig, überschneidungsfrei und rechtlich qualifiziert. Nur erste zwei Ansatzarten zählen.",
+    "ehegattenvoraus_wert": "Nichtnegativer exakter Vorauswert, bereits in Aktiva enthalten und dort noch nicht abgezogen.",
+    "berechtigter_abkoemmling_oder_elternteil": "Pflichtwahrheitswert: nur bei TRUE Voraus nach2311I2 abziehen.",
+    "bewertungsnachweis": "Nichtleerer Nachweis rechtlicher Qualifizierung, Ansatzarten und gleicher maßgeblicher Bewertungsgrundlage. Geeigneter Ertragswert2312 darf qualifizierter Bewertungsinput sein."
+  },
+  "ergebnisvertrag": "wert enthält beruecksichtigte_aktiva, beruecksichtigte_passiva, abgezogener_ehegattenvoraus und vorzeichenbehafteten pflichtteilsnachlass als exakte EUR-Brüche.",
+  "regelart": "BETRAGSOPERATION"
+}

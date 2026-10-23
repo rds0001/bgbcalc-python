@@ -1,0 +1,29 @@
+{
+  "regel_id": "BGB_ABTRENNUNG_ABWENDUNGSFEHLBETRAG",
+  "regelversion": "1",
+  "bezeichnung": "abtrennung_abwendungsfehlbetrag",
+  "fundstelle_ids": [
+    "BGB_997_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "bestandteilswert_nach_abtrennung: Nichtnegativer rechtlich bewerteter Betrag in EUR, qualifizierte Bedeutung gemäß Abgrenzung. bereits_ersetzter_bestandteilswert: Nichtnegativer rechtlich bewerteter Vergleichs-/Abzugs-/Zusatzbetrag in EUR für denselben Gegenstand und konsistente Bewertungsbasis. anwendungsfall_qualifiziert: Explizite Bestätigung des im Fachvertrag abgegrenzten Normfalls. FALSE ergibt NICHT_ANWENDBAR. bewertungsnachweis: Nichtleere Herkunft und rechtliche Begründung beider Beträge, Bewertungszeitpunkte und Anwendbarkeit.",
+  "rechenschritte": "Wert des Bestandteils nach Abtrennung um bereits ersetzten Wert mindern, mindestens null.",
+  "ausnahmen": "Nur numerischer Fehlbetrag der Wertabwendung nach997Absatz2. Wert ist der rechtlich bewertete Nutzen des abgetrennten Bestandteils gerade für den Besitzer; tatsächlicher Ersatz, kein bloß angebotenes Geld. Weitere Ausschlüsse wegen gewöhnlicher Erhaltung oder fehlendem Nutzen sowie258 bleiben separat; Ergebnis allein entscheidet kein Abtrennungsrecht.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/sachenrecht_restbetraege.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "bestandteilswert_nach_abtrennung": "Nichtnegativer rechtlich bewerteter Betrag in EUR, qualifizierte Bedeutung gemäß Abgrenzung.",
+    "bereits_ersetzter_bestandteilswert": "Nichtnegativer rechtlich bewerteter Vergleichs-/Abzugs-/Zusatzbetrag in EUR für denselben Gegenstand und konsistente Bewertungsbasis.",
+    "anwendungsfall_qualifiziert": "Explizite Bestätigung des im Fachvertrag abgegrenzten Normfalls. FALSE ergibt NICHT_ANWENDBAR.",
+    "bewertungsnachweis": "Nichtleere Herkunft und rechtliche Begründung beider Beträge, Bewertungszeitpunkte und Anwendbarkeit."
+  },
+  "ergebnisvertrag": "wert ist exakter EUR-Bruch, keine automatische Rundung.",
+  "regelart": "BETRAGSOPERATION"
+}

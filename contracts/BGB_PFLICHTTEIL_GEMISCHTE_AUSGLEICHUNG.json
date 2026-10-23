@@ -1,0 +1,35 @@
+{
+  "regel_id": "BGB_PFLICHTTEIL_GEMISCHTE_AUSGLEICHUNG",
+  "regelversion": "1",
+  "bezeichnung": "pflichtteil_gemischte_ausgleichung",
+  "fundstelle_ids": [
+    "BGB_2316_T0001",
+    "BGB_2316_T0003",
+    "BGB_2316_T0005",
+    "BGB_2303_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "gruppennachlass: Nichtnegativer exakter EUR-Nachlassanteil derselben vollständigen Ausgleichungsgruppe. miterben: Liste2..1000 mit genau person_id (eindeutig),relative_erbquote (positive exakte Zahl≤1, Summe1),ausgleichungswert_zuwendungen (nichtnegative rechtlich bewertete2055-Werte),leistungs_ausgleichsbetrag (nichtnegative billig bemessene, um2057aII-Ausschlüsse bereinigte Werte). Leistungssumme höchstens Gruppennachlass. berechtigter_id: Nichtleere ID eines Mitglieds der hypothetischen gesetzlichen Gruppe nach2316. zugleich_anrechenbarer_zuwendungswert: Nichtnegativer bereits im eigenen Ausgleichungswert enthaltener zugleich2315-anrechenbarer Wert, gleiche Wertbasis, höchstens eigener Zuwendungswert. hinterlassener_erbteilwert: Nichtnegativer rechtlich maßgeblicher EUR-Erbteilwert; bei Enterbung null. fall_nach_2316_qualifiziert: Pflichtwahrheitswert des Pflichtteilsfalls mit hypothetischer gesetzlicher Gruppe nach2316I/III. Keine zusätzlichen reinen2315-Zuwendungen/2325-Ergänzung. bewertungsnachweis: Nichtleerer Nachweis der hypothetischen Gruppe und Anrechnungswerte.",
+  "rechenschritte": "Gemischte gesetzliche Zuteilung aus2055/2057a halbieren; halben zugleich2315-anrechenbaren Wert abziehen; mindestens null; Mehrbetrag zu hinterlassenem Erbteil.",
+  "ausnahmen": "Grenzen gemischter Teilung gelten: negativer individueller Teilungsbetrag NICHT_ANWENDBAR. Keine zusätzliche reine2315-Zuwendung,2325-Ergänzung oder Vermächtnisanrechnung.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/gemischter_erbausgleich.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "gruppennachlass": "Nichtnegativer exakter EUR-Nachlassanteil derselben vollständigen Ausgleichungsgruppe.",
+    "miterben": "Liste2..1000 mit genau person_id (eindeutig),relative_erbquote (positive exakte Zahl≤1, Summe1),ausgleichungswert_zuwendungen (nichtnegative rechtlich bewertete2055-Werte),leistungs_ausgleichsbetrag (nichtnegative billig bemessene, um2057aII-Ausschlüsse bereinigte Werte). Leistungssumme höchstens Gruppennachlass.",
+    "berechtigter_id": "Nichtleere ID eines Mitglieds der hypothetischen gesetzlichen Gruppe nach2316.",
+    "zugleich_anrechenbarer_zuwendungswert": "Nichtnegativer bereits im eigenen Ausgleichungswert enthaltener zugleich2315-anrechenbarer Wert, gleiche Wertbasis, höchstens eigener Zuwendungswert.",
+    "hinterlassener_erbteilwert": "Nichtnegativer rechtlich maßgeblicher EUR-Erbteilwert; bei Enterbung null.",
+    "fall_nach_2316_qualifiziert": "Pflichtwahrheitswert des Pflichtteilsfalls mit hypothetischer gesetzlicher Gruppe nach2316I/III. Keine zusätzlichen reinen2315-Zuwendungen/2325-Ergänzung.",
+    "bewertungsnachweis": "Nichtleerer Nachweis der hypothetischen Gruppe und Anrechnungswerte."
+  },
+  "ergebnisvertrag": "wert enthält hypothetischer_gesetzlicher_erbteil,pflichtteil_vor_doppelanrechnung,halber_anrechnungswert,pflichtteilswert,mehrbetrag_gegenueber_hinterlassenem_erbteil als exakte EUR-Brüche.",
+  "regelart": "BETRAGSOPERATION"
+}

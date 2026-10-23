@@ -1,0 +1,31 @@
+{
+  "regel_id": "BGB_SCHATZFUND_EIGENTUMSQUOTEN",
+  "regelversion": "1",
+  "bezeichnung": "schatzfund_eigentumsquoten",
+  "fundstelle_ids": [
+    "BGB_984_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "entdecker_id: Nichtleere Zeichenfolge des einen rechtlich bestimmten Entdeckers. Mehrere Entdecker oder dienst-/auftragsbezogene Zuordnungsfragen gesondert lösen; keine beliebige erste meldende Person einsetzen. eigentuemer_verbergende_sache_id: Nichtleere Zeichenfolge des einen Alleineigentümers der Sache, in der Schatz verborgen war. Nicht bloßer Besitzer oder Grundstücksnachbar. Bei Identität mit Entdecker werden beide Hälften zu1 vereinigt; Miteigentum der verbergenden Sache außerhalb dieses Modells. qualifizierter_schatz: Wahrheitswert, dass Sache so lange verborgen lag, dass ihr Eigentümer nicht mehr zu ermitteln ist. Unbekannter Eigentümer eines gewöhnlichen Funds allein genügt nicht. entdeckt_und_infolge_entdeckung_besitzgenommen: Wahrheitswert, dass Entdeckung und infolgedessen Besitzergreifung eingetreten sind. Bloße Vermutung eines Schatzes oder Meldung ohne Besitzergreifung nicht gleichsetzen. abweichendes_landesrecht: Wahrheitswert, dass am konkreten Fundort abweichende landesrechtliche Erwerbsregel, insbesondere Schatzregal, einschlägig ist. Dann NICHT_ANWENDBAR; FALSE nur nach rechtlicher Orts-/Sachprüfung, keine automatische Annahme für archäologische Funde. einordnungsnachweis: Nichtleere Begründung von Schatzcharakter, Entdeckung/Besitzergreifung, Personen-/Eigentümerzuordnung und Prüfung abweichenden Rechts am Fundort.",
+  "rechenschritte": "Im anwendbaren BGB-Schatzfundfall je Hälfte Entdecker und Eigentümer verbergender Sache; identische Person erhält beide Hälften zusammen.",
+  "ausnahmen": "Nur ein Entdecker/ein Alleineigentümer. Landesrechtliche Schatzregale oder besondere Zuordnung können ausschließen; keine automatische Prüfung externer Rechtsquellen. Quoten begründen keinen Finderlohn oder Geldanspruch.",
+  "rundung": "Keine; Eigentumsquoten exakt als Brüche.",
+  "wertebereich": "Nichtleere Personenkennungen, explizite Wahrheitswerte und Nachweis; bei Schwärmen2..1000 Eigentümer, positive ganze Schwarmzahlen und Gesamtsumme höchstens2^53-1.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/sachenfundanteile.json",
+  "gesamtabnahme": false,
+  "einheit": "eigentumsquoten",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "entdecker_id": "Nichtleere Zeichenfolge des einen rechtlich bestimmten Entdeckers. Mehrere Entdecker oder dienst-/auftragsbezogene Zuordnungsfragen gesondert lösen; keine beliebige erste meldende Person einsetzen.",
+    "eigentuemer_verbergende_sache_id": "Nichtleere Zeichenfolge des einen Alleineigentümers der Sache, in der Schatz verborgen war. Nicht bloßer Besitzer oder Grundstücksnachbar. Bei Identität mit Entdecker werden beide Hälften zu1 vereinigt; Miteigentum der verbergenden Sache außerhalb dieses Modells.",
+    "qualifizierter_schatz": "Wahrheitswert, dass Sache so lange verborgen lag, dass ihr Eigentümer nicht mehr zu ermitteln ist. Unbekannter Eigentümer eines gewöhnlichen Funds allein genügt nicht.",
+    "entdeckt_und_infolge_entdeckung_besitzgenommen": "Wahrheitswert, dass Entdeckung und infolgedessen Besitzergreifung eingetreten sind. Bloße Vermutung eines Schatzes oder Meldung ohne Besitzergreifung nicht gleichsetzen.",
+    "abweichendes_landesrecht": "Wahrheitswert, dass am konkreten Fundort abweichende landesrechtliche Erwerbsregel, insbesondere Schatzregal, einschlägig ist. Dann NICHT_ANWENDBAR; FALSE nur nach rechtlicher Orts-/Sachprüfung, keine automatische Annahme für archäologische Funde.",
+    "einordnungsnachweis": "Nichtleere Begründung von Schatzcharakter, Entdeckung/Besitzergreifung, Personen-/Eigentümerzuordnung und Prüfung abweichenden Rechts am Fundort."
+  },
+  "ergebnisvertrag": "wert ist Liste mit eigentuemer_id/eigentumsquote; unterschiedliche Personen je1/2, identische Person einmal1. Ohne Tatbestand oder bei abweichendem Landesrecht NICHT_ANWENDBAR/null.",
+  "regelart": "QUOTENBERECHNUNG"
+}

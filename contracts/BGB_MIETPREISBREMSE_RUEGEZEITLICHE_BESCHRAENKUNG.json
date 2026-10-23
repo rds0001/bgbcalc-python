@@ -1,0 +1,31 @@
+{
+  "regel_id": "BGB_MIETPREISBREMSE_RUEGEZEITLICHE_BESCHRAENKUNG",
+  "regelversion": "1",
+  "bezeichnung": "mietpreisbremse_ruegezeitliche_beschraenkung",
+  "fundstelle_ids": [
+    "BGB_556g_T0013",
+    "BGB_556g_T0014",
+    "BGB_556g_T0015"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "mietbeginn_am: ISO-Datum des rechtlich maßgeblichen Mietbeginns zu Tagesbeginn; nicht bloßer Vertragsabschluss. ruegezugang_lokal_am: ISO-Kalendertag des wirksamen Zugangs am rechtlich maßgeblichen Ort. Für30Monatsvergleich, nicht ungeprüft UTC-Datum verwenden. ruegezugang_utc: Derselbe wirksame Zugang als hinreichend genauer UTC-Sekundenzeitpunkt. mietende_utc: Rechtlich wirksamer Beendigungszeitpunkt als UTC-Sekundenzeitpunkt, ab dem das Mietverhältnis beendet ist; None/NULL wenn kein Ende feststeht. zeitnachweis: Geltung556gII3, Tagesbeginn des Mietverhältnisses, Lokal-/UTC-Zuordnung und wirksame Beendigung/Wirksamkeit der Rüge vorqualifizieren.",
+  "rechenschritte": "30Monatsende aus Tagesbeginn berechnen, lokalen Rügetag und unabhängig davon UTC-Beendigungszeitpunkt vergleichen; Beschränkungsgründe mit ODER verbinden.",
+  "ausnahmen": "556gII3:30Kalendermonate ab Mietbeginn zu Tagesbeginn nach187II/188. Zugang nach dem so berechneten letzten Tag ist verspätet. Unabhängig davon Beschränkung, wenn Mietverhältnis beim UTC-Zugang bereits beendet ist; Zugang gleich exklusivem Beendigungszeitpunkt zählt als beendet. Bei üblichem Vertragsende31.12.um24Uhr ist dieser Zeitpunkt1.1.um00Uhr in zutreffender Zeitzone, anschließend inUTC normalisieren. Keine pauschalen900Tage, keine Zeitzone raten und keine193-Verlängerung dieses Rückwirkungsmerkmals. Kein materielles Urteil über Rügeform/Auskunft, Rückzahlungsbetrag oder Verjährung. Lokalzugangstag undUTC-Zeit müssen dasselbe rechtlich qualifizierte Ereignis bezeichnen. Für untertägigen Mietbeginn ist diese Tagesbeginnvariante nicht freigegeben.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/mietpreisbremse_ruegezeitliche_beschraenkung.json",
+  "gesamtabnahme": false,
+  "einheit": "datum_und_wahrheitswerte",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "mietbeginn_am": "ISO-Datum des rechtlich maßgeblichen Mietbeginns zu Tagesbeginn; nicht bloßer Vertragsabschluss.",
+    "ruegezugang_lokal_am": "ISO-Kalendertag des wirksamen Zugangs am rechtlich maßgeblichen Ort. Für30Monatsvergleich, nicht ungeprüft UTC-Datum verwenden.",
+    "ruegezugang_utc": "Derselbe wirksame Zugang als hinreichend genauer UTC-Sekundenzeitpunkt.",
+    "mietende_utc": "Rechtlich wirksamer Beendigungszeitpunkt als UTC-Sekundenzeitpunkt, ab dem das Mietverhältnis beendet ist; None/NULL wenn kein Ende feststeht.",
+    "zeitnachweis": "Geltung556gII3, Tagesbeginn des Mietverhältnisses, Lokal-/UTC-Zuordnung und wirksame Beendigung/Wirksamkeit der Rüge vorqualifizieren."
+  },
+  "ergebnisvertrag": "30Monats-Endtag und getrennte Wahrheitswerte für Fristüberschreitung, Beendigung und kombinierte Rückforderungsbeschränkung."
+}

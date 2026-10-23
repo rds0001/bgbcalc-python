@@ -1,0 +1,30 @@
+{
+  "regel_id": "BGB_ZAHLUNGSINSTRUMENT_ERSATZENTGELT_GRENZE",
+  "regelversion": "1",
+  "bezeichnung": "zahlungsinstrument_ersatzentgelt_grenze",
+  "fundstelle_ids": [
+    "BGB_675l_T0001",
+    "BGB_675l_T0002",
+    "BGB_675l_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "vereinbartes_ersatzentgelt: Vereinbartes nichtnegatives Ersatzentgelt in EUR, ohne Aussage über die Wirksamkeit eines überschießenden Vertragsbestandteils. unmittelbare_ersatzkosten: Ausschließlich und unmittelbar mit dem qualifizierten Ersatz verbundene Kosten in EUR; keine allgemeinen Betriebskosten oder Gewinnmarge. einordnungsnachweis: Nachweis des Ersatzfalls675lI, der Entgeltvereinbarung und der unmittelbar zugeordneten Kosten.",
+  "rechenschritte": "Numerisch auf die ausschließlich unmittelbaren Ersatzkosten begrenztes Entgelt: Minimum aus vereinbartem Entgelt und Kosten.",
+  "ausnahmen": "§675lI: ausschließlich numerische Entgeltobergrenze für Ersatz nach Verlust, Diebstahl, Missbrauch oder sonst nicht autorisierter Nutzung. Das Minimum heilt keine unwirksame Entgeltvereinbarung und entscheidet keinen Zahlungsanspruch; Wirksamkeit und Rechtsfolgen einer überschießenden Klausel gesondert. Kosten müssen dem konkreten Ersatz unmittelbar und ausschließlich zurechenbar sein; kein allgemeines Entgelt für Sperrung oder Anzeige.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Nichtnegative Eingangswerte, exakter nichtnegativer EUR-Bruch im sicheren gemeinsamen Zahlenbereich.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/schuldrechtliche_betragsreste.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "vereinbartes_ersatzentgelt": "Vereinbartes nichtnegatives Ersatzentgelt in EUR, ohne Aussage über die Wirksamkeit eines überschießenden Vertragsbestandteils.",
+    "unmittelbare_ersatzkosten": "Ausschließlich und unmittelbar mit dem qualifizierten Ersatz verbundene Kosten in EUR; keine allgemeinen Betriebskosten oder Gewinnmarge.",
+    "einordnungsnachweis": "Nachweis des Ersatzfalls675lI, der Entgeltvereinbarung und der unmittelbar zugeordneten Kosten."
+  },
+  "ergebnisvertrag": "wert ist der exakte EUR-Bruch.",
+  "regelart": "BETRAGSOPERATION"
+}

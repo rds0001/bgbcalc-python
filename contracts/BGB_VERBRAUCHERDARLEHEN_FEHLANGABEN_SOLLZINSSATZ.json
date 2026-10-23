@@ -1,0 +1,37 @@
+{
+  "regel_id": "BGB_VERBRAUCHERDARLEHEN_FEHLANGABEN_SOLLZINSSATZ",
+  "regelversion": "1",
+  "bezeichnung": "verbraucherdarlehen_fehlangaben_sollzinssatz",
+  "fundstelle_ids": [
+    "BGB_246_T0001",
+    "BGB_494_T0001",
+    "BGB_494_T0002",
+    "BGB_494_T0003",
+    "BGB_494_T0004",
+    "BGB_494_T0005",
+    "BGB_494_T0006",
+    "BGB_494_T0007",
+    "BGB_494_T0008",
+    "BGB_494_T0009",
+    "BGB_494_T0010",
+    "BGB_494_T0011"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "vertraglicher_sollzinssatz: Vorzeichenbehaftete Jahresquote;0.05=5Prozent. Tatsächlich zugrunde gelegten Zinssatz rechtlich bestimmen. fehlangabennachweis: Geheilter Verbraucherdarlehensvertrag und fehlende Sollzins-, Effektivzins- oder Gesamtbetragsangabe494II qualifiziert; keine bloße Unterangabe nachIII.",
+  "rechenschritte": "Vertraglichen Jahreszinssatz auf höchstens den gesetzlichen Satz von vier Prozent vermindern.",
+  "ausnahmen": "494II in Verbindung mit246: Jahresquote auf höchstens0.04 vermindern. Bereits niedrigerer oder negativer vertraglicher Satz wird nicht erhöht. Ergebnis ist nur die Zinsbasis; keine automatische Zahlungspflicht bei negativem Satz. Tatsächliche Zinsbeträge/Teilzahlungen anhand der rechtlich fortbestehenden Vertragsstruktur berechnen. Nicht mit der Differenzkorrektur bei zu niedrig angegebenem Effektivzins494III verwechseln.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/verbraucherdarlehen_fehlangaben_sollzinssatz.json",
+  "gesamtabnahme": false,
+  "einheit": "Jahresquote",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "vertraglicher_sollzinssatz": "Vorzeichenbehaftete Jahresquote;0.05=5Prozent. Tatsächlich zugrunde gelegten Zinssatz rechtlich bestimmen.",
+    "fehlangabennachweis": "Geheilter Verbraucherdarlehensvertrag und fehlende Sollzins-, Effektivzins- oder Gesamtbetragsangabe494II qualifiziert; keine bloße Unterangabe nachIII."
+  },
+  "ergebnisvertrag": "Exakte vorzeichenbehaftete Jahresquote ohne Erhöhung niedrigerer Vertragssätze."
+}

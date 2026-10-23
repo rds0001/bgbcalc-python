@@ -1,0 +1,29 @@
+{
+  "regel_id": "BGB_ZAHLUNG_EMPFAENGERENTGELT_RESTBETRAG",
+  "regelversion": "1",
+  "bezeichnung": "zahlung_empfaengerentgelt_restbetrag",
+  "fundstelle_ids": [
+    "BGB_675q_T0002",
+    "BGB_675q_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "vollstaendiger_zahlungsbetrag: Vollständiger übermittelter Zahlungsbetrag in EUR; vor einem zulässigen Empfängerentgeltabzug. vereinbartes_empfaengerentgelt: Rechtlich zustehendes vereinbartes Empfängerentgelt in EUR, höchstens der übermittelte Betrag. einordnungsnachweis: Nichtleerer Nachweis der wirksamen Abzugsvereinbarung nach675qII und des Anwendungsbereichs ohne abweichenden675qIV-Fall.",
+  "rechenschritte": "Vollständigen Zahlungsbetrag um das zulässige vereinbarte Empfängerentgelt vermindern.",
+  "ausnahmen": "§675qII-Grundfall, vor Erteilung der Gutschrift vereinbarter Abzug eines zustehenden Entgelts. Vollständiger Zahlungsbetrag und Entgelt bleiben in eingaben und nutzervorgaben getrennt dokumentiert; gesetzliche Zahlungsinformationen müssen sie separat ausweisen. Keine Kürzung durch zwischengeschaltete Stellen nachAbsatz1, keine Entgeltberechnung und keine Abweichung nachAbsatz4. Entgelt über Zahlungsbetrag und gesonderte Kontobelastungen außerhalb dieses Modells.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Nichtnegative Eingangswerte, exakter nichtnegativer EUR-Bruch im sicheren gemeinsamen Zahlenbereich.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/schuldrechtliche_betragsreste.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "vollstaendiger_zahlungsbetrag": "Vollständiger übermittelter Zahlungsbetrag in EUR; vor einem zulässigen Empfängerentgeltabzug.",
+    "vereinbartes_empfaengerentgelt": "Rechtlich zustehendes vereinbartes Empfängerentgelt in EUR, höchstens der übermittelte Betrag.",
+    "einordnungsnachweis": "Nichtleerer Nachweis der wirksamen Abzugsvereinbarung nach675qII und des Anwendungsbereichs ohne abweichenden675qIV-Fall."
+  },
+  "ergebnisvertrag": "wert ist der exakte EUR-Bruch.",
+  "regelart": "BETRAGSOPERATION"
+}

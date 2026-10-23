@@ -1,0 +1,32 @@
+{
+  "regel_id": "BGB_GEMEINSCHAFT_AUFHEBUNGSANTEIL",
+  "regelversion": "1",
+  "bezeichnung": "gemeinschaft_aufhebungsanteil",
+  "fundstelle_ids": [
+    "BGB_753_T0001",
+    "BGB_755_T0001",
+    "BGB_756_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "gemeinschaftlicher_erloes: Nichtnegativer exakter EUR-Betrag als Dezimalzeichenfolge/Bruchobjekt; rechtlich qualifiziert und gleiche Abrechnung ohne Doppelzählung. zu_berichtigende_gemeinsame_schulden: Nichtnegativer exakter EUR-Betrag als Dezimalzeichenfolge/Bruchobjekt; rechtlich qualifiziert und gleiche Abrechnung ohne Doppelzählung. teilhaberquote: Rechtlich bestimmter Einzelanteil zwischen0und1 als exakter Dezimalwert/Bruchobjekt. gemeinschaftsbezogene_teilhaberschuld: Nichtnegativer exakter EUR-Betrag als Dezimalzeichenfolge/Bruchobjekt; rechtlich qualifiziert und gleiche Abrechnung ohne Doppelzählung. einordnungsnachweis: Nichtleerer Nachweis der Gemeinschaftsaufhebung, gesetzlichen Schuldqualifikation und verlangten Berichtigung nach §755/756; konkurrierende Forderungen vorher klären.",
+  "rechenschritte": "Erlös minus gemeinsame Schulden, mindestens null, mal Einzelquote; davon qualifizierte Teilhaberschuld bis zum Anteilsbetrag berichtigen.",
+  "ausnahmen": "Nur §§753/755/756 bei rechtlich qualifizierter Erlösaufteilung. Gemeinsame Schuld muss §755 erfüllen und ihre Berichtigung verlangt sein; individuelle Schuld muss gemeinschaftsbezogener Anspruch eines anderen Teilhabers nach §756 sein und ihre Berichtigung verlangt sein. Beträge auf gleiche Abrechnung beziehen, keine Doppelzählung bereits abgezogener Kosten/Schulden. Einzelanteil des Schuldner-Teilhabers; Berichtigungsbetrag ist dem qualifizierten Gläubiger zusätzlich zu dessen eigenem Erlösanteil zuzuordnen. Mehrere konkurrierende Forderungen, wechselseitige Forderungsnetze und Vorränge zuvor rechtlich bestimmen, nicht unbesehen saldieren. Ungedeckte gemeinsame Schuld ist Gesamtrest, keine automatische persönliche Quote. Keine Wertbewertung, Naturteilung/Losentscheidung oder zusätzliche Haftungsentscheidung.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/gemeinschaftsaufhebungsbetrag.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "gemeinschaftlicher_erloes": "Nichtnegativer exakter EUR-Betrag als Dezimalzeichenfolge/Bruchobjekt; rechtlich qualifiziert und gleiche Abrechnung ohne Doppelzählung.",
+    "zu_berichtigende_gemeinsame_schulden": "Nichtnegativer exakter EUR-Betrag als Dezimalzeichenfolge/Bruchobjekt; rechtlich qualifiziert und gleiche Abrechnung ohne Doppelzählung.",
+    "teilhaberquote": "Rechtlich bestimmter Einzelanteil zwischen0und1 als exakter Dezimalwert/Bruchobjekt.",
+    "gemeinschaftsbezogene_teilhaberschuld": "Nichtnegativer exakter EUR-Betrag als Dezimalzeichenfolge/Bruchobjekt; rechtlich qualifiziert und gleiche Abrechnung ohne Doppelzählung.",
+    "einordnungsnachweis": "Nichtleerer Nachweis der Gemeinschaftsaufhebung, gesetzlichen Schuldqualifikation und verlangten Berichtigung nach §755/756; konkurrierende Forderungen vorher klären."
+  },
+  "ergebnisvertrag": "wert enthält verteilbare Erlösmasse, Anteil vor Teilhaberschuld, Berichtigungsbetrag, verbleibenden Einzelanteil und ungedeckte individuelle/gemeinsame Schulden als EUR-Brüche.",
+  "regelart": "BETRAGSOPERATION"
+}

@@ -1,0 +1,33 @@
+{
+  "regel_id": "BGB_STIFTUNG_WIEDERAUFSTOCKUNGSREST",
+  "regelversion": "1",
+  "bezeichnung": "stiftung_wiederaufstockungsrest",
+  "fundstelle_ids": [
+    "BGB_83c_T0001",
+    "BGB_83c_T0002",
+    "BGB_83c_T0003",
+    "BGB_83c_T0004",
+    "BGB_83c_T0005",
+    "BGB_83c_T0006"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "verbrauchter_grundstock: Betrag eines rechtlich qualifizierten Grundstockverbrauchs nach83cII inEUR. bereits_wiederaufgestockt: Demselben Verbrauch auf gleicher Bewertungsbasis zugeordnete bisherige AuffüllungEUR. zuordnungsnachweis: Nichtleerer Nachweis der Zuordnung, keine doppelt angerechnete Auffüllung.",
+  "rechenschritte": "max(Verbrauch−zugeordneteAuffüllung,0).",
+  "ausnahmen": "Keine Bewertung angemessener Zeit, keine Zulässigkeit des Verbrauchs, keine Entnahmefreigabe bei Überschuss.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/stiftungsvermoegen.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "verbrauchter_grundstock": "Betrag eines rechtlich qualifizierten Grundstockverbrauchs nach83cII inEUR.",
+    "bereits_wiederaufgestockt": "Demselben Verbrauch auf gleicher Bewertungsbasis zugeordnete bisherige AuffüllungEUR.",
+    "zuordnungsnachweis": "Nichtleerer Nachweis der Zuordnung, keine doppelt angerechnete Auffüllung."
+  },
+  "ergebnisvertrag": "wert ist verbleibender Auffüllungsbetrag als exakter EUR-Bruch.",
+  "regelart": "BETRAGSOPERATION"
+}

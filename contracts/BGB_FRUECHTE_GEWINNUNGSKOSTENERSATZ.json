@@ -1,0 +1,29 @@
+{
+  "regel_id": "BGB_FRUECHTE_GEWINNUNGSKOSTENERSATZ",
+  "regelversion": "1",
+  "bezeichnung": "fruechte_gewinnungskostenersatz",
+  "fundstelle_ids": [
+    "BGB_102_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "ordnungsgemaesse_gewinnungskosten: Nichtnegativer in EUR bewerteter Teil tatsächlich auf die Gewinnung der konkreten Früchte verwendeter Kosten, der einer ordnungsmäßigen Wirtschaft entspricht. Ungeeignete/übermäßige/andere Kosten vorab ausscheiden; kein bloßes Gesamtbudget. wert_der_fruechte: Nichtnegativer rechtlich maßgeblicher Wert der betreffenden herauszugebenden Früchte in EUR, gleicher Bezugsfall wie Gewinnungskosten. Keine automatische Sachverständigenbewertung. herausgabepflicht_fruechte: Expliziter Wahrheitswert einer Pflicht zur Herausgabe der betreffenden Früchte. FALSE ergibt NICHT_ANWENDBAR für§102; andere Kostenersatzgrundlagen nicht beurteilt. kostennachweis: Nichtleere Beschreibung der tatsächlich verwendeten und rechtlich qualifizierten Gewinnungskosten, des Fruchtwerts und der Herausgabepflicht.",
+  "rechenschritte": "Bei Herausgabepflicht: Ersatz=min(ordnungsmäßige verwendete Gewinnungskosten,Fruchtwert). Sonst NICHT_ANWENDBAR.",
+  "ausnahmen": "Kein Kostenersatz für beliebige Aufwendungen und keine automatische Rechtfertigung aller eingegebenen Kosten. Nur§102 im konkret abgegrenzten Fall.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/fruechte_lasten.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "ordnungsgemaesse_gewinnungskosten": "Nichtnegativer in EUR bewerteter Teil tatsächlich auf die Gewinnung der konkreten Früchte verwendeter Kosten, der einer ordnungsmäßigen Wirtschaft entspricht. Ungeeignete/übermäßige/andere Kosten vorab ausscheiden; kein bloßes Gesamtbudget.",
+    "wert_der_fruechte": "Nichtnegativer rechtlich maßgeblicher Wert der betreffenden herauszugebenden Früchte in EUR, gleicher Bezugsfall wie Gewinnungskosten. Keine automatische Sachverständigenbewertung.",
+    "herausgabepflicht_fruechte": "Expliziter Wahrheitswert einer Pflicht zur Herausgabe der betreffenden Früchte. FALSE ergibt NICHT_ANWENDBAR für§102; andere Kostenersatzgrundlagen nicht beurteilt.",
+    "kostennachweis": "Nichtleere Beschreibung der tatsächlich verwendeten und rechtlich qualifizierten Gewinnungskosten, des Fruchtwerts und der Herausgabepflicht."
+  },
+  "ergebnisvertrag": "wert ist exakter EUR-Kostenersatz, höchstens Fruchtwert. Ohne Herausgabepflicht null und NICHT_ANWENDBAR.",
+  "regelart": "BETRAGSOPERATION"
+}

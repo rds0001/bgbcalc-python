@@ -1,0 +1,26 @@
+{
+  "regel_id": "BGB_PFANDRECHTE_BESTELLUNGSRANG",
+  "regelversion": "1",
+  "bezeichnung": "pfandrechte_bestellungsrang",
+  "fundstelle_ids": [
+    "BGB_1209_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "pfandrechte: Liste1..1000 mit genau pfandrecht_id und bestellung_am_utc (YYYY-MM-DDTHH:MM:SSZ). Wirksame Bestellungszeiten, nicht Entstehung/Fälligkeit der gesicherten Forderung; eindeutige Kennungen. einordnungsnachweis: Nichtleerer Nachweis von1209-Anwendungsbereich, wirksamen Bestellungszeitpunkten, ausreichender Sekundengenauigkeit und gegebenenfalls echter Gleichzeitigkeit. Keine abweichenden vorrangigen Rangregeln.",
+  "rechenschritte": "Pfandrechte nach qualifizierter wirksamer Bestellungszeit in zeitlich aufsteigende Ranggruppen einordnen; Gleichzeitigkeit gleichrangig behandeln.",
+  "ausnahmen": "§1209: frühere rechtlich wirksame Bestellung hat niedrigere Ranggruppe, gleichzeitige Bestellung gleiche Ranggruppe. Künftige oder bedingte Forderungen verwenden ebenfalls die Bestellungszeit des Pfandrechts. Kein automatischer Rangwechsel, keine Entscheidung über Entstehung/Gutgläubigkeit oder Befriedigungsbeträge. Zeitpunkte müssen rechtlich ausreichend exakt auf UTC-Sekunden normalisiert sein; unterschiedliche Subsekunden dürfen nicht durch Abschneiden zu Gleichrang werden. Bei nicht sekundengenau abbildbarem Sachverhalt diese Funktion nicht verwenden. Ausgabe in Eingabereihenfolge; Ranggruppen sind lückenlos numeriert, kein Grundbuchrang nach879.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/pfandbestellungsrang.json",
+  "gesamtabnahme": false,
+  "einheit": "ranggruppen",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "pfandrechte": "Liste1..1000 mit genau pfandrecht_id und bestellung_am_utc (YYYY-MM-DDTHH:MM:SSZ). Wirksame Bestellungszeiten, nicht Entstehung/Fälligkeit der gesicherten Forderung; eindeutige Kennungen.",
+    "einordnungsnachweis": "Nichtleerer Nachweis von1209-Anwendungsbereich, wirksamen Bestellungszeitpunkten, ausreichender Sekundengenauigkeit und gegebenenfalls echter Gleichzeitigkeit. Keine abweichenden vorrangigen Rangregeln."
+  },
+  "ergebnisvertrag": "wert als Liste in Eingabereihenfolge mit pfandrecht_id und positiver ganzzahliger ranggruppe;1 ist früheste Gruppe."
+}

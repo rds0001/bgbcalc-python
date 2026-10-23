@@ -1,0 +1,34 @@
+{
+  "regel_id": "BGB_PAUSCHALREISE_PREISSENKUNG_ERSTATTUNG",
+  "regelversion": "1",
+  "bezeichnung": "pauschalreise_preissenkung_erstattung",
+  "fundstelle_ids": [
+    "BGB_651f_T0013",
+    "BGB_651f_T0014",
+    "BGB_651f_T0015",
+    "BGB_651f_T0016"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "reisepreis: Nichtnegativer ursprünglicher Reisepreis in EUR vor der konkreten Senkung nach§651f Absatz4. preissenkungsbetrag: Nichtnegativer gesetzlich/vertraglich korrekt ermittelter Senkungsbetrag in EUR, höchstens Reisepreis. Bereits bewertete Ersparnisfolge der einschlägigen Kostenänderung; keine allgemeine Minderung wegen Reisemängeln. geleistete_zahlung: Nichtnegative bereits geleistete Zahlung auf den Reisepreis in EUR. Ein noch nicht gezahlter Preisanteil ist keine rückzahlbare Überzahlung. tatsaechliche_verwaltungsausgaben: Nichtnegative tatsächlich entstandene und im konkreten Fall gesetzlich abzugsfähige Verwaltungsausgaben in EUR; keine pauschal angenommene Bearbeitungsgebühr. Abzug nur aus gezahltem Mehrbetrag, höchstens dessen Höhe. senkungsvoraussetzungen_erfuellt: Wahrheitswert: vertraglicher Erhöhungsvorbehalt besteht und einschlägige nach Vertragsschluss, vor Reisebeginn eingetretene Preis-/Abgaben-/Wechselkursänderung führt zu geringeren Veranstalterkosten. Berechnungsweg rechtlich geprüft; FALSE ergibt NICHT_ANWENDBAR. berechnungsnachweis: Nichtleere Beschreibung von Kostenänderung, Senkungsberechnung, Zahlungen und tatsächlich abzugsfähigen Verwaltungsausgaben; Nachweisverlangen des Reisenden gesondert erfüllen.",
+  "rechenschritte": "Gesenkter Preis=Reisepreis minus Senkung. Gezahlter Mehrbetrag=max(Zahlung minus gesenkter Preis,0). Verwaltungsabzug=min(tatsächliche abzugsfähige Ausgaben,Mehrbetrag). Erstattung=Mehrbetrag minus Abzug.",
+  "ausnahmen": "Nur Senkung§651f Absatz4, nicht Reisemangelminderung. Verwaltungskosten erhöhen nicht den gesenkten Vertragspreis und erzeugen keine zusätzliche Forderung. Kostenänderungsformel und tatsächliche Abzugsfähigkeit extern; keine Pauschalgebühr erfinden.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/reisepreis.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "reisepreis": "Nichtnegativer ursprünglicher Reisepreis in EUR vor der konkreten Senkung nach§651f Absatz4.",
+    "preissenkungsbetrag": "Nichtnegativer gesetzlich/vertraglich korrekt ermittelter Senkungsbetrag in EUR, höchstens Reisepreis. Bereits bewertete Ersparnisfolge der einschlägigen Kostenänderung; keine allgemeine Minderung wegen Reisemängeln.",
+    "geleistete_zahlung": "Nichtnegative bereits geleistete Zahlung auf den Reisepreis in EUR. Ein noch nicht gezahlter Preisanteil ist keine rückzahlbare Überzahlung.",
+    "tatsaechliche_verwaltungsausgaben": "Nichtnegative tatsächlich entstandene und im konkreten Fall gesetzlich abzugsfähige Verwaltungsausgaben in EUR; keine pauschal angenommene Bearbeitungsgebühr. Abzug nur aus gezahltem Mehrbetrag, höchstens dessen Höhe.",
+    "senkungsvoraussetzungen_erfuellt": "Wahrheitswert: vertraglicher Erhöhungsvorbehalt besteht und einschlägige nach Vertragsschluss, vor Reisebeginn eingetretene Preis-/Abgaben-/Wechselkursänderung führt zu geringeren Veranstalterkosten. Berechnungsweg rechtlich geprüft; FALSE ergibt NICHT_ANWENDBAR.",
+    "berechnungsnachweis": "Nichtleere Beschreibung von Kostenänderung, Senkungsberechnung, Zahlungen und tatsächlich abzugsfähigen Verwaltungsausgaben; Nachweisverlangen des Reisenden gesondert erfüllen."
+  },
+  "ergebnisvertrag": "wert enthält gesenkter_reisepreis, gezahlter_mehrbetrag, verwaltungsabzug und erstattungsbetrag als exakte EUR-Brüche; bei fehlender Anwendbarkeit null.",
+  "regelart": "BETRAGSOPERATION"
+}

@@ -1,0 +1,31 @@
+{
+  "regel_id": "BGB_MIETSPIEGEL_FOLGESTICHTAGE",
+  "regelversion": "1",
+  "bezeichnung": "mietspiegel_folgestichtage",
+  "fundstelle_ids": [
+    "BGB_558d_T0004",
+    "BGB_558d_T0005",
+    "BGB_558d_T0006",
+    "BGB_558d_T0007",
+    "BGB_558d_T0008"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "datenerhebungsstichtag: ISO-Datum des maßgeblichen ursprünglichen Datenerhebungsstichtags des qualifizierten Mietspiegels; nicht späteres Anerkennungs-/Veröffentlichungsdatum. stichtagsnachweis: Nichtleerer Nachweis des ursprünglichen Erhebungsstichtags und des Anwendungsbereichs558dII; zwischenzeitliche Anpassung setzt die Vierjahresfrist nicht neu in Gang.",
+  "rechenschritte": "Erste Anpassung und Neuerstellung zwei beziehungsweise vier Jahre nach Erhebungsstichtag.",
+  "ausnahmen": "§558dII: erste Zweijahresanpassung und Vierjahresneuerstellung eines qualifizierten Mietspiegels, ausgehend vom Datenerhebungsstichtag der ursprünglichen Erstellung. Eine zwischenzeitliche Indexanpassung setzt die Vierjahresneuerstellung nicht neu in Gang; nicht deren Veröffentlichungsdatum als neuen Ausgangspunkt einsetzen. Keine automatische Feiertagsverschiebung, Gültigkeitsvermutung oder Aussage über verspätete Veröffentlichung. Veröffentlichung und wissenschaftliche/formelle Voraussetzungen gesondert prüfen; keine Fristberechnung aus einem beliebig ausgewählten Indexmonat.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Exakte nichtnegative Basis und positive Indexstände; sichere Ganzzahlen nach NUMERIK.md. Kalenderdaten0001..9999 einschließlich Folgestichtagen.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/mietspiegelfortschreibung.json",
+  "gesamtabnahme": false,
+  "einheit": "daten",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "datenerhebungsstichtag": "ISO-Datum des maßgeblichen ursprünglichen Datenerhebungsstichtags des qualifizierten Mietspiegels; nicht späteres Anerkennungs-/Veröffentlichungsdatum.",
+    "stichtagsnachweis": "Nichtleerer Nachweis des ursprünglichen Erhebungsstichtags und des Anwendungsbereichs558dII; zwischenzeitliche Anpassung setzt die Vierjahresfrist nicht neu in Gang."
+  },
+  "ergebnisvertrag": "wert: anpassung_stichtag und neuerstellung_stichtag als ISO-Daten.",
+  "regelart": "BETRAGSOPERATION"
+}

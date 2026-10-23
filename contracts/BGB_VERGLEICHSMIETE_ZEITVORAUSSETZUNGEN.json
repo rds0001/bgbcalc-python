@@ -1,0 +1,38 @@
+{
+  "regel_id": "BGB_VERGLEICHSMIETE_ZEITVORAUSSETZUNGEN",
+  "regelversion": "1",
+  "bezeichnung": "vergleichsmiete_zeitvoraussetzungen",
+  "fundstelle_ids": [
+    "BGB_558_T0001",
+    "BGB_558_T0002",
+    "BGB_558_T0003",
+    "BGB_558b_T0001",
+    "BGB_558b_T0002",
+    "BGB_558b_T0003",
+    "BGB_558b_T0004",
+    "BGB_558b_T0005",
+    "BGB_187_T0002",
+    "BGB_188_T0002",
+    "BGB_188_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; maßgeblicher bisheriger Mietbeginn und Zugang belegt; Vergleichsmietenverfahren grundsätzlich anwendbar.",
+  "eingabevertrag": "letzte_massgebliche_miete_ab: ISO-Datum YYYY-MM-DD des Tagesbeginns, seit dem die für §558 Abs.1 maßgebliche Miete unverändert gilt; bei der ersten Erhöhung der maßgebliche Beginn der Ausgangsmiete. Erhöhungen nach §§559 bis560 bei Bestimmung dieses Zeitpunkts nicht als fristauslösenden Neubeginn behandeln. Der Beginn darf nicht nach dem Zugang liegen. zugang_erhoehungsverlangen: ISO-Datum des nachgewiesenen Zugangs des maßgeblichen Erhöhungsverlangens. Versanddatum genügt nicht. Bei Nachholung oder Heilung im Rechtsstreit nach §558b Abs.3 ist der dafür maßgebliche neue Zugang zu bestimmen; die Funktion erkennt oder heilt Mängel nicht. verlangen_formell_ordnungsgemaess: Expliziter Wahrheitswert zur formellen Ordnungsmäßigkeit nach §558a, insbesondere Textform und Begründung. Die zeitlichen Voraussetzungen sind nicht darin vorwegzunehmen; sie werden separat berechnet. FALSE ergibt NICHT_ANWENDBAR. Materieller Anwendungsbereich des Vergleichsmietenverfahrens ist vorausgesetzt.",
+  "rechenschritte": "Ein volles Jahr und15Monate unveränderte Miete ab Tagesbeginn berechnen. Frühesten zulässigen Zugang und frühesten Mietbeginn jeweils als Tag nach dem Ablauf ausweisen. Aus dem tatsächlichen Zugang: Zustimmung bis zum Ende des zweiten Folgemonats, Mietbeginn bei Zustimmung am ersten Tag des dritten Folgemonats, reguläres rechnerisches Klagefristende am letzten Tag des fünften Folgemonats. Tatsächlichen Zugang und zugangsbezogenen Mietbeginn getrennt mit den Mindestterminen vergleichen.",
+  "ausnahmen": "Zeitliche Teilprüfung, kein vollständiger Anspruch auf Mieterhöhung. Vergleichsmietbetrag, Kappung, Drittmittel und sonstige Wirksamkeitsvoraussetzungen nicht hier berechnet. Mietbeginn setzt Zustimmung voraus; fehlende Zustimmung nicht durch TRUE bei der formellen Ordnungsmäßigkeit ersetzen. Verfrühtes Verlangen wird nicht automatisch verschoben. Rechnerische Monatsfristenden sind vor einer gesondert zu prüfenden Anwendung von §193 oder einschlägigem Verfahrensrecht angegeben; keine abschließende Klagefristberechnung unter Feiertagsverschiebungen. Bei Nachholung oder Heilung nach §558b Abs.3 ist die neue maßgebliche Erklärung gesondert zugrunde zu legen. Sonderrechte des Mieters, insbesondere Kündigung nach §561, werden hier nicht entschieden.",
+  "rundung": "Keine; Kalenderfristen.",
+  "wertebereich": "Proleptischer gregorianischer Kalender0001..9999 einschließlich aller notwendigen Zwischenwerte. Fehlend EINGABE_FEHLT, falscher Typ/Bereich EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/vergleichsmietzeit.json",
+  "gesamtabnahme": false,
+  "einheit": "daten_und_wahrheitswerte",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "letzte_massgebliche_miete_ab": "ISO-Datum YYYY-MM-DD des Tagesbeginns, seit dem die für §558 Abs.1 maßgebliche Miete unverändert gilt; bei der ersten Erhöhung der maßgebliche Beginn der Ausgangsmiete. Erhöhungen nach §§559 bis560 bei Bestimmung dieses Zeitpunkts nicht als fristauslösenden Neubeginn behandeln. Der Beginn darf nicht nach dem Zugang liegen.",
+    "zugang_erhoehungsverlangen": "ISO-Datum des nachgewiesenen Zugangs des maßgeblichen Erhöhungsverlangens. Versanddatum genügt nicht. Bei Nachholung oder Heilung im Rechtsstreit nach §558b Abs.3 ist der dafür maßgebliche neue Zugang zu bestimmen; die Funktion erkennt oder heilt Mängel nicht.",
+    "verlangen_formell_ordnungsgemaess": "Expliziter Wahrheitswert zur formellen Ordnungsmäßigkeit nach §558a, insbesondere Textform und Begründung. Die zeitlichen Voraussetzungen sind nicht darin vorwegzunehmen; sie werden separat berechnet. FALSE ergibt NICHT_ANWENDBAR. Materieller Anwendungsbereich des Vergleichsmietenverfahrens ist vorausgesetzt."
+  },
+  "ergebnisvertrag": "wert enthält fünf ISO-Daten: fruehester_zugang_nach_jahresfrist, fruehester_mietbeginn_nach_wartefrist, mietbeginn_bei_zustimmung, rechnerisches_ende_zustimmungsfrist und rechnerisches_ende_klagefrist. Hinzu kommen die getrennten Wahrheitswerte jahresfrist_eingehalten und wartefrist_eingehalten. BERECHNET bedeutet durchgeführte Teilprüfung, nicht automatisch erfüllte Fristen. Bei NICHT_ANWENDBAR ist wert null.",
+  "regelart": "VERBAL_RECHENBAR"
+}

@@ -1,0 +1,36 @@
+{
+  "regel_id": "BGB_ERBTEILUNG_LEISTUNGSAUSGLEICH",
+  "regelversion": "1",
+  "bezeichnung": "erbteilung_leistungsausgleich",
+  "fundstelle_ids": [
+    "BGB_2057a_T0001",
+    "BGB_2057a_T0002",
+    "BGB_2057a_T0003",
+    "BGB_2057a_T0004",
+    "BGB_2057a_T0005",
+    "BGB_2057a_T0006",
+    "BGB_2057a_T0007"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "nachlasswert_der_ausgleichungsgemeinschaft: Nichtnegativer EUR-Nachlasswert ausschließlich des den ausgleichenden Miterben zustehenden Anteils; andere Erben nicht durch Abzug der Ausgleiche mitbelasten. miterben: Unbenannte Liste mit2..1000 eindeutigen Miterben; je genau miterbe_id (nichtleere Zeichenfolge), relative_erbquote (positive exakte Quote höchstens1 innerhalb der Ausgleichungsgemeinschaft, Summe1) und leistungs_ausgleichsbetrag (nichtnegative exakte EUR-Zahl). Beträge rechtlich nach§2057a Absatz3 billig bemessen und unter Ausschlüssen des Absatz2 bereinigen. Summe der Ausgleichsbeträge höchstens zugehöriger Nachlasswert; bei Überschreitung keine erfundene Kürzung. leistungsausgleich_2057a_anwendbar: Wahrheitswert: Abkömmlinge, gesetzliche Erbfolge oder§2052, besondere Leistungen/Pflege und Anspruchsberechtigung nach§2057a rechtlich geprüft. Angemessen vergütete oder durch andere Ansprüche gedeckte Leistungen nicht nochmals ansetzen. weitere_ausgleichungsposten_vorhanden: Wahrheitswert: weitere auszugleichende Zuwendungen oder sonstige Ausgleichungsposten berühren dieselbe Teilung. TRUE ergibt NICHT_ANWENDBAR, da dieses Modell isolierten Leistungsausgleich berechnet. bewertungsnachweis: Nichtleere Begründung der Gemeinschaft, relativen Quoten, Nachlasszuordnung und individuell billig bestimmten, anspruchsbereinigten Ausgleichsbeträge. Keine pauschale Pflegevergütungsformel.",
+  "rechenschritte": "Summe qualifizierter Leistungsausgleichsbeträge vom Gemeinschaftsnachlass abziehen. Rest nach relativen Erbquoten teilen und jedem Miterben seinen Ausgleichsbetrag zusätzlich zuordnen.",
+  "ausnahmen": "Nur isolierter Leistungsausgleich, keine kombinierte Ausgleichung weiterer Zuwendungen. Anspruch und Billigkeitsbewertung vorgegeben. Kein erfundener Stundensatz, keine automatische Kürzung bei zu hohen Ausgleichsbeträgen.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "2..1000 eindeutige Miterben mit positiven relativen Quoten der Summe1. Nichtnegative EUR-Beträge, Ausgleichssumme höchstens Gemeinschaftsnachlass. Exakte Ganzzahl-Zwischenwerte höchstens2^53-1.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/leistungsausgleich.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "nachlasswert_der_ausgleichungsgemeinschaft": "Nichtnegativer EUR-Nachlasswert ausschließlich des den ausgleichenden Miterben zustehenden Anteils; andere Erben nicht durch Abzug der Ausgleiche mitbelasten.",
+    "miterben": "Unbenannte Liste mit2..1000 eindeutigen Miterben; je genau miterbe_id (nichtleere Zeichenfolge), relative_erbquote (positive exakte Quote höchstens1 innerhalb der Ausgleichungsgemeinschaft, Summe1) und leistungs_ausgleichsbetrag (nichtnegative exakte EUR-Zahl). Beträge rechtlich nach§2057a Absatz3 billig bemessen und unter Ausschlüssen des Absatz2 bereinigen. Summe der Ausgleichsbeträge höchstens zugehöriger Nachlasswert; bei Überschreitung keine erfundene Kürzung.",
+    "leistungsausgleich_2057a_anwendbar": "Wahrheitswert: Abkömmlinge, gesetzliche Erbfolge oder§2052, besondere Leistungen/Pflege und Anspruchsberechtigung nach§2057a rechtlich geprüft. Angemessen vergütete oder durch andere Ansprüche gedeckte Leistungen nicht nochmals ansetzen.",
+    "weitere_ausgleichungsposten_vorhanden": "Wahrheitswert: weitere auszugleichende Zuwendungen oder sonstige Ausgleichungsposten berühren dieselbe Teilung. TRUE ergibt NICHT_ANWENDBAR, da dieses Modell isolierten Leistungsausgleich berechnet.",
+    "bewertungsnachweis": "Nichtleere Begründung der Gemeinschaft, relativen Quoten, Nachlasszuordnung und individuell billig bestimmten, anspruchsbereinigten Ausgleichsbeträge. Keine pauschale Pflegevergütungsformel."
+  },
+  "ergebnisvertrag": "wert enthält verteilungsrest als EUR-Bruch und zuteilungen in Eingabereihenfolge mit miterbe_id/erbteil_nach_leistungsausgleich als EUR-Bruch. Summe der Zuteilungen gleich Gemeinschaftsnachlass. Außerhalb Anwendungsbereich NICHT_ANWENDBAR/null.",
+  "regelart": "BETRAGSOPERATION"
+}

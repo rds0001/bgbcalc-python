@@ -1,0 +1,29 @@
+{
+  "regel_id": "BGB_BETREUUNGEN_IM_QUALIFIZIERTEN_ZWEIJAHRESFENSTER",
+  "regelversion": "1",
+  "bezeichnung": "betreuungen_im_qualifizierten_zweijahresfenster",
+  "fundstelle_ids": [
+    "BGB_1861_T0002",
+    "BGB_1861_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "prueftag: Maßgeblicher Tag YYYY-MM-DD. rueckblick_erster_tag: Rechtlich qualifizierter erster eingeschlossener Tag des Zweijahresrückblicks YYYY-MM-DD. Keine beliebige Dauer; Grenztag und untertägige Fälle müssen zuvor qualifiziert sein. betreuungszeitraeume: Liste0..1000 Zeiträume mit betreuungs_id und erster_tag und letzter_tag als eingeschlossene ISO-Tage. Laufende Betreuung mit letzter_tag gleich prueftag abschneiden; keine unbekannte Beendigung erfinden. Mehrere getrennte Zeiträume derselben Betreuung mit gleicher betreuungs_id angeben; diese Betreuung wird höchstens einmal gezählt. Keine Lücken durch Zusammenziehen überbrücken. einordnungsnachweis: Nichtleerer Nachweis1861II: qualifiziertes Zweijahresfenster und vollständige Betreuungshistorie einschließlich am Prüftag geführter Betreuungen, Identität der einzelnen Betreuungen und Tagesnormalisierung.",
+  "rechenschritte": "Eindeutige Betreuungen im qualifizierten Zweijahresfenster zählen und strikt mit eins vergleichen.",
+  "ausnahmen": "§1861II: Zahl unterschiedlicher Betreuungen zählen, die am Prüftag geführt werden oder das vorqualifizierte eingeschlossene Zweijahresfenster schneiden. Mehr als eine bedeutet strikt mindestens zwei; nicht Anzahl einzelner Tätigkeitstage oder unterschiedlicher Betreuer. Keine automatische Pflichtbefreiung oder Festlegung eines ungeklärten rückwärts zu berechnenden Grenztags. Nicht zusammenhängende Zeiträume derselben Betreuung werden getrennt auf Schnittmenge geprüft; gezählt wird die eindeutige Betreuung, nicht ihre Zeiträume.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/betreuungsanzahl.json",
+  "gesamtabnahme": false,
+  "einheit": "anzahl_und_wahrheitswert",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "prueftag": "Maßgeblicher Tag YYYY-MM-DD.",
+    "rueckblick_erster_tag": "Rechtlich qualifizierter erster eingeschlossener Tag des Zweijahresrückblicks YYYY-MM-DD. Keine beliebige Dauer; Grenztag und untertägige Fälle müssen zuvor qualifiziert sein.",
+    "betreuungszeitraeume": "Liste0..1000 Zeiträume mit betreuungs_id und erster_tag und letzter_tag als eingeschlossene ISO-Tage. Laufende Betreuung mit letzter_tag gleich prueftag abschneiden; keine unbekannte Beendigung erfinden. Mehrere getrennte Zeiträume derselben Betreuung mit gleicher betreuungs_id angeben; diese Betreuung wird höchstens einmal gezählt. Keine Lücken durch Zusammenziehen überbrücken.",
+    "einordnungsnachweis": "Nichtleerer Nachweis1861II: qualifiziertes Zweijahresfenster und vollständige Betreuungshistorie einschließlich am Prüftag geführter Betreuungen, Identität der einzelnen Betreuungen und Tagesnormalisierung."
+  },
+  "ergebnisvertrag": "wert.beruecksichtigte_betreuungs_ids als Liste in Eingabereihenfolge, anzahl_betreuungen ganzzahlig und mehr_als_eine_betreuung als Wahrheitswert."
+}

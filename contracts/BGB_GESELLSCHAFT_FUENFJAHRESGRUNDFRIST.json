@@ -1,0 +1,38 @@
+{
+  "regel_id": "BGB_GESELLSCHAFT_FUENFJAHRESGRUNDFRIST",
+  "regelversion": "1",
+  "bezeichnung": "gesellschaft_fuenfjahresgrundfrist",
+  "fundstelle_ids": [
+    "BGB_728b_T0001",
+    "BGB_728b_T0002",
+    "BGB_728b_T0003",
+    "BGB_728b_T0004",
+    "BGB_728b_T0005",
+    "BGB_728b_T0006",
+    "BGB_739_T0001",
+    "BGB_739_T0002",
+    "BGB_739_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "fristfall: nachhaftung_728b oder erloeschen_verjaehrung_739; unterschiedliche Rechtswirkungen trotz gleichem Kalenderkern. ausscheiden_oder_erloeschen_am: Tag des rechtlich wirksamen Ausscheidens beziehungsweise Erlöschens der Gesellschaft YYYY-MM-DD. glaeubigerkenntnis_am: Tag der rechtlich maßgeblichen Kenntnis des konkreten Gläubigers, sonst null. registereintragung_am: Tag der maßgeblichen Eintragung des Ausscheidens beziehungsweise Erlöschens im Gesellschaftsregister, sonst null. kuerzere_gesellschaftsfrist_letzter_tag: Optional ausschließlich739: bereits vollständig bestimmter letzter Tag der rechtlich kürzeren Gesellschaftsanspruchsverjährung. Null bedeutet kein berechneter Vergleich; nicht automatisch Fehlen einer kürzeren Frist. einordnungsnachweis: Nichtleerer Nachweis des Fristfalls, Wirksamkeit, richtigen Registereintrags und individueller Gläubigerkenntnis; mindestens einer der beiden Beginnanlässe muss feststehen.",
+  "rechenschritte": "Frühere qualifizierte Gläubigerkenntnis oder Registereintragung bestimmen und fünfjährige Ereignisgrundfrist berechnen.",
+  "ausnahmen": "§728bI3 beziehungsweise739II: frühester feststehender Beginnanlass aus Gläubigerkenntnis und Registereintragung, danach fünf Kalenderjahre ohne Jahresendverschiebung. Ausscheiden oder Erlöschen allein ersetzt weder Kenntnis noch Eintragung. Vorherige bloße Kenntnis einer Absicht beziehungsweise unzutreffender Registereintrag sind nicht qualifiziert. Nur ungestörter Grundlauf:728b-Nachhaftung verlangt zusätzlich rechtzeitig fällige Altverbindlichkeit sowie Feststellung/Vollstreckung oder schriftliches Anerkenntnis; bei Schadensersatz muss Pflichtverletzung vor Ausscheiden liegen.728b-Verweise204/206/210/211/212II/III gesondert.739: Optionaler Minimumvergleich mit rechtlich bestimmtem Ende der kürzeren Gesellschaftsanspruchsfrist ausschließlich für den ungestörten Fünfjahresgrundlauf. Ohne Eingabe bleibt Vergleich null. Bei Hemmung/Neubeginn739III zuvor beide Laufzeiten gesondert korrigieren; ein Vergleich mit unberichtigter Grundfrist wäre dann unzulässig; Ergebnis keinesfalls als abschließende Haftungs-/Verjährungsgrenze verwenden. Kein automatischer Haftungsausschluss.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/gesellschaft_fuenfjahresfrist.json",
+  "gesamtabnahme": false,
+  "einheit": "daten",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "fristfall": "nachhaftung_728b oder erloeschen_verjaehrung_739; unterschiedliche Rechtswirkungen trotz gleichem Kalenderkern.",
+    "ausscheiden_oder_erloeschen_am": "Tag des rechtlich wirksamen Ausscheidens beziehungsweise Erlöschens der Gesellschaft YYYY-MM-DD.",
+    "glaeubigerkenntnis_am": "Tag der rechtlich maßgeblichen Kenntnis des konkreten Gläubigers, sonst null.",
+    "registereintragung_am": "Tag der maßgeblichen Eintragung des Ausscheidens beziehungsweise Erlöschens im Gesellschaftsregister, sonst null.",
+    "kuerzere_gesellschaftsfrist_letzter_tag": "Optional ausschließlich739: bereits vollständig bestimmter letzter Tag der rechtlich kürzeren Gesellschaftsanspruchsverjährung. Null bedeutet kein berechneter Vergleich; nicht automatisch Fehlen einer kürzeren Frist.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des Fristfalls, Wirksamkeit, richtigen Registereintrags und individueller Gläubigerkenntnis; mindestens einer der beiden Beginnanlässe muss feststehen."
+  },
+  "ergebnisvertrag": "wert.massgeblicher_beginnanlass_am und wert.rechnerisches_fuenfjahresende alsYYYY-MM-DD; zusätzlich ende_im_qualifizierten_kuerzeren_grundfall als Datum oder null ohne Vergleichseingabe. Keine abschließende Haftungs-/Verjährungsgrenze."
+}

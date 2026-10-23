@@ -1,0 +1,31 @@
+{
+  "regel_id": "BGB_GEMEINSCHAFTSQUOTEN_AUFLOESEN",
+  "regelversion": "1",
+  "bezeichnung": "gemeinschaftsquoten_aufloesen",
+  "fundstelle_ids": [
+    "BGB_2093_T0001",
+    "BGB_2157_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "gemeinschaftlicher_anteil: Positive bereits rechtlich bestimmte exakte Oberquote höchstens1, bezogen auf ganze Erbschaft/vermachten Gegenstand. gruppenmitglieder: Rekursive Liste je2..1000 Mitglieder, insgesamt höchstens1000 Knoten und20 Ebenen. Je Objekt genau knoten_id (global eindeutige nichtleere Kennung), bestimmter_anteil (positive Quote≤1 relativ zur unmittelbaren Gruppe oder NULL für testamentarisch unbestimmt), untergruppe (NULL für Person oder weitere vollständige Mitgliederliste). regelkontext: gemeinschaftlicher_erbteil_2093 oder gemeinschaftliches_vermaechtnis_2157;2157 mehrere Bedachte desselben Gegenstands. gruppeneinsetzung_qualifiziert: Pflichtwahrheitswert zu rechtlich qualifizierter vollständiger gemeinschaftlicher Einsetzung und anwendbaren2089–2092-Regeln; FALSE NICHT_ANWENDBAR. einordnungsnachweis: Nichtleerer Nachweis der Oberquote, Gruppenstruktur und relativen Binnenquoten.",
+  "rechenschritte": "In jeder vollständigen Gruppe vorhandenen testament_erbquoten-Kern mit Normalisierung auf gesamte Gruppenquote anwenden; Binnenquote rekursiv mit Oberquote multiplizieren.",
+  "ausnahmen": "Keine Wegfall-/Anwachsungs-/Ersatzerbautomatik, kein zusätzlicher gesetzlicher Rest innerhalb vollständig bestimmter Gruppe. Gleiche Person in mehreren Zweigen außerhalb Modell; separate Anteilstitel gesondert rechnen.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/gemeinschaftsquoten.json",
+  "gesamtabnahme": false,
+  "einheit": "quoten",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "gemeinschaftlicher_anteil": "Positive bereits rechtlich bestimmte exakte Oberquote höchstens1, bezogen auf ganze Erbschaft/vermachten Gegenstand.",
+    "gruppenmitglieder": "Rekursive Liste je2..1000 Mitglieder, insgesamt höchstens1000 Knoten und20 Ebenen. Je Objekt genau knoten_id (global eindeutige nichtleere Kennung), bestimmter_anteil (positive Quote≤1 relativ zur unmittelbaren Gruppe oder NULL für testamentarisch unbestimmt), untergruppe (NULL für Person oder weitere vollständige Mitgliederliste).",
+    "regelkontext": "gemeinschaftlicher_erbteil_2093 oder gemeinschaftliches_vermaechtnis_2157;2157 mehrere Bedachte desselben Gegenstands.",
+    "gruppeneinsetzung_qualifiziert": "Pflichtwahrheitswert zu rechtlich qualifizierter vollständiger gemeinschaftlicher Einsetzung und anwendbaren2089–2092-Regeln; FALSE NICHT_ANWENDBAR.",
+    "einordnungsnachweis": "Nichtleerer Nachweis der Oberquote, Gruppenstruktur und relativen Binnenquoten."
+  },
+  "ergebnisvertrag": "wert.aufgeloeste_anteile enthält person_id und exakten Gesamtbruch anteil für sämtliche Blätter.",
+  "regelart": "QUOTENOPERATION"
+}

@@ -1,0 +1,34 @@
+{
+  "regel_id": "BGB_NACHLASS_DREISSIGSTER_ZEITRAUM",
+  "regelversion": "1",
+  "bezeichnung": "nachlass_dreissigster_zeitraum",
+  "fundstelle_ids": [
+    "BGB_1969_T0001",
+    "BGB_1969_T0002",
+    "BGB_1969_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "erbfall_am: ISO-Datum des Todes/Erbfalls; Ereignistag wird nicht mitgezählt. prueftag: ISO-Datum ab Erbfall einschließlich; Prüfung eines Kalendertages. familienangehoeriger: Expliziter Wahrheitswert der rechtlich qualifizierten Familienangehörigkeit zum Erblasser. hausstandszugehoerigkeit_bei_erbfall: Expliziter Wahrheitswert der Zugehörigkeit zum Hausstand gerade im Todeszeitpunkt, nicht nur früherer gemeinsamer Wohnsitz. unterhalt_vom_erblasser_bezogen: Expliziter Wahrheitswert des relevanten tatsächlichen Unterhaltsbezugs vom Erblasser. Abstrakte gesetzliche Unterhaltsberechtigung genügt nicht automatisch. abweichende_letztwillige_anordnung: Expliziter Wahrheitswert einer rechtlich wirksamen abweichenden letztwilligen Anordnung. TRUE ergibt NICHT_ANWENDBAR; die Anordnung kann den Anspruch verändern, erweitern oder ausschließen und wird nicht automatisch ausgelegt. einordnungsnachweis: Nichtleere Begründung der familiären, hausstandsbezogenen und unterhaltsbezogenen Einordnung sowie der letztwilligen Anordnungen.",
+  "rechenschritte": "Erbfalltag nicht mitzählen. Gesetzlicher Zeitraum vom Folgetag bis zum dreißigsten Folgetag einschließlich. Familienangehörigkeit, Hausstand im Todeszeitpunkt und Unterhaltsbezug kumulativ; Prüftag innerhalb beider Grenzen.",
+  "ausnahmen": "Abweichende letztwillige Anordnung verlangt individuelle Auslegung und ergibt NICHT_ANWENDBAR. Nur Zeit- und persönliche Voraussetzungen; Vermächtnisvorschriften nach Absatz2, Einwendungen und Haftungsbeschränkungen separat. Keine Monetarisierung des Unterhalts oder der Wohnungs-/Hausratsbenutzung. Keine automatische Feiertagsverschiebung des Versorgungszeitraums.",
+  "rundung": "Keine; Kalenderdaten taggenau.",
+  "wertebereich": "ISO-Daten und berechnete Grenzen0001..9999, explizite Wahrheitswerte und nichtleerer Nachweis.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/nachlassdreissigster.json",
+  "gesamtabnahme": false,
+  "einheit": "daten_und_wahrheitswerte",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "erbfall_am": "ISO-Datum des Todes/Erbfalls; Ereignistag wird nicht mitgezählt.",
+    "prueftag": "ISO-Datum ab Erbfall einschließlich; Prüfung eines Kalendertages.",
+    "familienangehoeriger": "Expliziter Wahrheitswert der rechtlich qualifizierten Familienangehörigkeit zum Erblasser.",
+    "hausstandszugehoerigkeit_bei_erbfall": "Expliziter Wahrheitswert der Zugehörigkeit zum Hausstand gerade im Todeszeitpunkt, nicht nur früherer gemeinsamer Wohnsitz.",
+    "unterhalt_vom_erblasser_bezogen": "Expliziter Wahrheitswert des relevanten tatsächlichen Unterhaltsbezugs vom Erblasser. Abstrakte gesetzliche Unterhaltsberechtigung genügt nicht automatisch.",
+    "abweichende_letztwillige_anordnung": "Expliziter Wahrheitswert einer rechtlich wirksamen abweichenden letztwilligen Anordnung. TRUE ergibt NICHT_ANWENDBAR; die Anordnung kann den Anspruch verändern, erweitern oder ausschließen und wird nicht automatisch ausgelegt.",
+    "einordnungsnachweis": "Nichtleere Begründung der familiären, hausstandsbezogenen und unterhaltsbezogenen Einordnung sowie der letztwilligen Anordnungen."
+  },
+  "ergebnisvertrag": "wert enthält zeitraumbeginn, zeitraumende, persoenliche_voraussetzungen_erfuellt, prueftag_im_zeitraum und gesetzliche_zeit_und_personenvoraussetzungen_erfuellt. Keine abschließende Anspruchsentscheidung. Abweichende Anordnung ergibt wert=null.",
+  "regelart": "FRISTBERECHNUNG"
+}

@@ -1,0 +1,30 @@
+{
+  "regel_id": "BGB_LANDPACHT_VERBESSERUNGSMASSNAHME_ERSATZBETRAG",
+  "regelversion": "1",
+  "bezeichnung": "landpacht_verbesserungsmassnahme_ersatzbetrag",
+  "fundstelle_ids": [
+    "BGB_588_T0002",
+    "BGB_588_T0003",
+    "BGB_588_T0004"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "ersatzfaehige_aufwendungen: Qualifizierte, der Verbesserungsmaßnahme zugeordnete angemessene Aufwendungen in EUR. ersatzfaehige_entgangene_ertraege: Qualifizierte, angemessene entgangene Erträge in EUR, bereits ohne Überschneidung mit den eingegebenen Aufwendungen bewertet. einordnungsnachweis: Nachweis der Maßnahme588II und des angemessenen Ersatzumfangs; Überschneidungen zwischen Aufwand und Ertragsausfall ausdrücklich ausgeschlossen.",
+  "rechenschritte": "Angemessene ersatzfähige Aufwendungen und überschneidungsfrei bewertete entgangene Erträge addieren.",
+  "ausnahmen": "§588II: numerischer Ersatzumfang aus qualifizierten Betragskomponenten. Keine automatische Billigkeitsbewertung oder Brutto-/Nettobewertung entgangener Erträge; diese ist widerspruchsfrei mit den Aufwendungen vorzugeben. Vorschüsse/Zahlungen gesondert anrechnen. Eine Pachterhöhung wegen höherer Erträge588III ist ein anderer Rechengegenstand und wird nicht erfunden.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Nichtnegative Eingangswerte, exakter nichtnegativer EUR-Bruch im sicheren gemeinsamen Zahlenbereich.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/schuldrechtliche_betragsreste.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "ersatzfaehige_aufwendungen": "Qualifizierte, der Verbesserungsmaßnahme zugeordnete angemessene Aufwendungen in EUR.",
+    "ersatzfaehige_entgangene_ertraege": "Qualifizierte, angemessene entgangene Erträge in EUR, bereits ohne Überschneidung mit den eingegebenen Aufwendungen bewertet.",
+    "einordnungsnachweis": "Nachweis der Maßnahme588II und des angemessenen Ersatzumfangs; Überschneidungen zwischen Aufwand und Ertragsausfall ausdrücklich ausgeschlossen."
+  },
+  "ergebnisvertrag": "wert ist der exakte EUR-Bruch.",
+  "regelart": "BETRAGSOPERATION"
+}

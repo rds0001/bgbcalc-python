@@ -1,0 +1,43 @@
+{
+  "regel_id": "BGB_MIETE_SCHONFRIST_WIEDERHOLUNGSZEITRAUM",
+  "regelversion": "1",
+  "bezeichnung": "miete_schonfrist_wiederholungszeitraum",
+  "fundstelle_ids": [
+    "BGB_569_T0001",
+    "BGB_569_T0002",
+    "BGB_569_T0003",
+    "BGB_569_T0004",
+    "BGB_569_T0005",
+    "BGB_569_T0006",
+    "BGB_569_T0007",
+    "BGB_569_T0008",
+    "BGB_569_T0009",
+    "BGB_569_T0010",
+    "BGB_569_T0011",
+    "BGB_569_T0012",
+    "BGB_569_T0013",
+    "BGB_569_T0014",
+    "BGB_569_T0015",
+    "BGB_569_T0016"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "fruehere_geheilte_kuendigung_am: DatumYYYY-MM-DD der früheren durch Schonfrist nach569III2Satz1 unwirksam gewordenen Kündigung. Datum der Kündigung, nicht Zahlungstag oder Rechtshängigkeit. erneute_kuendigung_am: DatumYYYY-MM-DD der nun betrachteten späteren Kündigung, strikt nach früherer Kündigung. einordnungsnachweis: Nichtleerer Nachweis der vorangegangenen Schonfristheilung und Zuordnung beider Kündigungen. Nur numerische Zweijahresgrenze, keine automatische Wirksamkeitsentscheidung.",
+  "rechenschritte": "Frühere geheilte Kündigung um zwei Jahre fortschreiben und erneute Kündigung einschließlich des Grenztags vergleichen.",
+  "ausnahmen": "§569III2Satz2: erneute Kündigung innerhalb von einschließlich zwei Jahren nach früherer, durch Schonfrist unwirksam gewordener Kündigung. Eine bloß erfolgte Mietzahlung ohne diese frühere Heilung genügt nicht als Bezugsvorgang. Zeitraum keine Handlungsfrist; keine193Verschiebung. Ergebnis betrifft nur die Wiederholungsgrenze der Schonfrist, nicht jede Zahlung, Aufrechnung oder sonstige Unwirksamkeit der neuen Kündigung.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Strikte ISO-Kalendertage0001..9999; keine automatische Feiertagsverschiebung.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/schuldrechtliche_zeitvergleiche.json",
+  "gesamtabnahme": false,
+  "einheit": "daten_und_wahrheitswerte",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "fruehere_geheilte_kuendigung_am": "DatumYYYY-MM-DD der früheren durch Schonfrist nach569III2Satz1 unwirksam gewordenen Kündigung. Datum der Kündigung, nicht Zahlungstag oder Rechtshängigkeit.",
+    "erneute_kuendigung_am": "DatumYYYY-MM-DD der nun betrachteten späteren Kündigung, strikt nach früherer Kündigung.",
+    "einordnungsnachweis": "Nichtleerer Nachweis der vorangegangenen Schonfristheilung und Zuordnung beider Kündigungen. Nur numerische Zweijahresgrenze, keine automatische Wirksamkeitsentscheidung."
+  },
+  "ergebnisvertrag": "wert: zweijahresgrenzeYYYY-MM-DD und innerhalb_wiederholungszeitraum als Wahrheitswert.",
+  "regelart": "FRISTBERECHNUNG"
+}

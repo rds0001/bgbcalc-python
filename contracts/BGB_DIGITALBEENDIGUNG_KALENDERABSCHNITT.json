@@ -1,0 +1,40 @@
+{
+  "regel_id": "BGB_DIGITALBEENDIGUNG_KALENDERABSCHNITT",
+  "regelversion": "1",
+  "bezeichnung": "digitalbeendigung_kalenderabschnitt",
+  "fundstelle_ids": [
+    "BGB_327o_T0001",
+    "BGB_327o_T0002",
+    "BGB_327o_T0003",
+    "BGB_327o_T0004",
+    "BGB_327o_T0005",
+    "BGB_327o_T0006",
+    "BGB_327o_T0007",
+    "BGB_327o_T0008",
+    "BGB_327o_T0009",
+    "BGB_327o_T0010"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "abschnitt_von: Erster eingeschlossener Tag des einheitlich bepreisten Abschnitts. abschnitt_bis: Letzter eingeschlossener Tag. nicht_mehr_geschuldet_ab: Erster rechtlich nicht mehr geschuldeter ganzer Kalendertag; darf vor oder nach dem Abschnitt liegen. mangelzeitraeume: Liste0..10000 Objekte mit von und bis, beide Tage eingeschlossen; Überschneidungen werden vereinigt. vereinbarter_abschnittspreis: Nichtnegativer exakter EUR-Preis dieses Abschnitts. gezahlter_abschnittspreis: Nichtnegative Zahlung höchstens Abschnittspreis, proportional über den Abschnitt zugeordnet. einordnungsnachweis: Rechtliche Beendigung, ganztägige Abgrenzung, Mangelhaftigkeit, einheitliche Tagesbewertung und Zahlungszuordnung belegen.",
+  "rechenschritte": "Mangelintervalle begrenzen und vereinigen; disjunkte Mangel-/Zukunftstage zählen und vorhandene zeitanteilige Erstattungsrechnung anwenden.",
+  "ausnahmen": "§327oII/III: nur dauerhafte digitale Bereitstellung und rechtlich qualifizierte ganze Kalendertage bei gleicher Bewertung jedes Tages im Abschnitt. Mangelintervalle werden auf bereits geschuldete Tage im Abschnitt begrenzt und vereinigt. Zukünftig entfallende Tage separat zählen; keine Doppelzählung bei Überschneidungen. Vorhandene exakte Preis-/Erstattungsrechnung verwenden. Unterschiedlich bepreiste oder bezahlte Abschnitte einzeln abrechnen. Untertägige Leistungen nicht runden; hierfür vorhandene Rechnung mit rechtlich bestimmten Zeiteinheiten verwenden. Keine automatische Mangel- oder Beendigungsentscheidung und keine pauschale30-Tage-Monatsannahme. Überzahlungen über Abschnittspreis separat; erloschener Preisanteil ist nicht zusätzlich neben Erstattung zu zahlen.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/digitalbeendigung_kalenderabschnitt.json",
+  "gesamtabnahme": false,
+  "einheit": "tage_quote_und_eur",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "abschnitt_von": "Erster eingeschlossener Tag des einheitlich bepreisten Abschnitts.",
+    "abschnitt_bis": "Letzter eingeschlossener Tag.",
+    "nicht_mehr_geschuldet_ab": "Erster rechtlich nicht mehr geschuldeter ganzer Kalendertag; darf vor oder nach dem Abschnitt liegen.",
+    "mangelzeitraeume": "Liste0..10000 Objekte mit von und bis, beide Tage eingeschlossen; Überschneidungen werden vereinigt.",
+    "vereinbarter_abschnittspreis": "Nichtnegativer exakter EUR-Preis dieses Abschnitts.",
+    "gezahlter_abschnittspreis": "Nichtnegative Zahlung höchstens Abschnittspreis, proportional über den Abschnitt zugeordnet.",
+    "einordnungsnachweis": "Rechtliche Beendigung, ganztägige Abgrenzung, Mangelhaftigkeit, einheitliche Tagesbewertung und Zahlungszuordnung belegen."
+  },
+  "ergebnisvertrag": "Gesamt-, Mangel- und Zukunftstage sowie exakter entfallender Zeitanteil, erloschener Preisanteil und Erstattungsbetrag."
+}

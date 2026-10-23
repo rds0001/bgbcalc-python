@@ -1,0 +1,32 @@
+{
+  "regel_id": "BGB_DIENSTKUENDIGUNG_VORAUSVERGUETUNGSRUECKZAHLUNG",
+  "regelversion": "1",
+  "bezeichnung": "dienstkuendigung_vorausverguetungsrueckzahlung",
+  "fundstelle_ids": [
+    "BGB_628_T0001",
+    "BGB_628_T0002",
+    "BGB_628_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "vorausverguetung: Nichtnegativer exakter EUR-Betrag der tatsächlich vorausbezahlten Vergütung für den betrachteten Zeitraum. zeitanteil_nach_kuendigung_zaehler: Nichtnegative ganze Zahl des rechtlich bestimmten auf die spätere Zeit entfallenden Vergütungsanteils, höchstens Nenner und2^53-1. zeitanteil_nach_kuendigung_nenner: Positive ganze Bezugsgröße desselben vorausbezahlten Zeitraums, höchstens2^53-1. Vergütungskonvention und Kündigungszeitpunkt im Nachweis belegen. kuendigungsumstand_nicht_zu_vertreten: Expliziter Wahrheitswert: Kündigung erfolgt wegen eines vom Dienstverpflichteten nicht zu vertretenden Umstands; dann Bereicherungsrecht, andernfalls346. abziehbare_entreicherung: Nur im Bereicherungsfall nichtnegativer bereits rechtlich abzugsfähiger EUR-Betrag, höchstens vorausbezahlter Nachkündigungsanteil. Nullverlust ausdrücklich0. Im346-Fall null. einordnungsnachweis: Nichtleerer Nachweis des628I3-Falls, tatsächlich vorausbezahlten Zeitraums, Vergütungsanteils und rechtlich qualifizierter Rückabwicklung; nicht automatisch jede freie Kündigung gleichsetzen.",
+  "rechenschritte": "Vorauszahlung mit qualifiziertem Nachkündigungsanteil multiplizieren; nur im Bereicherungsfall rechtlich abzugsfähige Entreicherung abziehen.",
+  "ausnahmen": "§628I3 nach qualifizierter Kündigung626/627 nach Dienstbeginn: nur im Voraus entrichtete Vergütung für Zeit nach Kündigung. Anteil auf den tatsächlich vorausbezahlten Zeitraum beziehen, nicht blind auf gesamte Vertragsvergütung oder bisherige Leistungsquote. Teilbetrag nach der rechtlich einschlägigen Vergütungs-/Zeitkonvention bestimmen; keine universelle Dreißigtage- oder Jahreskonvention. Hat der Dienstverpflichtete den Kündigungsumstand nicht zu vertreten, gelten Bereicherungsvorschriften; abzugsfähige Entreicherung insbesondere unter Berücksichtigung818/819/820 rechtlich bestimmen. Im346-Fall keine818III-Entreicherung abziehen. Weitere Nutzungen, Wertersatz, frühere Leistungen und Interessenverlust628I1/2 sowie Kündigungsschaden628II separat; keine automatische Aufrechnung.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/dienstvorausverguetung.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "vorausverguetung": "Nichtnegativer exakter EUR-Betrag der tatsächlich vorausbezahlten Vergütung für den betrachteten Zeitraum.",
+    "zeitanteil_nach_kuendigung_zaehler": "Nichtnegative ganze Zahl des rechtlich bestimmten auf die spätere Zeit entfallenden Vergütungsanteils, höchstens Nenner und2^53-1.",
+    "zeitanteil_nach_kuendigung_nenner": "Positive ganze Bezugsgröße desselben vorausbezahlten Zeitraums, höchstens2^53-1. Vergütungskonvention und Kündigungszeitpunkt im Nachweis belegen.",
+    "kuendigungsumstand_nicht_zu_vertreten": "Expliziter Wahrheitswert: Kündigung erfolgt wegen eines vom Dienstverpflichteten nicht zu vertretenden Umstands; dann Bereicherungsrecht, andernfalls346.",
+    "abziehbare_entreicherung": "Nur im Bereicherungsfall nichtnegativer bereits rechtlich abzugsfähiger EUR-Betrag, höchstens vorausbezahlter Nachkündigungsanteil. Nullverlust ausdrücklich0. Im346-Fall null.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des628I3-Falls, tatsächlich vorausbezahlten Zeitraums, Vergütungsanteils und rechtlich qualifizierter Rückabwicklung; nicht automatisch jede freie Kündigung gleichsetzen."
+  },
+  "ergebnisvertrag": "wert: rechnerischer_vorausanteil und rechnerischer_rueckzahlungsbetrag als exakte EUR-Brüche."
+}

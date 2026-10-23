@@ -1,0 +1,36 @@
+{
+  "regel_id": "BGB_VERMAECHTNISKUERZUNG_BEI_QUALIFIZIERTEM_ERBENVORRANG",
+  "regelversion": "1",
+  "bezeichnung": "vermaechtniskuerzung_bei_qualifiziertem_erbenvorrang",
+  "fundstelle_ids": [
+    "BGB_2318_T0001",
+    "BGB_2318_T0003",
+    "BGB_2318_T0004",
+    "BGB_2323_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "erwerbswert_vor_vermaechtnis: Nichtnegativer Erwerbswert nach sonstigen Verbindlichkeiten vor Vermächtnis/Pflichtteilslast. vermaechtniswert: Nichtnegativer Wert höchstens Erwerb. gesamte_pflichtteilslast: Nichtnegative Last höchstens Erwerb. anderweitig_getragene_last_2323: Rechtlich anderweitig getragene Last0..gesamteLast. pflichtteilswert_erbe: Nichtnegativer rechtlich bestimmter eigener Pflichtteil; Schutz bleibt auf vorbestehenden Erwerbsrest begrenzt. pflichtteilswert_vermaechtnisnehmer: Nichtnegativer rechtlich bestimmter Schutzwert des Bedachten. erbenvorrang_und_einzelfall_qualifiziert: Pflichtwahrheitswert: konkrete Anwendung der Erbenvorrangvariante in2318II/III-Konkurrenz fachlich begründet, einErbe/einVermächtnis; FALSE NICHT_ANWENDBAR. rechts_und_bewertungsnachweis: Nichtleere dokumentierte rechtliche Zuordnung gerade zur Erbenvorrangvariante einschließlich Begründung/Quelle und vergleichbarer Bewertungen. Keine beliebige Methodenwahl.",
+  "rechenschritte": "L=Gesamtlast−2323Last;K_B=min(L×V/N,max(V−P_B,0)); geschützterEigenwert=min(P_E,N−V);Bedarf=min(V,max(geschützterEigenwert−(N−V−L),0));K=max(K_B,Bedarf).",
+  "ausnahmen": "Explizite extern rechtlich begründete Erbenvorrangvariante, keine universell gelöste2318Konkurrenz. Vorbeeinträchtigung durchVermächtnis nicht reparieren. KeinMehrvermächtnisfall oder freie Methodenwahl.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/pflichtteilsschutzkonkurrenz.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "erwerbswert_vor_vermaechtnis": "Nichtnegativer Erwerbswert nach sonstigen Verbindlichkeiten vor Vermächtnis/Pflichtteilslast.",
+    "vermaechtniswert": "Nichtnegativer Wert höchstens Erwerb.",
+    "gesamte_pflichtteilslast": "Nichtnegative Last höchstens Erwerb.",
+    "anderweitig_getragene_last_2323": "Rechtlich anderweitig getragene Last0..gesamteLast.",
+    "pflichtteilswert_erbe": "Nichtnegativer rechtlich bestimmter eigener Pflichtteil; Schutz bleibt auf vorbestehenden Erwerbsrest begrenzt.",
+    "pflichtteilswert_vermaechtnisnehmer": "Nichtnegativer rechtlich bestimmter Schutzwert des Bedachten.",
+    "erbenvorrang_und_einzelfall_qualifiziert": "Pflichtwahrheitswert: konkrete Anwendung der Erbenvorrangvariante in2318II/III-Konkurrenz fachlich begründet, einErbe/einVermächtnis; FALSE NICHT_ANWENDBAR.",
+    "rechts_und_bewertungsnachweis": "Nichtleere dokumentierte rechtliche Zuordnung gerade zur Erbenvorrangvariante einschließlich Begründung/Quelle und vergleichbarer Bewertungen. Keine beliebige Methodenwahl."
+  },
+  "ergebnisvertrag": "Grundkürzung,vorbestehenderErbenschutz,Bedachtenschutzkürzung,Erbenbedarf,Kürzung und verbleibende Werte als EUR-Brüche.",
+  "regelart": "BETRAGSOPERATION"
+}

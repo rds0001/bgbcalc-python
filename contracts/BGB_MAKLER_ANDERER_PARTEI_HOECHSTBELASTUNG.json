@@ -1,0 +1,27 @@
+{
+  "regel_id": "BGB_MAKLER_ANDERER_PARTEI_HOECHSTBELASTUNG",
+  "regelversion": "1",
+  "bezeichnung": "makler_anderer_partei_hoechstbelastung",
+  "fundstelle_ids": [
+    "BGB_656d_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "qualifizierter_gesamtmaklerlohn: Nichtnegativer exakter rechtlich qualifizierter EUR-Betrag als Dezimalzeichenfolge/Bruchobjekt; einheitliche Kostenbasis ohne Doppelzählung. Erlass höchstens bisheriger Maklerlohn je Partei. einordnungsnachweis: Nichtleerer Nachweis des §656b-Verbraucher-/Immobilienfalls und wirksamer qualifizierter Maklerlohn-/Erlassbasis.",
+  "rechenschritte": "Gesamtmaklerlohn durch zwei teilen als maximale auf andere Vertragspartei abwälzbare Belastung",
+  "ausnahmen": "Nur §656d bei einem Maklervertrag mit einer Partei eines Wohnungs-/Einfamilienhauskaufs und Verbrauchereigenschaft des Käufers nach §656b. Gesamtmaklerlohn ist die rechtlich wirksame einheitliche Kostenbasis beider Parteien nach qualifizierten Ermäßigungen/Erlassen; keine Zusammenzählung zusätzlicher identischer Forderungen. Ergebnis nur Belastungsobergrenze; überschreitende Vereinbarung wird nicht automatisch auf Hälfte reduziert. Fälligkeit verlangt Zahlung und Nachweis nach Satz2; kein automatischer Fälligkeitseintritt.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/maklerbetragsgrenzen.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "qualifizierter_gesamtmaklerlohn": "Nichtnegativer exakter rechtlich qualifizierter EUR-Betrag als Dezimalzeichenfolge/Bruchobjekt; einheitliche Kostenbasis ohne Doppelzählung. Erlass höchstens bisheriger Maklerlohn je Partei.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des §656b-Verbraucher-/Immobilienfalls und wirksamer qualifizierter Maklerlohn-/Erlassbasis."
+  },
+  "ergebnisvertrag": "wert ist die Höchstbelastung der anderen Partei oder verbleibender gleicher Maklerlohn je Partei in EUR als exakter Bruch.",
+  "regelart": "BETRAGSOPERATION"
+}

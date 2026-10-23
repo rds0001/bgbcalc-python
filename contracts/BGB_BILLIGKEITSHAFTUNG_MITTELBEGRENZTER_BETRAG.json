@@ -1,0 +1,29 @@
+{
+  "regel_id": "BGB_BILLIGKEITSHAFTUNG_MITTELBEGRENZTER_BETRAG",
+  "regelversion": "1",
+  "bezeichnung": "billigkeitshaftung_mittelbegrenzter_betrag",
+  "fundstelle_ids": [
+    "BGB_829_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "billig_erforderlicher_ersatzbetrag: Vorqualifizierter nach Billigkeit erforderlicher Schadloshaltungsbetrag in EUR; nicht automatisch voller Schaden. verfuegbare_mittel: Rechtlich festgestellte für den betrachteten Ausgleich verfügbare Mittel in EUR, zeitlich und wirtschaftlich konsistent bewertet. geschuetzter_unterhaltsbedarf: Davon benötigte Mittel für angemessenen eigenen Unterhalt und gesetzliche Unterhaltspflichten in EUR; ohne Doppelzählung. einordnungsnachweis: Nachweis des Anwendungsbereichs829 und der Billigkeitsbewertung sowie konsistenter Mittel-/Unterhaltsbewertung; kein Ersatz durch aufsichtspflichtigen Dritten erlangbar.",
+  "rechenschritte": "Vom verfügbaren Mittelbestand geschützten Unterhaltsbedarf abziehen, mindestens null; Billigkeitsersatz auf diesen verbleibenden Betrag begrenzen.",
+  "ausnahmen": "§829: nur numerische Mittelgrenze eines bereits nach Billigkeit qualifizierten Ersatzbetrags. Keine automatische Billigkeitsentscheidung aus Vermögenszahlen und keine Tabelle für angemessenen Unterhalt. Haftungsvoraussetzungen827/828, fehlende Erlangbarkeit von Ersatz durch einen aufsichtspflichtigen Dritten und Verhältnisse der Beteiligten extern feststellen. Keine Entscheidung über zeitliche Streckung, künftige Einkünfte oder Vollstreckbarkeit.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Nichtnegative Eingangswerte, exakter nichtnegativer EUR-Bruch im sicheren gemeinsamen Zahlenbereich.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/schuldrechtliche_betragsreste.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "billig_erforderlicher_ersatzbetrag": "Vorqualifizierter nach Billigkeit erforderlicher Schadloshaltungsbetrag in EUR; nicht automatisch voller Schaden.",
+    "verfuegbare_mittel": "Rechtlich festgestellte für den betrachteten Ausgleich verfügbare Mittel in EUR, zeitlich und wirtschaftlich konsistent bewertet.",
+    "geschuetzter_unterhaltsbedarf": "Davon benötigte Mittel für angemessenen eigenen Unterhalt und gesetzliche Unterhaltspflichten in EUR; ohne Doppelzählung.",
+    "einordnungsnachweis": "Nachweis des Anwendungsbereichs829 und der Billigkeitsbewertung sowie konsistenter Mittel-/Unterhaltsbewertung; kein Ersatz durch aufsichtspflichtigen Dritten erlangbar."
+  },
+  "ergebnisvertrag": "wert ist der exakte EUR-Bruch.",
+  "regelart": "BETRAGSOPERATION"
+}

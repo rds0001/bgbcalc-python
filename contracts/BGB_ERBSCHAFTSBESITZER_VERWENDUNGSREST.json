@@ -1,0 +1,30 @@
+{
+  "regel_id": "BGB_ERBSCHAFTSBESITZER_VERWENDUNGSREST",
+  "regelversion": "1",
+  "bezeichnung": "erbschaftsbesitzer_verwendungsrest",
+  "fundstelle_ids": [
+    "BGB_2022_T0001",
+    "BGB_2022_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "ersatzfaehige_verwendungen: Nichtnegative exakte EUR-Summe rechtlich unter2022I/II fallender Verwendungen einschließlich qualifizierter Lasten-/Schuldentilgungsaufwendungen. Noch vor Abzug des bereits bereicherungsrechtlich gedeckten Teils. bereits_durch_bereicherungsanrechnung_gedeckt: Nichtnegativer exakter EUR-Teil gerade dieser Verwendungen, der durch Anrechnung auf2021-Bereicherung bereits gedeckt wird, höchstens ersatzfaehige_verwendungen. anspruch_nach_2022_qualifiziert: Expliziter Wahrheitswert des rechtlich einschlägigen Verwendungsersatzes. Verschärfte Haftung2023–2025 und abweichende/weitergehende Ersatzgrundlagen separat qualifiziert; FALSE ergibt NICHT_ANWENDBAR. bewertungsnachweis: Nichtleerer Nachweis zu qualifizierten Aufwendungen, bereits gedecktem Anteil und Rechtsgrund.",
+  "rechenschritte": "Ersatzfähige Verwendungen minus gerade durch Anrechnung auf2021-Bereicherung bereits gedeckter Aufwand.",
+  "ausnahmen": "Keine eigenständige Bereicherungsbewertung, keine automatische Durchsetzbarkeit/Zurückbehaltung oder weitergehender Anspruch2022III. Bereits gedeckter Teil darf Aufwand nicht übersteigen.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/erbrecht_ersatzbetraege.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "ersatzfaehige_verwendungen": "Nichtnegative exakte EUR-Summe rechtlich unter2022I/II fallender Verwendungen einschließlich qualifizierter Lasten-/Schuldentilgungsaufwendungen. Noch vor Abzug des bereits bereicherungsrechtlich gedeckten Teils.",
+    "bereits_durch_bereicherungsanrechnung_gedeckt": "Nichtnegativer exakter EUR-Teil gerade dieser Verwendungen, der durch Anrechnung auf2021-Bereicherung bereits gedeckt wird, höchstens ersatzfaehige_verwendungen.",
+    "anspruch_nach_2022_qualifiziert": "Expliziter Wahrheitswert des rechtlich einschlägigen Verwendungsersatzes. Verschärfte Haftung2023–2025 und abweichende/weitergehende Ersatzgrundlagen separat qualifiziert; FALSE ergibt NICHT_ANWENDBAR.",
+    "bewertungsnachweis": "Nichtleerer Nachweis zu qualifizierten Aufwendungen, bereits gedecktem Anteil und Rechtsgrund."
+  },
+  "ergebnisvertrag": "wert ist exakter noch nicht durch Bereicherungsanrechnung gedeckter EUR-Verwendungsrest; negative Anwendbarkeit NULL.",
+  "regelart": "BETRAGSOPERATION"
+}

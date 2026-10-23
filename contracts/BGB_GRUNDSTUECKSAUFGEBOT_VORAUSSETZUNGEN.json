@@ -1,0 +1,36 @@
+{
+  "regel_id": "BGB_GRUNDSTUECKSAUFGEBOT_VORAUSSETZUNGEN",
+  "regelversion": "1",
+  "bezeichnung": "grundstuecksaufgebot_voraussetzungen",
+  "fundstelle_ids": [
+    "BGB_927_T0001",
+    "BGB_927_T0002",
+    "BGB_927_T0003",
+    "BGB_927_T0004",
+    "BGB_927_T0005"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "eigenbesitzbeginn_am: ISO-Datum des Erwerbs des Eigenbesitzes eines anderen als des Eigentümers; Ereignisfrist. Keine bloße Nutzung ohne Eigenbesitz. prueftag: ISO-Datum ab Eigenbesitzbeginn; Berechnung zum Ablauf dieses Tages. Dreißigjahresfrist ist erst am Tagesende vollständig abgelaufen. einfacher_eigenbesitzzeitraum: Expliziter Wahrheitswert: Eigenbesitz dauert bis Prüftag fort, ist ungehemmt und ununterbrochen und es werden keine Vorgängerzeiten angerechnet. FALSE ergibt NICHT_ANWENDBAR; sämtliche abweichenden Zeitkonstellationen gemäß Verweis auf Ersitzung gesondert behandeln. eigentuemer_im_grundbuch_eingetragen: Expliziter Wahrheitswert, ob der Eigentümer eingetragen ist und damit die zusätzlichen Voraussetzungen nach Absatz1 Satz3 greifen. eigentuemer_gestorben_oder_verschollen: Expliziter rechtlich qualifizierter Wahrheitswert der Alternative Tod oder Verschollenheit, nicht bloß unerreichbar. Bei nicht eingetragenem Eigentümer ohne Einfluss auf Ergebnis. letzte_zustimmungsbeduerftige_eintragung_am: Optionales ISO-Datum der letzten Grundbucheintragung, die der Zustimmung dieses Eigentümers bedurfte, spätestens Prüftag. NULL bedeutet nach vollständig geprüfter relevanter Grundbuchhistorie niemals eine solche Eintragung, nicht unbekannt oder ungeprüft. Bei nicht eingetragenem Eigentümer für Zusatzvoraussetzung unerheblich; ein eingegebenes Datum wird dennoch validiert. einordnungsnachweis: Nichtleere Begründung von Eigenbesitz und Zeitverlauf, Eigentümerstatus sowie vollständiger Grundbuchhistorie und Zustimmungsbedürftigkeit. Keine gerichtliche Entscheidung durch Eigenerklärung ersetzen.",
+  "rechenschritte": "Eigenbesitzbeginn plus30 Jahre als Ereignisfrist. Bei eingetragenem Eigentümer zusätzlich Tod oder Verschollenheit und, falls eine zustimmungsbedürftige Eintragung erfolgte, deren Datum plus30 Jahre. Prüfung zum Tagesende; beide Zeitbedingungen kumulativ.",
+  "ausnahmen": "Nur einfacher fortdauernder ungehemmter/ununterbrochener Eigenbesitz ohne Vorgängeranrechnung. Andere Zeitverläufe NICHT_ANWENDBAR. Keine vollständige gerichtliche Zulässigkeitsprüfung. Absatz2 verlangt Beschluss und eigene Grundbucheintragung; Schutz Dritter nach Absatz3 nicht durch diesen Tatbestand berechnet.",
+  "rundung": "Keine; Kalenderdaten taggenau.",
+  "wertebereich": "ISO-Daten und berechnete Grenzen0001..9999, explizite Wahrheitswerte und nichtleerer Nachweis.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/grundstuecksaufgebot.json",
+  "gesamtabnahme": false,
+  "einheit": "daten_und_wahrheitswerte",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "eigenbesitzbeginn_am": "ISO-Datum des Erwerbs des Eigenbesitzes eines anderen als des Eigentümers; Ereignisfrist. Keine bloße Nutzung ohne Eigenbesitz.",
+    "prueftag": "ISO-Datum ab Eigenbesitzbeginn; Berechnung zum Ablauf dieses Tages. Dreißigjahresfrist ist erst am Tagesende vollständig abgelaufen.",
+    "einfacher_eigenbesitzzeitraum": "Expliziter Wahrheitswert: Eigenbesitz dauert bis Prüftag fort, ist ungehemmt und ununterbrochen und es werden keine Vorgängerzeiten angerechnet. FALSE ergibt NICHT_ANWENDBAR; sämtliche abweichenden Zeitkonstellationen gemäß Verweis auf Ersitzung gesondert behandeln.",
+    "eigentuemer_im_grundbuch_eingetragen": "Expliziter Wahrheitswert, ob der Eigentümer eingetragen ist und damit die zusätzlichen Voraussetzungen nach Absatz1 Satz3 greifen.",
+    "eigentuemer_gestorben_oder_verschollen": "Expliziter rechtlich qualifizierter Wahrheitswert der Alternative Tod oder Verschollenheit, nicht bloß unerreichbar. Bei nicht eingetragenem Eigentümer ohne Einfluss auf Ergebnis.",
+    "letzte_zustimmungsbeduerftige_eintragung_am": "Optionales ISO-Datum der letzten Grundbucheintragung, die der Zustimmung dieses Eigentümers bedurfte, spätestens Prüftag. NULL bedeutet nach vollständig geprüfter relevanter Grundbuchhistorie niemals eine solche Eintragung, nicht unbekannt oder ungeprüft. Bei nicht eingetragenem Eigentümer für Zusatzvoraussetzung unerheblich; ein eingegebenes Datum wird dennoch validiert.",
+    "einordnungsnachweis": "Nichtleere Begründung von Eigenbesitz und Zeitverlauf, Eigentümerstatus sowie vollständiger Grundbuchhistorie und Zustimmungsbedürftigkeit. Keine gerichtliche Entscheidung durch Eigenerklärung ersetzen."
+  },
+  "ergebnisvertrag": "wert enthält eigenbesitz_dreissigjahresende, grundbuchruhe_dreissigjahresende (null falls keine einschlägige Eintragung oder kein eingetragener Eigentümer), eigenbesitzzeit_erfuellt, zusatzvoraussetzungen_eingetragener_eigentuemer_erfuellt, zeit_und_statusvoraussetzungen_erfuellt. Keine Aussage über bereits erlangtes Eigentum.",
+  "regelart": "FRISTBERECHNUNG"
+}

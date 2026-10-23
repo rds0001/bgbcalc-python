@@ -1,0 +1,32 @@
+{
+  "regel_id": "BGB_MIETSICHERHEIT_MIT_ANLAGEERTRAEGEN",
+  "regelversion": "1",
+  "bezeichnung": "mietsicherheit_mit_anlageertraegen",
+  "fundstelle_ids": [
+    "BGB_551_T0005",
+    "BGB_551_T0006",
+    "BGB_551_T0007",
+    "BGB_551_T0008",
+    "BGB_551_T0009"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "sicherheit_vor_ertragszuwachs: Nichtnegativer vorhandener Sicherheitsbetrag in EUR unmittelbar vor den betrachteten Erträgen. hinzukommende_anlageertraege: Tatsächliche nichtnegative, dem Mieter zustehende und noch nicht im Sicherheitsbetrag enthaltene Anlageerträge in EUR. einordnungsnachweis: Nachweis des Sicherheitsbestands und der zusätzlich zugeordneten tatsächlichen Erträge nach551III.",
+  "rechenschritte": "Bestehende Sicherheit und noch nicht enthaltene zugeordnete Anlageerträge addieren.",
+  "ausnahmen": "§551III: tatsächlicher Ertragszuwachs erhöht die Sicherheit; keine erneute Begrenzung des Ertragszuwachses auf drei Monatsmieten. Ausgangssicherheit gesondert nach551I prüfen. Keine Hochrechnung eines hypothetischen Sparzinses, kein Ersatz einer unterlassenen Anlage und keine automatische Kautionsfreigabe. Anlageverluste, Entnahmen und bereits eingerechnete Erträge getrennt berücksichtigen; keine Doppelzählung.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Nichtnegative Eingangswerte, exakter nichtnegativer EUR-Bruch im sicheren gemeinsamen Zahlenbereich.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/schuldrechtliche_betragsreste.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "sicherheit_vor_ertragszuwachs": "Nichtnegativer vorhandener Sicherheitsbetrag in EUR unmittelbar vor den betrachteten Erträgen.",
+    "hinzukommende_anlageertraege": "Tatsächliche nichtnegative, dem Mieter zustehende und noch nicht im Sicherheitsbetrag enthaltene Anlageerträge in EUR.",
+    "einordnungsnachweis": "Nachweis des Sicherheitsbestands und der zusätzlich zugeordneten tatsächlichen Erträge nach551III."
+  },
+  "ergebnisvertrag": "wert ist der exakte EUR-Bruch.",
+  "regelart": "BETRAGSOPERATION"
+}

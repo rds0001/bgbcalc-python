@@ -1,0 +1,35 @@
+{
+  "regel_id": "BGB_ERBRECHT_WEITERE_GRUNDFRIST",
+  "regelversion": "1",
+  "bezeichnung": "erbrecht_weitere_grundfrist",
+  "fundstelle_ids": [
+    "BGB_1965_T0003",
+    "BGB_1965_T0004",
+    "BGB_1981_T0003",
+    "BGB_2034_T0002",
+    "BGB_469_T0003",
+    "BGB_469_T0004",
+    "BGB_2061_T0001",
+    "BGB_2061_T0004"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "fristart: erbrechtsnachweis_1965 (3Monate), nachlassverwaltung_1981 (2Jahre), erbteilvorkauf_2034 (2Monate), glaeubigeranmeldung_2061 (6Monate). Nur der rechtlich einschlägige gesetzliche Fristentyp. fristbeginnereignis_am: ISO-Datum des qualifizierten Anfangsereignisses:1965 Ablauf öffentliche Anmeldungsfrist oder ohne öffentliche Aufforderung gerichtliche Nachweisaufforderung;1981 Annahme;2034 Empfang ausreichender Vertragsmitteilung469;2061 letzte erforderliche Veröffentlichung. Keine pauschale Ersatzwahl Erbfall/Kaufvertrag. einordnungsnachweis: Nichtleerer Nachweis zu Fristart, gesetzlichem Anwendungsfall und maßgeblichem Anfangsereignis.",
+  "rechenschritte": "Gesetzliche3-/2-/6Monats- oder2Jahresfrist auswählen und als Ereignisfrist berechnen.",
+  "ausnahmen": "Nur Grundfrist, kein Wirksamkeits-/Zulässigkeitsentscheid und keine automatische Hemmung/Feiertagskorrektur.2061-Haftungsquote getrennt.",
+  "rundung": "Keine; Kalenderdaten taggenau.",
+  "wertebereich": "ISO-Daten und berechnete Grenzen0001..9999, feste Auswahlwerte, nichtleerer Nachweis.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/erbfristenrest.json",
+  "gesamtabnahme": false,
+  "einheit": "datum_und_fristlaenge",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "fristart": "erbrechtsnachweis_1965 (3Monate), nachlassverwaltung_1981 (2Jahre), erbteilvorkauf_2034 (2Monate), glaeubigeranmeldung_2061 (6Monate). Nur der rechtlich einschlägige gesetzliche Fristentyp.",
+    "fristbeginnereignis_am": "ISO-Datum des qualifizierten Anfangsereignisses:1965 Ablauf öffentliche Anmeldungsfrist oder ohne öffentliche Aufforderung gerichtliche Nachweisaufforderung;1981 Annahme;2034 Empfang ausreichender Vertragsmitteilung469;2061 letzte erforderliche Veröffentlichung. Keine pauschale Ersatzwahl Erbfall/Kaufvertrag.",
+    "einordnungsnachweis": "Nichtleerer Nachweis zu Fristart, gesetzlichem Anwendungsfall und maßgeblichem Anfangsereignis."
+  },
+  "ergebnisvertrag": "wert enthält grundfristende, anzahl und einheit der gesetzlichen Frist.",
+  "regelart": "FRISTBERECHNUNG"
+}

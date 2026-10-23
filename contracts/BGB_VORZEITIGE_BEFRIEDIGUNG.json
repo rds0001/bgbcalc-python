@@ -1,0 +1,38 @@
+{
+  "regel_id": "BGB_VORZEITIGE_BEFRIEDIGUNG",
+  "regelversion": "1",
+  "bezeichnung": "vorzeitiger_befriedigungsbetrag",
+  "fundstelle_ids": [
+    "BGB_246_T0001",
+    "BGB_1133_T0001",
+    "BGB_1133_T0002",
+    "BGB_1133_T0003",
+    "BGB_1217_T0001",
+    "BGB_1217_T0002",
+    "BGB_1217_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlich ausgewählter Fall und ausdrücklich belegte externe Parameter.",
+  "eingabevertrag": "forderungsbetrag: nichtnegative EUR-Dezimalzeichenfolge; zeitanteil_zaehler/nenner: nichtnegative/positive ganze Zahl; zeitanteil_nachweis: nichtleer; unverzinslich, noch_nicht_faellig, voraussetzungen_erfuellt: explizite Wahrheitswerte; befriedigungsgrund: hypothek_gefaehrdung oder pfand_rueckgabe. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+  "rechenschritte": "Bei erfüllten Voraussetzungen und unverzinslicher noch nicht fälliger Forderung: Auszahlungsbetrag = Forderungsbetrag / (1 + 4/100 * Jahresanteil bis Fälligkeit).",
+  "ausnahmen": "§ 1133: hypothekarische Sicherheit durch Grundstücksverschlechterung gefährdet, angemessene Abhilfefrist abgelaufen und Gefährdung nicht beseitigt. § 1217 Abs. 2: erhebliche fortgesetzte Rechtsverletzung trotz Abmahnung nach Abs. 1 und Rückgabe gegen Befriedigung statt Hinterlegung/Verwahrung verlangt. Diese Voraussetzungen werden in voraussetzungen_erfuellt bewertet eingegeben. Bei fehlender Voraussetzung NICHT_ANWENDBAR, nicht eine Berechnung anderer Ansprüche. Gesetzlicher Satz § 246 von 4 Prozent; kein Verzugszins oder Zinseszins.",
+  "rundung": "Keine. Ausgabe exakter Bruch als Ganzzahlzeichenfolgen; Jahreszinssätze in Prozent, Geldbeträge in EUR.",
+  "wertebereich": "Gemeinsamer Zahlenvertrag NUMERIK.md; fehlend EINGABE_FEHLT, falscher Typ/Bereich EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/abzinsung.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "exakte_bruchobjekte_als_dezimaleingaben": true,
+  "parameter_dokumentation": {
+    "forderungsbetrag": "Nichtnegative Dezimalzeichenfolge des Forderungsbetrags in EUR. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+    "zeitanteil_zaehler": "Nichtnegative ganze Zahl des belegten Jahresanteils von Zahlung bis Fälligkeit.",
+    "zeitanteil_nenner": "Positive ganze Zahl als Nenner des Jahresanteils.",
+    "zeitanteil_nachweis": "Nichtleere Beschreibung des maßgeblichen Zeitraums und der Zeitkonvention.",
+    "unverzinslich": "Expliziter Wahrheitswert, ob die Forderung unverzinslich ist.",
+    "noch_nicht_faellig": "Expliziter Wahrheitswert, ob die Forderung bei Zahlung noch nicht fällig ist.",
+    "befriedigungsgrund": "hypothek_gefaehrdung für § 1133 oder pfand_rueckgabe für § 1217 Abs. 2.",
+    "voraussetzungen_erfuellt": "Expliziter Wahrheitswert zur rechtlichen Bewertung der nachfolgend erläuterten Voraussetzungen des ausgewählten Befriedigungsgrundes."
+  }
+}

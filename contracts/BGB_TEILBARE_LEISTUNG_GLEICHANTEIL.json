@@ -1,0 +1,32 @@
+{
+  "regel_id": "BGB_TEILBARE_LEISTUNG_GLEICHANTEIL",
+  "regelversion": "1",
+  "bezeichnung": "teilbare_leistung_gleichanteil",
+  "fundstelle_ids": [
+    "BGB_420_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlich ausgewählter Fall und ausdrücklich belegte externe Parameter.",
+  "eingabevertrag": "gesamtleistung: Nichtnegative Dezimalzeichenfolge oder exaktes Bruchobjekt mit zaehler/nenner nach NUMERIK.md. Bezifferte Gesamtleistung in der gesondert angegebenen Einheit; keine automatische Bewertung oder Umrechnung. anzahl_beteiligte: Ganzzahl zwischen 2 und 9007199254740991. Gezählt werden ausschließlich die Personen auf der aufzuteilenden Seite; die Gegenpartei nicht mitzählen. Keine Anzahl verschiedener Ansprüche oder Leistungsteile. leistungseinheit: Nichtleere Zeichenfolge der gemeinsamen Leistungseinheit, beispielsweise EUR oder kg. Wird als Ergebniseinheit übernommen; keine Umrechnung und keine automatische Cent- oder Stückrundung. Physische Teilbarkeit und rechtliche Einordnung bleiben gesonderte Tatsachen. rollenart: Auswahl teilschuld oder teilforderung. Im ersten Fall sind Schuldner zu zählen, im zweiten Gläubiger. Keine Auswahl einer Gesamtschuld oder Gesamtgläubigerschaft nach anderen Vorschriften. leistung_teilbar: Expliziter Wahrheitswert zur Teilbarkeit der Leistung. FALSE ergibt NICHT_ANWENDBAR. gleichanteilsvermutung_anwendbar: Expliziter Wahrheitswert zur Zweifelsregel des § 420: keine vorrangige abweichende Zuordnung oder andere Haftungs-/Berechtigungsform. FALSE ergibt NICHT_ANWENDBAR; keine automatische Vertragsauslegung.",
+  "rechenschritte": "Bei teilbarer Leistung und anwendbarer Zweifelsregel: Anteilsquote=1geteilt durch Anzahl der beteiligten Schuldner beziehungsweise Gläubiger; Leistungsanteil=Gesamtleistung mal Anteilsquote.",
+  "ausnahmen": "Nur Zweifelsregel für Teilschuld beziehungsweise Teilforderung nach §420. Keine Gesamtschuld, Gesamtgläubigerschaft, gemeinschaftliche Gläubigerschaft oder automatische Vertragsauslegung. Jede Person erhält hier den gleichen rechnerischen Anteil; bereits erbrachte Zahlungen, Einwendungen und abweichende Quoten sind gesondert. Bezifferte Mengen sind keine automatische Anordnung, eine physisch unteilbare Sache zu zerteilen.",
+  "rundung": "Keine; exakte Brüche, Einheit ausdrücklich eingegeben.",
+  "wertebereich": "Gemeinsamer Zahlenvertrag NUMERIK.md; fehlend EINGABE_FEHLT, falscher Typ/Bereich EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/gleichanteile.json",
+  "gesamtabnahme": false,
+  "einheit": "Leistungseinheit laut Eingabe",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "gesamtleistung": "Nichtnegative Dezimalzeichenfolge oder exaktes Bruchobjekt mit zaehler/nenner nach NUMERIK.md. Bezifferte Gesamtleistung in der gesondert angegebenen Einheit; keine automatische Bewertung oder Umrechnung.",
+    "anzahl_beteiligte": "Ganzzahl zwischen 2 und 9007199254740991. Gezählt werden ausschließlich die Personen auf der aufzuteilenden Seite; die Gegenpartei nicht mitzählen. Keine Anzahl verschiedener Ansprüche oder Leistungsteile.",
+    "leistungseinheit": "Nichtleere Zeichenfolge der gemeinsamen Leistungseinheit, beispielsweise EUR oder kg. Wird als Ergebniseinheit übernommen; keine Umrechnung und keine automatische Cent- oder Stückrundung. Physische Teilbarkeit und rechtliche Einordnung bleiben gesonderte Tatsachen.",
+    "rollenart": "Auswahl teilschuld oder teilforderung. Im ersten Fall sind Schuldner zu zählen, im zweiten Gläubiger. Keine Auswahl einer Gesamtschuld oder Gesamtgläubigerschaft nach anderen Vorschriften.",
+    "leistung_teilbar": "Expliziter Wahrheitswert zur Teilbarkeit der Leistung. FALSE ergibt NICHT_ANWENDBAR.",
+    "gleichanteilsvermutung_anwendbar": "Expliziter Wahrheitswert zur Zweifelsregel des § 420: keine vorrangige abweichende Zuordnung oder andere Haftungs-/Berechtigungsform. FALSE ergibt NICHT_ANWENDBAR; keine automatische Vertragsauslegung."
+  },
+  "ergebnisvertrag": "wert enthält anteilsquote als exakten dimensionslosen Bruch und leistungsanteil als exakten Bruch in leistungseinheit. Bei NICHT_ANWENDBAR ist wert null. Keine automatische Rundung; Nutzerangaben einschließlich Einheit bleiben im Ergebnis sichtbar.",
+  "exakte_bruchobjekte_als_dezimaleingaben": true,
+  "regelart": "VERBAL_RECHENBAR"
+}

@@ -1,0 +1,35 @@
+{
+  "regel_id": "BGB_DIENSTKUENDIGUNG_TEILVERGUETUNG",
+  "regelversion": "1",
+  "bezeichnung": "dienstkuendigung_teilverguetung",
+  "fundstelle_ids": [
+    "BGB_628_T0001",
+    "BGB_628_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "gesamtverguetung: Nichtnegative rechtlich maßgebliche vereinbarte Gesamtvergütung in EUR für den betrachteten Leistungsumfang. Gleicher Bewertungsumfang wie Leistungsanteil. leistungsanteil_zaehler: Nichtnegative ganze Zahl des rechtlich bestimmten Anteils bisher erbrachter Leistung, höchstens Nenner und2^53-1. Nicht automatisch Zeitanteil; Wert/Umfang der vereinbarten Leistungen bestimmen. leistungsanteil_nenner: Positive ganze Bezugsgröße der gesamten betrachteten Leistung im selben Maßstab, höchstens2^53-1. Leistungsanteil0..1. interesseloser_verguetungsanteil: Nichtnegativer EUR-Anteil der bisher erarbeiteten Teilvergütung, dessen zugehörige Leistungen infolge der Kündigung für den anderen Teil kein Interesse mehr haben. Höchstens bisherige Teilvergütung. Rechtlich bewerteter Vergütungsanteil, nicht beliebige Schadenhöhe oder Interessenbewertung des gesamten Vertrags. selbst_gekuendigt: Wahrheitswert einer Kündigung durch den Dienstverpflichteten selbst. Rechtliche Kündigungserklärung und maßgeblichen Sachverhalt bestimmen. durch_vertragsbruch_des_anderen_veranlasst: Wahrheitswert: Eigenkündigung wurde durch vertragswidriges Verhalten des anderen Teils veranlasst. Nur bei Eigenkündigung für diese Verlustalternative maßgeblich. fremdkuendigung_durch_eigenen_vertragsbruch: Wahrheitswert: Dienstverpflichteter hat durch eigenes vertragswidriges Verhalten die Kündigung des anderen Teils veranlasst. Nicht jede Fremdkündigung gleichsetzen. kuendigung_nach_626_627_nach_dienstbeginn: Wahrheitswert einer rechtlich wirksamen Kündigung gerade nach§626 oder§627 nach Beginn der Dienstleistung. Gründe, Fristen, Kündigungsbefugnis und weitere Voraussetzungen vorab prüfen. bewertungsnachweis: Nichtleere Beschreibung von Kündigungsgrund/-richtung, Dienstbeginn, Leistungsanteil und kausal durch Kündigung eingetretenem Interessenverlust. Vorauszahlungen und gesonderte Schadenersatzansprüche separat.",
+  "rechenschritte": "Gesamtvergütung×bisheriger Leistungsanteil. Davon interesselosen Vergütungsanteil abziehen bei Eigenkündigung ohne Veranlassung durch Vertragsbruch des anderen ODER durch eigenen Vertragsbruch veranlasster Fremdkündigung.",
+  "ausnahmen": "Nur§628 Absatz1 Sätze1/2; kein pauschaler Totalverlust bei Eigenkündigung. Interessenverlust gerade infolge Kündigung und höchstens bisherige Teilvergütung. VorausvergütungsrückzahlungSatz3 und KündigungsschadenAbsatz2 gesondert.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/teilverguetung.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "gesamtverguetung": "Nichtnegative rechtlich maßgebliche vereinbarte Gesamtvergütung in EUR für den betrachteten Leistungsumfang. Gleicher Bewertungsumfang wie Leistungsanteil.",
+    "leistungsanteil_zaehler": "Nichtnegative ganze Zahl des rechtlich bestimmten Anteils bisher erbrachter Leistung, höchstens Nenner und2^53-1. Nicht automatisch Zeitanteil; Wert/Umfang der vereinbarten Leistungen bestimmen.",
+    "leistungsanteil_nenner": "Positive ganze Bezugsgröße der gesamten betrachteten Leistung im selben Maßstab, höchstens2^53-1. Leistungsanteil0..1.",
+    "interesseloser_verguetungsanteil": "Nichtnegativer EUR-Anteil der bisher erarbeiteten Teilvergütung, dessen zugehörige Leistungen infolge der Kündigung für den anderen Teil kein Interesse mehr haben. Höchstens bisherige Teilvergütung. Rechtlich bewerteter Vergütungsanteil, nicht beliebige Schadenhöhe oder Interessenbewertung des gesamten Vertrags.",
+    "selbst_gekuendigt": "Wahrheitswert einer Kündigung durch den Dienstverpflichteten selbst. Rechtliche Kündigungserklärung und maßgeblichen Sachverhalt bestimmen.",
+    "durch_vertragsbruch_des_anderen_veranlasst": "Wahrheitswert: Eigenkündigung wurde durch vertragswidriges Verhalten des anderen Teils veranlasst. Nur bei Eigenkündigung für diese Verlustalternative maßgeblich.",
+    "fremdkuendigung_durch_eigenen_vertragsbruch": "Wahrheitswert: Dienstverpflichteter hat durch eigenes vertragswidriges Verhalten die Kündigung des anderen Teils veranlasst. Nicht jede Fremdkündigung gleichsetzen.",
+    "kuendigung_nach_626_627_nach_dienstbeginn": "Wahrheitswert einer rechtlich wirksamen Kündigung gerade nach§626 oder§627 nach Beginn der Dienstleistung. Gründe, Fristen, Kündigungsbefugnis und weitere Voraussetzungen vorab prüfen.",
+    "bewertungsnachweis": "Nichtleere Beschreibung von Kündigungsgrund/-richtung, Dienstbeginn, Leistungsanteil und kausal durch Kündigung eingetretenem Interessenverlust. Vorauszahlungen und gesonderte Schadenersatzansprüche separat."
+  },
+  "ergebnisvertrag": "wert ist exakte verbleibende EUR-Teilvergütung. Fehlender Anwendungsfall ergibt NICHT_ANWENDBAR/null.",
+  "regelart": "BETRAGSOPERATION"
+}

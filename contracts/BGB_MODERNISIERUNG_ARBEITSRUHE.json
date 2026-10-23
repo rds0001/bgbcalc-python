@@ -1,0 +1,30 @@
+{
+  "regel_id": "BGB_MODERNISIERUNG_ARBEITSRUHE",
+  "regelversion": "1",
+  "bezeichnung": "modernisierung_arbeitsruhe",
+  "fundstelle_ids": [
+    "BGB_559d_T0005"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "ruhebeginn_am: ISO-Datum0001..9999 des rechtlich maßgeblichen Beginns einer zusammenhängenden Arbeitsruhe, nachdem die bauliche Veränderung bereits begonnen hat. Unzusammenhängende Unterbrechungen nicht aufsummieren. beginnart: Auswahl tagesbeginn, wenn der erste Ruhetag vom Tagesbeginn an mitzählt, oder ereignis, wenn ein Ereignis im Tagesverlauf den Zeitraum auslöst und der Ereignistag nicht mitzählt. Rechtliche Einordnung§187 vorgeben; keine beliebige Auswahl zur Ergebnissteuerung. wiederaufnahme_am: ISO-Datum0001..9999 einer rechtlich wirksamen Wiederaufnahme zum Tagesbeginn, mindestens Ruhebeginn und höchstens Prüftag. Dann zählt der Vortag als letzter Ruhetag. NULL/None bedeutet am Prüftag weiterhin ununterbrochene Ruhe. Untertägige Wiederaufnahme nicht ungeprüft als Tagesbeginn normalisieren. prueftag: ISO-Datum0001..9999, mindestens Ruhebeginn; bei laufender Ruhe Prüfung bis zum Tagesschluss. Bei bereits erfolgter Wiederaufnahme entscheidet letzter Ruhetag, nicht späterer Prüftag. zeitnachweis: Nichtleere Begründung, dass Bauarbeiten schon begonnen hatten, die Ruhe ununterbrochen war, welche Beginnart gilt und ob/ab wann die Arbeiten rechtlich relevant wiederaufgenommen wurden. Sachlichen/zeitlichen Anwendungsbereich§559d prüfen.",
+  "rechenschritte": "Zwölfmonatsgrenze nach gewählter rechtlicher Beginnart berechnen. Letzter Ruhetag ist Prüftag bei laufender Ruhe, sonst Vortag tagbeginnlicher Wiederaufnahme. Nummer4 nur bei strikt späterem letzten Ruhetag.",
+  "ausnahmen": "Nur eine ununterbrochene Arbeitsruhe nach Baubeginn; keine Addition einzelner Pausen. Taggenaues Modell, untertägige Grenzfälle rechtlich gesondert; objektiver Grund separat. Genau zwölf Monate genügen nicht.",
+  "rundung": "Keine; Kalenderdaten taggenau mit beschriebener Tagesgrenze.",
+  "wertebereich": "ISO-Daten und berechnete Grenzen0001..9999, explizite Auswahl und nichtleerer Nachweis. Optionale Daten ausschließlich mit der beschriebenen Bedeutung.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/modernisierungsverzoegerung.json",
+  "gesamtabnahme": false,
+  "einheit": "daten_und_wahrheitswerte",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "ruhebeginn_am": "ISO-Datum0001..9999 des rechtlich maßgeblichen Beginns einer zusammenhängenden Arbeitsruhe, nachdem die bauliche Veränderung bereits begonnen hat. Unzusammenhängende Unterbrechungen nicht aufsummieren.",
+    "beginnart": "Auswahl tagesbeginn, wenn der erste Ruhetag vom Tagesbeginn an mitzählt, oder ereignis, wenn ein Ereignis im Tagesverlauf den Zeitraum auslöst und der Ereignistag nicht mitzählt. Rechtliche Einordnung§187 vorgeben; keine beliebige Auswahl zur Ergebnissteuerung.",
+    "wiederaufnahme_am": "ISO-Datum0001..9999 einer rechtlich wirksamen Wiederaufnahme zum Tagesbeginn, mindestens Ruhebeginn und höchstens Prüftag. Dann zählt der Vortag als letzter Ruhetag. NULL/None bedeutet am Prüftag weiterhin ununterbrochene Ruhe. Untertägige Wiederaufnahme nicht ungeprüft als Tagesbeginn normalisieren.",
+    "prueftag": "ISO-Datum0001..9999, mindestens Ruhebeginn; bei laufender Ruhe Prüfung bis zum Tagesschluss. Bei bereits erfolgter Wiederaufnahme entscheidet letzter Ruhetag, nicht späterer Prüftag.",
+    "zeitnachweis": "Nichtleere Begründung, dass Bauarbeiten schon begonnen hatten, die Ruhe ununterbrochen war, welche Beginnart gilt und ob/ab wann die Arbeiten rechtlich relevant wiederaufgenommen wurden. Sachlichen/zeitlichen Anwendungsbereich§559d prüfen."
+  },
+  "ergebnisvertrag": "wert enthält zwoelfmonatsgrenze, letzter_beruecksichtigter_ruhetag als ISO-Daten und arbeitsruhe_nummer_4 als Wahrheitswert.",
+  "regelart": "FRISTVERGLEICH"
+}

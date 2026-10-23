@@ -1,0 +1,33 @@
+{
+  "regel_id": "BGB_GESAMTHYPOTHEK_NICHTNEGATIVE_NETTOWERTANTEILE",
+  "regelversion": "1",
+  "bezeichnung": "gesamthypothek_nichtnegative_nettowertanteile",
+  "fundstelle_ids": [
+    "BGB_1172_T0001",
+    "BGB_1172_T0002",
+    "BGB_1172_T0003",
+    "BGB_1175_T0001",
+    "BGB_1175_T0002",
+    "BGB_1175_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "zu_verteilender_hypothekenbetrag: Nichtnegativer gemeinschaftlich zu verteilender Betrag nach1172/1175. grundstuecke: Liste1..1000: grundstueck_id, grundstueckswert, vorrangige_belastungen; dieselbe Wertgrundlage und vollständige Gemeinschaft. gewichtsmethode: Zwingend rechtlich qualifiziert: positive_nettowerte. Negative Rohdifferenz ergibt dabei Nullgewicht, keine negative dingliche Zuteilung. verteilungsnachweis: 1172II/1175-Anwendbarkeit und rechtliche Verwendung nichtnegativer Verwertungsgewichte ausdrücklich qualifizieren; keine abweichende Vereinbarung unterstellen.",
+  "rechenschritte": "Rohnettowerte und nichtnegative qualifizierte Gewichte bestimmen; vorhandenen Quotenkern nur bei positiver Gewichtssumme anwenden.",
+  "ausnahmen": "Bedingte Nettowertrechnung: ursprünglichen Wert minus qualifizierte vorrangige Belastungen ausweisen; unter ausdrücklich vorgegebener Methode positive_nettowerte Verteilungsgewicht=max(Rohsaldo,0). Bestehenden1172-Quotenkern mit diesen abgeleiteten Gewichten verwenden, Vorrang nicht doppelt abziehen. Bei Gewichtssumme0keine Division/keine künstliche Kopfquote: quoten_bestimmbar=false, anteile=None/NULL; die Rohsalden bleiben ausgewiesen. Gesetzliche Vorschrift liefert für0/0keine feste Ersatzquote. Keine automatische Bewertung der Vorranglast, Verwertung oder rechtliche Freigabe des Nullgewichtsmodells in jedem Streitfall.1174-Regress und1176/1182-Rangschutz gesondert.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/gesamthypothek_nichtnegative_nettowertanteile.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR_und_Quoten",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "zu_verteilender_hypothekenbetrag": "Nichtnegativer gemeinschaftlich zu verteilender Betrag nach1172/1175.",
+    "grundstuecke": "Liste1..1000: grundstueck_id, grundstueckswert, vorrangige_belastungen; dieselbe Wertgrundlage und vollständige Gemeinschaft.",
+    "gewichtsmethode": "Zwingend rechtlich qualifiziert: positive_nettowerte. Negative Rohdifferenz ergibt dabei Nullgewicht, keine negative dingliche Zuteilung.",
+    "verteilungsnachweis": "1172II/1175-Anwendbarkeit und rechtliche Verwendung nichtnegativer Verwertungsgewichte ausdrücklich qualifizieren; keine abweichende Vereinbarung unterstellen."
+  },
+  "ergebnisvertrag": "Rohnettowerte/Gewichte, Bestimmbarkeitsmerkmal und optionale vollständige Quotenverteilung."
+}

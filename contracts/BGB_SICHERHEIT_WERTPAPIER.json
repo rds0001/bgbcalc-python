@@ -1,0 +1,34 @@
+{
+  "regel_id": "BGB_SICHERHEIT_WERTPAPIER",
+  "regelversion": "1",
+  "bezeichnung": "wertpapier_sicherheitswert",
+  "fundstelle_ids": [
+    "BGB_234_T0001",
+    "BGB_234_T0002",
+    "BGB_234_T0003",
+    "BGB_240a_T0001",
+    "BGB_240a_T0002",
+    "BGB_240a_T0003",
+    "BGB_240a_T0004"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung. Entsprechender Sicherheitsleistungs- oder Sachschadensfall ist gewählt; keine Ermittlung einer nicht in dieser Betragsregel enthaltenen Anspruchsgrundlage.",
+  "eingabevertrag": "kurswert: nichtnegative Dezimalzeichenfolge in EUR; papierart: inhaberpapier|blanko_orderpapier|sonstiges; gattung_zulaessig: bool; scheine_hinterlegt: bool; gattungsnachweis: nichtleere Herkunft der Einordnung nach Verordnung zu § 240a. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+  "rechenschritte": "Bei zulässigem Inhaberpapier oder blankoindossiertem Orderpapier, zugelassener Gattung und mit hinterlegten zugehörigen Scheinen: Kurswert * 3/4. Andernfalls NICHT_ANWENDBAR ohne Wert.",
+  "ausnahmen": "Keine pauschale Bewertung oder Gleichsetzung von Nutzereingabe mit gerichtlich festgestelltem Sachverhalt. NICHT_ANWENDBAR hat wert=null, nicht 0 EUR.",
+  "rundung": "Keine. Ausgabe exakter gekürzter Bruch mit dezimalen Ganzzahlzeichenfolgen zaehler und nenner; Geldbeträge nicht automatisch auf Cent runden.",
+  "wertebereich": "NUMERIK.md gilt; bool muss explizit sein; fehlend/null/NA -> EINGABE_FEHLT, ungültiges Format/Bereich/Überlauf -> EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/betraege.json",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "gesamtabnahme": false,
+  "exakte_bruchobjekte_als_dezimaleingaben": true,
+  "parameter_dokumentation": {
+    "kurswert": "Nichtnegative Dezimalzeichenfolge in EUR. Bei Buchforderung Kurswert der gegen Löschung auszuhändigenden Wertpapiere, nicht Forderungsnominalwert. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+    "papierart": "inhaberpapier, blanko_orderpapier oder sonstiges. Nur die ersten beiden Arten erfüllen die Papierartvoraussetzung.",
+    "gattung_zulaessig": "Expliziter Wahrheitswert zur Zulässigkeit der Gattung nach der Verordnung zu § 240a. Diese externe Einordnung wird nicht von der Library ermittelt.",
+    "scheine_hinterlegt": "Expliziter Wahrheitswert: zugehörige Zins-, Renten-, Gewinnanteil- und Erneuerungsscheine sind mit hinterlegt.",
+    "gattungsnachweis": "Nichtleere Herkunfts-/Versionsangabe der externen Gattungseinordnung."
+  }
+}

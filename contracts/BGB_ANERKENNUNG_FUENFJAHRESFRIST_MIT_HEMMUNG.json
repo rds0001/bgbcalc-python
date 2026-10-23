@@ -1,0 +1,33 @@
+{
+  "regel_id": "BGB_ANERKENNUNG_FUENFJAHRESFRIST_MIT_HEMMUNG",
+  "regelversion": "1",
+  "bezeichnung": "anerkennung_fuenfjahresfrist_mit_hemmung",
+  "fundstelle_ids": [
+    "BGB_1598_T0003",
+    "BGB_1598_T0004",
+    "BGB_1598_T0005",
+    "BGB_1598_T0006",
+    "BGB_1598_T0007",
+    "BGB_1598_T0008"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "fristausloesung_am: Qualifizierte Registereintragung oder gesetzlich gleichgestellte Beurkundung1598II als EreignistagYYYY-MM-DD. ruecknahmezeitraeume: Liste höchstens1000 abgeschlossener, auf eingeschlossene Kalendertage normalisierter rechtlich wirksamer Rücknahme-Hemmungsintervalle mit genau erster_tag und letzter_tag. aufschiebende_wirkung_zeitraeume: Liste höchstens1000 abgeschlossener, auf eingeschlossene Kalendertage normalisierter Intervalle gerichtlich angeordneter aufschiebender Wirkung80V VwGO mit genau erster_tag und letzter_tag. Leere Liste bedeutet festgestellt keine. einordnungsnachweis: Nichtleerer Nachweis des1598II-Fristbeginns, Rücknahme mit unrichtig gewordener Eintragung und der vollständigen qualifizierten Hemmungs-/Ausnahmeintervalle.",
+  "rechenschritte": "Fünfjahresfrist berechnen; gerichtlich angeordnete aufschiebende Wirkungszeiten aus Rücknahmehemmung ausschneiden und verbleibende Hemmungstage vereinigt berücksichtigen.",
+  "ausnahmen": "§1598II: Fünfjahresgrundlauf ab qualifiziertem Register-/Beurkundungsereignis. Von den abgeschlossenen qualifizierten Rücknahmeintervallen die Intervalle angeordneter aufschiebender Wirkung abziehen; verbleibende Tage vereinigen und nicht mitzählen. Bloße Rechtsbehelfseinlegung ist keine automatische aufschiebende Wirkung. Alle Intervalle müssen rechtlich taggenau normalisiert sein; offene oder unbekannte Enden nicht durch erfundene Daten ersetzen. Eine nach bereits abgeschlossenem Fristlauf eintretende Rücknahme setzt keine neue Frist in Gang. Keine automatische Anerkennungswirksamkeit, Ausländerbehördenentscheidung oder Feiertagsverschiebung.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/anerkennungshemmung.json",
+  "gesamtabnahme": false,
+  "einheit": "daten_und_tage",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "fristausloesung_am": "Qualifizierte Registereintragung oder gesetzlich gleichgestellte Beurkundung1598II als EreignistagYYYY-MM-DD.",
+    "ruecknahmezeitraeume": "Liste höchstens1000 abgeschlossener, auf eingeschlossene Kalendertage normalisierter rechtlich wirksamer Rücknahme-Hemmungsintervalle mit genau erster_tag und letzter_tag.",
+    "aufschiebende_wirkung_zeitraeume": "Liste höchstens1000 abgeschlossener, auf eingeschlossene Kalendertage normalisierter Intervalle gerichtlich angeordneter aufschiebender Wirkung80V VwGO mit genau erster_tag und letzter_tag. Leere Liste bedeutet festgestellt keine.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des1598II-Fristbeginns, Rücknahme mit unrichtig gewordener Eintragung und der vollständigen qualifizierten Hemmungs-/Ausnahmeintervalle."
+  },
+  "ergebnisvertrag": "wert.grundfrist_letzter_tag und rechnerischer_letzter_tag alsYYYY-MM-DD; beruecksichtigte_hemmungstage als ganze Zahl."
+}

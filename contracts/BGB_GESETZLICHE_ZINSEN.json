@@ -1,0 +1,31 @@
+{
+  "regel_id": "BGB_GESETZLICHE_ZINSEN",
+  "regelversion": "1",
+  "bezeichnung": "gesetzliche_zinsen",
+  "fundstelle_ids": [
+    "BGB_246_T0001",
+    "BGB_301_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlich ausgewählter Fall und ausdrücklich belegte externe Parameter.",
+  "eingabevertrag": "kapital: nichtnegative EUR-Dezimalzeichenfolge; zeitanteil_zaehler: nichtnegative Ganzzahl; zeitanteil_nenner: positive Ganzzahl; zeitanteil_nachweis: nichtleere Beschreibung der belegten Jahresanteilberechnung; glaeubigerverzug: bool; abweichender_zinssatz_prozent: optionale Dezimalzeichenfolge in Prozent pro Jahr. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+  "rechenschritte": "Kapital * Jahreszinssatz/100 * angegebener Jahresanteil. Jahreszinssatz 4 Prozent, außer ausdrücklich abweichende wirksame Bestimmung als Eingabe. Während eines vollständig im Gläubigerverzug liegenden Zeitanteils kein Zinsanspruch aus dieser Regel (NICHT_ANWENDBAR).",
+  "ausnahmen": "Verzinsungspflicht aus Gesetz/Rechtsgeschäft muss bereits feststehen; Funktion begründet sie nicht. Keine universelle 30/360-/365-Tage-Annahme und kein Zinseszins; Zeitanteile mit geändertem Satz, Kapital oder Gläubigerverzug getrennt berechnen.",
+  "rundung": "Keine. Ausgabe exakter Bruch als Ganzzahlzeichenfolgen; Jahreszinssätze in Prozent, Geldbeträge in EUR.",
+  "wertebereich": "Gemeinsamer Zahlenvertrag NUMERIK.md; fehlend EINGABE_FEHLT, falscher Typ/Bereich EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/zinsen.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "exakte_bruchobjekte_als_dezimaleingaben": true,
+  "parameter_dokumentation": {
+    "kapital": "Nichtnegative Dezimalzeichenfolge des zu verzinsenden Kapitals in EUR. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+    "zeitanteil_zaehler": "Nichtnegative ganze Zahl im ausdrücklich ermittelten Jahresanteil.",
+    "zeitanteil_nenner": "Positive ganze Zahl als Nenner des Jahresanteils.",
+    "zeitanteil_nachweis": "Nichtleere Beschreibung von Zeitraum und maßgeblicher Zeitkonvention. Keine automatische 30/360- oder 365-Tage-Annahme.",
+    "glaeubigerverzug": "Expliziter Wahrheitswert: liegt der gesamte eingegebene Zeitraum im Gläubigerverzug?",
+    "abweichender_zinssatz_prozent": "Optionaler wirksam abweichender Jahreszinssatz als Dezimalzeichenfolge in Prozent; sonst NULL für 4 Prozent. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "regel_id": "BGB_SICHERHEIT_BUCHFORDERUNG",
+  "regelversion": "1",
+  "bezeichnung": "buchforderung_sicherheitswert",
+  "fundstelle_ids": [
+    "BGB_236_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung. Entsprechender Sicherheitsleistungs- oder Sachschadensfall ist gewählt; keine Ermittlung einer nicht in dieser Betragsregel enthaltenen Anspruchsgrundlage.",
+  "eingabevertrag": "kurswert: nichtnegative Dezimalzeichenfolge in EUR, nicht Nominalwert der Forderung; schuldnerart: bund|land|sonstiges. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+  "rechenschritte": "Kurswert der gegen Löschung auszuhändigenden Papiere * 3/4. Nur Schuldbuchforderung gegen Bund oder Land; sonst NICHT_ANWENDBAR.",
+  "ausnahmen": "Keine pauschale Bewertung oder Gleichsetzung von Nutzereingabe mit gerichtlich festgestelltem Sachverhalt. NICHT_ANWENDBAR hat wert=null, nicht 0 EUR.",
+  "rundung": "Keine. Ausgabe exakter gekürzter Bruch mit dezimalen Ganzzahlzeichenfolgen zaehler und nenner; Geldbeträge nicht automatisch auf Cent runden.",
+  "wertebereich": "NUMERIK.md gilt; bool muss explizit sein; fehlend/null/NA -> EINGABE_FEHLT, ungültiges Format/Bereich/Überlauf -> EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/betraege.json",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "gesamtabnahme": false,
+  "exakte_bruchobjekte_als_dezimaleingaben": true,
+  "parameter_dokumentation": {
+    "kurswert": "Nichtnegative Dezimalzeichenfolge in EUR. Bei Buchforderung Kurswert der gegen Löschung auszuhändigenden Wertpapiere, nicht Forderungsnominalwert. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+    "schuldnerart": "bund, land oder sonstiges. Die Funktion setzt eine Schuldbuchforderung der bezeichneten Art voraus."
+  }
+}

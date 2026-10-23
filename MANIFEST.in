@@ -1,0 +1,4 @@
+include LICENSE NOTICE README.md CHANGELOG.md MODELLE.md
+recursive-include src/bgbcalc *.py *.pyi py.typed *.json.gz
+prune tests
+prune docs

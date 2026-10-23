@@ -1,0 +1,35 @@
+{
+  "regel_id": "BGB_AUSLOBUNG_BELOHNUNGSANTEIL",
+  "regelversion": "1",
+  "bezeichnung": "auslobung_belohnungsanteil",
+  "fundstelle_ids": [
+    "BGB_659_T0002",
+    "BGB_659_T0003",
+    "BGB_660_T0001",
+    "BGB_660_T0002",
+    "BGB_661_T0004"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "gesamtbelohnung: Nichtnegative teilbare Geldbelohnung in EUR. verteilungsart: gleichzeitige_handlung nach659II, gleiche_preiswuerdigkeit nach661III oder mitwirkungsanteil nach660I; Rechtsgrund vorqualifiziert. anzahl_berechtigte: Nur Gleichverteilung: ganze Zahl mindestens2, höchstens2^53-1. Bei Mitwirkungsquote null. anteil_zaehler: Nur Mitwirkungsquote: nichtnegative ganze Zahl höchstens Nenner und2^53-1. Bei Gleichverteilung null. anteil_nenner: Nur Mitwirkungsquote: positive ganze Zahl höchstens2^53-1. Bei Gleichverteilung null. verteilungsnachweis: Nichtleerer Nachweis des Verteilungsfalls, der Teilbarkeit und des fehlenden Einzelempfängervorbehalts beziehungsweise der verbindlich festgestellten Mitwirkungsquote; Gesamtquoten müssen eins ergeben.",
+  "rechenschritte": "Geldbelohnung durch Anzahl gleichberechtigter Personen teilen oder mit qualifizierter Mitwirkungsquote multiplizieren.",
+  "ausnahmen": "§659II/661III: rechtlich festgestellte Gleichzeitigkeit beziehungsweise gleiche Preiswürdigkeit, teilbare Geldbelohnung und kein Vorbehalt nur eines Empfängers. Losentscheid bei Unteilbarkeit/Einzelempfängervorbehalt außerhalb dieser Berechnung. §660I: verbindlich festgestellter billiger Mitwirkungsanteil; Funktion bewertet Beiträge nicht. Bei mehreren Einzelaufrufen müssen sämtliche qualifizierten Mitwirkungsquoten zusammen eins ergeben, keine mehrfachen Vollbelohnungen. Streitbedingtes Leistungsverweigerungsrecht660II, Hinterlegung und Preisvergabewirksamkeit gesondert. Keine Rundung oder Abrechnung bereits gezahlter Teilbeträge.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/belohnungsanteile.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "gesamtbelohnung": "Nichtnegative teilbare Geldbelohnung in EUR.",
+    "verteilungsart": "gleichzeitige_handlung nach659II, gleiche_preiswuerdigkeit nach661III oder mitwirkungsanteil nach660I; Rechtsgrund vorqualifiziert.",
+    "anzahl_berechtigte": "Nur Gleichverteilung: ganze Zahl mindestens2, höchstens2^53-1. Bei Mitwirkungsquote null.",
+    "anteil_zaehler": "Nur Mitwirkungsquote: nichtnegative ganze Zahl höchstens Nenner und2^53-1. Bei Gleichverteilung null.",
+    "anteil_nenner": "Nur Mitwirkungsquote: positive ganze Zahl höchstens2^53-1. Bei Gleichverteilung null.",
+    "verteilungsnachweis": "Nichtleerer Nachweis des Verteilungsfalls, der Teilbarkeit und des fehlenden Einzelempfängervorbehalts beziehungsweise der verbindlich festgestellten Mitwirkungsquote; Gesamtquoten müssen eins ergeben."
+  },
+  "ergebnisvertrag": "wert: exakter EUR-Bruch des Anteils der betrachteten Person; keine Aussage über sofortige Durchsetzbarkeit.",
+  "regelart": "BETRAGSOPERATION"
+}

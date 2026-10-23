@@ -1,0 +1,35 @@
+{
+  "regel_id": "BGB_NACHBARRECHT_KOSTENGLEICHANTEIL",
+  "regelversion": "1",
+  "bezeichnung": "nachbarrecht_kostengleichanteil",
+  "fundstelle_ids": [
+    "BGB_919_T0001",
+    "BGB_919_T0002",
+    "BGB_919_T0003",
+    "BGB_922_T0001",
+    "BGB_922_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "gesamtkosten: Nichtnegative rechtlich zu verteilende tatsächliche Gesamtkosten in EUR für Abmarkung beziehungsweise Unterhaltung der Grenzeinrichtung. Nicht Herstellung, beliebige Erneuerung oder andere Maßnahmen ungeprüft als Unterhaltung einordnen. kostenart: Auswahl abmarkung (§919 Absatz3) oder grenzeinrichtung_unterhaltung (§922 Satz2). Abmarkung meint gesetzlich einschlägige Grenzzeichenerrichtung/-wiederherstellung; landesrechtliche Verfahrensvorgaben zuvor prüfen. beteiligtenzahl: Ganze Zahl2..2^53-1 der beteiligten Kostenseiten. Bei Unterhaltung einer Einrichtung zwischen zwei Grundstücken genau2. Miteigentümer innerhalb einer Grundstücksseite nicht ungeprüft als zusätzliche Nachbarn zählen; interne Verteilung separat. abweichendes_rechtsverhaeltnis: Wahrheitswert einer rechtlich wirksamen abweichenden Kostenverteilung. TRUE führt aus gesetzlichem Gleichteilungsmodell; Ersatzquote nicht erfinden. Bei Abmarkung ausdrücklicher Vorbehalt§919 Absatz3. gesetzlicher_kostenfall: Wahrheitswert des rechtlich einschlägigen gesetzlichen Kostenfalls. Bei§922 gemeinschaftliche Benutzungsberechtigung an Einrichtung§921 erforderlich; nicht bloß Grenznähe. Andere spezielle Regelungen vorab prüfen. kostennachweis: Nichtleere Beschreibung von Maßnahme, rechtlichem Kostenfall, Kostenträgern/Grundstücksseiten, Kostenhöhe und gegebenenfalls abweichendem Rechtsverhältnis.",
+  "rechenschritte": "Gesetzlichen Kostenfall ohne abweichende Kostenverteilung auswählen. Gesamtkosten durch Zahl der beteiligten Kostenseiten teilen; bei Unterhaltung zwischen zwei Nachbargrundstücken genau zwei.",
+  "ausnahmen": "Kein automatischer Abmarkungs-/Unterhaltungsanspruch und keine Aussage zum zulässigen Verfahren nach Landesrecht. Keine gleiche Verteilung auf sämtliche natürlichen Miteigentümer unabhängig von Grundstücksseiten. Abweichendes Rechtsverhältnis gesondert.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/nachbarkosten.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "gesamtkosten": "Nichtnegative rechtlich zu verteilende tatsächliche Gesamtkosten in EUR für Abmarkung beziehungsweise Unterhaltung der Grenzeinrichtung. Nicht Herstellung, beliebige Erneuerung oder andere Maßnahmen ungeprüft als Unterhaltung einordnen.",
+    "kostenart": "Auswahl abmarkung (§919 Absatz3) oder grenzeinrichtung_unterhaltung (§922 Satz2). Abmarkung meint gesetzlich einschlägige Grenzzeichenerrichtung/-wiederherstellung; landesrechtliche Verfahrensvorgaben zuvor prüfen.",
+    "beteiligtenzahl": "Ganze Zahl2..2^53-1 der beteiligten Kostenseiten. Bei Unterhaltung einer Einrichtung zwischen zwei Grundstücken genau2. Miteigentümer innerhalb einer Grundstücksseite nicht ungeprüft als zusätzliche Nachbarn zählen; interne Verteilung separat.",
+    "abweichendes_rechtsverhaeltnis": "Wahrheitswert einer rechtlich wirksamen abweichenden Kostenverteilung. TRUE führt aus gesetzlichem Gleichteilungsmodell; Ersatzquote nicht erfinden. Bei Abmarkung ausdrücklicher Vorbehalt§919 Absatz3.",
+    "gesetzlicher_kostenfall": "Wahrheitswert des rechtlich einschlägigen gesetzlichen Kostenfalls. Bei§922 gemeinschaftliche Benutzungsberechtigung an Einrichtung§921 erforderlich; nicht bloß Grenznähe. Andere spezielle Regelungen vorab prüfen.",
+    "kostennachweis": "Nichtleere Beschreibung von Maßnahme, rechtlichem Kostenfall, Kostenträgern/Grundstücksseiten, Kostenhöhe und gegebenenfalls abweichendem Rechtsverhältnis."
+  },
+  "ergebnisvertrag": "wert ist exakter EUR-Kostenanteil je gesetzlicher Kostenseite. Fehlender Kostenfall oder abweichende Verteilung ergibt NICHT_ANWENDBAR mit null.",
+  "regelart": "BETRAGSOPERATION"
+}

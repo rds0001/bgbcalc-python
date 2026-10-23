@@ -1,0 +1,31 @@
+{
+  "regel_id": "BGB_GESAMTSCHULD_GLEICHANTEILE_MIT_AUSFALL",
+  "regelversion": "1",
+  "bezeichnung": "gesamtschuld_gleichanteile_mit_ausfall",
+  "fundstelle_ids": [
+    "BGB_426_T0001",
+    "BGB_426_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung und ausdrücklich bewertete gleichanteilige interne Ausgleichspflicht sowie vollständige Beitragsausfälle.",
+  "eingabevertrag": "gesamtbetrag: Nichtnegativer Gesamtbetrag der betrachteten Gesamtschuld in EUR als Dezimalzeichenfolge oder exaktes Bruchobjekt mit Zeichenfolgenfeldern zaehler und nenner nach NUMERIK.md. Keine Summe bereits individuell verteilter Rückgriffsforderungen; Zahlungsstände werden hier nicht verrechnet. anzahl_gesamtschuldner: Ganze Zahl zwischen 2 und9007199254740991 der intern zu gleichen Grundanteilen verpflichteten Gesamtschuldner. Gläubiger nicht mitzählen. Keine abweichenden internen Quoten oder persönlich ausgeschlossenen Ausgleichspflichten in diese Gleichanteilsgruppe aufnehmen. anzahl_vollstaendig_ausfallender_beitraege: Ganze Zahl von0 bis anzahl_gesamtschuldner minus1. Gezählt werden ausschließlich Beiträge, die vollständig nicht erlangt werden können. Die tatsächliche und rechtliche Nichterlangbarkeit ist eine Nutzervorgabe; bloßer Zahlungsverzug genügt nicht automatisch. Mindestens ein übriger ausgleichungspflichtiger Schuldner muss verbleiben. Teilweise Ausfälle werden von dieser Funktion nicht modelliert. gleichanteiliger_ausgleich_anwendbar: Expliziter Wahrheitswert zur Anwendbarkeit des gleichen internen Grundanteils nach §426 Abs.1 Satz1 und der Ausfalltragung unter diesen übrigen Schuldnern. Keine andere Bestimmung im Innenverhältnis. FALSE ergibt NICHT_ANWENDBAR; andere Quoten werden nicht als Gleichanteile behandelt.",
+  "rechenschritte": "Ursprüngliche Quote1/n; Grundbeitrag=Gesamtbetrag/n. Vollständiger Ausfallbetrag=Grundbeitrag mal Anzahl der ausgefallenen Beiträge. Zusatzbeitrag je Übrigem=Ausfallbetrag geteilt durch n minus Ausfallanzahl. Gesamtbelastung je Übrigem=Grundbeitrag plus Zusatzbeitrag. Auch ohne Ausfall werden Grundanteile ausgewiesen.",
+  "ausnahmen": "Beschränkter Teilfall des §426 Abs.1: gleiche interne Grundanteile, ausschließlich vollständig ausfallende Beiträge und mindestens ein übriger Ausgleichungspflichtiger. Keine automatische Bewertung der Nichterlangbarkeit, keine Teilinsolvenz, keine abweichenden Quoten, keine Ermittlung bereits geleisteter Beiträge. Ausfalltragung ist keine Befreiung des ausfallenden Schuldners und keine Begrenzung der Außenhaftung. Zahlungsanspruch, Fälligkeit, Forderungsübergang und Schutz des Gläubigers nach §426 Abs.2 sind gesondert zu bestimmen.",
+  "rundung": "Keine; exakte Brüche.",
+  "wertebereich": "Gemeinsamer Zahlenvertrag NUMERIK.md einschließlich notwendiger Zwischenergebnisse; fehlend EINGABE_FEHLT, falscher Typ/Bereich EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/gesamtschuld.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "gesamtbetrag": "Nichtnegativer Gesamtbetrag der betrachteten Gesamtschuld in EUR als Dezimalzeichenfolge oder exaktes Bruchobjekt mit Zeichenfolgenfeldern zaehler und nenner nach NUMERIK.md. Keine Summe bereits individuell verteilter Rückgriffsforderungen; Zahlungsstände werden hier nicht verrechnet.",
+    "anzahl_gesamtschuldner": "Ganze Zahl zwischen 2 und9007199254740991 der intern zu gleichen Grundanteilen verpflichteten Gesamtschuldner. Gläubiger nicht mitzählen. Keine abweichenden internen Quoten oder persönlich ausgeschlossenen Ausgleichspflichten in diese Gleichanteilsgruppe aufnehmen.",
+    "anzahl_vollstaendig_ausfallender_beitraege": "Ganze Zahl von0 bis anzahl_gesamtschuldner minus1. Gezählt werden ausschließlich Beiträge, die vollständig nicht erlangt werden können. Die tatsächliche und rechtliche Nichterlangbarkeit ist eine Nutzervorgabe; bloßer Zahlungsverzug genügt nicht automatisch. Mindestens ein übriger ausgleichungspflichtiger Schuldner muss verbleiben. Teilweise Ausfälle werden von dieser Funktion nicht modelliert.",
+    "gleichanteiliger_ausgleich_anwendbar": "Expliziter Wahrheitswert zur Anwendbarkeit des gleichen internen Grundanteils nach §426 Abs.1 Satz1 und der Ausfalltragung unter diesen übrigen Schuldnern. Keine andere Bestimmung im Innenverhältnis. FALSE ergibt NICHT_ANWENDBAR; andere Quoten werden nicht als Gleichanteile behandelt."
+  },
+  "ergebnisvertrag": "wert enthält urspruenglicher_innenanteil (dimensionslos), urspruenglicher_beitrag, gesamter_ausfallbetrag, zusaetzlicher_beitrag_je_uebrigem und gesamtbelastung_je_uebrigem (jeweils exakter EUR-Bruch) sowie anzahl_uebrige als ganze Personenzahl. Bei NICHT_ANWENDBAR ist wert null. Keine automatische Cent-Rundung.",
+  "exakte_bruchobjekte_als_dezimaleingaben": true,
+  "regelart": "VERBAL_RECHENBAR"
+}

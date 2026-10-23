@@ -1,0 +1,32 @@
+{
+  "regel_id": "BGB_IMMOBILIARDARLEHEN_WECHSELKURSRECHNUNG",
+  "regelversion": "1",
+  "bezeichnung": "immobiliardarlehen_wechselkursrechnung",
+  "fundstelle_ids": [
+    "BGB_503_T0002",
+    "BGB_503_T0004",
+    "BGB_503_T0005"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "fremdwaehrungsbetrag: Nichtnegative exakte Dezimalzeichenfolge oder Bruchobjekt. Zinssätze als Jahresquoten (0.05=5%); Wechselkurse strikt positiv als Landeswährung je Fremdwährungseinheit, Fremdwährungsbetrag nichtnegativ. wechselkurs_vertrag: Nichtnegative exakte Dezimalzeichenfolge oder Bruchobjekt. Zinssätze als Jahresquoten (0.05=5%); Wechselkurse strikt positiv als Landeswährung je Fremdwährungseinheit, Fremdwährungsbetrag nichtnegativ. wechselkurs_vergleich: Nichtnegative exakte Dezimalzeichenfolge oder Bruchobjekt. Zinssätze als Jahresquoten (0.05=5%); Wechselkurse strikt positiv als Landeswährung je Fremdwährungseinheit, Fremdwährungsbetrag nichtnegativ. wechselkurs_umstellung: Nichtnegative exakte Dezimalzeichenfolge oder Bruchobjekt. Zinssätze als Jahresquoten (0.05=5%); Wechselkurse strikt positiv als Landeswährung je Fremdwährungseinheit, Fremdwährungsbetrag nichtnegativ. einordnungsnachweis: Nichtleerer Nachweis des qualifizierten gesetzlichen Falls und rechtlich bestimmten Zinssatz-/Kursgrundlagen; keine automatische Markt-/Effektivzinsberechnung.",
+  "rechenschritte": "Identischen Rest- oder Ratenbetrag zum Vertrags-/Vergleichskurs bewerten,120%-Grenze prüfen und Umstellungswert berechnen.",
+  "ausnahmen": "Nur §503 für qualifiziertes Immobiliar-Verbraucherdarlehen in Fremdwährung. Derselbe aktuelle Restbetrag oder dieselbe regelmäßige Rate wird in beiden Vergleichswerten verwendet, nicht ursprünglicher Nennbetrag gegen heutige Restschuld. Landeswährung nach Absatz1 einschließlich wirksamer Währungsvereinbarung rechtlich bestimmen. Restbetrag und Rate bei unterschiedlichen relevanten Werten separat prüfen; numerischer Auslöser liegt vor, wenn wenigstens einer strikt über20% gestiegen ist. Umstellungskurs ist grundsätzlich Marktwechselkurs am Antragstag, bei wirksamer abweichender Vereinbarung deren Kurs; muss extern belegt werden. Kein Kursabruf, keine automatische Umwandlung/Vertragsänderung. Alle Kurse haben dieselbe ausdrückliche Orientierung Landeswährung je Fremdwährungseinheit.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Exakte gemeinsame rationale Zahlengrenzen; Eingangszinsen nichtnegativ, rechnerischer korrigierter Sollzins vorzeichenbehaftet; Wechselkurse positiv, Währungsbetrag nichtnegativ.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/darlehenszinsundwaehrung.json",
+  "gesamtabnahme": false,
+  "einheit": "landeswaehrung",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "fremdwaehrungsbetrag": "Nichtnegative exakte Dezimalzeichenfolge oder Bruchobjekt. Zinssätze als Jahresquoten (0.05=5%); Wechselkurse strikt positiv als Landeswährung je Fremdwährungseinheit, Fremdwährungsbetrag nichtnegativ.",
+    "wechselkurs_vertrag": "Nichtnegative exakte Dezimalzeichenfolge oder Bruchobjekt. Zinssätze als Jahresquoten (0.05=5%); Wechselkurse strikt positiv als Landeswährung je Fremdwährungseinheit, Fremdwährungsbetrag nichtnegativ.",
+    "wechselkurs_vergleich": "Nichtnegative exakte Dezimalzeichenfolge oder Bruchobjekt. Zinssätze als Jahresquoten (0.05=5%); Wechselkurse strikt positiv als Landeswährung je Fremdwährungseinheit, Fremdwährungsbetrag nichtnegativ.",
+    "wechselkurs_umstellung": "Nichtnegative exakte Dezimalzeichenfolge oder Bruchobjekt. Zinssätze als Jahresquoten (0.05=5%); Wechselkurse strikt positiv als Landeswährung je Fremdwährungseinheit, Fremdwährungsbetrag nichtnegativ.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des qualifizierten gesetzlichen Falls und rechtlich bestimmten Zinssatz-/Kursgrundlagen; keine automatische Markt-/Effektivzinsberechnung."
+  },
+  "ergebnisvertrag": "wert enthält exakte Zinsquoten einschließlich gegebenenfalls negativem mathematischem Korrekturwert bzw. Landeswährungswerte und strikt geprüften120%-Grenzvergleich.",
+  "regelart": "BETRAGSOPERATION"
+}

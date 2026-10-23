@@ -1,0 +1,38 @@
+{
+  "regel_id": "BGB_UNTERHALT_DYNAMISCH",
+  "regelversion": "1",
+  "bezeichnung": "dynamischer_kindesunterhalt",
+  "fundstelle_ids": [
+    "BGB_1612a_T0001",
+    "BGB_1612a_T0002",
+    "BGB_1612a_T0003",
+    "BGB_1612a_T0004",
+    "BGB_1612a_T0005",
+    "BGB_1612a_T0006",
+    "BGB_1612a_T0007",
+    "BGB_1612a_T0008",
+    "BGB_1612a_T0009",
+    "BGB_1612a_T0010",
+    "BGB_1612a_T0011"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlich ausgewählter Fall und ausdrücklich belegte externe Parameter.",
+  "eingabevertrag": "mindestunterhalt: positive volle EUR als Dezimalzeichenfolge für einschlägige Altersstufe und Zeitraum. prozentsatz: nichtnegative Dezimalzeichenfolge in Prozent. mindestunterhaltsnachweis: nichtleer. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+  "rechenschritte": "Prozentsatz nach einer Dezimalstelle abschneiden, Mindestunterhalt mit diesem Satz/100 multiplizieren, Ergebnis auf volle EUR aufrunden.",
+  "ausnahmen": "Gesetzliche Voraussetzungen und maßgeblicher Prozentsatz bereits rechtlich bestimmt. Null als Prozentsatz rechnerisch erlaubt, bestätigt keinen Verzicht oder rechtliche Wirksamkeit. Keine automatische Düsseldorfer Tabelle, Leistungsfähigkeitsprüfung oder Kindergeldanrechnung. Mindestunterhaltsquelle ausdrücklich vorgeben.",
+  "rundung": "PROZENTSATZ_NACH_1_DEZIMALSTELLE_ABSCHNEIDEN_DANN_BETRAG_AUF_VOLLE_EURO",
+  "wertebereich": "Gemeinsamer Zahlenvertrag NUMERIK.md; fehlend EINGABE_FEHLT, falscher Typ/Bereich EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/unterhalt.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "mindestunterhalt": "Positive volle EUR als Dezimalzeichenfolge des einschlägigen Mindestunterhalts für Altersstufe und Zeitraum. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+    "prozentsatz": "Nichtnegative Dezimalzeichenfolge in Prozent des Mindestunterhalts; wird nach einer Dezimalstelle abgeschnitten. Keine automatische Einkommensgruppenzuordnung. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+    "mindestunterhaltsnachweis": "Nichtleere Beschreibung der maßgeblichen Mindestunterhaltsverordnung, Fassung, Altersstufe und Gültigkeit. Synthetische Beispiele entsprechend kennzeichnen."
+  },
+  "ergebnisvertrag": "wert enthält den auf volle EUR aufgerundeten Betrag als Bruch mit zaehler und nenner als Ganzzahlzeichenfolgen; nenner ist 1.",
+  "exakte_bruchobjekte_als_dezimaleingaben": true
+}

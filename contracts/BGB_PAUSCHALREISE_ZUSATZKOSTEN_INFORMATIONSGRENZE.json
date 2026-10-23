@@ -1,0 +1,27 @@
+{
+  "regel_id": "BGB_PAUSCHALREISE_ZUSATZKOSTEN_INFORMATIONSGRENZE",
+  "regelversion": "1",
+  "bezeichnung": "pauschalreise_zusatzkosten_informationsgrenze",
+  "fundstelle_ids": [
+    "BGB_651d_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "kostenpositionen: Unbenannte Liste1..1000 Objekte mit genau kosten_id (nichtleer, eindeutig), betrag (nichtnegativer EUR-Dezimaltext/Bruch), rechtzeitig_ordnungsgemaess_informiert (expliziter Wahrheitswert). Rechtzeitig vor Vertragserklärung des Reisenden; bei keinen Zusatzkosten einzelne Nullposition. einordnungsnachweis: Nichtleerer Nachweis der qualifizierten Zusatzkosten und der rechtzeitigen inhaltlich ordnungsgemäßen Information; übrige Anspruchsvoraussetzungen vorqualifiziert.",
+  "rechenschritte": "Zusatzkosten nach rechtzeitiger ordnungsgemäßer Information auswählen und getrennt summieren.",
+  "ausnahmen": "§651dII: zusätzliche Gebühren, Entgelte und sonstige Kosten; rechtzeitig bedeutet vor Abgabe der Vertragserklärung des Reisenden, nicht bloß vor Bestätigung des Veranstalters. Inhaltlich ordnungsgemäße Information nach dem verwiesenen EGBGB rechtlich vorqualifizieren; die Library prüft kein Informationsformular. Einbeziehung ist nur diese numerische Teilgrenze, kein Nachweis sämtlicher Anspruchsvoraussetzungen oder Vertragswirksamkeit. Positionen müssen im Übrigen der maßgeblichen Reise zugeordnet und überschneidungsfrei sein; bereits gezahlte Beträge separat. Keine Zusatzkosten ausdrücklich als einzelne Nullposition, keine fehlende Liste.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Nichtnegative exakte EUR-Dezimaltexte/Brüche nach NUMERIK.md. Kostenlisten ohne doppelte Positionen, keine Rundung.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/reisekostenpositionen.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "kostenpositionen": "Unbenannte Liste1..1000 Objekte mit genau kosten_id (nichtleer, eindeutig), betrag (nichtnegativer EUR-Dezimaltext/Bruch), rechtzeitig_ordnungsgemaess_informiert (expliziter Wahrheitswert). Rechtzeitig vor Vertragserklärung des Reisenden; bei keinen Zusatzkosten einzelne Nullposition.",
+    "einordnungsnachweis": "Nichtleerer Nachweis der qualifizierten Zusatzkosten und der rechtzeitigen inhaltlich ordnungsgemäßen Information; übrige Anspruchsvoraussetzungen vorqualifiziert."
+  },
+  "ergebnisvertrag": "wert: nach_informationsgrenze_einbezogene_kosten und wegen_information_ausgeschlossene_kosten als exakte EUR-Brüche.",
+  "regelart": "BETRAGSOPERATION"
+}

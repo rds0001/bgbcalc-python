@@ -1,0 +1,27 @@
+{
+  "regel_id": "BGB_VEREIN_MITGLIEDERSCHWUND_ANTRAGSFRIST",
+  "regelversion": "1",
+  "bezeichnung": "verein_mitgliederschwund_antragsfrist",
+  "fundstelle_ids": [
+    "BGB_73_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "unterschreiten_am: ISO-Datum des rechtlich maßgeblichen Unterschreitens von drei Vereinsmitgliedern, nicht späterer Kenntnis. Tatsächlichen Verlauf einschließlich Wiederanstieg qualifizieren; Schwelle separat mit vereins_mitgliederschwellen prüfbar. einordnungsnachweis: Nichtleere Begründung des Ereignisses und rechtlichen Anwendungsbereichs§73.",
+  "rechenschritte": "Ereignisdatum plus3 Kalendermonate.",
+  "ausnahmen": "Nur rechnerische Grundfrist; rechtliche Kalender-/Verfahrenskorrekturen separat. Keine Entziehung ohne gerichtliche Entscheidung.",
+  "rundung": "Keine; Kalenderdaten taggenau.",
+  "wertebereich": "ISO-Daten und berechnete Grenzen0001..9999, explizite Beginnart/Wahrheitswerte soweit gefordert und nichtleerer Nachweis.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/allgemeine_sonderfristen.json",
+  "gesamtabnahme": false,
+  "einheit": "daten_und_wahrheitswerte",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "unterschreiten_am": "ISO-Datum des rechtlich maßgeblichen Unterschreitens von drei Vereinsmitgliedern, nicht späterer Kenntnis. Tatsächlichen Verlauf einschließlich Wiederanstieg qualifizieren; Schwelle separat mit vereins_mitgliederschwellen prüfbar.",
+    "einordnungsnachweis": "Nichtleere Begründung des Ereignisses und rechtlichen Anwendungsbereichs§73."
+  },
+  "ergebnisvertrag": "wert enthält rechnerisches_antragsfristende.",
+  "regelart": "FRISTBERECHNUNG"
+}

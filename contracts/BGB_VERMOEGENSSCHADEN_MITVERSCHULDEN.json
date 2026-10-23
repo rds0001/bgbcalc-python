@@ -1,0 +1,32 @@
+{
+  "regel_id": "BGB_VERMOEGENSSCHADEN_MITVERSCHULDEN",
+  "regelversion": "1",
+  "bezeichnung": "vermoegensschaden_mitverschulden",
+  "fundstelle_ids": [
+    "BGB_254_T0001",
+    "BGB_254_T0002",
+    "BGB_254_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlich ausgewählter Fall und ausdrücklich belegte externe Parameter.",
+  "eingabevertrag": "vermoegensschaden: Nichtnegative EUR-Dezimalzeichenfolge oder exaktes Bruchobjekt mit zaehler/nenner nach NUMERIK.md. Für diese konkrete Schadensposition rechtlich ermittelter ersatzfähiger Vermögensschaden vor der hier anzuwendenden Mitverschuldenskürzung. Kein bereits um dieselbe Quote gekürzter Betrag. mitverschuldensquote: Dezimalzeichenfolge oder exaktes Bruchobjekt nach NUMERIK.md im geschlossenen Bereich 0 bis 1. Anteil der Kürzung wegen des dem Geschädigten zuzurechnenden Mitverschuldens; beispielsweise 0.25 für 25 Prozent, nicht 25. Die Quote muss für die konkrete Position aus der Abwägung nach § 254 ermittelt sein; sie wird nicht allein aus der Zahl Beteiligter oder einer bloßen Verschuldensbehauptung berechnet. quotenbegruendung: Nichtleere deutsche fachliche Begründungs-/Herkunftsangabe für die Nutzerquote. Insbesondere sind die einschlägigen Verursachungsbeiträge und gegebenenfalls Warnpflicht, Schadensabwendungs-/Schadensminderungspflicht oder nach § 278 zugerechnetes Verhalten zuvor rechtlich zu bewerten; der Text wird als Nutzervorgabe dokumentiert, nicht als richtig bestätigt. kuerzung_nach_254_anwendbar: Expliziter Wahrheitswert zur rechtlichen Anwendung der vorgegebenen Quote auf diese Vermögensschadensposition. FALSE ergibt NICHT_ANWENDBAR. Keine automatische Feststellung der Ersatzpflicht oder eines Mitverschuldens.",
+  "rechenschritte": "Kürzungsbetrag = ersatzfähiger Vermögensschaden mal vorgegebene Mitverschuldensquote. Verbleibender Ersatzbetrag = Vermögensschaden minus Kürzungsbetrag. Exakte Bruchrechnung ohne automatische Cent-Rundung.",
+  "ausnahmen": "Parametrisierte Rechenstufe für eine rechtlich bereits bestimmte Vermögensschadensposition und deren Mitverschuldensquote nach § 254. Die Abwägung der Verursachungs- und Verschuldensanteile einschließlich Absatz2 wird nicht durch eine erfundene Bewertungsformel ersetzt. Unterschiedlich zu quotierende Schadenspositionen getrennt rechnen. Keine automatische Anwendung auf Schmerzensgeld oder sonstige billige Entschädigung, deren Gesamtbemessung eine eigenständige Abwägung erfordert. Weitere Anspruchsvoraussetzungen, Vorteilsausgleichung, Zahlungen und Rangfolgen anderer Abzüge sind nicht enthalten. Die gleiche Quote nicht doppelt berücksichtigen.",
+  "rundung": "Keine; exakte EUR-Brüche.",
+  "wertebereich": "Gemeinsamer Zahlenvertrag NUMERIK.md; fehlend EINGABE_FEHLT, falscher Typ/Bereich EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/mitverschulden.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "vermoegensschaden": "Nichtnegative EUR-Dezimalzeichenfolge oder exaktes Bruchobjekt mit zaehler/nenner nach NUMERIK.md. Für diese konkrete Schadensposition rechtlich ermittelter ersatzfähiger Vermögensschaden vor der hier anzuwendenden Mitverschuldenskürzung. Kein bereits um dieselbe Quote gekürzter Betrag.",
+    "mitverschuldensquote": "Dezimalzeichenfolge oder exaktes Bruchobjekt nach NUMERIK.md im geschlossenen Bereich 0 bis 1. Anteil der Kürzung wegen des dem Geschädigten zuzurechnenden Mitverschuldens; beispielsweise 0.25 für 25 Prozent, nicht 25. Die Quote muss für die konkrete Position aus der Abwägung nach § 254 ermittelt sein; sie wird nicht allein aus der Zahl Beteiligter oder einer bloßen Verschuldensbehauptung berechnet.",
+    "quotenbegruendung": "Nichtleere deutsche fachliche Begründungs-/Herkunftsangabe für die Nutzerquote. Insbesondere sind die einschlägigen Verursachungsbeiträge und gegebenenfalls Warnpflicht, Schadensabwendungs-/Schadensminderungspflicht oder nach § 278 zugerechnetes Verhalten zuvor rechtlich zu bewerten; der Text wird als Nutzervorgabe dokumentiert, nicht als richtig bestätigt.",
+    "kuerzung_nach_254_anwendbar": "Expliziter Wahrheitswert zur rechtlichen Anwendung der vorgegebenen Quote auf diese Vermögensschadensposition. FALSE ergibt NICHT_ANWENDBAR. Keine automatische Feststellung der Ersatzpflicht oder eines Mitverschuldens."
+  },
+  "ergebnisvertrag": "wert enthält kuerzungsbetrag und verbleibender_ersatzbetrag als exakte EUR-Brüche; ihre Summe entspricht dem eingegebenen Vermögensschaden. Bei NICHT_ANWENDBAR ist wert null. Die Nutzerquote und ihre Begründung bleiben unter eingaben und nutzervorgaben sichtbar.",
+  "exakte_bruchobjekte_als_dezimaleingaben": true,
+  "regelart": "PARAMETRISIERT_RECHENBAR"
+}

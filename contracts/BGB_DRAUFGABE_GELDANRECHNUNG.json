@@ -1,0 +1,30 @@
+{
+  "regel_id": "BGB_DRAUFGABE_GELDANRECHNUNG",
+  "regelversion": "1",
+  "bezeichnung": "draufgabe_geldanrechnung",
+  "fundstelle_ids": [
+    "BGB_337_T0001",
+    "BGB_338_T0001",
+    "BGB_338_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "anrechnungsfall: leistung_337 oder schadensersatz_338; rechtlich bereits feststehende Anrechnung einer Geld-Draufgabe. geschuldeter_betrag: Vor Anrechnung noch geschuldeter, sachlich bestimmter Leistungs- oder Schadensersatzbetrag in Euro. draufgabebetrag: Auf denselben Betrag rechtlich anrechenbare Geld-Draufgabe in Euro; keine automatisch bewertete Sachleistung. einordnungsnachweis: Nichtleerer Nachweis von Draufgabeeigenschaft, Anrechenbarkeit und gewähltem337/338-Fall; keine entgegenstehende Vereinbarung.",
+  "rechenschritte": "Anrechenbare Geld-Draufgabe bis zur bestimmten Leistung oder zum Schadensersatz anrechnen, Restbetrag und nicht angerechneten Draufgabenteil ausweisen.",
+  "ausnahmen": "§337I beziehungsweise338Satz2: Anrechnung einer qualifizierten Geld-Draufgabe auf den bestimmten Leistungs- beziehungsweise Schadensersatzbetrag. Anrechnung höchstens in Höhe des geschuldeten Betrags, danach rechnerischer Rest. Ein nicht angerechneter Draufgabenteil wird separat ausgewiesen; daraus folgt weder Rückzahlungsanspruch noch Verwirkung. Insbesondere bei338 keine automatische Rückzahlung des den Schaden übersteigenden Betrags. Nicht anrechenbare Sach-Draufgaben und reine Rückgabepflichten337II/338 sind keine eigenständige Geldberechnung; weder Geldersatz noch Eigentums-/Rückgabeentscheidung wird erfunden. Keine automatische Bestimmung der gesetzlichen Zweifelregel oder Anrechnung auf zusätzliche Zinsen/Kosten.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/draufgabe.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "anrechnungsfall": "leistung_337 oder schadensersatz_338; rechtlich bereits feststehende Anrechnung einer Geld-Draufgabe.",
+    "geschuldeter_betrag": "Vor Anrechnung noch geschuldeter, sachlich bestimmter Leistungs- oder Schadensersatzbetrag in Euro.",
+    "draufgabebetrag": "Auf denselben Betrag rechtlich anrechenbare Geld-Draufgabe in Euro; keine automatisch bewertete Sachleistung.",
+    "einordnungsnachweis": "Nichtleerer Nachweis von Draufgabeeigenschaft, Anrechenbarkeit und gewähltem337/338-Fall; keine entgegenstehende Vereinbarung."
+  },
+  "ergebnisvertrag": "wert.angerechneter_betrag, verbleibender_betrag und nicht_angerechnete_draufgabe als exakte nichtnegative Eurobrüche."
+}

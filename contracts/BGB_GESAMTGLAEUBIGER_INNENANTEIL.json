@@ -1,0 +1,30 @@
+{
+  "regel_id": "BGB_GESAMTGLAEUBIGER_INNENANTEIL",
+  "regelversion": "1",
+  "bezeichnung": "gesamtglaeubiger_innenanteil",
+  "fundstelle_ids": [
+    "BGB_430_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlich ausgewählter Fall und ausdrücklich belegte externe Parameter.",
+  "eingabevertrag": "gesamtleistung: Nichtnegative Dezimalzeichenfolge oder exaktes Bruchobjekt mit zaehler/nenner nach NUMERIK.md. Bezifferte Gesamtleistung in der gesondert angegebenen Einheit; keine automatische Bewertung oder Umrechnung. anzahl_gesamtglaeubiger: Ganzzahl zwischen 2 und 9007199254740991. Gezählt werden ausschließlich die Personen auf der aufzuteilenden Seite; die Gegenpartei nicht mitzählen. Keine Anzahl verschiedener Ansprüche oder Leistungsteile. leistungseinheit: Nichtleere Zeichenfolge der gemeinsamen Leistungseinheit, beispielsweise EUR oder kg. Wird als Ergebniseinheit übernommen; keine Umrechnung und keine automatische Cent- oder Stückrundung. Physische Teilbarkeit und rechtliche Einordnung bleiben gesonderte Tatsachen. gleichanteilige_innenberechtigung_anwendbar: Expliziter Wahrheitswert: Gesamtgläubigerschaft liegt vor und im Innenverhältnis ist kein anderer Anteil bestimmt (§ 430). FALSE ergibt NICHT_ANWENDBAR. Eine abweichende Bestimmung wird nicht automatisch verworfen oder durch Gleichanteile ersetzt.",
+  "rechenschritte": "Bei anwendbarer gleichanteiliger Innenberechtigung: Anteilsquote=1geteilt durch Anzahl der Gesamtgläubiger; rechnerischer Innenanteil=Gesamtleistung mal Anteilsquote.",
+  "ausnahmen": "Nur rechnerische gleiche Innenberechtigung der Gesamtgläubiger nach §430. Die gegenüber dem Schuldner bestehende Außenberechtigung wird nicht auf diesen Innenanteil reduziert. Keine Abrechnung bereits vereinnahmter Leistungen, kein selbständiger Ausgleichsanspruch in exakt dieser Höhe ohne Prüfung weiterer Voraussetzungen. Abweichende Bestimmungen und andere Gläubigerformen bleiben gesondert.",
+  "rundung": "Keine; exakte Brüche, Einheit ausdrücklich eingegeben.",
+  "wertebereich": "Gemeinsamer Zahlenvertrag NUMERIK.md; fehlend EINGABE_FEHLT, falscher Typ/Bereich EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/gleichanteile.json",
+  "gesamtabnahme": false,
+  "einheit": "Leistungseinheit laut Eingabe",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "gesamtleistung": "Nichtnegative Dezimalzeichenfolge oder exaktes Bruchobjekt mit zaehler/nenner nach NUMERIK.md. Bezifferte Gesamtleistung in der gesondert angegebenen Einheit; keine automatische Bewertung oder Umrechnung.",
+    "anzahl_gesamtglaeubiger": "Ganzzahl zwischen 2 und 9007199254740991. Gezählt werden ausschließlich die Personen auf der aufzuteilenden Seite; die Gegenpartei nicht mitzählen. Keine Anzahl verschiedener Ansprüche oder Leistungsteile.",
+    "leistungseinheit": "Nichtleere Zeichenfolge der gemeinsamen Leistungseinheit, beispielsweise EUR oder kg. Wird als Ergebniseinheit übernommen; keine Umrechnung und keine automatische Cent- oder Stückrundung. Physische Teilbarkeit und rechtliche Einordnung bleiben gesonderte Tatsachen.",
+    "gleichanteilige_innenberechtigung_anwendbar": "Expliziter Wahrheitswert: Gesamtgläubigerschaft liegt vor und im Innenverhältnis ist kein anderer Anteil bestimmt (§ 430). FALSE ergibt NICHT_ANWENDBAR. Eine abweichende Bestimmung wird nicht automatisch verworfen oder durch Gleichanteile ersetzt."
+  },
+  "ergebnisvertrag": "wert enthält anteilsquote als exakten dimensionslosen Bruch und leistungsanteil als exakten Bruch in leistungseinheit. Bei NICHT_ANWENDBAR ist wert null. Keine automatische Rundung; Nutzerangaben einschließlich Einheit bleiben im Ergebnis sichtbar.",
+  "exakte_bruchobjekte_als_dezimaleingaben": true,
+  "regelart": "VERBAL_RECHENBAR"
+}

@@ -1,0 +1,36 @@
+{
+  "regel_id": "BGB_KLEINBETRAGSINSTRUMENT_BETRAGSGRENZE",
+  "regelversion": "1",
+  "bezeichnung": "kleinbetragsinstrument_betragsgrenze",
+  "fundstelle_ids": [
+    "BGB_675i_T0001",
+    "BGB_675i_T0002",
+    "BGB_675i_T0003",
+    "BGB_675i_T0004",
+    "BGB_675i_T0005",
+    "BGB_675i_T0006",
+    "BGB_675i_T0014",
+    "BGB_675i_T0015"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "grenzfall: einzelzahlung, ausgabenobergrenze, speicherobergrenze oder egeld_sperrausnahme. massgeblicher_betrag: Nichtnegativer EUR-Betrag: rechtlich vorgesehener Höchstbetrag des einzelnen Vorgangs, Ausgaben-/Speicherobergrenze oder maßgeblicher Instrument-/Kontowert für675iIII. Kein zufällig kleiner Umsatz anstelle einer Instrumentenobergrenze. ausschliesslich_inland: Nur Ausgaben-/Speicherobergrenze: expliziter Wahrheitswert, ob das Instrument ausschließlich für inländische Vorgänge genutzt werden kann. Sonst null. einordnungsnachweis: Nichtleerer Nachweis des Grenzfalls und maßgeblichen Betrags; übrige675i-Voraussetzungen separat.",
+  "rechenschritte": "Qualifizierte Instrumentenbeträge mit30,150oder200EUR vergleichen.",
+  "ausnahmen": "§675iI: Einzelzahlungslimit höchstens30EUR; Ausgaben-/Speicherobergrenze150EUR, nur bei ausschließlich möglichen inländischen Vorgängen200EUR. Maßgeblich ist die rechtlich vorgesehene Instrumentengrenze, nicht ein zufällig kleiner Einzelumsatz; Speicherbetrag darf die Grenze zu keiner Zeit überschreiten. Drei alternative Instrumentenwege, kein kumulatives Erfordernis aller Grenzen. egeld_sperrausnahme betrifft nur die200EUR-Wertgrenze675iIII; fehlende Sperrmöglichkeit und übrige Voraussetzungen separat. Kein automatischer Ausschluss sämtlicher Zahlungsdienste-Schutzregeln aus einem positiven Zahlenvergleich; Vereinbarungen und spezifische Bedingungen675iII/III prüfen.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Exakte EUR-Dezimaltexte oder Brüche nach NUMERIK.md; Kontostände vorzeichenbehaftet, Betragspositionen nichtnegativ. Keine Rundung.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/zahlungsbetragsgrenzen.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR_und_wahrheitswert",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "grenzfall": "einzelzahlung, ausgabenobergrenze, speicherobergrenze oder egeld_sperrausnahme.",
+    "massgeblicher_betrag": "Nichtnegativer EUR-Betrag: rechtlich vorgesehener Höchstbetrag des einzelnen Vorgangs, Ausgaben-/Speicherobergrenze oder maßgeblicher Instrument-/Kontowert für675iIII. Kein zufällig kleiner Umsatz anstelle einer Instrumentenobergrenze.",
+    "ausschliesslich_inland": "Nur Ausgaben-/Speicherobergrenze: expliziter Wahrheitswert, ob das Instrument ausschließlich für inländische Vorgänge genutzt werden kann. Sonst null.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des Grenzfalls und maßgeblichen Betrags; übrige675i-Voraussetzungen separat."
+  },
+  "ergebnisvertrag": "wert: betragsgrenze_euro und ueberschreitungsbetrag als EUR-Brüche, grenze_eingehalten als Wahrheitswert.",
+  "regelart": "BETRAGSOPERATION"
+}

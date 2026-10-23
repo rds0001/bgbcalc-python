@@ -1,0 +1,38 @@
+{
+  "regel_id": "BGB_ZAHLUNGSMISSBRAUCH_ZAHLERHAFTUNGSBETRAG",
+  "regelversion": "1",
+  "bezeichnung": "zahlungsmissbrauch_zahlerhaftungsbetrag",
+  "fundstelle_ids": [
+    "BGB_675v_T0001",
+    "BGB_675v_T0002",
+    "BGB_675v_T0005",
+    "BGB_675v_T0010",
+    "BGB_675v_T0013",
+    "BGB_675v_T0015",
+    "BGB_675v_T0016",
+    "BGB_675v_T0017"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "schadensbetrag: Nichtnegativer exakter EUR-Schaden derselben rechtlichen Haftungseinheit als Dezimalzeichenfolge oder Bruchobjekt. betruegerische_absicht: Expliziter Wahrheitswert für den rechtlich qualifizierten Tatbestand des §675v; keine automatische Verschuldens-/Authentifizierungsprüfung. qualifizierte_pflichtverletzung: Expliziter Wahrheitswert für den rechtlich qualifizierten Tatbestand des §675v; keine automatische Verschuldens-/Authentifizierungsprüfung. ausschluss_absatz_2: Expliziter Wahrheitswert für den rechtlich qualifizierten Tatbestand des §675v; keine automatische Verschuldens-/Authentifizierungsprüfung. ausschluss_absatz_4_oder_5: Expliziter Wahrheitswert für den rechtlich qualifizierten Tatbestand des §675v; keine automatische Verschuldens-/Authentifizierungsprüfung. einordnungsnachweis: Nichtleerer Nachweis des Anwendungsfalls und qualifizierter Betrugs-/Pflichtverletzungs-/Ausschlusstatbestände; Absatz4/5-Grundtatbestand vor Betrugsausnahme.",
+  "rechenschritte": "Betrug voller Schaden; sonst Absatz4/5 null; sonst qualifizierte Pflichtverletzung voller Schaden; sonst Absatz2 null; sonst min(Schaden,50EUR).",
+  "ausnahmen": "Nur §675v im qualifizierten Anwendungsbereich nicht autorisierter Zahlungsvorgänge/Zahlungsinstrumente. Betrug und qualifizierte vorsätzliche/grob fahrlässige kausale Pflichtverletzung nach Absatz3 getrennt bewerten. Absatz2 betrifft unbemerkbaren Missbrauch bzw. dienstleisterseitigen Verlust; Absatz4/5 betrifft qualifiziert fehlende starke Authentifizierung oder nach Anzeige entstandene Schäden bzw. fehlende Anzeigemöglichkeit. Ausschlussflag Absatz4/5 bezeichnet den Grundtatbestand vor Betrugsausnahme. Schaden muss derselben rechtlich einheitlichen Haftungseinheit angehören;50EUR nicht automatisch je Einzelbuchung erneut ausschöpfen. Keine automatische Betrugs-/Verschuldensbeurteilung, Kontokorrektur nach §675u oder Haftung des Zahlungsempfängers.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/zahlungsmissbrauch.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "schadensbetrag": "Nichtnegativer exakter EUR-Schaden derselben rechtlichen Haftungseinheit als Dezimalzeichenfolge oder Bruchobjekt.",
+    "betruegerische_absicht": "Expliziter Wahrheitswert für den rechtlich qualifizierten Tatbestand des §675v; keine automatische Verschuldens-/Authentifizierungsprüfung.",
+    "qualifizierte_pflichtverletzung": "Expliziter Wahrheitswert für den rechtlich qualifizierten Tatbestand des §675v; keine automatische Verschuldens-/Authentifizierungsprüfung.",
+    "ausschluss_absatz_2": "Expliziter Wahrheitswert für den rechtlich qualifizierten Tatbestand des §675v; keine automatische Verschuldens-/Authentifizierungsprüfung.",
+    "ausschluss_absatz_4_oder_5": "Expliziter Wahrheitswert für den rechtlich qualifizierten Tatbestand des §675v; keine automatische Verschuldens-/Authentifizierungsprüfung.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des Anwendungsfalls und qualifizierter Betrugs-/Pflichtverletzungs-/Ausschlusstatbestände; Absatz4/5-Grundtatbestand vor Betrugsausnahme."
+  },
+  "ergebnisvertrag": "wert ist der Zahlerhaftungsbetrag in EUR als exaktes Bruchobjekt.",
+  "regelart": "BETRAGSOPERATION"
+}

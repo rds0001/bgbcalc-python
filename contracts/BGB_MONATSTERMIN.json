@@ -1,0 +1,36 @@
+{
+  "regel_id": "BGB_MONATSTERMIN",
+  "regelversion": "1",
+  "bezeichnung": "monatstermin",
+  "fundstelle_ids": [
+    "BGB_186_T0001",
+    "BGB_192_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; anwendbare Fristbestimmung bereits ausgewählt. Speziellere gesetzliche Vorschriften/abweichende wirksame Bestimmung vorher prüfen.",
+  "eingabevertrag": "jahr: 1..9999; monat: 1..12; lage: anfang|mitte|ende.",
+  "rechenschritte": "Anfang=1, Mitte=15, Ende=letzter Tag des konkret angegebenen Monats.",
+  "ausnahmen": "§ 193 ist ausschließlich separate explizite Operation. Keine automatische Feiertagsverschiebung. Keine historischen Fassungen behaupten.",
+  "wertebereich": "Proleptischer gregorianischer Kalender, Jahr 0001..9999. Ganze Anzahlen maximal 3652059 (technischer Schutz, keine gesetzliche Grenze); Überschreitung des Datumsbereichs als EINGABE_UNGUELTIG. Keine Uhrzeiten, keine Zeitzonen.",
+  "fehlende_werte": "Fehlend/null/NA -> EINGABE_FEHLT; falscher Typ, Float in Python, nichtganzzahlig in R, ungültiges Datum/Enum/Bereich -> EINGABE_UNGUELTIG. Keine skalare Vektorrecycling-API.",
+  "rundung": "Keine; ganzzahlige Tage/Monate/Jahre.",
+  "ausgabe": "Gemeinsame Ergebnisfelder gemäß Scaffold; Datum als exakt vierstelliges ISO-Jahr, ganzzahlige Tage für Zeitraum.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/kalender.json",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "referenzfall_ids": [
+    "KAL_028",
+    "KAL_029",
+    "KAL_030",
+    "KAL_031",
+    "KAL_032",
+    "KAL_033"
+  ],
+  "gesamtabnahme": false,
+  "parameter_dokumentation": {
+    "jahr": "Ganzes Kalenderjahr von 1 bis 9999.",
+    "monat": "Ganze Monatszahl von 1 bis 12.",
+    "lage": "anfang, mitte oder ende. Mitte bedeutet den 15. und nicht die Hälfte der Monatslänge."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "regel_id": "BGB_DARLEHEN_RUECKZAHLUNG_IM_ZWEIWOCHENFENSTER",
+  "regelversion": "1",
+  "bezeichnung": "darlehen_rueckzahlung_im_zweiwochenfenster",
+  "fundstelle_ids": [
+    "BGB_489_T0005",
+    "BGB_193_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "kuendigung_wirksam_am: Rechtlich bestimmter Tag des Wirksamwerdens YYYY-MM-DD, nicht früherer Zugang. geschuldeter_betrag: Nichtnegativer geschuldeter Rückzahlungsbetrag inEUR zum Wirksamwerden, nach vorherigen Zahlungen bereits bereinigt. rueckzahlungen: Liste0..1000 mit genau zahlung_id, rueckzahlung_am, betrag. Eindeutige tatsächlich bewirkte, rechtlich zugeordnete Rückzahlungen ab Wirksamwerden; Datum bedeutet qualifizierten Erfüllungstag, nicht bloß Überweisungsauftrag. feiertagskalender: Objekt mit genau feiertage(ListeISO-Daten),ort,kalenderquelle,kalender_von,kalender_bis. Vollständiger bestätigter örtlicher Kalender für193 einschließlich nächstem Werktag. einordnungsnachweis: Nichtleerer Nachweis489III: tatsächliches Wirksamwerden, geschuldeter Betrag, erfüllungswirksame Zahlungen und vollständiger193Kalender. Gleichdatierte Zahlung nur bei qualifiziertem zeitlichem Zusammenhang.",
+  "rechenschritte": "Zweiwochenrückzahlungsfrist mit193 korrigieren und rechtzeitige Rückzahlungen mit geschuldetem Betrag vergleichen.",
+  "ausnahmen": "§489III: Zweiwochengrundfrist ab Wirksamwerden der Kündigung, anschließend193-Leistungsfristkorrektur mit vorhandenem Kalenderkern. Nur bis einschließlich korrigiertem Ende erfüllungswirksame Rückzahlungen summieren; Deckung und positiven Fehlbetrag vergleichen. Spätere Zahlungen getrennt summieren, sie heilen die Frist nicht automatisch. Keine automatische Kündigungswirksamkeitsentscheidung; geschuldete Summe und Erfüllung rechtlich vorqualifiziert. Kalenderdatum einer Zahlung reicht nur bei rechtlich eindeutig normalisiertem Erfüllungszeitpunkt.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/darlehen_rueckzahlung.json",
+  "gesamtabnahme": false,
+  "einheit": "daten_EUR_und_wahrheitswert",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "kuendigung_wirksam_am": "Rechtlich bestimmter Tag des Wirksamwerdens YYYY-MM-DD, nicht früherer Zugang.",
+    "geschuldeter_betrag": "Nichtnegativer geschuldeter Rückzahlungsbetrag inEUR zum Wirksamwerden, nach vorherigen Zahlungen bereits bereinigt.",
+    "rueckzahlungen": "Liste0..1000 mit genau zahlung_id, rueckzahlung_am, betrag. Eindeutige tatsächlich bewirkte, rechtlich zugeordnete Rückzahlungen ab Wirksamwerden; Datum bedeutet qualifizierten Erfüllungstag, nicht bloß Überweisungsauftrag.",
+    "feiertagskalender": "Objekt mit genau feiertage(ListeISO-Daten),ort,kalenderquelle,kalender_von,kalender_bis. Vollständiger bestätigter örtlicher Kalender für193 einschließlich nächstem Werktag.",
+    "einordnungsnachweis": "Nichtleerer Nachweis489III: tatsächliches Wirksamwerden, geschuldeter Betrag, erfüllungswirksame Zahlungen und vollständiger193Kalender. Gleichdatierte Zahlung nur bei qualifiziertem zeitlichem Zusammenhang."
+  },
+  "ergebnisvertrag": "wert enthält Grund-/korrigiertes Fristende, rechtzeitige/spätere Zahlungssumme und positiven Fehlbetrag als Eurobrüche sowie numerischen Deckungswahrheitswert."
+}

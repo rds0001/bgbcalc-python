@@ -1,0 +1,28 @@
+{
+  "regel_id": "BGB_SCHADENSPAUSCHALE_BETRAGSVERGLEICH",
+  "regelversion": "1",
+  "bezeichnung": "schadenspauschale_betragsvergleich",
+  "fundstelle_ids": [
+    "BGB_309_T0008",
+    "BGB_309_T0009"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "pauschalbetrag: Vereinbarter pauschalierter Schadensersatz oder Wertminderungsersatz in Euro. gewoehnlich_zu_erwartender_betrag: Rechtlich qualifizierter, in den geregelten Fällen gewöhnlich zu erwartender Schaden oder gewöhnlich eintretende Wertminderung in Euro. einordnungsnachweis: Nichtleerer Nachweis des Anwendungsbereichs und der sachlich vergleichbaren Bezugsbeträge nach309Nr5a.",
+  "rechenschritte": "Schadens- oder Wertminderungspauschale mit qualifiziertem gewöhnlichen Erwartungsbetrag vergleichen und positiven Überschreitungsbetrag berechnen.",
+  "ausnahmen": "§309Nr5a: strenger Betragsvergleich der Pauschale mit dem qualifizierten gewöhnlich zu erwartenden Schaden oder der Wertminderung. Vergleichsmaßstab ist nicht automatisch der konkret entstandene Einzelschaden. Keine automatische Wirksamkeitsentscheidung, insbesondere keine Prüfung von309Nr5b. Der positive Überschreitungsbetrag ist keine automatische Rückforderung oder geltungserhaltende Herabsetzung auf einen zulässigen Vertragsbetrag.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/schadenspauschale.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR_und_wahrheitswert",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "pauschalbetrag": "Vereinbarter pauschalierter Schadensersatz oder Wertminderungsersatz in Euro.",
+    "gewoehnlich_zu_erwartender_betrag": "Rechtlich qualifizierter, in den geregelten Fällen gewöhnlich zu erwartender Schaden oder gewöhnlich eintretende Wertminderung in Euro.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des Anwendungsbereichs und der sachlich vergleichbaren Bezugsbeträge nach309Nr5a."
+  },
+  "ergebnisvertrag": "wert.pauschale_uebersteigt_vergleichsbetrag als Wahrheitswert; wert.ueberschreitungsbetrag als exakter nichtnegativer Eurobruch."
+}

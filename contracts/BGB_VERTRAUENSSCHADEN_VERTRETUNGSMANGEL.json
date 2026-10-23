@@ -1,0 +1,37 @@
+{
+  "regel_id": "BGB_VERTRAUENSSCHADEN_VERTRETUNGSMANGEL",
+  "regelversion": "1",
+  "bezeichnung": "vertrauensschaden_vertretungsmangel",
+  "fundstelle_ids": [
+    "BGB_179_T0001",
+    "BGB_179_T0002",
+    "BGB_179_T0003",
+    "BGB_179_T0004"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "vertrauensschaden: Nichtnegativer kausaler Schaden in EUR durch Vertrauen des anderen Teils auf Vertretungsmacht (negatives Interesse). Kein pauschaler Prozentsatz. wirksamkeitsinteresse: Nichtnegatives rechtlich bewertetes Interesse an Wirksamkeit des Vertrags in EUR als Höchstbetrag des§179 Absatz2. vertretungsmangel_unbekannt: Wahrheitswert, ob der Vertreter den Mangel seiner Vertretungsmacht nicht kannte. FALSE führt aus dem begrenzten Absatz2-Modell; umfassendere Folgen nach Absatz1 separat prüfen. vertretungsmacht_nachgewiesen: Wahrheitswert, ob Vertretungsmacht im konkreten Fall nachgewiesen ist. TRUE führt aus dem hier berechneten Haftungsfall heraus; keine automatische Beweiswürdigung. genehmigung_verweigert: Wahrheitswert einer rechtlich maßgeblichen Verweigerung der Vertragsgenehmigung durch den Vertretenen. Bloßes Schweigen ohne rechtlich einschlägige Verweigerungsfolge nicht ungeprüft gleichsetzen. gegner_kennt_oder_kennen_muss: Wahrheitswert, ob der andere Teil den Mangel der Vertretungsmacht kannte oder kennen musste. Im Anwendungsfall Ausschluss nach§179 Absatz3 Satz1. vertreter_beschraenkt_geschaeftsfaehig: Wahrheitswert zur beschränkten Geschäftsfähigkeit des Handelnden im konkreten Fall. Nicht automatisch mit bloßer Minderjährigkeit gleichsetzen; Ausnahmen/Ermächtigungen rechtlich einordnen. mit_zustimmung_des_gesetzlichen_vertreters: Wahrheitswert der Zustimmung des gesetzlichen Vertreters zum Handeln des beschränkt geschäftsfähigen Vertreters. Nur bei beschränkter Geschäftsfähigkeit für Ausschlussausnahme maßgeblich. bewertungsnachweis: Nichtleere Beschreibung von Vertragsschluss als Vertreter, Vertretungsmangel/Kenntnis, Genehmigung, Gegnerkenntnis, Geschäftsfähigkeit/Zustimmung und den beiden Geldwerten.",
+  "rechenschritte": "Absatz2-Modell bei unbekanntem Vertretungsmangel, nicht nachgewiesener Vertretungsmacht und verweigerter Genehmigung. Im Anwendungsfall0 bei Gegnerkenntnis/Kennenmüssen oder beschränkter Geschäftsfähigkeit ohne Zustimmung; sonst min(Vertrauensschaden,Wirksamkeitsinteresse).",
+  "ausnahmen": "Keine Haftungsfreiheit aus NICHT_ANWENDBAR ableiten, insbesondere bei bekanntem Vertretungsmangel. Erfüllungs-/Schadenersatzwahl nach Absatz1 außerhalb des Modells. Geschäftsunfähigkeit oder andere Wirksamkeits-/Sonderfälle vorab gesondert prüfen.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/vertrauensschaden.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "vertrauensschaden": "Nichtnegativer kausaler Schaden in EUR durch Vertrauen des anderen Teils auf Vertretungsmacht (negatives Interesse). Kein pauschaler Prozentsatz.",
+    "wirksamkeitsinteresse": "Nichtnegatives rechtlich bewertetes Interesse an Wirksamkeit des Vertrags in EUR als Höchstbetrag des§179 Absatz2.",
+    "vertretungsmangel_unbekannt": "Wahrheitswert, ob der Vertreter den Mangel seiner Vertretungsmacht nicht kannte. FALSE führt aus dem begrenzten Absatz2-Modell; umfassendere Folgen nach Absatz1 separat prüfen.",
+    "vertretungsmacht_nachgewiesen": "Wahrheitswert, ob Vertretungsmacht im konkreten Fall nachgewiesen ist. TRUE führt aus dem hier berechneten Haftungsfall heraus; keine automatische Beweiswürdigung.",
+    "genehmigung_verweigert": "Wahrheitswert einer rechtlich maßgeblichen Verweigerung der Vertragsgenehmigung durch den Vertretenen. Bloßes Schweigen ohne rechtlich einschlägige Verweigerungsfolge nicht ungeprüft gleichsetzen.",
+    "gegner_kennt_oder_kennen_muss": "Wahrheitswert, ob der andere Teil den Mangel der Vertretungsmacht kannte oder kennen musste. Im Anwendungsfall Ausschluss nach§179 Absatz3 Satz1.",
+    "vertreter_beschraenkt_geschaeftsfaehig": "Wahrheitswert zur beschränkten Geschäftsfähigkeit des Handelnden im konkreten Fall. Nicht automatisch mit bloßer Minderjährigkeit gleichsetzen; Ausnahmen/Ermächtigungen rechtlich einordnen.",
+    "mit_zustimmung_des_gesetzlichen_vertreters": "Wahrheitswert der Zustimmung des gesetzlichen Vertreters zum Handeln des beschränkt geschäftsfähigen Vertreters. Nur bei beschränkter Geschäftsfähigkeit für Ausschlussausnahme maßgeblich.",
+    "bewertungsnachweis": "Nichtleere Beschreibung von Vertragsschluss als Vertreter, Vertretungsmangel/Kenntnis, Genehmigung, Gegnerkenntnis, Geschäftsfähigkeit/Zustimmung und den beiden Geldwerten."
+  },
+  "ergebnisvertrag": "wert ist exakter EUR-Betrag des begrenzten Vertrauensschadens. Ausschluss nach Absatz3 innerhalb dieses Modells ergibt0/1; fehlender Absatz2-Anwendungsfall null.",
+  "regelart": "BETRAGSOPERATION"
+}

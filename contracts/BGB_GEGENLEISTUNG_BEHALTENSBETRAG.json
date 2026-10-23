@@ -1,0 +1,37 @@
+{
+  "regel_id": "BGB_GEGENLEISTUNG_BEHALTENSBETRAG",
+  "regelversion": "1",
+  "bezeichnung": "gegenleistung_behaltensbetrag",
+  "fundstelle_ids": [
+    "BGB_326_T0002",
+    "BGB_326_T0003",
+    "BGB_326_T0004",
+    "BGB_326_T0005"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "vereinbarte_gegenleistung: Nichtnegative vereinbarte Gegenleistung in EUR für den vollständig von der Leistung befreiten Bezugsfall. Teilweise Befreiung oder bloß ausgeschlossene Nacherfüllung nicht ungeprüft als diesen Fall eingeben. ersparte_aufwendungen: Nichtnegative infolge der Leistungsbefreiung ersparte Aufwendungen in EUR. Ursächliche und rechtlich anrechenbare Positionen vorab bestimmen. anderweitiger_erwerb: Nichtnegativer Erwerb durch anderweitige Verwendung der Arbeitskraft in EUR, rechtlich dem Befreiungsfall zugeordnet. Keine doppelte Anrechnung derselben Position als Ersparnis. boeswillig_unterlassener_erwerb: Nichtnegativer bewerteter Betrag böswillig unterlassenen anderweitigen Erwerbs in EUR. Böswilligkeit und Erwerbsmöglichkeit sind eigenständige rechtliche Bewertungen, keine frei eingesetzte Strafquote. leistungsbefreiung_nach_275: Wahrheitswert, ob der Schuldner nach§275 Absätze1–3 für den hier berechneten Bezugsfall nicht zu leisten braucht. Sachlichen Anwendungsbereich des§326 Absatz2 und Vorrang besonderer Gefahrtragungsregeln vorab bestimmen. glaeubiger_allein_oder_weit_ueberwiegend_verantwortlich: Wahrheitswert zur alleinigen oder weit überwiegenden Verantwortlichkeit des Gläubigers für den Befreiungsumstand. Nicht bloß irgendein Mitverschulden; keine erfundene prozentuale Schwelle. schuldner_hat_umstand_zu_vertreten: Wahrheitswert, ob der Schuldner den zur Leistungsbefreiung führenden Umstand zu vertreten hat. Für die Annahmeverzugsalternative muss dieser Wert FALSE sein. annahmeverzug_bei_eintritt: Wahrheitswert, ob gerade beim Eintritt des Befreiungsumstands der Gläubiger in Annahmeverzug war. Bloß irgendwann früherer Verzug reicht nicht. bewertungsnachweis: Nichtleere Beschreibung von Leistungsbefreiung, Gefahrtragung, Verantwortlichkeit, Zeitpunkt des Annahmeverzugs und den drei getrennten Anrechnungspositionen.",
+  "rechenschritte": "Behaltensgrund=Leistungsbefreiung UND(Gläubiger allein/weit überwiegend verantwortlich ODER(Schuldner nicht verantwortlich UND Annahmeverzug beim Eintritt)). Dann Gegenleistung minus Ersparnis minus Erwerb minus böswillig unterlassenen Erwerb, mindestens0. Ohne diesen Behaltensgrund NICHT_ANWENDBAR.",
+  "ausnahmen": "Nur Absatz2, keine umfassende Gefahrtragungsberechnung. Bei Nichtanwendbarkeit kann Gegenleistung nach anderen Regeln bestehen oder entfallen; nicht automatisch0. Teilbefreiung, bloße Nacherfüllungsbefreiung, Ersatzverlangen nach Absatz3, Sonderregeln und Rückabwicklung separat.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/gegenleistung.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "vereinbarte_gegenleistung": "Nichtnegative vereinbarte Gegenleistung in EUR für den vollständig von der Leistung befreiten Bezugsfall. Teilweise Befreiung oder bloß ausgeschlossene Nacherfüllung nicht ungeprüft als diesen Fall eingeben.",
+    "ersparte_aufwendungen": "Nichtnegative infolge der Leistungsbefreiung ersparte Aufwendungen in EUR. Ursächliche und rechtlich anrechenbare Positionen vorab bestimmen.",
+    "anderweitiger_erwerb": "Nichtnegativer Erwerb durch anderweitige Verwendung der Arbeitskraft in EUR, rechtlich dem Befreiungsfall zugeordnet. Keine doppelte Anrechnung derselben Position als Ersparnis.",
+    "boeswillig_unterlassener_erwerb": "Nichtnegativer bewerteter Betrag böswillig unterlassenen anderweitigen Erwerbs in EUR. Böswilligkeit und Erwerbsmöglichkeit sind eigenständige rechtliche Bewertungen, keine frei eingesetzte Strafquote.",
+    "leistungsbefreiung_nach_275": "Wahrheitswert, ob der Schuldner nach§275 Absätze1–3 für den hier berechneten Bezugsfall nicht zu leisten braucht. Sachlichen Anwendungsbereich des§326 Absatz2 und Vorrang besonderer Gefahrtragungsregeln vorab bestimmen.",
+    "glaeubiger_allein_oder_weit_ueberwiegend_verantwortlich": "Wahrheitswert zur alleinigen oder weit überwiegenden Verantwortlichkeit des Gläubigers für den Befreiungsumstand. Nicht bloß irgendein Mitverschulden; keine erfundene prozentuale Schwelle.",
+    "schuldner_hat_umstand_zu_vertreten": "Wahrheitswert, ob der Schuldner den zur Leistungsbefreiung führenden Umstand zu vertreten hat. Für die Annahmeverzugsalternative muss dieser Wert FALSE sein.",
+    "annahmeverzug_bei_eintritt": "Wahrheitswert, ob gerade beim Eintritt des Befreiungsumstands der Gläubiger in Annahmeverzug war. Bloß irgendwann früherer Verzug reicht nicht.",
+    "bewertungsnachweis": "Nichtleere Beschreibung von Leistungsbefreiung, Gefahrtragung, Verantwortlichkeit, Zeitpunkt des Annahmeverzugs und den drei getrennten Anrechnungspositionen."
+  },
+  "ergebnisvertrag": "wert enthält den exakten verbleibenden EUR-Betrag. Nichtanwendbarkeit ergibt null, nicht einen festgestellten Gegenleistungswegfall.",
+  "regelart": "BETRAGSOPERATION"
+}

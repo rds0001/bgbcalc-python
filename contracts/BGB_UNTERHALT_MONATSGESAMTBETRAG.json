@@ -1,0 +1,35 @@
+{
+  "regel_id": "BGB_UNTERHALT_MONATSGESAMTBETRAG",
+  "regelversion": "1",
+  "bezeichnung": "unterhalt_monatsgesamtbetrag",
+  "fundstelle_ids": [
+    "BGB_1361_T0006",
+    "BGB_1361_T0007",
+    "BGB_1585_T0002",
+    "BGB_1585_T0003",
+    "BGB_1612_T0005",
+    "BGB_1612_T0006",
+    "BGB_1586_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "monatsbetrag: Konstanter rechtlich qualifizierter voller Monatsunterhalt als nichtnegative exakte EUR-Zahl; keine automatische Bedarfsbemessung. erster_voller_monat: ISO-Datum des ersten vollständig geschuldeten Monats, zwingend erster Tag. Teilweiser Erstmonat bleibt außerhalb. beendigung_am: ISO-Datum des gesetzlich einschlägigen Todes-/Wiederheiratsereignisses. Anspruch und Erhaltung des vollen Endmonats rechtlich vorqualifiziert, nicht vor Anfang. zeitraumnachweis: Nichtleerer Nachweis der einschlägigen Norm, des zulässigen Beendigungsgrundes, Vollmonatsanspruchs und konstanten Monatsbetrags.",
+  "rechenschritte": "Monatszahl=(Endjahr−Anfangsjahr)×12+Endmonat−Anfangsmonat+1; Gesamtbetrag=Monatszahl×konstanter Monatsbetrag.",
+  "ausnahmen": "Konstanter qualifizierter voller Monatsbetrag und erster vollständig geschuldeter Monat. Letzter Monat ist rechtlich als voll geschuldeter Monat bestimmt: Tod nach§1361IV/1585I/1612III oder Wiederheirat nach§1585I, gegebenenfalls§1586II. Auch bei Beendigung am ersten oder letzten Tag zählt er voll. Keine tägliche Kürzung dieses Endmonats; kein automatischer voller Anfangsmonat bei erstmaliger Entstehung im Monatslauf. Abweichende Vereinbarungen/Bestimmungen nach§1612II und andere Endgründe nicht abgedeckt. Keine Ermittlung der Unterhaltshöhe, Zahlungsrückstände oder Fälligkeit an Bankarbeitstagen.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/unterhaltsbetraege.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "monatsbetrag": "Konstanter rechtlich qualifizierter voller Monatsunterhalt als nichtnegative exakte EUR-Zahl; keine automatische Bedarfsbemessung.",
+    "erster_voller_monat": "ISO-Datum des ersten vollständig geschuldeten Monats, zwingend erster Tag. Teilweiser Erstmonat bleibt außerhalb.",
+    "beendigung_am": "ISO-Datum des gesetzlich einschlägigen Todes-/Wiederheiratsereignisses. Anspruch und Erhaltung des vollen Endmonats rechtlich vorqualifiziert, nicht vor Anfang.",
+    "zeitraumnachweis": "Nichtleerer Nachweis der einschlägigen Norm, des zulässigen Beendigungsgrundes, Vollmonatsanspruchs und konstanten Monatsbetrags."
+  },
+  "ergebnisvertrag": "wert enthält monatsanzahl als Ganzzahl und gesamtbetrag als EUR-Bruch.",
+  "regelart": "BETRAGSOPERATION"
+}

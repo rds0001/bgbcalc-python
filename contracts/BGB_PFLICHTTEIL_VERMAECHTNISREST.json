@@ -1,0 +1,34 @@
+{
+  "regel_id": "BGB_PFLICHTTEIL_VERMAECHTNISREST",
+  "regelversion": "1",
+  "bezeichnung": "pflichtteil_vermaechtnisrest",
+  "fundstelle_ids": [
+    "BGB_2306_T0001",
+    "BGB_2306_T0002",
+    "BGB_2307_T0001",
+    "BGB_2307_T0002",
+    "BGB_2307_T0003",
+    "BGB_2307_T0004"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlich ausgewählter Fall und ausdrücklich belegte externe Parameter.",
+  "eingabevertrag": "pflichtteilsbetrag, unbeschwerter_vermaechtniswert: nichtnegative EUR-Dezimalzeichenfolgen; vermaechtnis_ausgeschlagen, pflichtteilsberechtigt: bool. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+  "rechenschritte": "Bei rechtlich wirksamer Ausschlagung des Vermächtnisses voller vorgegebener Pflichtteilsbetrag; sonst max(Pflichtteilsbetrag - Vermächtniswert, 0).",
+  "ausnahmen": "Ausschlagungsstatus einschließlich möglicher Fiktion nach § 2307 Abs. 2 vorab rechtlich feststellen; Funktion berechnet keine Fristen. Vermächtniswert ohne Beschränkungen/Beschwerungen der in § 2306 bezeichneten Art. Kein universeller Rechner für gleichzeitige Erbeinsetzung und Vermächtnisse, keine Ausschlagung der Erbschaft unterstellen.",
+  "rundung": "Keine. Ausgabe exakter EUR-Bruch als Ganzzahlzeichenfolgen.",
+  "wertebereich": "Gemeinsamer Zahlenvertrag NUMERIK.md; fehlend EINGABE_FEHLT, falscher Typ/Bereich EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/pflichtteil.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "pflichtteilsbetrag": "Nichtnegative EUR-Dezimalzeichenfolge des nach den einschlägigen Vorschriften bereits bestimmten Pflichtteilsbetrags. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+    "unbeschwerter_vermaechtniswert": "Nichtnegative EUR-Dezimalzeichenfolge des Vermächtniswerts ohne Abzug der Beschränkungen und Beschwerungen nach § 2306. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+    "vermaechtnis_ausgeschlagen": "Expliziter Wahrheitswert zur rechtlich wirksamen Ausschlagung des Vermächtnisses einschließlich gegebenenfalls der Fiktion nach § 2307 Abs. 2.",
+    "pflichtteilsberechtigt": "Expliziter Wahrheitswert für die rechtlich vorab geprüfte Berechtigung im gewählten Fall. FALSE ergibt NICHT_ANWENDBAR."
+  },
+  "ergebnisvertrag": "Ergebnisobjekt mit wert als zaehler/nenner-Ganzzahlzeichenfolgen, einheit EUR, Regel- und Quellenfassung, Eingaben, Nutzervorgaben und Rechenschritten. Bei NICHT_ANWENDBAR ist wert null. Fehlende oder ungültige Eingaben erzeugen einen strukturierten Berechnungsfehler.",
+  "exakte_bruchobjekte_als_dezimaleingaben": true
+}

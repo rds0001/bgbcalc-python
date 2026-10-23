@@ -1,0 +1,31 @@
+{
+  "regel_id": "BGB_VERBANDSKLAGE_HEMMUNGSNACHLAUF",
+  "regelversion": "1",
+  "bezeichnung": "verbandsklage_hemmungsnachlauf",
+  "fundstelle_ids": [
+    "BGB_204_T0024",
+    "BGB_204a_T0020",
+    "BGB_204a_T0021",
+    "BGB_204a_T0022"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "verfahrensende_am: Optionales ISO-Datum der Rechtskraft beziehungsweise anderweitigen Beendigung des einschlägigen Verfahrens; kein bloßer Stillstand. Bei noch nicht eingetretenem Ereignis null. teilnahmefall: Expliziter Wahrheitswert, ob ein Teilnahmefall nach204aIII2 vorliegt. teilnahmeende_am: Nur im Teilnahmefall optionales ISO-Datum des tatsächlichen Teilnahmeendes, etwa wirksame Rücknahme der Anmeldung; andernfalls null. einordnungsnachweis: Nichtleerer Nachweis des204a-Verfahrens, Anwendbarkeit, qualifizierter Endereignisse und gegebenenfalls Teilnahmefall.",
+  "rechenschritte": "Frühestes einschlägiges Verfahrens-/Teilnahmeende bestimmen und sechsmonatigen Hemmungsnachlauf berechnen.",
+  "ausnahmen": "§204aIII: sechsmonatiger Nachlauf ab rechtskräftiger Entscheidung/anderweitigem Verfahrensende entsprechend204II1; im qualifizierten Teilnahmefall auch ab Ende der Teilnahme, insbesondere Rücknahme der Registeranmeldung. Wenn beide einschlägigen Ereignisse feststehen, maßgeblich ist das frühere Nachlaufende. Kein Stillstand durch Nichtbetreiben als zusätzlicher204a-Auslöser: der Verweis nennt nur204II1. Teilnahmefall ausschließlich204aI1Nr3/4 oderII2, gegebenenfalls gleichgestellte UnternehmerIV; keine beliebige Nichtteilnahme bei Unterlassungsklage. Ohne bekanntes Endereignis kein fiktives Ende des laufenden Schutzes. Keine automatische Addition des Ergebnisses zur Verjährungsfrist: normierte tatsächliche Hemmungstage und209 gesondert berechnen.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/rechtsverfolgung_sonderfristen.json",
+  "gesamtabnahme": false,
+  "einheit": "datum",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "verfahrensende_am": "Optionales ISO-Datum der Rechtskraft beziehungsweise anderweitigen Beendigung des einschlägigen Verfahrens; kein bloßer Stillstand. Bei noch nicht eingetretenem Ereignis null.",
+    "teilnahmefall": "Expliziter Wahrheitswert, ob ein Teilnahmefall nach204aIII2 vorliegt.",
+    "teilnahmeende_am": "Nur im Teilnahmefall optionales ISO-Datum des tatsächlichen Teilnahmeendes, etwa wirksame Rücknahme der Anmeldung; andernfalls null.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des204a-Verfahrens, Anwendbarkeit, qualifizierter Endereignisse und gegebenenfalls Teilnahmefall."
+  },
+  "ergebnisvertrag": "wert.rechnerisches_nachlaufende alsYYYY-MM-DD; kein Anspruchsverjährungsdatum."
+}

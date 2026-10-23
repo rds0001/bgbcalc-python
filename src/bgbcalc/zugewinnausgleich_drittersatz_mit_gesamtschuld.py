@@ -1,0 +1,18 @@
+from .kalender import _ergebnis, _text, _auswahl, _fehler
+from .betraege import _geld
+from .zahlen import _bruch, _zahleneingabe, _addieren, _subtrahieren
+from .zinsen import _bruchteile
+from .schuldrechtliche_betragsreste import bereicherung_entreicherungsrest
+
+def zugewinnausgleich_drittersatz_mit_gesamtschuld(ausgleichsforderung=None, endnettovermoegen=None, bereicherungsrechtlicher_zuwendungswert=None, anrechenbare_entreicherung=None, erfuellung_ehegatte=None, erfuellung_dritter=None, begrenzungsmodell=None, methodennachweis=None):
+    """Vermögensfehlbetrag als Tatbestandsvergleich bestimmen, qualifizierten Bereicherungsrest auf Forderung begrenzen und gemeinsame Erfüllungen ohne Doppelabzug verrechnen."""
+    forderung=_geld(ausgleichsforderung);netto=_zahleneingabe(endnettovermoegen);ehegatte=_geld(erfuellung_ehegatte);dritter=_geld(erfuellung_dritter);_text(methodennachweis,'methodennachweis');_auswahl(begrenzungsmodell,'begrenzungsmodell',('ausgleichsforderung_als_obergrenze',))
+    ber=_geld(bereicherung_entreicherungsrest(bereicherungsrechtlicher_zuwendungswert,anrechenbare_entreicherung,methodennachweis)['wert']);merkmal=forderung>netto;grund=min(ber,forderung) if merkmal else _bruch(0);erfuellt=_addieren(ehegatte,dritter)
+    if erfuellt>forderung or dritter>grund:_fehler('erfuellungen','Erfüllungen höchstens gemeinsame Forderung; Dritterfüllung höchstens Drittgrundbetrag.')
+    rest=_subtrahieren(forderung,erfuellt);dritt=min(rest,_subtrahieren(grund,dritter))
+    wert=dict(betragsmerkmal_erfuellt=merkmal,vermoegensfehlbetrag=_bruchteile(max(_subtrahieren(forderung,netto),_bruch(0))),bereicherungsrest=_bruchteile(ber),drittgrundbetrag=_bruchteile(grund),gemeinsame_restforderung=_bruchteile(rest),verbleibender_drittersatz=_bruchteile(dritt))
+    eingaben = dict(ausgleichsforderung=ausgleichsforderung, endnettovermoegen=endnettovermoegen, bereicherungsrechtlicher_zuwendungswert=bereicherungsrechtlicher_zuwendungswert, anrechenbare_entreicherung=anrechenbare_entreicherung, erfuellung_ehegatte=erfuellung_ehegatte, erfuellung_dritter=erfuellung_dritter, begrenzungsmodell=begrenzungsmodell, methodennachweis=methodennachweis)
+    ergebnis = _ergebnis(wert,'EUR','BGB_ZUGEWINNAUSGLEICH_DRITTERSATZ_MIT_GESAMTSCHULD',eingaben,[dict(operation='Vermögensfehlbetrag als Tatbestandsvergleich bestimmen, qualifizierten Bereicherungsrest auf Forderung begrenzen und gemeinsame Erfüllungen ohne Doppelabzug verrechnen.')],eingaben.copy())
+    ergebnis["hinweise"] = ['Bedingtes1390-Geldersatzmodell mit ausdrücklich qualifizierter Forderungsobergrenze: Tatbestandsmerkmal ursprünglicheAusgleichsforderung>Endnettovermögen selbst vergleichen. Bereicherungsrest durch vorhandenen818-Kern. Drittgrundbetrag bei erfülltem Betragsmerkmal=min(Bereicherungsrest,ursprünglicheAusgleichsforderung), nicht min(...,Vermögensfehlbetrag). Rechtliche Geltung dieser Forderungsobergrenze wird als Voraussetzung verlangt, nicht abschließend aus der Reformbegründung2009 behauptet. Beide Erfüllungsbeträge einmal von der gemeinsamen Forderung abziehen; Drittrest=min(noch offener gemeinsamer Forderung,Drittgrundbetrag-Dritterfüllung). Ehegattenzahlung verkleinert die gemeinsame Restforderung, ist aber nicht zusätzlich nochmals vom individuellen Drittrahmen abzuziehen. Ursprüngliches Betragsmerkmal nicht nachträglich anhand der bereits getilgten Forderung neu prüfen. Keine über den ursprünglichen Anspruch hinausgehenden Nebenforderungen; Sachherausgabe zur Abwendung nur bei rechtlich bestimmter Erfüllungsbewertung als Erfüllungsbetrag erfassen. §1390III-Verjährungsbeginn bleibt separate Kalenderbindung.']
+    return ergebnis
+

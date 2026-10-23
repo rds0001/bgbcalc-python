@@ -1,0 +1,32 @@
+{
+  "regel_id": "BGB_AUSSTATTUNG_PERSOENLICHE_INNENLAST",
+  "regelversion": "1",
+  "bezeichnung": "ausstattung_persoenliche_innenlast",
+  "fundstelle_ids": [
+    "BGB_1444_T0001",
+    "BGB_1444_T0002",
+    "BGB_1466_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "ausstattungsbetrag: Nichtnegativer rechtlich qualifizierter versprochener/gewährter Ausstattungsbetrag aus Gesamtgut in EUR. gesamtgutangemessener_betrag: Nichtnegatives rechtlich bewertetes dem Gesamtgut entsprechendes Ausstattungsmaß in EUR; kein ungeprüfter Elternvermögenswert. zugestimmter_mehrbetrag: Nichtnegativer konkret zugestimmter Teil des Betrags über dem Gesamtgutmaß, höchstens tatsächlicher Mehrbetrag. Nur im Nichtverwalter-Elternfall, sonst0. Keine Doppelzählung mit bereits angemessenem Grundbetrag. berechnungsfall: Rechtlich qualifizierter Fall: gemeinschaftliches_kind_alleinverwalter; nichtgemeinschaftliches_kind_elternteil_alleinverwalter; nichtgemeinschaftliches_kind_elternteil_nichtverwalter; nichtgemeinschaftliches_kind_gemeinschaftliche_verwaltung. zuordnungsnachweis: Nichtleerer Nachweis von Kindeseinordnung, Elternteil/Verwalter, Gesamtgutmaß und gegebenenfalls konkreter Zustimmung zum Mehrbetrag.",
+  "rechenschritte": "Grundbetrag=min(Ausstattung,Gesamtgutmaß), Mehrbetrag=Ausstattung−Grundbetrag. Gemeinschaftliches Kind/Alleinverwalter: persönliche Last=Mehrbetrag. Nichtgemeinschaftliches Kind/Elternteil nicht verwaltend: Grundbetrag+zugestimmter Mehrbetrag. Sonstige modellierte Elternfälle: voller Ausstattungsbetrag.",
+  "ausnahmen": "Gesetzliche Innenlast ohne abweichende Vereinbarung. Bei gemeinschaftlichem Kind nach§1444I ist die persönliche Last des allein verwaltenden Ehegatten gemeint. Bei nichtgemeinschaftlichem Kind ist die persönliche Last des Elternteils gemeint:§1444II bei Alleinverwaltung,§1466 bei gemeinschaftlicher Verwaltung. Umfang der Ausstattung und Gesamtgutmaß rechtlich bewertet; keine automatische Bestimmung von Elternschaft, Kindeseigenschaft, Verwaltungsform oder Angemessenheit. Im Nichtverwalter-Elternfall Zustimmung ausschließlich als tatsächlich zugestimmter Teil des über dem Maß liegenden Mehrbetrags vorgeben; nicht pauschal irgendeinen zugestimmten Gesamtbetrag verwenden, da sonst Überlappungen doppelt zählen. Übriger Betrag wird nur als nicht dieser persönlichen Last zugeordnet ausgewiesen, nicht automatisch dem anderen Ehegatten oder einer Masse auferlegt. Keine Außenhaftung, Erfüllung, Schenkungsbewertung oder Ausgleichsfälligkeit berechnet.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/ausstattungsinnenlast.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "ausstattungsbetrag": "Nichtnegativer rechtlich qualifizierter versprochener/gewährter Ausstattungsbetrag aus Gesamtgut in EUR.",
+    "gesamtgutangemessener_betrag": "Nichtnegatives rechtlich bewertetes dem Gesamtgut entsprechendes Ausstattungsmaß in EUR; kein ungeprüfter Elternvermögenswert.",
+    "zugestimmter_mehrbetrag": "Nichtnegativer konkret zugestimmter Teil des Betrags über dem Gesamtgutmaß, höchstens tatsächlicher Mehrbetrag. Nur im Nichtverwalter-Elternfall, sonst0. Keine Doppelzählung mit bereits angemessenem Grundbetrag.",
+    "berechnungsfall": "Rechtlich qualifizierter Fall: gemeinschaftliches_kind_alleinverwalter; nichtgemeinschaftliches_kind_elternteil_alleinverwalter; nichtgemeinschaftliches_kind_elternteil_nichtverwalter; nichtgemeinschaftliches_kind_gemeinschaftliche_verwaltung.",
+    "zuordnungsnachweis": "Nichtleerer Nachweis von Kindeseinordnung, Elternteil/Verwalter, Gesamtgutmaß und gegebenenfalls konkreter Zustimmung zum Mehrbetrag."
+  },
+  "ergebnisvertrag": "wert enthält persoenliche_innenlast und nicht_als_persoenliche_innenlast_erfasst als EUR-Brüche. Letzterer weist keine andere persönliche Last zu.",
+  "regelart": "BETRAGSOPERATION"
+}

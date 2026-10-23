@@ -1,0 +1,29 @@
+{
+  "regel_id": "BGB_AUSGLEICHUNG_ZUSCHUSS_MEHRBETRAG",
+  "regelversion": "1",
+  "bezeichnung": "ausgleichung_zuschuss_mehrbetrag",
+  "fundstelle_ids": [
+    "BGB_2050_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "zuwendungswert: Nichtnegativer exakter EUR-Wert qualifizierter Einkünftezuschüsse oder Berufsvorbildungskosten2050II. angemessenes_mass: Nichtnegative rechtlich bewertete angemessene Summe nach Vermögensverhältnissen des Erblassers auf vergleichbarer Wertgrundlage. Keine erfundene gesetzliche Prozentgrenze. zuwendung_nach_2050_abs2_qualifiziert: Pflichtwahrheitswert: Ausgleichungsfall2050II rechtlich festgestellt. FALSE ergibt NICHT_ANWENDBAR. bewertungsnachweis: Nichtleerer Nachweis des Anwendungsfalls und angemessenen Maßes.",
+  "rechenschritte": "Zuwendungswert minus angemessenes Maß, mindestens null.",
+  "ausnahmen": "Keine automatische Angemessenheitsprüfung, Bewertung2055 oder abschließende Ausgleichung2055/2056. Keine unqualifizierte Zusammenrechnung verschiedener Zuwendungen.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/erbauseinandersetzungsbetraege.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "zuwendungswert": "Nichtnegativer exakter EUR-Wert qualifizierter Einkünftezuschüsse oder Berufsvorbildungskosten2050II.",
+    "angemessenes_mass": "Nichtnegative rechtlich bewertete angemessene Summe nach Vermögensverhältnissen des Erblassers auf vergleichbarer Wertgrundlage. Keine erfundene gesetzliche Prozentgrenze.",
+    "zuwendung_nach_2050_abs2_qualifiziert": "Pflichtwahrheitswert: Ausgleichungsfall2050II rechtlich festgestellt. FALSE ergibt NICHT_ANWENDBAR.",
+    "bewertungsnachweis": "Nichtleerer Nachweis des Anwendungsfalls und angemessenen Maßes."
+  },
+  "ergebnisvertrag": "wert ist ausgleichungsrelevanter Mehrbetrag als exakter EUR-Bruch; kein sofortiger Zahlungsanspruch.",
+  "regelart": "BETRAGSOPERATION"
+}

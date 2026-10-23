@@ -1,0 +1,34 @@
+{
+  "regel_id": "BGB_ADOPTION_AUFHEBUNGSGRUNDFRIST",
+  "regelversion": "1",
+  "bezeichnung": "adoption_aufhebungsgrundfrist",
+  "fundstelle_ids": [
+    "BGB_1762_T0005",
+    "BGB_1762_T0007",
+    "BGB_1762_T0008",
+    "BGB_1762_T0009",
+    "BGB_1762_T0010",
+    "BGB_1762_T0011",
+    "BGB_1762_T0012"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "annahme_am: Rechtlich qualifiziertes ISO-Datum der Annahme als Ereignis für Dreijahresgrenze. relativer_fristbeginn_am: Rechtlich qualifiziertes ISO-Ereignisdatum des relativen Jahresbeginns nach§1762II a bis e; keine pauschale Gleichsetzung mit Annahmedatum oder Kenntnisdatum. fristbeginnnachweis: Nichtleerer Nachweis zu maßgeblichem relativen Beginn einschließlich Vertreterbezug/etwaigem vorausgehendem Fristablauf. Nur ungestörte Grundfristen.",
+  "rechenschritte": "Minimum aus relativem Beginn+1Jahr und Annahme+3Jahre; beide ungestörten Einzelgrenzen ausweisen.",
+  "ausnahmen": "Nur ungestörte Grundfristen nach§1762II. Relativen Beginn nach Buchstaben a bis e einschließlich etwaiger Vertreterkenntnis oder Ablaufs der§1747II1-Frist rechtlich vorqualifizieren; nicht allgemein Kenntnis der Annahme einsetzen. §§206/210 und eine einschlägige§193-Korrektur sind hier nicht berechnet, insbesondere keine Behauptung absolut unkorrigierbarer Dreijahresfrist. Liegt relativer Beginn erst nach Dreijahresgrenze, bleibt das errechnete Grundende früher; daraus folgt kein automatisches Erlöschensurteil. Antragsberechtigung, Vertretung, Beurkundung und Aufhebungsgrund gesondert.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/adoptionsfristen.json",
+  "gesamtabnahme": false,
+  "einheit": "daten",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "annahme_am": "Rechtlich qualifiziertes ISO-Datum der Annahme als Ereignis für Dreijahresgrenze.",
+    "relativer_fristbeginn_am": "Rechtlich qualifiziertes ISO-Ereignisdatum des relativen Jahresbeginns nach§1762II a bis e; keine pauschale Gleichsetzung mit Annahmedatum oder Kenntnisdatum.",
+    "fristbeginnnachweis": "Nichtleerer Nachweis zu maßgeblichem relativen Beginn einschließlich Vertreterbezug/etwaigem vorausgehendem Fristablauf. Nur ungestörte Grundfristen."
+  },
+  "ergebnisvertrag": "wert enthält jahresgrundfristende, dreijahresgrundgrenze und antragsgrundfristende als ISO-Daten.",
+  "regelart": "FRISTBERECHNUNG"
+}

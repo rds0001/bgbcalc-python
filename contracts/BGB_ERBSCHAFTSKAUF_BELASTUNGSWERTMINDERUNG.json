@@ -1,0 +1,31 @@
+{
+  "regel_id": "BGB_ERBSCHAFTSKAUF_BELASTUNGSWERTMINDERUNG",
+  "regelversion": "1",
+  "bezeichnung": "erbschaftskauf_belastungswertminderung",
+  "fundstelle_ids": [
+    "BGB_2375_T0001",
+    "BGB_2375_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "wert_ohne_belastung: Nichtnegativer exakter EUR-Vergleichswert des Gegenstands ohne die untersuchte Belastung am rechtlich maßgeblichen Bewertungszeitpunkt. wert_mit_belastung: Nichtnegativer exakter EUR-Vergleichswert mit derselben Belastung, sonst gleiche Bewertungsannahmen/gleicher Zeitpunkt. Keine ungeprüfte Mischung historischer und aktueller Marktpreise. unentgeltliche_belastung_vor_kauf_qualifiziert: Expliziter Wahrheitswert: unentgeltliche Belastung des Erbschaftsgegenstands durch Verkäufer vor Abschluss des Erbschaftskaufs nach2375I. FALSE ergibt NICHT_ANWENDBAR. kaeufer_kennt_belastung_beim_kauf: Expliziter Wahrheitswert rechtlich maßgeblicher Kenntnis des Käufers bei Vertragsschluss; TRUE ergibt Ersatzbetrag null, rechnerische Wertminderung bleibt ausgewiesen. bewertungsnachweis: Nichtleerer Nachweis der vergleichbaren Werte, Belastung, Kaufzeit und Käuferkenntnis.",
+  "rechenschritte": "Positive Differenz Wert ohne minus Wert mit Belastung; bei Käuferkenntnis bei Kauf Ersatzbetrag null.",
+  "ausnahmen": "Nur unentgeltliche Vorbelastung2375I. Andere Ersatzgründe, Verbrauch/Veräußerung und Erbschaftsschenkung2385II separat. Keine Wertprognose oder pauschale historische Preisänderung.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/erbschaftskauf_ersatz.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "wert_ohne_belastung": "Nichtnegativer exakter EUR-Vergleichswert des Gegenstands ohne die untersuchte Belastung am rechtlich maßgeblichen Bewertungszeitpunkt.",
+    "wert_mit_belastung": "Nichtnegativer exakter EUR-Vergleichswert mit derselben Belastung, sonst gleiche Bewertungsannahmen/gleicher Zeitpunkt. Keine ungeprüfte Mischung historischer und aktueller Marktpreise.",
+    "unentgeltliche_belastung_vor_kauf_qualifiziert": "Expliziter Wahrheitswert: unentgeltliche Belastung des Erbschaftsgegenstands durch Verkäufer vor Abschluss des Erbschaftskaufs nach2375I. FALSE ergibt NICHT_ANWENDBAR.",
+    "kaeufer_kennt_belastung_beim_kauf": "Expliziter Wahrheitswert rechtlich maßgeblicher Kenntnis des Käufers bei Vertragsschluss; TRUE ergibt Ersatzbetrag null, rechnerische Wertminderung bleibt ausgewiesen.",
+    "bewertungsnachweis": "Nichtleerer Nachweis der vergleichbaren Werte, Belastung, Kaufzeit und Käuferkenntnis."
+  },
+  "ergebnisvertrag": "wert enthält wertminderung und ersatzbetrag als exakte EUR-Brüche; negative Anwendbarkeit NULL.",
+  "regelart": "BETRAGSOPERATION"
+}

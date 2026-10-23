@@ -1,0 +1,32 @@
+{
+  "regel_id": "BGB_MIETPREISBEGRENZUNG_MODERNISIERUNGSALTERNATIVE",
+  "regelversion": "1",
+  "bezeichnung": "mietpreisbegrenzung_modernisierungsalternative",
+  "fundstelle_ids": [
+    "BGB_556e_T0001",
+    "BGB_556e_T0002",
+    "BGB_556e_T0003",
+    "BGB_556e_T0004"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "grund_oder_vormietgrenze: Bereits berechnete nutzbare Monatsgrenze des Grund-/Vormietwegs; etwa Ergebnis mietpreisbegrenzung_vormietgrenze. grundbetrag_ohne_modernisierung: 556d-Grundbetrag auf Basis der Vergleichsmiete OHNE betrachtete Modernisierung, grundsätzlich110Prozent dieser qualifizierten Vergleichsmiete. modernisierung_monatlich: Mit559I–IIIa/559aI–IV berechneter hypothetischer monatlicher Erhöhungsbetrag; nicht bloße Kosten oder ungeprüfter Zwischenbetrag. Vorhandene Kosten-/Förder-/Kappungskerne verwenden. modernisierungsprivileg_nutzbar: Expliziter Wahrheitswert: Maßnahmen im maßgeblichen Dreijahresfenster, gesetzlicher Anwendungsfall und Auskunftslage erlauben diesen Weg. einordnungsnachweis: Rechtliche Nutzbarkeit, Vergleichsmiete ohne Modernisierung, zugehörige Maßnahmen und vorgeschaltete hypothetische Erhöhungsrechnung nachweisen.",
+  "rechenschritte": "Eigenständigen Modernisierungsweg berechnen und bei rechtlicher Nutzbarkeit mit bisheriger Monatsgrenze vergleichen.",
+  "ausnahmen": "556eII-Alternativweg: Grundbetrag auf unmodernisierter Vergleichsmiete plus hypothetischer559/559a-Erhöhung; anschließend höherer nutzbarer Betrag gegenüber eigenständigem Grund-/Vormietweg. Niemals Modernisierungszuschlag zusätzlich auf die Vormiete aufschlagen. Bei nicht nutzbarem Privileg bleibt nur bisheriger Weg; hypothetischer Alternativbetrag wird dann nicht ausgegeben. Keine doppelte Einbeziehung der Modernisierung in Vergleichsmiete und Zuschlag. Zeitliche Dreijahreszuordnung, Maßnahmenqualifikation und556g-Auskunft sind rechtliche Eingaben. Die rechtliche Förderabzugs-/Kappungsreihenfolge bleibt bei einschlägiger Konkurrenz ausdrücklich vorzugeben; kein neuer Standard dafür.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/mietpreis556e.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "grund_oder_vormietgrenze": "Bereits berechnete nutzbare Monatsgrenze des Grund-/Vormietwegs; etwa Ergebnis mietpreisbegrenzung_vormietgrenze.",
+    "grundbetrag_ohne_modernisierung": "556d-Grundbetrag auf Basis der Vergleichsmiete OHNE betrachtete Modernisierung, grundsätzlich110Prozent dieser qualifizierten Vergleichsmiete.",
+    "modernisierung_monatlich": "Mit559I–IIIa/559aI–IV berechneter hypothetischer monatlicher Erhöhungsbetrag; nicht bloße Kosten oder ungeprüfter Zwischenbetrag. Vorhandene Kosten-/Förder-/Kappungskerne verwenden.",
+    "modernisierungsprivileg_nutzbar": "Expliziter Wahrheitswert: Maßnahmen im maßgeblichen Dreijahresfenster, gesetzlicher Anwendungsfall und Auskunftslage erlauben diesen Weg.",
+    "einordnungsnachweis": "Rechtliche Nutzbarkeit, Vergleichsmiete ohne Modernisierung, zugehörige Maßnahmen und vorgeschaltete hypothetische Erhöhungsrechnung nachweisen."
+  },
+  "ergebnisvertrag": "Optionaler Modernisierungsalternativbetrag und höhere nutzbare Monatsgrenze, exakte EUR-Brüche."
+}

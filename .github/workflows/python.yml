@@ -1,0 +1,26 @@
+name: Python package
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {os: ubuntu-latest, python: '3.10'}
+          - {os: ubuntu-latest, python: '3.14'}
+          - {os: windows-latest, python: '3.14'}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install ".[test]" build twine
+      - run: python -m pytest -q
+      - run: python -m build
+      - run: python -m twine check dist/*
+      - run: python tools/pruefe_installiertes_python.py --bericht referenzpruefung.json
+      - run: python tools/pruefe_installierte_kompositionen.py --bericht kompositionspruefung.json

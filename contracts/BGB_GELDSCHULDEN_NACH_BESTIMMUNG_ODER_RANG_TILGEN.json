@@ -1,0 +1,29 @@
+{
+  "regel_id": "BGB_GELDSCHULDEN_NACH_BESTIMMUNG_ODER_RANG_TILGEN",
+  "regelversion": "1",
+  "bezeichnung": "geldschulden_nach_bestimmung_oder_rang_tilgen",
+  "fundstelle_ids": [
+    "BGB_366_T0001",
+    "BGB_366_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "zahlung: Zur Tilgung gleichartiger Geldschulden verfügbarer Betrag in Euro. schulden: Liste1..1000 mit genau schuld_id, offener_betrag(positivEUR), faellig(Wahrheitswert), sicherheitsrang, laestigkeitsrang, altersrang(positive ganze Zahlen). Niedriger Rang: geringere Sicherheit, größere Lästigkeit, älter. Auch noch nicht fällige Schulden müssen erfüllbar sein. bestimmte_schuld_id: Nichtleere Kennung bei rechtlich wirksamer eindeutiger Bestimmung genau einer Schuld nach366I;NULL bedeutet festgestellt keine Bestimmung und Anwendung366II. Andere Bestimmungsmodelle separat. einordnungsnachweis: Nichtleerer Nachweis366-Anwendung, gleicher Schuldner/Gläubiger, gleichartiger erfüllbarer Geldschulden, wirksamer Bestimmung oder gesetzlicher Rangmerkmale. Keine vorrangige Spezialregel.",
+  "rechenschritte": "Eindeutige Tilgungsbestimmung ausführen oder gesetzliche Fälligkeits-/Sicherheits-/Lästigkeits-/Altersgruppen proportional bedienen.",
+  "ausnahmen": "§366I/II: bei qualifizierter eindeutiger Tilgungsbestimmung nur bestimmte Schuld bedienen; Überschuss bleibt unzugeordnet, keine erfundene weitere Schuldnerbestimmung. Ohne Bestimmung fällige vor nicht fälligen Schulden, dann geringere Sicherheit, größere Lästigkeit, höheres Alter; bei vollständigem Gleichrang verhältnismäßig nach offenen Beträgen. Nicht fällige Forderungen müssen vorzeitig erfüllbar sein. Qualifizierte Rangwerte sind keine automatisch bewertete Sicherheit/Lästigkeit. Mehrfachbestimmungen, Gläubiger-/Parteivereinbarungen und Spezialregeln gesondert. Innerhalb jeder Schuld Kosten/Zinsen/Hauptforderung367 separat; keine automatische Erstattung des unzugeordneten Betrags.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/mehrschuld_faelligkeit.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "zahlung": "Zur Tilgung gleichartiger Geldschulden verfügbarer Betrag in Euro.",
+    "schulden": "Liste1..1000 mit genau schuld_id, offener_betrag(positivEUR), faellig(Wahrheitswert), sicherheitsrang, laestigkeitsrang, altersrang(positive ganze Zahlen). Niedriger Rang: geringere Sicherheit, größere Lästigkeit, älter. Auch noch nicht fällige Schulden müssen erfüllbar sein.",
+    "bestimmte_schuld_id": "Nichtleere Kennung bei rechtlich wirksamer eindeutiger Bestimmung genau einer Schuld nach366I;NULL bedeutet festgestellt keine Bestimmung und Anwendung366II. Andere Bestimmungsmodelle separat.",
+    "einordnungsnachweis": "Nichtleerer Nachweis366-Anwendung, gleicher Schuldner/Gläubiger, gleichartiger erfüllbarer Geldschulden, wirksamer Bestimmung oder gesetzlicher Rangmerkmale. Keine vorrangige Spezialregel."
+  },
+  "ergebnisvertrag": "wert.zuordnungen in Eingabereihenfolge mit schuld_id, tilgungsbetrag und restschuld; nicht_zugeordnet. Beträge als exakte Eurobrüche."
+}

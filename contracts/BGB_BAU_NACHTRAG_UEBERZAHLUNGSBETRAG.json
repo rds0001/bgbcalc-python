@@ -1,0 +1,29 @@
+{
+  "regel_id": "BGB_BAU_NACHTRAG_UEBERZAHLUNGSBETRAG",
+  "regelversion": "1",
+  "bezeichnung": "bau_nachtrag_ueberzahlungsbetrag",
+  "fundstelle_ids": [
+    "BGB_650c_T0007",
+    "BGB_650c_T0008"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "gezahlte_vorlaeufige_nachtragsverguetung: Nichtnegativer exakter rechtlich qualifizierter EUR-Betrag als Dezimalzeichenfolge oder Bruchobjekt; dieselbe Preis-/Abrechnungsbasis ohne Doppelzählung. geschuldete_mehrverguetung: Nichtnegativer exakter rechtlich qualifizierter EUR-Betrag als Dezimalzeichenfolge oder Bruchobjekt; dieselbe Preis-/Abrechnungsbasis ohne Doppelzählung. einordnungsnachweis: Nichtleerer Nachweis des gesetzlichen Anordnungs-/Nachtragsfalls, der Zulässigkeit des Berechnungswegs und der qualifizierten Preisbestandteile.",
+  "rechenschritte": "Vorläufig gezahlte Nachtragsvergütung minus endgültig geschuldete Mehrvergütung, mindestens null",
+  "ausnahmen": "Nur Zahlungen nach §650c Absatz3 Satz1 und rechtlich feststehende nichtnegative Mehrvergütung nach Absatz1/2. Mehrfachzahlungen nur einmal summieren; echte Vergütungsminderungsfälle gesondert abrechnen. Überzahlungszinsen ab jeweiligem Zahlungseingang nach entsprechend §288 Absatz1 Satz2/Absatz2 ohne Zinseszins (§289 Satz1); vorhandene Zinskerne mit qualifizierter Überzahlungszuordnung und Datumsbasis separat verwenden, nicht pauschal gesamte Bruttozahlung verzinsen.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/baunachtragsbetraege.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "gezahlte_vorlaeufige_nachtragsverguetung": "Nichtnegativer exakter rechtlich qualifizierter EUR-Betrag als Dezimalzeichenfolge oder Bruchobjekt; dieselbe Preis-/Abrechnungsbasis ohne Doppelzählung.",
+    "geschuldete_mehrverguetung": "Nichtnegativer exakter rechtlich qualifizierter EUR-Betrag als Dezimalzeichenfolge oder Bruchobjekt; dieselbe Preis-/Abrechnungsbasis ohne Doppelzählung.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des gesetzlichen Anordnungs-/Nachtragsfalls, der Zulässigkeit des Berechnungswegs und der qualifizierten Preisbestandteile."
+  },
+  "ergebnisvertrag": "wert ist ein exakter EUR-Bruch; bei bau_nachtragsverguetung_differenz kann er als Vergütungsminderung negativ sein.",
+  "regelart": "BETRAGSOPERATION"
+}

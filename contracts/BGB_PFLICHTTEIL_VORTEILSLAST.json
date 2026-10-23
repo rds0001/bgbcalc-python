@@ -1,0 +1,33 @@
+{
+  "regel_id": "BGB_PFLICHTTEIL_VORTEILSLAST",
+  "regelversion": "1",
+  "bezeichnung": "pflichtteil_vorteilslast",
+  "fundstelle_ids": [
+    "BGB_2320_T0001",
+    "BGB_2320_T0002",
+    "BGB_2321_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "fallart: ersatzerwerb_2320 oder vermaechtnisausschlagung_2321, jeweils rechtlich qualifiziert. pflichtteilslast: Nichtnegative exakte EUR-Pflichtteilslast, bei angenommenem Vermächtnis Anrechnung2307 bereits berücksichtigt. angenommenes_vermaechtnis: Nichtnegativer EUR-Wert eines angenommenen Vermächtnisses2320; überschneidungsfrei zur Pflichtteilslast. Bei2321 null. erlangter_vorteil: Nichtnegativer rechtlich bewerteter EUR-Vorteil gerade aus Ersatzerwerb/Ausschlagung, nicht automatisch gesamter Erbteil. lastzuordnung_qualifiziert: Pflichtwahrheitswert der Sonderzuordnung2320/2321 einschließlich abweichender Verfügung2324; FALSE NICHT_ANWENDBAR. bewertungsnachweis: Nichtleerer Nachweis von Vorteil und überschneidungsfreien Lastkomponenten.",
+  "rechenschritte": "Pflichtteilslast plus angenommenes Vermächtnis addieren; zugeordnete Sonderlast=min(Gesamtlast,Vorteil); Rest getrennt.",
+  "ausnahmen": "Keine Doppelanrechnung2307 und keine automatische Quote für mehrere Begünstigte oder übrige Erben.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/pflichtteilslast.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "fallart": "ersatzerwerb_2320 oder vermaechtnisausschlagung_2321, jeweils rechtlich qualifiziert.",
+    "pflichtteilslast": "Nichtnegative exakte EUR-Pflichtteilslast, bei angenommenem Vermächtnis Anrechnung2307 bereits berücksichtigt.",
+    "angenommenes_vermaechtnis": "Nichtnegativer EUR-Wert eines angenommenen Vermächtnisses2320; überschneidungsfrei zur Pflichtteilslast. Bei2321 null.",
+    "erlangter_vorteil": "Nichtnegativer rechtlich bewerteter EUR-Vorteil gerade aus Ersatzerwerb/Ausschlagung, nicht automatisch gesamter Erbteil.",
+    "lastzuordnung_qualifiziert": "Pflichtwahrheitswert der Sonderzuordnung2320/2321 einschließlich abweichender Verfügung2324; FALSE NICHT_ANWENDBAR.",
+    "bewertungsnachweis": "Nichtleerer Nachweis von Vorteil und überschneidungsfreien Lastkomponenten."
+  },
+  "ergebnisvertrag": "wert enthält zugeordnete_sonderlast und nicht_durch_vorteil_zugeordnete_restlast als exakte EUR-Brüche.",
+  "regelart": "BETRAGSOPERATION"
+}

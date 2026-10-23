@@ -1,0 +1,32 @@
+{
+  "regel_id": "BGB_BUERGSCHAFT_FORDERUNGSUEBERGANG_BETRAG",
+  "regelversion": "1",
+  "bezeichnung": "buergschaft_forderungsuebergang_betrag",
+  "fundstelle_ids": [
+    "BGB_1143_T0001",
+    "BGB_1143_T0002",
+    "BGB_774_T0001",
+    "BGB_774_T0002",
+    "BGB_774_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "offene_hauptforderung: Noch bestehende, von der Bürgschaft erfasste Gläubigerforderung gegen den Hauptschuldner in EUR unmittelbar vor der betrachteten Befriedigung. befriedigung_durch_buergen: Durch die konkrete Bürgenleistung auf diese Hauptforderung tatsächlich bewirkter Befriedigungsbetrag in EUR; keine bloße Zahlung ohne Tilgungszuordnung. einordnungsnachweis: Nachweis der wirksamen Bürgschaft, zugeordneten Hauptforderung und tatsächlich eingetretenen Befriedigung nach774I.",
+  "rechenschritte": "Numerischer Forderungsübergang: Minimum aus noch bestehender erfasster Hauptforderung und darauf bewirkter Befriedigung durch den Bürgen.",
+  "ausnahmen": "§774I: ausschließlich Höhe des gesetzlichen Übergangs der konkret erfassten Hauptforderung. Entsprechend§1143I bei Befriedigung durch den Grundstückseigentümer, der nicht persönlicher Schuldner ist; befriedigung_durch_buergen bezeichnet in dieser Normanwendung dessen qualifizierten Befriedigungsbetrag. Der Funktionsname bezeichnet den wiederverwendeten774-Kern, keine zusätzlich vorausgesetzte Bürgschaft. Gesamthypothekenfolgen1143II/1173 und Sicherheitenverteilung werden hier nicht berechnet. Keine Vermehrung der Forderung bei Überzahlung und keine Berechnung eines daraus möglichen Rückforderungsanspruchs. Durchsetzung darf dem verbleibenden Gläubiger nicht schaden; Hauptschuldnereinwendungen bleiben bestehen. Innenausgleich unter Mitbürgen nach774II/426, Sicherheiten, Zinsen und Kosten separat zuordnen; keine doppelte Erfassung bereits übergegangener Forderungen.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Nichtnegative Eingangswerte, exakter nichtnegativer EUR-Bruch im sicheren gemeinsamen Zahlenbereich.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/schuldrechtliche_betragsreste.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "offene_hauptforderung": "Noch bestehende, von der Bürgschaft erfasste Gläubigerforderung gegen den Hauptschuldner in EUR unmittelbar vor der betrachteten Befriedigung. Bei entsprechender Anwendung1143I: Eigentümer ist nicht persönlicher Schuldner, konkrete gesicherte Forderung und darauf bewirkte Eigentümerbefriedigung qualifizieren; keine zusätzliche Bürgschaft erforderlich.",
+    "befriedigung_durch_buergen": "Durch die konkrete Bürgenleistung auf diese Hauptforderung tatsächlich bewirkter Befriedigungsbetrag in EUR; keine bloße Zahlung ohne Tilgungszuordnung. Bei entsprechender Anwendung1143I: Eigentümer ist nicht persönlicher Schuldner, konkrete gesicherte Forderung und darauf bewirkte Eigentümerbefriedigung qualifizieren; keine zusätzliche Bürgschaft erforderlich.",
+    "einordnungsnachweis": "Nachweis der wirksamen Bürgschaft, zugeordneten Hauptforderung und tatsächlich eingetretenen Befriedigung nach774I. Bei entsprechender Anwendung1143I: Eigentümer ist nicht persönlicher Schuldner, konkrete gesicherte Forderung und darauf bewirkte Eigentümerbefriedigung qualifizieren; keine zusätzliche Bürgschaft erforderlich."
+  },
+  "ergebnisvertrag": "wert ist der exakte EUR-Bruch.",
+  "regelart": "BETRAGSOPERATION"
+}

@@ -1,0 +1,28 @@
+{
+  "regel_id": "BGB_GESAMTSCHULD_QUOTEN_MIT_TEILAUSFAELLEN",
+  "regelversion": "1",
+  "bezeichnung": "gesamtschuld_quoten_mit_teilausfaellen",
+  "fundstelle_ids": [
+    "BGB_426_T0001",
+    "BGB_426_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "gesamtbetrag: Für denselben Innenausgleich zu verteilender Gesamtbetrag in Euro, nicht nochmals bereits abgerechnete Zahlungen. gesamtschuldner: Liste2..1000, je genau schuldner_id, innenquote(0..1, Summe1), einbringlicher_gesamtbeitrag geleisteter_beitrag und ausfallgewicht(nichtnegativ). Der Gesamtbeitrag ist der rechtlich/tatsächlich insgesamt erlangbare Betrag einschließlich Grund-/Zusatzlast. Ausfallgewichte sind rechtlich qualifizierte relative Tragungsgewichte; null bedeutet keine zusätzliche Ausfalltragung. geleisteter_beitrag ist der dieser Abrechnung eindeutig zugeordnete bereits erbrachte Betrag; ausdrücklich0 falls keiner. Summe höchstens Gesamtbetrag; Überzahlungen an den Gläubiger separat. einordnungsnachweis: Nichtleerer Nachweis von426I-Innenquoten, tatsächlicher Nichterlangbarkeit, gemeinsamen Abrechnungsgrundlagen und rechtlich maßgeblicher relativer Ausfalltragung einschließlich wiederholter Teilausfälle.",
+  "rechenschritte": "Grundanteile mit vollständigen Innenquoten berechnen; Teilausfall nach qualifizierten Gewichten unter verbleibenden Gesamtgrenzen wiederholt nachverteilen.",
+  "ausnahmen": "§426I: zunächst Gesamtbetrag nach rechtlich bestimmten Innenquoten, daraus nur erlangbare Grundbeiträge. Nicht erlangbaren Rest nach ausdrücklich qualifizierten Ausfallgewichten auf übrige noch verfügbare Beiträge verteilen, bei weiterer Begrenzung wiederholt proportional nachverteilen. Vorhandener begrenzter Quotenkern wird wiederverwendet. Gesetzlicher Gleichanteilsfall mit gleichen Quoten/Gewichten; abweichende Bestimmung muss rechtlich belegt sein. Keine automatische Annahme, dass beliebige Innenquote stets dieselbe Ausfallquote vorgibt. Grenzen sind tatsächlich/rechtlich erlangbare Gesamtbeiträge und keine bloßen Zahlungsangebote. Ursprüngliche Beitragspflicht ausgefallener Schuldner wird nicht erlassen. Keine Begrenzung der Außenhaftung, kein automatischer Forderungsübergang426II oder individueller Anspruchszuordnung zwischen bereits leistenden Schuldnern. Kein Gesamtvermögens- oder Insolvenzmodell und keine Cent-Rundung. Bereits erbrachte, auf diese Abrechnung zugeordnete Beiträge werden mit der rechnerischen Gesamtlast verglichen. Über-/Restbeitrag sind Rechensalden, keine automatisch fälligen Einzelansprüche gegen bestimmte Mitschuldner. Teilbefriedigung lässt einen gesondert ausgewiesenen Gläubigerrest; Gesamtüberzahlung an den Gläubiger außerhalb.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/gesamtschuld_teilweise_ausfaelle.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "gesamtbetrag": "Für denselben Innenausgleich zu verteilender Gesamtbetrag in Euro, nicht nochmals bereits abgerechnete Zahlungen.",
+    "gesamtschuldner": "Liste2..1000, je genau schuldner_id, innenquote(0..1, Summe1), einbringlicher_gesamtbeitrag geleisteter_beitrag und ausfallgewicht(nichtnegativ). Der Gesamtbeitrag ist der rechtlich/tatsächlich insgesamt erlangbare Betrag einschließlich Grund-/Zusatzlast. Ausfallgewichte sind rechtlich qualifizierte relative Tragungsgewichte; null bedeutet keine zusätzliche Ausfalltragung. geleisteter_beitrag ist der dieser Abrechnung eindeutig zugeordnete bereits erbrachte Betrag; ausdrücklich0 falls keiner. Summe höchstens Gesamtbetrag; Überzahlungen an den Gläubiger separat.",
+    "einordnungsnachweis": "Nichtleerer Nachweis von426I-Innenquoten, tatsächlicher Nichterlangbarkeit, gemeinsamen Abrechnungsgrundlagen und rechtlich maßgeblicher relativer Ausfalltragung einschließlich wiederholter Teilausfälle."
+  },
+  "ergebnisvertrag": "wert.verteilung mit Grund-/Zusatz-/Gesamtbeiträgen sowie urspruenglicher_ausfall und ungedeckter_ausfall, alle Beträge als exakte Eurobrüche. Je Schuldner zusätzlich rechnerischer_ueberbeitrag und rechnerischer_beitragsrest; insgesamt gesamt_gezahlter_beitrag und gegenueber_glaeubiger_noch_offen."
+}

@@ -1,0 +1,39 @@
+{
+  "regel_id": "BGB_FRIST_VERLAENGERUNG",
+  "regelversion": "1",
+  "bezeichnung": "fristverlaengerung",
+  "fundstelle_ids": [
+    "BGB_186_T0001",
+    "BGB_187_T0001",
+    "BGB_187_T0002",
+    "BGB_187_T0003",
+    "BGB_188_T0001",
+    "BGB_188_T0002",
+    "BGB_188_T0003",
+    "BGB_189_T0001",
+    "BGB_189_T0002",
+    "BGB_190_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; anwendbare Fristbestimmung bereits ausgewählt. Speziellere gesetzliche Vorschriften/abweichende wirksame Bestimmung vorher prüfen.",
+  "eingabevertrag": "bisheriges_fristende: ISO-Datum; anzahl/einheit wie Kalenderfrist.",
+  "rechenschritte": "Voriger Ablauf als Ereignisdatum für Verlängerungsfrist. Keine erneute Anknüpfung an ursprünglichen Anfang. Nutzer liefert den rechtlich maßgeblichen vorigen Ablauf.",
+  "ausnahmen": "§ 193 ist ausschließlich separate explizite Operation. Keine automatische Feiertagsverschiebung. Keine historischen Fassungen behaupten.",
+  "wertebereich": "Proleptischer gregorianischer Kalender, Jahr 0001..9999. Ganze Anzahlen maximal 3652059 (technischer Schutz, keine gesetzliche Grenze); Überschreitung des Datumsbereichs als EINGABE_UNGUELTIG. Keine Uhrzeiten, keine Zeitzonen.",
+  "fehlende_werte": "Fehlend/null/NA -> EINGABE_FEHLT; falscher Typ, Float in Python, nichtganzzahlig in R, ungültiges Datum/Enum/Bereich -> EINGABE_UNGUELTIG. Keine skalare Vektorrecycling-API.",
+  "rundung": "Keine; ganzzahlige Tage/Monate/Jahre.",
+  "ausgabe": "Gemeinsame Ergebnisfelder gemäß Scaffold; Datum als exakt vierstelliges ISO-Jahr, ganzzahlige Tage für Zeitraum.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/kalender.json",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "referenzfall_ids": [
+    "KAL_024"
+  ],
+  "gesamtabnahme": false,
+  "parameter_dokumentation": {
+    "bisheriges_fristende": "Rechtlich maßgeblicher Ablauf der bisherigen Frist als ISO-Datum; keine automatische Bestimmung aus einem früheren Fristbeginn.",
+    "anzahl": "Ganze Anzahl der Einheiten, höchstens 3652059; positive Zahl bei Fristen, null bei zeitraum_tage zulässig. Technischer Wertebereich, keine gesetzliche Fristobergrenze.",
+    "einheit": "Fristen: tage, wochen, monate, jahre, halbjahre, vierteljahre oder halber_monat. Bei halber_monat ist anzahl genau eins. zeitraum_tage erlaubt nur monate oder jahre."
+  }
+}

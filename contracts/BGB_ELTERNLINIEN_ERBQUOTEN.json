@@ -1,0 +1,40 @@
+{
+  "regel_id": "BGB_ELTERNLINIEN_ERBQUOTEN",
+  "regelversion": "1",
+  "bezeichnung": "elternlinien_erbquoten",
+  "fundstelle_ids": [
+    "BGB_1924_T0001",
+    "BGB_1924_T0002",
+    "BGB_1924_T0003",
+    "BGB_1924_T0004",
+    "BGB_1925_T0001",
+    "BGB_1925_T0002",
+    "BGB_1925_T0003",
+    "BGB_1925_T0004",
+    "BGB_1925_T0005",
+    "BGB_1927_T0001",
+    "BGB_1927_T0002",
+    "BGB_1930_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlich ausgewählter Fall und ausdrücklich belegte externe Parameter.",
+  "eingabevertrag": "elternlinien: genau zwei Knoten wie kinderstaemme der Abkömmlingsverteilung, je ein Elternteil mit seinen rechtlich berufenen Abkömmlingen. erste_ordnung_vorhanden: bool. verwandtenanteil_zaehler/nenner: Anteil 0..1 als ganze Zahlen. Sonstige Strukturgrenzen wie abkoemmlings_erbquoten. In R müssen die äußere Stammliste und sämtliche verschachtelten Abkömmlingslisten unbenannt sein; die einzelnen Knoten bleiben benannte Listen mit den angegebenen Feldern.",
+  "rechenschritte": "Bei berufenen Verwandten erster Ordnung keine Anwendung. Sonst den Verwandtenanteil auf besetzte Elternlinien gleich verteilen; eintretende Eltern schließen ihre Abkömmlinge aus, sonst Stammteilung. Eine vollständig leere Elternlinie fällt der anderen zu. Mehrfachanteile derselben Person aus beiden Linien getrennt erhalten und summieren.",
+  "ausnahmen": "Gesetzliche zweite Ordnung. Rechtlich maßgebliche Elternschaft und Abkömmlingsbeziehungen vorgeben; insbesondere die Beziehungen mit Ausschluss nach § 1925 Abs. 4 i.V.m. § 1756 vorher abgrenzen. Erblasser selbst nicht als berufenen Abkömmling aufnehmen. Verwandtenanteil nach Ehegattenquote bereits bestimmt. Keine Feststellung von Adoption, Verzicht, Ausschlagung oder Erbunwürdigkeit. Fehlt erste Ordnung und ist auch zweite Ordnung leer, sind weitere Ordnungen gesondert zu prüfen.",
+  "rundung": "KEINE",
+  "wertebereich": "Gemeinsamer Zahlenvertrag NUMERIK.md; fehlend EINGABE_FEHLT, falscher Typ/Bereich EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/elternlinien.json",
+  "gesamtabnahme": false,
+  "einheit": "erbquote",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "regelart": "VERTEILUNGSOPERATION",
+  "ergebnisvertrag": "wert enthält erbteile (person_id, stammpfad, quote) und erbquoten (person_id, quote). Quoten exakte Brüche als Ganzzahlzeichenfolgen. Reihenfolge folgt Eingabestämmen, Zusammenfassung je Person nach erstem Auftreten. Ohne eintretende Personen NICHT_ANWENDBAR und wert null.",
+  "parameter_dokumentation": {
+    "elternlinien": "Genau zwei rekursive Knoten (je ein Elternteil), mit person_id, tritt_ein und abkoemmlinge entsprechend abkoemmlings_erbquoten. Fehlende berufene Personen als nicht eintretender Knoten ohne berufene Nachkommen darstellen. In R müssen die äußere Stammliste und sämtliche verschachtelten Abkömmlingslisten unbenannt sein; die einzelnen Knoten bleiben benannte Listen mit den angegebenen Feldern.",
+    "erste_ordnung_vorhanden": "Expliziter Wahrheitswert: Ist ein gesetzlich berufener Verwandter erster Ordnung vorhanden? Dann ist die zweite Ordnung ausgeschlossen.",
+    "verwandtenanteil_zaehler": "Nichtnegative ganze Zahl als Zähler des rechtlich bestimmten Verwandtenanteils am gesamten Nachlass.",
+    "verwandtenanteil_nenner": "Positive ganze Zahl als Nenner; der Verwandtenanteil darf 1 nicht überschreiten."
+  }
+}

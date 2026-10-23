@@ -1,0 +1,28 @@
+{
+  "regel_id": "BGB_BEREICHERUNG_ENTREICHERUNGSREST",
+  "regelversion": "1",
+  "bezeichnung": "bereicherung_entreicherungsrest",
+  "fundstelle_ids": [
+    "BGB_818_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "qualifizierter_geldherausgabebetrag: Nichtnegativer exakter EUR-Ausgangsbetrag rechtlich geschuldeter Geldherausgabe/Wertersatzes einschließlich zugeordneter Nutzungen/Surrogate, ohne Doppelzählung. Beispielsweise Summe aus schuldrecht_geldpositionssumme für bereicherung_geldkomponenten. anrechenbare_entreicherung: Nichtnegativer exakter EUR-Betrag des rechtlich anrechenbaren Wegfalls der Bereicherung, höchstens Ausgangsbetrag. Keine beliebigen Ausgaben oder Vermögensverluste; soweit verschärfte Haftung die Einwendung ausschließt, keine solchen Beträge einrechnen. einordnungsnachweis: Nichtleerer Nachweis von Ausgangsbereicherung, noch bestehender Bereicherung und rechtlich anrechenbarem Wegfall. Zeitpunkte und verschärfte Haftung818IV/819/820 gesondert bestimmen.",
+  "rechenschritte": "Qualifizierten Geldherausgabebetrag um rechtlich anrechenbare Entreicherung vermindern.",
+  "ausnahmen": "§818III: ausschließlich numerische Begrenzung auf Grundlage bereits rechtlich bestimmter Beträge. Entreicherung nicht automatisch aus vermindertem Kontostand, Konsumausgaben oder Verlusten ablesen. Anrechenbaren Wegfall auf die tatsächlich erfassten Komponenten und den maßgeblichen Haftungszeitraum beziehen. Verschärfte Haftung818IV/819/820, Nutzungsgrenze820II, Drittweitergabe822 und Einreden821 gesondert; ausgeschlossene Entreicherung darf nicht durch positives Eingabefeld wieder eingeführt werden. Keine automatische Saldotheorie oder Verrechnung beider Leistungsrichtungen, keine körperliche Sachherausgabe als Geldrest behandeln. Zahlungen separat.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Nichtnegative Eingangswerte, exakter nichtnegativer EUR-Bruch im sicheren gemeinsamen Zahlenbereich.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/schuldrechtliche_betragsreste.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "qualifizierter_geldherausgabebetrag": "Nichtnegativer exakter EUR-Ausgangsbetrag rechtlich geschuldeter Geldherausgabe/Wertersatzes einschließlich zugeordneter Nutzungen/Surrogate, ohne Doppelzählung. Beispielsweise Summe aus schuldrecht_geldpositionssumme für bereicherung_geldkomponenten.",
+    "anrechenbare_entreicherung": "Nichtnegativer exakter EUR-Betrag des rechtlich anrechenbaren Wegfalls der Bereicherung, höchstens Ausgangsbetrag. Keine beliebigen Ausgaben oder Vermögensverluste; soweit verschärfte Haftung die Einwendung ausschließt, keine solchen Beträge einrechnen.",
+    "einordnungsnachweis": "Nichtleerer Nachweis von Ausgangsbereicherung, noch bestehender Bereicherung und rechtlich anrechenbarem Wegfall. Zeitpunkte und verschärfte Haftung818IV/819/820 gesondert bestimmen."
+  },
+  "ergebnisvertrag": "wert ist der exakte EUR-Bruch.",
+  "regelart": "BETRAGSOPERATION"
+}

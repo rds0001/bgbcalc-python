@@ -1,0 +1,32 @@
+{
+  "regel_id": "BGB_STIMMGEWICHTS_MEHRHEITSGRENZE",
+  "regelversion": "1",
+  "bezeichnung": "stimmgewichts_mehrheitsgrenze",
+  "fundstelle_ids": [
+    "BGB_732_T0001",
+    "BGB_734_T0002",
+    "BGB_745_T0001",
+    "BGB_745_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "regelfall: gesellschaft_aufloesung_732, gesellschaft_fortsetzung_734 oder gemeinschaft_verwaltung_745. zustimmendes_stimmgewicht: Nichtnegativer exakter Dezimaltext/Bruch des qualifizierten Zustimmungsgewichts in einheitlicher Stimm-/Anteilseinheit, höchstens Gesamtgewicht. massgebliches_gesamtgewicht: Strikt positives exaktes Gesamtgewicht. Bei732/734 maßgebliche abgegebene Stimmen; bei745 gesamte maßgebliche Gemeinschaftsanteile einschließlich nicht zustimmender/nicht abgegebener Anteile. einordnungsnachweis: Nichtleerer Nachweis des gesetzlichen Mehrheitsfalls, der passenden Stimmgewichtung/Nennerbasis und gegebenenfalls gesellschaftsvertraglicher Mehrheitsentscheidung.",
+  "rechenschritte": "Zustimmungsgewicht mit Dreiviertelmehrheit oder strikter Anteilsmehrheit vergleichen.",
+  "ausnahmen": "§732/734II: nur bei gesellschaftsvertraglicher Mehrheitsentscheidung; Nenner sind rechtlich maßgebliche abgegebene Stimmen, Stimmgewicht und Behandlung von Enthaltungen/Ungültigkeit vorqualifizieren. §745I: Mehrheit nach Größe sämtlicher maßgeblicher Gemeinschaftsanteile, nicht bloß nach Kopfzahl oder abgegebenen Stimmen; Nenner umfasst die gesamte Anteilsbasis. Keine automatische Beschlusswirksamkeit, Quorums-, Kompetenz- oder Vertragsprüfung.736V und736dI enthalten keine pauschale Dreiviertelregel und sind hier nicht einbezogen. Gleichheit genügt bei drei Vierteln, nicht bei der Hälfte.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Exakte nichtnegative Anteile/Stimmgewichte beziehungsweise ganze Personenzahlen nach NUMERIK.md; Nenner positiv, Zustimmung höchstens Bezugsgröße. Keine Rundung.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/gesellschaftsquoten.json",
+  "gesamtabnahme": false,
+  "einheit": "anteile_und_wahrheitswert",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "regelfall": "gesellschaft_aufloesung_732, gesellschaft_fortsetzung_734 oder gemeinschaft_verwaltung_745.",
+    "zustimmendes_stimmgewicht": "Nichtnegativer exakter Dezimaltext/Bruch des qualifizierten Zustimmungsgewichts in einheitlicher Stimm-/Anteilseinheit, höchstens Gesamtgewicht.",
+    "massgebliches_gesamtgewicht": "Strikt positives exaktes Gesamtgewicht. Bei732/734 maßgebliche abgegebene Stimmen; bei745 gesamte maßgebliche Gemeinschaftsanteile einschließlich nicht zustimmender/nicht abgegebener Anteile.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des gesetzlichen Mehrheitsfalls, der passenden Stimmgewichtung/Nennerbasis und gegebenenfalls gesellschaftsvertraglicher Mehrheitsentscheidung."
+  },
+  "ergebnisvertrag": "wert: zustimmungsquote, grenzquote als exakte Brüche, vergleich (mehr_als oder mindestens), mehrheitsgrenze_erreicht.",
+  "regelart": "VERBAL_RECHENBAR"
+}

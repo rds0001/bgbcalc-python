@@ -1,0 +1,35 @@
+{
+  "regel_id": "BGB_SACHENRECHT_GLEICHANTEIL",
+  "regelversion": "1",
+  "bezeichnung": "sachenrecht_gleichanteil",
+  "fundstelle_ids": [
+    "BGB_920_T0002",
+    "BGB_920_T0003",
+    "BGB_923_T0001",
+    "BGB_923_T0004",
+    "BGB_923_T0006",
+    "BGB_1038_T0003",
+    "BGB_1038_T0004"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "gesamtmenge: Nichtnegative Gesamtfläche, Frucht-/Holzmenge oder Wirtschaftsplankosten in einer gemeinsamen Einheit; Kosten inEUR. anzahl_berechtigte: Ganze Zahl2..1000 betroffener Grundstücksseiten; bei Wirtschaftsplankosten genau2:Eigentümer und Nießbraucher. Miteigentümer einer Seite nicht mehrfach zählen. regelfall: grenzflaeche_920; grenzbaum_fruechte_923; grenzbaum_holz_923; wirtschaftsplan_kosten_1038. verteilungsnachweis: Nichtleerer Nachweis des gesetzlichen Gleichverteilungsfalls, ohne abweichende Billigkeits-/Verzichtsregel. Keine rechtliche Entscheidung durch den Rechner.",
+  "rechenschritte": "Einzelanteil=Gesamtmenge/Anzahl; Quote=1/Anzahl.",
+  "ausnahmen": "Nur qualifizierte Gleichverteilung.920Absatz2-Billigkeit und923Verzicht nicht in dieser Grundverteilung. Räumliche Grenzziehung, Sachbewertung und die interne Verteilung mehrerer Miteigentümer einer Nachbarseite separat.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/sachenrecht_gleichanteile.json",
+  "gesamtabnahme": false,
+  "einheit": "menge_oder_EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "gesamtmenge": "Nichtnegative Gesamtfläche, Frucht-/Holzmenge oder Wirtschaftsplankosten in einer gemeinsamen Einheit; Kosten inEUR.",
+    "anzahl_berechtigte": "Ganze Zahl2..1000 betroffener Grundstücksseiten; bei Wirtschaftsplankosten genau2:Eigentümer und Nießbraucher. Miteigentümer einer Seite nicht mehrfach zählen.",
+    "regelfall": "grenzflaeche_920; grenzbaum_fruechte_923; grenzbaum_holz_923; wirtschaftsplan_kosten_1038.",
+    "verteilungsnachweis": "Nichtleerer Nachweis des gesetzlichen Gleichverteilungsfalls, ohne abweichende Billigkeits-/Verzichtsregel. Keine rechtliche Entscheidung durch den Rechner."
+  },
+  "ergebnisvertrag": "wert enthält anteilsquote und einzelanteil als exakte Brüche.",
+  "regelart": "VERBAL_RECHENBAR"
+}

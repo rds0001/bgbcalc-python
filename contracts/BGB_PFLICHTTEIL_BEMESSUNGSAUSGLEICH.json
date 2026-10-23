@@ -1,0 +1,33 @@
+{
+  "regel_id": "BGB_PFLICHTTEIL_BEMESSUNGSAUSGLEICH",
+  "regelversion": "1",
+  "bezeichnung": "pflichtteil_bemessungsausgleich",
+  "fundstelle_ids": [
+    "BGB_2313_T0003",
+    "BGB_2313_T0004",
+    "BGB_2303_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "frueherer_pflichtteilsnachlass: Vorzeichenbehaftete exakte EUR-Nettobasis vor Neubemessung. neuer_pflichtteilsnachlass: Vorzeichenbehaftete exakte EUR-Nettobasis nach rechtlich qualifizierter Neubemessung2313, gleicher Bewertungsmaßstab. gesetzliche_erbquote_zaehler: Ganzzahlig0..Nenner, Zähler unveränderter gesetzlicher Erbquote. gesetzliche_erbquote_nenner: Positiver ganzzahliger Nenner bis2^53−1. grundmodell_ohne_anrechnung_qualifiziert: Pflichtwahrheitswert: Neubemessung2313 bei unveränderter Quote ohne2315/2316/2325 oder Vermächtnisanrechnung; FALSE ergibt NICHT_ANWENDBAR. bewertungsnachweis: Nichtleerer Nachweis geänderter Positionen und unveränderter Bewertungsgrundlage.",
+  "rechenschritte": "Beide Nettobasen jeweils mindestens null mit halber gesetzlicher Erbquote multiplizieren; neuer minus früherer Pflichtteilswert.",
+  "ausnahmen": "Nur Grundmodell; keine automatischen Zahlungs-/Rückzahlungsansprüche, Vorleistungen/Einwendungen separat. Keine anderen Anrechnungsregime.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Nachlassbasen als vorzeichenbehaftete Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/pflichtteilsbemessung.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "frueherer_pflichtteilsnachlass": "Vorzeichenbehaftete exakte EUR-Nettobasis vor Neubemessung.",
+    "neuer_pflichtteilsnachlass": "Vorzeichenbehaftete exakte EUR-Nettobasis nach rechtlich qualifizierter Neubemessung2313, gleicher Bewertungsmaßstab.",
+    "gesetzliche_erbquote_zaehler": "Ganzzahlig0..Nenner, Zähler unveränderter gesetzlicher Erbquote.",
+    "gesetzliche_erbquote_nenner": "Positiver ganzzahliger Nenner bis2^53−1.",
+    "grundmodell_ohne_anrechnung_qualifiziert": "Pflichtwahrheitswert: Neubemessung2313 bei unveränderter Quote ohne2315/2316/2325 oder Vermächtnisanrechnung; FALSE ergibt NICHT_ANWENDBAR.",
+    "bewertungsnachweis": "Nichtleerer Nachweis geänderter Positionen und unveränderter Bewertungsgrundlage."
+  },
+  "ergebnisvertrag": "wert enthält frueherer_pflichtteilswert, neuer_pflichtteilswert und vorzeichenbehaftete ausgleichsdifferenz als exakte EUR-Brüche.",
+  "regelart": "BETRAGSOPERATION"
+}

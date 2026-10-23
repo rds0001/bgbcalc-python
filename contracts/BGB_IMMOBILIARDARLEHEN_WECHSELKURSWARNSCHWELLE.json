@@ -1,0 +1,30 @@
+{
+  "regel_id": "BGB_IMMOBILIARDARLEHEN_WECHSELKURSWARNSCHWELLE",
+  "regelversion": "1",
+  "bezeichnung": "immobiliardarlehen_wechselkurswarnschwelle",
+  "fundstelle_ids": [
+    "BGB_493_T0007",
+    "BGB_493_T0012"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "wert_zum_vertragskurs: Positiver Vergleichswert desselben aktuellen Rest-/Ratenbetrags zum Vertragskurs in Landeswährung als exakte Dezimalzeichenfolge/Bruch. wert_zum_vergleichskurs: Nichtnegativer Wert desselben Betrags zum Vergleichskurs in derselben Landeswährung, exakt. warnfolge_bereits_ausgeloest: Expliziter Wahrheitswert einer zuvor rechtlich qualifiziert ausgelösten Warnfolge. einordnungsnachweis: Nichtleerer Nachweis des493IV-Anwendungsfalls, identischer Vergleichsgegenstände/Währung und bisherigen Warnfolgestatus.",
+  "rechenschritte": "Erstauslösung strikt über120%; nach vorheriger Auslösung Fortdauer bei mindestens120%, bis wieder unterschritten.",
+  "ausnahmen": "Nur numerischer Vergleich nach §493 Absatz4 Satz1/Satz2 Nummer4 im qualifizierten Fremdwährungs-/entsprechenden Einkommenswährungsfall. Beide Werte müssen denselben aktuellen Restbetrag oder dieselbe regelmäßige Rate in gleicher Landeswährung zu Vertrags- bzw. Vergleichskurs darstellen; Werte gegebenenfalls mit immobiliardarlehen_wechselkursrechnung vorbereiten. Bei bereits ausgelöster Folge hält genau20% die numerische Fortdauergrenze ein, löst aber erstmals keine Folge aus. Restbetrag und Raten gemeinsam fachlich berücksichtigen, sofern beide maßgeblich sind. Keine automatische Bestimmung regelmäßiger Informationsabstände, kein Versand und kein vollständiger Informationstatbestand. Nullvergleichsbasis außerhalb dieser relativen Rechnung.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/wechselkurswarnschwelle.json",
+  "gesamtabnahme": false,
+  "einheit": "quote_und_landeswaehrung",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "wert_zum_vertragskurs": "Positiver Vergleichswert desselben aktuellen Rest-/Ratenbetrags zum Vertragskurs in Landeswährung als exakte Dezimalzeichenfolge/Bruch.",
+    "wert_zum_vergleichskurs": "Nichtnegativer Wert desselben Betrags zum Vergleichskurs in derselben Landeswährung, exakt.",
+    "warnfolge_bereits_ausgeloest": "Expliziter Wahrheitswert einer zuvor rechtlich qualifiziert ausgelösten Warnfolge.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des493IV-Anwendungsfalls, identischer Vergleichsgegenstände/Währung und bisherigen Warnfolgestatus."
+  },
+  "ergebnisvertrag": "wert enthält relative Wertänderung als Quote,20%-Grenzwert in Landeswährung und boolesche numerische Erst-/Fortdauer-/Statusgrenzen.",
+  "regelart": "BETRAGSOPERATION"
+}

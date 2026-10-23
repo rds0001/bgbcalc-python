@@ -1,0 +1,31 @@
+{
+  "regel_id": "BGB_ENTGELTFORDERUNG_DREISSIGTAGEFRIST",
+  "regelversion": "1",
+  "bezeichnung": "entgeltforderung_dreissigtagefrist",
+  "fundstelle_ids": [
+    "BGB_286_T0009",
+    "BGB_286_T0010"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "faelligkeit_am: ISO-Datum der rechtlich maßgeblichen Fälligkeit, nicht bloß Rechnungsdatum. bezugsereignis_am: ISO-Datum des tatsächlichen Zugangs der Rechnung/gleichwertigen Zahlungsaufstellung; bei rechtlich zulässigem Ersatzfall Datum des Gegenleistungsempfangs. bezugsart: rechnungszugang oder gegenleistungsempfang_bei_unsicherem_zugang. Ersatzfall ausschließlich Nichtverbraucher bei unsicherem Rechnungszugang. dreissigtageregel_anwendbar: Explizite Bestätigung des286III-Falls, bei Verbrauchern insbesondere besonderer Folgenhinweis; FALSE ergibt NICHT_ANWENDBAR. einordnungsnachweis: Nichtleerer Nachweis der Fälligkeit, Zugang/Empfang, Fallwahl und ggf.Verbraucherhinweis.",
+  "rechenschritte": "Maximum aus Fälligkeit und Bezugstag;30Tage Ereignisfrist und nachfolgender Kalendertag.",
+  "ausnahmen": "Nur rechnerische Grundfrist. Kein endgültiger Verzugsbeginn: frühere Verzugsgründe, Leistung, Vertretenmüssen, wirksame Vereinbarungen und erforderliche Kalenderkorrekturen separat.",
+  "rundung": "Keine; taggenau.",
+  "wertebereich": "ISO-Daten im Bereich0001..9999 inklusive berechneter Folgetage; feste Fallwahl undWahrheitswert.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/zahlungsverzugfrist.json",
+  "gesamtabnahme": false,
+  "einheit": "daten",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "faelligkeit_am": "ISO-Datum der rechtlich maßgeblichen Fälligkeit, nicht bloß Rechnungsdatum.",
+    "bezugsereignis_am": "ISO-Datum des tatsächlichen Zugangs der Rechnung/gleichwertigen Zahlungsaufstellung; bei rechtlich zulässigem Ersatzfall Datum des Gegenleistungsempfangs.",
+    "bezugsart": "rechnungszugang oder gegenleistungsempfang_bei_unsicherem_zugang. Ersatzfall ausschließlich Nichtverbraucher bei unsicherem Rechnungszugang.",
+    "dreissigtageregel_anwendbar": "Explizite Bestätigung des286III-Falls, bei Verbrauchern insbesondere besonderer Folgenhinweis; FALSE ergibt NICHT_ANWENDBAR.",
+    "einordnungsnachweis": "Nichtleerer Nachweis der Fälligkeit, Zugang/Empfang, Fallwahl und ggf.Verbraucherhinweis."
+  },
+  "ergebnisvertrag": "wert: massgeblicher_beginn, grundfristende und tag_nach_grundfrist alsISO-Daten.",
+  "regelart": "FRISTBERECHNUNG"
+}

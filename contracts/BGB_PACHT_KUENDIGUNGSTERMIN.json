@@ -1,0 +1,34 @@
+{
+  "regel_id": "BGB_PACHT_KUENDIGUNGSTERMIN",
+  "regelversion": "1",
+  "bezeichnung": "pacht_kuendigungstermin",
+  "fundstelle_ids": [
+    "BGB_584_T0001",
+    "BGB_584_T0002",
+    "BGB_594a_T0001",
+    "BGB_594a_T0002",
+    "BGB_594a_T0003",
+    "BGB_594a_T0004"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "fristfall: pacht_584, landpacht_ordentlich_594a oder landpacht_ausserordentlich_594a. Nur gesetzliche Kündigungsfrist ohne abweichende Vereinbarung. kuendigungszugang_am: Rechtlich maßgeblicher taggenauer ZugangYYYY-MM-DD. fristabschnitte: Vollständige geordnete Liste1..1000 möglicher Termine, je genau fristabschnitt_beginn_am und pachtende_am.584/594aII: Beginn des letzten halben Pachtjahres und Ende desselben Pachtjahres.594aI: Beginn des Pachtjahres und Ende des NÄCHSTEN Pachtjahres. Abschnitte rechtlich bestimmen, keine Kalenderjahrannahme außer qualifiziertem gesetzlichen Zweifelsfall. werktagskalender: Objekt genau erster_kalendertag, letzter_kalendertag, werktage: vollständige geordnete Liste1..10000 maßgeblicher WerktageYYYY-MM-DD; erforderliche dritte Werktage müssen belegt sein. einordnungsnachweis: Nichtleerer Nachweis des Normfalls, des Zugangs, der vollständigen möglichen Fristabschnitte/Pachtjahre sowie des einschlägigen Werktagsbegriffs und Kalenders.",
+  "rechenschritte": "Dritten qualifizierten Werktag je normativ zugeordnetem Pachtabschnitt zählen und ersten beim Zugang noch erreichbaren Pachtendtermin auswählen.",
+  "ausnahmen": "§584I/II beziehungsweise594aI/II: dritten einschlägigen Werktag ab dem qualifizierten Fristabschnittsbeginn einschließlich bestimmen und erstes Pachtende auswählen, dessen Stichtag beim Zugang noch nicht überschritten ist.594aI koppelt Pachtjahresbeginn an Ende des nächsten Pachtjahres;584/594aII koppelt letzten Halbjahresbeginn an Ende desselben Pachtjahres. Diese Periodenzuordnung ist ausdrücklich Eingabe, keine freie Kürzungsvereinbarung. Liste muss sämtliche möglichen Termine ab Zugang vollständig enthalten; kein automatisches Überspringen ausgelassener Jahre. Samstag-/Feiertagsqualifikation extern, keine Gleichsetzung mit Bankgeschäftstagen trotz Wiederverwendung derselben Kalendersuche. Keine automatische Kündigungsberechtigung oder Textform-/Zugangsbewertung. Ein zu kurzer Kalender oder fehlender erreichbarer Termin ist Eingabefehler, kein unbefristeter Vertrag.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/pachtkuendigung.json",
+  "gesamtabnahme": false,
+  "einheit": "daten",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "fristfall": "pacht_584, landpacht_ordentlich_594a oder landpacht_ausserordentlich_594a. Nur gesetzliche Kündigungsfrist ohne abweichende Vereinbarung.",
+    "kuendigungszugang_am": "Rechtlich maßgeblicher taggenauer ZugangYYYY-MM-DD.",
+    "fristabschnitte": "Vollständige geordnete Liste1..1000 möglicher Termine, je genau fristabschnitt_beginn_am und pachtende_am.584/594aII: Beginn des letzten halben Pachtjahres und Ende desselben Pachtjahres.594aI: Beginn des Pachtjahres und Ende des NÄCHSTEN Pachtjahres. Abschnitte rechtlich bestimmen, keine Kalenderjahrannahme außer qualifiziertem gesetzlichen Zweifelsfall.",
+    "werktagskalender": "Objekt genau erster_kalendertag, letzter_kalendertag, werktage: vollständige geordnete Liste1..10000 maßgeblicher WerktageYYYY-MM-DD; erforderliche dritte Werktage müssen belegt sein.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des Normfalls, des Zugangs, der vollständigen möglichen Fristabschnitte/Pachtjahre sowie des einschlägigen Werktagsbegriffs und Kalenders."
+  },
+  "ergebnisvertrag": "wert.letzter_zugangstag und wert.rechnerischer_pachtendtermin alsYYYY-MM-DD."
+}

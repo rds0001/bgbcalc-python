@@ -1,0 +1,31 @@
+{
+  "regel_id": "BGB_VERBRAUCHER_INFORMIERTE_NEBENKOSTEN",
+  "regelversion": "1",
+  "bezeichnung": "verbraucher_informierte_nebenkosten",
+  "fundstelle_ids": [
+    "BGB_312a_T0004",
+    "BGB_312a_T0005",
+    "BGB_312e_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "kostenpositionen: Liste bis1000 eindeutiger Objekte mit position_id, nichtnegativem EUR-betrag und Wahrheitswert ordnungsgemaess_informiert. Nur rechtlich zugehörige und sonst beanspruchbare Positionen; bei teilweiser Information rechtlich zutreffend aufteilen. regelfall: praesenz_312a_absatz_2 oder fernabsatz_aussergeschaeftlich_312e; gesetzlichen Anwendungsbereich vorher qualifizieren. kostenregel_anwendbar: Explizite Bestätigung des Kostenregel-Anwendungsfalls ohne speziellere Ausschlüsse; FALSE ergibt NICHT_ANWENDBAR. einordnungsnachweis: Nichtleere Herkunft/Begründung von Positionen, Vereinbarung, Kostenhöhe und gesetzeskonformer Information.",
+  "rechenschritte": "Ordnungsgemäß informierte zugehörige Kosten auswählen und exakt addieren.",
+  "ausnahmen": "Keine neue qualitative Informationsprüfung.312a Absatz2 ausgenommen Fernabsatz/außergeschäftliche/Finanzdienstleistungsverträge. Hauptpreis und andere Entgeltverbote separat.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/verbraucherkosten.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "kostenpositionen": "Liste bis1000 eindeutiger Objekte mit position_id, nichtnegativem EUR-betrag und Wahrheitswert ordnungsgemaess_informiert. Nur rechtlich zugehörige und sonst beanspruchbare Positionen; bei teilweiser Information rechtlich zutreffend aufteilen.",
+    "regelfall": "praesenz_312a_absatz_2 oder fernabsatz_aussergeschaeftlich_312e; gesetzlichen Anwendungsbereich vorher qualifizieren.",
+    "kostenregel_anwendbar": "Explizite Bestätigung des Kostenregel-Anwendungsfalls ohne speziellere Ausschlüsse; FALSE ergibt NICHT_ANWENDBAR.",
+    "einordnungsnachweis": "Nichtleere Herkunft/Begründung von Positionen, Vereinbarung, Kostenhöhe und gesetzeskonformer Information."
+  },
+  "ergebnisvertrag": "wert ist Summe der eingeschlossenen Kosten in EUR; leer oder vollständig ausgeschlossen ergibt0.",
+  "regelart": "BETRAGSOPERATION"
+}

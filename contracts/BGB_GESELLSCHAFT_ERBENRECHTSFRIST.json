@@ -1,0 +1,34 @@
+{
+  "regel_id": "BGB_GESELLSCHAFT_ERBENRECHTSFRIST",
+  "regelversion": "1",
+  "bezeichnung": "gesellschaft_erbenrechtsfrist",
+  "fundstelle_ids": [
+    "BGB_724_T0003",
+    "BGB_724_T0004",
+    "BGB_724_T0005",
+    "BGB_210_T0001",
+    "BGB_210_T0002",
+    "BGB_210_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "erbschaftskenntnis_am: Kenntnis des Erbschaftsanfalls YYYY-MM-DD; nicht automatisch Todestag. ablaufhemmung_mindestende_am: Rechtlich vollständig bestimmtes210-Mindestende YYYY-MM-DD; null ausschließlich wenn keine wirksame210-Verlängerung besteht. Ungeklärten Schutz nicht als null behandeln. ausschlagungsrecht_bei_dreimonatsablauf_noch_offen: Expliziter Wahrheitswert für das bei Ablauf der gesetzlichen Dreimonatsgrundfrist noch bestehende Ausschlagungsrecht. ausschlagungsfristende_am: Nur bei noch offenem Ausschlagungsrecht dessen vollständig bestimmtes Ende YYYY-MM-DD; sonst null. einordnungsnachweis: Nichtleerer Nachweis des724III-Falls, Kenntnis,210-Behandlung und Ausschlagungsrechts einschließlich Hemmung und Verlustgründen.",
+  "rechenschritte": "Dreimonatsgrundfrist mit wirksamer210-Ablaufhemmung und noch offener Ausschlagungsfrist als spätestes Ende verknüpfen.",
+  "ausnahmen": "§724III: Drei Monate ab Kenntnis des Erbschaftsanfalls, entsprechend210 bestimmtes Mindestende und gegebenenfalls späteres Ausschlagungsfristende als Maximum. Ob das Ausschlagungsrecht bei Ablauf der Dreimonatsgrundfrist noch besteht, separat rechtlich vorqualifizieren, nicht allein aus einem theoretischen Datum folgern.210-Mindestende mit vorhandener Ablaufhemmungsfunktion berechnen: die maßgebliche Frist beträgt drei Monate, daher210-Nachlauf grundsätzlich entsprechend kürzer als sechs Monate. Offene/ungeklärte Schutzereignisse nicht durch fiktives Enddatum oder null ersetzen. Keine automatische Annahme/Ausschlagung, Kommanditistenstellung, Kündigungswirksamkeit oder Haftungsbeschränkung nachAbsatz4. Keine pauschale Feiertagsverschiebung; gegebenenfalls weitere rechtliche Kalenderkorrektur separat.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/gesellschaft_erbenfrist.json",
+  "gesamtabnahme": false,
+  "einheit": "daten",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "erbschaftskenntnis_am": "Kenntnis des Erbschaftsanfalls YYYY-MM-DD; nicht automatisch Todestag.",
+    "ablaufhemmung_mindestende_am": "Rechtlich vollständig bestimmtes210-Mindestende YYYY-MM-DD; null ausschließlich wenn keine wirksame210-Verlängerung besteht. Ungeklärten Schutz nicht als null behandeln.",
+    "ausschlagungsrecht_bei_dreimonatsablauf_noch_offen": "Expliziter Wahrheitswert für das bei Ablauf der gesetzlichen Dreimonatsgrundfrist noch bestehende Ausschlagungsrecht.",
+    "ausschlagungsfristende_am": "Nur bei noch offenem Ausschlagungsrecht dessen vollständig bestimmtes Ende YYYY-MM-DD; sonst null.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des724III-Falls, Kenntnis,210-Behandlung und Ausschlagungsrechts einschließlich Hemmung und Verlustgründen."
+  },
+  "ergebnisvertrag": "wert.dreimonatsgrundfristende und wert.rechnerisches_ausuebungsfristende alsYYYY-MM-DD."
+}

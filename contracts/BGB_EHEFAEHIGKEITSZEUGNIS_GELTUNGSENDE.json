@@ -1,0 +1,27 @@
+{
+  "regel_id": "BGB_EHEFAEHIGKEITSZEUGNIS_GELTUNGSENDE",
+  "regelversion": "1",
+  "bezeichnung": "ehefaehigkeitszeugnis_geltungsende",
+  "fundstelle_ids": [
+    "BGB_1309_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "ausstellung_am: ISO-Datum der Ausstellung des qualifizierten Ehefähigkeitszeugnisses als Ereignis. urkundenende_am: Optionales ISO-Datum des qualifizierten letzten Urkundengeltungstages, frühestens Ausstellung. NULL wenn keine besondere Begrenzung. Spätere Urkundengeltung verlängert gesetzliche Höchstfrist nicht.",
+  "rechenschritte": "Ende=min(Ausstellung+6Kalendermonate,gegebenenfalls qualifiziertes Urkundenende).",
+  "ausnahmen": "§1309I3, nur Zeugnisgeltung. In der Urkunde angegebene kürzere Dauer vorab in rechtlich maßgeblichen letzten Geltungstag umsetzen; fehlende Begrenzung als NULL. Späteres Urkundenende verlängert die gesetzliche Sechsmonatsgrenze nicht. Keine automatische Prüfung von Ehefähigkeit, Herkunft, Befreiung oder Eheschließung. Keine Verlängerung einer materiellen Geltungsdauer durch Wochenende/Feiertag.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/familiengrundfristen.json",
+  "gesamtabnahme": false,
+  "einheit": "datum",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "ausstellung_am": "ISO-Datum der Ausstellung des qualifizierten Ehefähigkeitszeugnisses als Ereignis.",
+    "urkundenende_am": "Optionales ISO-Datum des qualifizierten letzten Urkundengeltungstages, frühestens Ausstellung. NULL wenn keine besondere Begrenzung. Spätere Urkundengeltung verlängert gesetzliche Höchstfrist nicht."
+  },
+  "ergebnisvertrag": "wert ist ISO-Datum des letzten Geltungstages.",
+  "regelart": "FRISTBERECHNUNG"
+}

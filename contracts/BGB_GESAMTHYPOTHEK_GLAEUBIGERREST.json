@@ -1,0 +1,29 @@
+{
+  "regel_id": "BGB_GESAMTHYPOTHEK_GLAEUBIGERREST",
+  "regelversion": "1",
+  "bezeichnung": "gesamthypothek_glaeubigerrest",
+  "fundstelle_ids": [
+    "BGB_1132_T0001",
+    "BGB_1132_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "ausgangsforderung: Nichtnegativer exakter EUR-Betrag der rechtlich abgegrenzten gesicherten Ausgangsforderung; frühere bereits abgezogene Zahlungen nicht nochmals ansetzen. befriedigungsbetraege: Liste1..10000 nichtnegativer exakter EUR-Dezimaltexte oder Bruchobjekte. Rechtlich zugeordnete, überschneidungsfreie Positionen; Wenn keine Beträge anzusetzen sind, ausdrücklich eine einzelne Null angeben. Grundstücks-/Zahlungsbelege im Einordnungsnachweis zuordnen. einordnungsnachweis: Nichtleerer Nachweis der einheitlichen gesicherten Forderung, zugehörigen Grundstücke, Betragszuordnung und des qualifizierten1132-Falls.",
+  "rechenschritte": "Alle auf dieselbe gesicherte Forderung wirkenden Befriedigungen einmal summieren; Rest beim bisherigen Gläubiger und übersteigenden Zahlbetrag getrennt bestimmen.",
+  "ausnahmen": "§1132I: dieselbe Forderung wird nicht mit der Zahl belasteter Grundstücke multipliziert. Qualifizierte Befriedigungen aus verschiedenen Grundstücken und sonstigen Quellen nur einmal auf dieselbe Ausgangsforderung anrechnen. Zahlung auf Kosten/Zinsen oder andere Forderungen zuerst richtig zuordnen; Ausgangsforderung und Beträge müssen denselben Umfang und Zeitraum betreffen. Ergebnis ist der Rest beim bisherigen Gläubiger, kein allgemeines Erlöschensurteil: Forderungs-/Hypothekenübergang insbesondere1143/1150, Ausgleich und verbleibende Eigentümerrechte separat. Übersteigender Zahlbetrag begründet keinen automatisch festgestellten Erstattungsanspruch.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/gesamthypothekenbilanz.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "ausgangsforderung": "Nichtnegativer exakter EUR-Betrag der rechtlich abgegrenzten gesicherten Ausgangsforderung; frühere bereits abgezogene Zahlungen nicht nochmals ansetzen.",
+    "befriedigungsbetraege": "Liste1..10000 nichtnegativer exakter EUR-Dezimaltexte oder Bruchobjekte. Rechtlich zugeordnete, überschneidungsfreie Positionen; Wenn keine Beträge anzusetzen sind, ausdrücklich eine einzelne Null angeben. Grundstücks-/Zahlungsbelege im Einordnungsnachweis zuordnen.",
+    "einordnungsnachweis": "Nichtleerer Nachweis der einheitlichen gesicherten Forderung, zugehörigen Grundstücke, Betragszuordnung und des qualifizierten1132-Falls."
+  },
+  "ergebnisvertrag": "wert enthält exakte EUR-Brüche für beruecksichtigte_befriedigung, verbleibende_glaeubigerforderung, uebersteigender_zahlbetrag.",
+  "regelart": "BETRAGSOPERATION"
+}

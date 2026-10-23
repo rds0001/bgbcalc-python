@@ -1,0 +1,29 @@
+{
+  "regel_id": "BGB_VERWAHRUNG_VORZEITIGE_TEILVERGUETUNG",
+  "regelversion": "1",
+  "bezeichnung": "verwahrung_vorzeitige_teilverguetung",
+  "fundstelle_ids": [
+    "BGB_699_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "gesamtverguetung: Nichtnegative EUR-Vergütung für den vorzeitig beendeten Aufbewahrungsumfang. leistungsanteil_zaehler: Nichtnegative ganze Zahl des bis zur Beendigung erbrachten bewerteten Leistungsanteils, höchstens Nenner und2^53-1. leistungsanteil_nenner: Positive ganze Bezugsgröße der gesamten betrachteten Leistung, höchstens2^53-1. Keine automatische Zeitquote. leistungsstandsnachweis: Nichtleerer Nachweis vorzeitiger Beendigung699II und des bewerteten Leistungsstands; keine abweichende Vergütungsvereinbarung.",
+  "rechenschritte": "Gesamtvergütung der vorzeitig beendeten Aufbewahrung mit dem bewerteten Anteil der bis zur Beendigung erbrachten Leistungen multiplizieren.",
+  "ausnahmen": "§699II: vorzeitiges Aufbewahrungsende ohne abweichende Vergütungsvereinbarung. Teilbetrag entspricht rechtlich bewerteter bisheriger Leistung; keine ungeprüfte Tagesquote. Keine volle Vergütung nicht erbrachter Leistungen. Bereits geleistete Vergütung, Aufwendungsersatz und Zinsen bei Eigennutzung698 separat abrechnen; keine automatische Aufrechnung.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/verwahrungsverguetung.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "gesamtverguetung": "Nichtnegative EUR-Vergütung für den vorzeitig beendeten Aufbewahrungsumfang.",
+    "leistungsanteil_zaehler": "Nichtnegative ganze Zahl des bis zur Beendigung erbrachten bewerteten Leistungsanteils, höchstens Nenner und2^53-1.",
+    "leistungsanteil_nenner": "Positive ganze Bezugsgröße der gesamten betrachteten Leistung, höchstens2^53-1. Keine automatische Zeitquote.",
+    "leistungsstandsnachweis": "Nichtleerer Nachweis vorzeitiger Beendigung699II und des bewerteten Leistungsstands; keine abweichende Vergütungsvereinbarung."
+  },
+  "ergebnisvertrag": "wert: exakter EUR-Vergütungsbruch für die erbrachte Leistung.",
+  "regelart": "BETRAGSOPERATION"
+}

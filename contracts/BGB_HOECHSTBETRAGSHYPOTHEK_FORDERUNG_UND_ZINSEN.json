@@ -1,0 +1,32 @@
+{
+  "regel_id": "BGB_HOECHSTBETRAGSHYPOTHEK_FORDERUNG_UND_ZINSEN",
+  "regelversion": "1",
+  "bezeichnung": "hoechstbetragshypothek_forderung_und_zinsen",
+  "fundstelle_ids": [
+    "BGB_1190_T0001",
+    "BGB_1190_T0002",
+    "BGB_1190_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "hauptforderung: Nichtnegative qualifizierte Hauptforderung in EUR, ohne nochmals enthaltene Zinsen. zinsen: Nichtnegative gesondert rechtlich bestimmte Zinsen in EUR; Zinssatz und Laufzeit nicht in dieser Summenfunktion berechnet. eingetragener_hoechstbetrag: Nichtnegativer eingetragener Höchstbetrag in EUR, der Hauptforderung und Zinsen gemeinsam begrenzt. hoechstbetragshypothek_anwendbar: Expliziter Wahrheitswert zur rechtlichen Anwendbarkeit§1190 auf diese Forderung; FALSE NICHT_ANWENDBAR. einordnungsnachweis: Nichtleere Begründung der Forderungs-/Zinsbeträge und wirksamen Höchstbetragshypothek.",
+  "rechenschritte": "Hauptforderung+Zinsen; gemeinsame Summe auf Höchstbetrag begrenzen; Überschuss als Differenz.",
+  "ausnahmen": "Nur Hauptforderung/Zinsen, sonstige Kosten und Nebenleistungen gesondert. Kein Erlös-/Rangplan, keine automatische Erlöschung übersteigender persönlicher Forderung.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/sachenrechtliche_betragsgrenzen.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "hauptforderung": "Nichtnegative qualifizierte Hauptforderung in EUR, ohne nochmals enthaltene Zinsen.",
+    "zinsen": "Nichtnegative gesondert rechtlich bestimmte Zinsen in EUR; Zinssatz und Laufzeit nicht in dieser Summenfunktion berechnet.",
+    "eingetragener_hoechstbetrag": "Nichtnegativer eingetragener Höchstbetrag in EUR, der Hauptforderung und Zinsen gemeinsam begrenzt.",
+    "hoechstbetragshypothek_anwendbar": "Expliziter Wahrheitswert zur rechtlichen Anwendbarkeit§1190 auf diese Forderung; FALSE NICHT_ANWENDBAR.",
+    "einordnungsnachweis": "Nichtleere Begründung der Forderungs-/Zinsbeträge und wirksamen Höchstbetragshypothek."
+  },
+  "ergebnisvertrag": "wert enthält forderung_mit_zinsen, durch_hoechstbetrag_erfasster_betrag, nicht_vom_hoechstbetrag_erfasster_anteil als exakte EUR-Brüche.",
+  "regelart": "BETRAGSOPERATION"
+}

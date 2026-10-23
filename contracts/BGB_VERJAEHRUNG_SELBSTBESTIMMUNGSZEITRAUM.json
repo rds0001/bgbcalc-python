@@ -1,0 +1,32 @@
+{
+  "regel_id": "BGB_VERJAEHRUNG_SELBSTBESTIMMUNGSZEITRAUM",
+  "regelversion": "1",
+  "bezeichnung": "verjaehrung_selbstbestimmungszeitraum",
+  "fundstelle_ids": [
+    "BGB_208_T0001",
+    "BGB_208_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "fristlauf_erster_tag: Erster rechtlich qualifizierter Verjährungslauftag alsISO-Datum. grundfrist_letzter_tag: Letzter Tag ohne diese Hemmung, nicht vor erstem Fristtag. geburtsdatum: ISO-Geburtstag des Anspruchsgläubigers, nicht nach Fristbeginn. gemeinschaft_bei_fristbeginn: Expliziter Wahrheitswert, ob bei Verjährungsbeginn häusliche Gemeinschaft mit Schuldner bestand. letzter_gemeinschaftstag: BeiTRUE Pflichtdatum des letzten eingeschlossenen Hemmungstags der ununterbrochenen anfänglichen Gemeinschaft; beiFALSE NULL. Kein Auswertungsstichtag einer laufenden Gemeinschaft. einordnungsnachweis: Nichtleerer Nachweis des208-Anspruchs und der rechtlich normalisierten zeitlichen Voraussetzungen.",
+  "rechenschritte": "Altersintervall bis Tag vor21 und gegebenenfalls anfängliches Gemeinschaftsintervall bilden; vorhandener209-Kern zählt Vereinigungsdauer und verschiebt Fristablauf.",
+  "ausnahmen": "Nur208-Ansprüche, keine neu begonnene spätere Gemeinschaft. Andere Hemmungen/Ablaufhemmung/Neubeginn und193 separat.",
+  "rundung": "Keine, ganze eingeschlossene Kalendertage.",
+  "wertebereich": "ISO-Daten und Ergebnisse0001..9999 mit darstellbarer21-Jahresgrenze.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/selbstbestimmungshemmung.json",
+  "gesamtabnahme": false,
+  "einheit": "datum_und_tage",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "fristlauf_erster_tag": "Erster rechtlich qualifizierter Verjährungslauftag alsISO-Datum.",
+    "grundfrist_letzter_tag": "Letzter Tag ohne diese Hemmung, nicht vor erstem Fristtag.",
+    "geburtsdatum": "ISO-Geburtstag des Anspruchsgläubigers, nicht nach Fristbeginn.",
+    "gemeinschaft_bei_fristbeginn": "Expliziter Wahrheitswert, ob bei Verjährungsbeginn häusliche Gemeinschaft mit Schuldner bestand.",
+    "letzter_gemeinschaftstag": "BeiTRUE Pflichtdatum des letzten eingeschlossenen Hemmungstags der ununterbrochenen anfänglichen Gemeinschaft; beiFALSE NULL. Kein Auswertungsstichtag einer laufenden Gemeinschaft.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des208-Anspruchs und der rechtlich normalisierten zeitlichen Voraussetzungen."
+  },
+  "ergebnisvertrag": "wert enthält rechnerischer_letzter_tag und beruecksichtigte_hemmungstage.",
+  "regelart": "FRISTBERECHNUNG"
+}

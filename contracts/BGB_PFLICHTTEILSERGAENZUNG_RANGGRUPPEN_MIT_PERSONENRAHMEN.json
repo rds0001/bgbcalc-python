@@ -1,0 +1,32 @@
+{
+  "regel_id": "BGB_PFLICHTTEILSERGAENZUNG_RANGGRUPPEN_MIT_PERSONENRAHMEN",
+  "regelversion": "1",
+  "bezeichnung": "pflichtteilsergaenzung_ranggruppen_mit_personenrahmen",
+  "fundstelle_ids": [
+    "BGB_2329_T0001",
+    "BGB_2329_T0002",
+    "BGB_2329_T0003",
+    "BGB_2329_T0004"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "fehlbetrag: Nichtnegativer rechtlich bestimmter Ergänzungsfehlbetrag. schenkungsgruppen: Liste1..1000; je Person und Zeitpunkt genau eine Gruppe: beschenkter_id, schenkungsrang, schenkungswert, einzelhaftungsgrenze. Höherer Rang=spätere Schenkung, gleicher Rang=qualifiziert gleichzeitig. Mehrere Geschenke derselben Person am selben Zeitpunkt vorab als rechtlich einheitliche Gruppe erfassen. personenrahmen: Liste: beschenkter_id, gemeinsame_haftungsgrenze. Genau alle Empfänger; rechtliche Grenze für diesen Anspruch, nicht bloße Zahlungsfähigkeit. kuerzungsmethode: Zwingend rechtlich qualifiziert: anteilige_kuerzung_ohne_umverteilung oder begrenzte_umverteilung. Keine automatische Rechtsentscheidung bei Sonderkürzungen. methodennachweis: Zeitordnung, Schenkungswerte, rechtliche Einzel-/Personengrenzen und Behandlung von Kürzungen innerhalb einer Gleichzeitigkeitsgruppe ausdrücklich begründen.",
+  "rechenschritte": "Chronologische Gruppen mit gleichzeitig wertproportionaler Verteilung und ausdrücklich qualifizierter Kappungsmethode unter einmaligen Personenrahmen abarbeiten.",
+  "ausnahmen": "Bedingte arithmetische2329III-Komposition: spätere Gruppen zuerst; gleichzeitig nach Schenkungswerten. Individuelle Kapazität=min(Gruppengrenze,Schenkungswert,noch unverbrauchter Personenrahmen). Bei anteilige_kuerzung_ohne_umverteilung erst Wertquote am kleineren Betrag aus Restfehlbetrag/Gesamtgruppenwert und danach persönliche Kappung; bei begrenzte_umverteilung proportional mit Kappung und Neuverteilung auf übrige Gruppenmitglieder. Nur tatsächlich zugeordnete Beträge verbrauchen den gemeinsamen Personenrahmen; rechtlich nicht gedeckter Rest geht zum früheren Rang. Kein doppelter Personenrahmen über mehrere Ränge. Die beiden Methoden sind ausdrücklich bedingte Rechenmodelle, keine Behauptung, dass beide gesetzlich zulässig sind. Rechtsfrage zusätzlicher Kürzungen bei Gleichzeitigkeit bleibt vom Anwender anhand seines Falls zu entscheiden; bloße Insolvenz macht spätere Verpflichtung nicht automatisch unwirksam. Keine gewöhnliche Geldhaftung statt qualifizierter Sachherausgabe unterstellen.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/pflichtteilsergaenzung_ranggruppen_mit_personenrahmen.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "fehlbetrag": "Nichtnegativer rechtlich bestimmter Ergänzungsfehlbetrag.",
+    "schenkungsgruppen": "Liste1..1000; je Person und Zeitpunkt genau eine Gruppe: beschenkter_id, schenkungsrang, schenkungswert, einzelhaftungsgrenze. Höherer Rang=spätere Schenkung, gleicher Rang=qualifiziert gleichzeitig. Mehrere Geschenke derselben Person am selben Zeitpunkt vorab als rechtlich einheitliche Gruppe erfassen.",
+    "personenrahmen": "Liste: beschenkter_id, gemeinsame_haftungsgrenze. Genau alle Empfänger; rechtliche Grenze für diesen Anspruch, nicht bloße Zahlungsfähigkeit.",
+    "kuerzungsmethode": "Zwingend rechtlich qualifiziert: anteilige_kuerzung_ohne_umverteilung oder begrenzte_umverteilung. Keine automatische Rechtsentscheidung bei Sonderkürzungen.",
+    "methodennachweis": "Zeitordnung, Schenkungswerte, rechtliche Einzel-/Personengrenzen und Behandlung von Kürzungen innerhalb einer Gleichzeitigkeitsgruppe ausdrücklich begründen."
+  },
+  "ergebnisvertrag": "Gruppenanteile in Eingabereihenfolge, verbleibende Personenrahmen und ungedeckter Fehlbetrag; keine automatische rechtliche Methodenwahl."
+}

@@ -1,0 +1,30 @@
+{
+  "regel_id": "BGB_GEMEINSCHAFT_FRUCHTANTEIL",
+  "regelversion": "1",
+  "bezeichnung": "gemeinschaft_fruchtanteil",
+  "fundstelle_ids": [
+    "BGB_743_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "gesamtfruchtmenge: Nichtnegative exakte gesamte Fruchtmenge oder Fruchtbetrag als Dezimaltext/Bruch in der angegebenen einheitlichen Einheit. teilhaberanteil_zaehler: Nichtnegative ganze Zahl des qualifizierten Teilhaberanteils, höchstens Nenner und2^53-1. teilhaberanteil_nenner: Positive ganze Bezugsgröße des Teilhaberanteils, höchstens2^53-1. fruchteinheit: Nichtleere qualifizierte Einheit, etwa kg oder EUR; keine automatische Einheitenumrechnung. zuordnungsnachweis: Nichtleerer Nachweis der Gemeinschaft, zugeordneten Früchte, Periode und Teilhaberquote; Kosten-/Lastenzuordnung separat.",
+  "rechenschritte": "Gesamte qualifizierte Früchte mit Teilhaberanteil multiplizieren; Einheit beibehalten.",
+  "ausnahmen": "§743I: Früchte einer Bruchteilsgemeinschaft entsprechend qualifiziertem Teilhaberanteil. Gesamte Früchte und Betrachtungszeitraum vorab rechtlich bestimmen; notwendige Abgrenzungen101/102 sowie Kosten-/Lasten748 separat, keine automatische Netto-/Bruttoannahme. Einheit ausdrücklich vorgeben, etwa kg oder EUR; nicht unterschiedliche Einheiten addieren. Rechnerischer Bruchteil begründet keine automatische Zuweisung bestimmter unteilbarer Naturstücke. Bei mehreren Einzelaufrufen Teilhaberanteile ohne Doppelzählung verwenden; kein Ersatz für die Bestimmung der tatsächlichen Anteilsquoten.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Nichtnegative exakte Gesamtmenge, Anteil0..1, sicherer gemeinsamer Zahlenbereich nach NUMERIK.md; keine Rundung.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/gemeinschaftsfruchtanteile.json",
+  "gesamtabnahme": false,
+  "einheit": "qualifizierte_fruchteinheit",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "gesamtfruchtmenge": "Nichtnegative exakte gesamte Fruchtmenge oder Fruchtbetrag als Dezimaltext/Bruch in der angegebenen einheitlichen Einheit.",
+    "teilhaberanteil_zaehler": "Nichtnegative ganze Zahl des qualifizierten Teilhaberanteils, höchstens Nenner und2^53-1.",
+    "teilhaberanteil_nenner": "Positive ganze Bezugsgröße des Teilhaberanteils, höchstens2^53-1.",
+    "fruchteinheit": "Nichtleere qualifizierte Einheit, etwa kg oder EUR; keine automatische Einheitenumrechnung.",
+    "zuordnungsnachweis": "Nichtleerer Nachweis der Gemeinschaft, zugeordneten Früchte, Periode und Teilhaberquote; Kosten-/Lastenzuordnung separat."
+  },
+  "ergebnisvertrag": "wert: exakter Bruch des Fruchtanteils, einheit entspricht fruchteinheit.",
+  "regelart": "VERBAL_RECHENBAR"
+}

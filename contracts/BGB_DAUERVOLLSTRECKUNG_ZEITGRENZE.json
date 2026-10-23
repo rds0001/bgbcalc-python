@@ -1,0 +1,35 @@
+{
+  "regel_id": "BGB_DAUERVOLLSTRECKUNG_ZEITGRENZE",
+  "regelversion": "1",
+  "bezeichnung": "dauervollstreckung_zeitgrenze",
+  "fundstelle_ids": [
+    "BGB_2210_T0001",
+    "BGB_2210_T0002",
+    "BGB_2210_T0003",
+    "BGB_2163_T0004"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "erbfall_am: ISO-Datum des Erbfalls; Beginn der dreißigjährigen Ereignisfrist, nicht Amtsantritt oder späterer Verwaltungsbeginn. prueftag: ISO-Datum mindestens Erbfalltag; Prüfung zum Tagesende. fortdaueranordnung: Genau keine, tod_erbe, tod_testamentsvollstrecker, ereignis_erbe oder ereignis_testamentsvollstrecker. Ausdrücklich rechtlich qualifizierte testamentarische Anordnung nach§2210 Satz2, keine bloße Ereignisbeschreibung. Erfasste konkrete Person und etwaige Amtsnachfolge vorab rechtlich bestimmen. fortdauerereignis_am: Optionales ISO-Datum des tatsächlichen angeordneten Ereigniseintritts zwischen Erbfall und Prüftag. NULL bedeutet bis Prüftag nicht eingetreten, nicht unbekannt. Bei keine zwingend NULL. Zum Prüftagesende ist bereits eingetretenes Beendigungsereignis wirksam. ereignisperson_juristische_person: Expliziter Wahrheitswert: erfasster Erbe/Testamentsvollstrecker ist juristische Person, dann§2163 Absatz2 entsprechend höchstens dreißig Jahre. Ohne Ereignisperson FALSE vorgeben. verwaltungsanordnung_nach_2209: Expliziter Wahrheitswert zum Anwendungsbereich der Verwaltungsanordnung§2209. FALSE ergibt NICHT_ANWENDBAR; keine automatische Gleichsetzung aller Testamentsvollstreckungen mit Dauervollstreckung. einordnungsnachweis: Nichtleere Begründung der§2209-Anordnung, konkreten Fortdauerbestimmung/Person, etwaiger juristischer Person und tatsächlichen Ereigniszeit. Amtsnachfolgerkette wird nicht automatisch als wirksame Fortdauer behandelt.",
+  "rechenschritte": "Dreißig Jahre ab Erbfall berechnen. Wirksame Fortdaueranordnung für natürliche Ereignisperson ersetzt die starre Grenze durch Ereigniseintritt. Bei juristischer Ereignisperson spätestens Dreißigjahresende, gegebenenfalls früherer angeordneter Ereigniseintritt.",
+  "ausnahmen": "Keine Gesamtwirksamkeit oder Amtsnachfolgeauslegung. Anders als§2163 Absatz1 enthält§2210 Satz2 kein ausdrückliches Erfordernis Leben beim Erbfall; nur Absatz2 wird entsprechend angewandt. Ereignisabhängiges unbekanntes künftiges Ende ist kein unbegrenztes Amt. Sonstige Beendigungsgründe außerhalb Modell.",
+  "rundung": "Keine; Kalenderdaten taggenau zum Tagesende.",
+  "wertebereich": "ISO-Daten und berechnete Grenzen0001..9999, explizite Wahrheitswerte, zulässige Fortdaueranordnung, nichtleerer Nachweis.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/dauertestamentsvollstreckung.json",
+  "gesamtabnahme": false,
+  "einheit": "daten_und_wahrheitswerte",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "erbfall_am": "ISO-Datum des Erbfalls; Beginn der dreißigjährigen Ereignisfrist, nicht Amtsantritt oder späterer Verwaltungsbeginn.",
+    "prueftag": "ISO-Datum mindestens Erbfalltag; Prüfung zum Tagesende.",
+    "fortdaueranordnung": "Genau keine, tod_erbe, tod_testamentsvollstrecker, ereignis_erbe oder ereignis_testamentsvollstrecker. Ausdrücklich rechtlich qualifizierte testamentarische Anordnung nach§2210 Satz2, keine bloße Ereignisbeschreibung. Erfasste konkrete Person und etwaige Amtsnachfolge vorab rechtlich bestimmen.",
+    "fortdauerereignis_am": "Optionales ISO-Datum des tatsächlichen angeordneten Ereigniseintritts zwischen Erbfall und Prüftag. NULL bedeutet bis Prüftag nicht eingetreten, nicht unbekannt. Bei keine zwingend NULL. Zum Prüftagesende ist bereits eingetretenes Beendigungsereignis wirksam.",
+    "ereignisperson_juristische_person": "Expliziter Wahrheitswert: erfasster Erbe/Testamentsvollstrecker ist juristische Person, dann§2163 Absatz2 entsprechend höchstens dreißig Jahre. Ohne Ereignisperson FALSE vorgeben.",
+    "verwaltungsanordnung_nach_2209": "Expliziter Wahrheitswert zum Anwendungsbereich der Verwaltungsanordnung§2209. FALSE ergibt NICHT_ANWENDBAR; keine automatische Gleichsetzung aller Testamentsvollstreckungen mit Dauervollstreckung.",
+    "einordnungsnachweis": "Nichtleere Begründung der§2209-Anordnung, konkreten Fortdauerbestimmung/Person, etwaiger juristischer Person und tatsächlichen Ereigniszeit. Amtsnachfolgerkette wird nicht automatisch als wirksame Fortdauer behandelt."
+  },
+  "ergebnisvertrag": "wert enthält dreissigjahresfristende, fortdauer_ueber_dreissig_jahre_zulaessig (abstrakte Ausnahme der wirksam qualifizierten Anordnung, auch bei tatsächlich früherem Ereignis), massgebliche_zeitgrenze_am (NULL bei noch nicht eingetretenem natürlichem Personenereignis) und verwaltung_nach_zeitregel_beendet.",
+  "regelart": "FRISTBERECHNUNG"
+}

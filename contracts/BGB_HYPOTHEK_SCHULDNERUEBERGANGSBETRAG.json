@@ -1,0 +1,31 @@
+{
+  "regel_id": "BGB_HYPOTHEK_SCHULDNERUEBERGANGSBETRAG",
+  "regelversion": "1",
+  "bezeichnung": "hypothek_schuldneruebergangsbetrag",
+  "fundstelle_ids": [
+    "BGB_1164_T0001",
+    "BGB_1164_T0002",
+    "BGB_1164_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "hypothekarisch_gesicherte_befriedigung: Nichtnegativer rechtlich bewerteter Betrag in EUR, qualifizierte Bedeutung gemäß Abgrenzung. ersatzanspruch_gegen_eigentuemer: Nichtnegativer rechtlich bewerteter Vergleichs-/Abzugs-/Zusatzbetrag in EUR für denselben Gegenstand und konsistente Bewertungsbasis. anwendungsfall_qualifiziert: Explizite Bestätigung des im Fachvertrag abgegrenzten Normfalls. FALSE ergibt NICHT_ANWENDBAR. bewertungsnachweis: Nichtleere Herkunft und rechtliche Begründung beider Beträge, Bewertungszeitpunkte und Anwendbarkeit.",
+  "rechenschritte": "Gesicherten Befriedigungsbetrag auf rechtlich bestehenden Ersatzanspruch begrenzen.",
+  "ausnahmen": "Nur Umfang des Übergangs nach1164, nicht dingliche Rangverteilung. Befriedigung bezeichnet tatsächlich getilgten hypothekarisch gesicherten Betrag, keine ungesicherten Nebenforderungen. Vereinigung von Forderung und Schuld ist als entsprechender qualifizierter Betrag verwendbar. Konkurrierende Eigentümerhypothek darf nicht zum Nachteil des Schuldners geltend gemacht werden; kein Verteilungsplan.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/sachenrecht_ersatzbetraege.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "hypothekarisch_gesicherte_befriedigung": "Nichtnegativer rechtlich bewerteter Betrag in EUR, qualifizierte Bedeutung gemäß Abgrenzung.",
+    "ersatzanspruch_gegen_eigentuemer": "Nichtnegativer rechtlich bewerteter Vergleichs-/Abzugs-/Zusatzbetrag in EUR für denselben Gegenstand und konsistente Bewertungsbasis.",
+    "anwendungsfall_qualifiziert": "Explizite Bestätigung des im Fachvertrag abgegrenzten Normfalls. FALSE ergibt NICHT_ANWENDBAR.",
+    "bewertungsnachweis": "Nichtleere Herkunft und rechtliche Begründung beider Beträge, Bewertungszeitpunkte und Anwendbarkeit."
+  },
+  "ergebnisvertrag": "wert ist exakter EUR-Bruch, keine automatische Rundung.",
+  "regelart": "BETRAGSOPERATION"
+}

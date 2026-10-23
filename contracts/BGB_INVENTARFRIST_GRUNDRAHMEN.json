@@ -1,0 +1,34 @@
+{
+  "regel_id": "BGB_INVENTARFRIST_GRUNDRAHMEN",
+  "regelversion": "1",
+  "bezeichnung": "inventarfrist_grundrahmen",
+  "fundstelle_ids": [
+    "BGB_1995_T0001",
+    "BGB_1995_T0002",
+    "BGB_1995_T0003",
+    "BGB_1995_T0004",
+    "BGB_1997_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "zustellung_fristbeschluss_am: ISO-Datum0001..9999 der wirksamen Zustellung des fristbestimmenden Beschlusses, nicht bloß Beschlussdatum. annahme_erbschaft_am: ISO-Datum der wirksamen Erbschaftsannahme; tatsächliche oder rechtlich zugerechnete Annahme qualifizieren. Nicht pauschal Erbfalltag. Nur Fall bereits feststehender Annahme. bestimmtes_grundfristende: ISO-Datum der gerichtlichen erstmaligen Grundfristgrenze, vergleichbar vor gesonderten Hemmungs-/Ablaufhemmungs- und Kalenderkorrekturen. Frühestens späterer Tag von Zustellung/Annahme. erstmalige_inventarfrist: Wahrheitswert: erstmalige Grundfristbestimmung, keine gerichtliche Verlängerung oder anderweitige Sonderfrist. FALSE ergibt NICHT_ANWENDBAR für diesen Sollrahmenvergleich. einordnungsnachweis: Nichtleere Begründung von Zustellung, wirksamer Annahme und Charakter der bestimmten Grundfrist.",
+  "rechenschritte": "Späteres Ereignis von Zustellung und Annahme als Beginn; ein und drei Monate berechnen und gerichtliches Grundende auf Einschluss in Sollrahmen prüfen.",
+  "ausnahmen": "Sollrahmen ist kein pauschales Wirksamkeitsurteil. Gerichtliche Verlängerung nicht auf drei Monate kappen. Ablaufhemmung§1997/210, Ehegatten§2008 und Kalenderkorrekturen separat.",
+  "rundung": "Keine; Kalenderdaten taggenau.",
+  "wertebereich": "ISO-Daten und berechnete Grenzen0001..9999, explizite Wahrheitswerte und nichtleerer Nachweis.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/inventarfristen.json",
+  "gesamtabnahme": false,
+  "einheit": "daten_und_wahrheitswert",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "zustellung_fristbeschluss_am": "ISO-Datum0001..9999 der wirksamen Zustellung des fristbestimmenden Beschlusses, nicht bloß Beschlussdatum.",
+    "annahme_erbschaft_am": "ISO-Datum der wirksamen Erbschaftsannahme; tatsächliche oder rechtlich zugerechnete Annahme qualifizieren. Nicht pauschal Erbfalltag. Nur Fall bereits feststehender Annahme.",
+    "bestimmtes_grundfristende": "ISO-Datum der gerichtlichen erstmaligen Grundfristgrenze, vergleichbar vor gesonderten Hemmungs-/Ablaufhemmungs- und Kalenderkorrekturen. Frühestens späterer Tag von Zustellung/Annahme.",
+    "erstmalige_inventarfrist": "Wahrheitswert: erstmalige Grundfristbestimmung, keine gerichtliche Verlängerung oder anderweitige Sonderfrist. FALSE ergibt NICHT_ANWENDBAR für diesen Sollrahmenvergleich.",
+    "einordnungsnachweis": "Nichtleere Begründung von Zustellung, wirksamer Annahme und Charakter der bestimmten Grundfrist."
+  },
+  "ergebnisvertrag": "wert enthält fristbeginnereignis_am, einmonatsgrenze, dreimonatsgrenze und bestimmtes_ende_im_sollrahmen. Außerhalb Erstbestimmung NICHT_ANWENDBAR/null.",
+  "regelart": "FRISTBERECHNUNG"
+}

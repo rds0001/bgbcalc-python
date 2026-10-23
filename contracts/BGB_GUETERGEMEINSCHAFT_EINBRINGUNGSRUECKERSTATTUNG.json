@@ -1,0 +1,30 @@
+{
+  "regel_id": "BGB_GUETERGEMEINSCHAFT_EINBRINGUNGSRUECKERSTATTUNG",
+  "regelversion": "1",
+  "bezeichnung": "guetergemeinschaft_einbringungsrueckerstattung",
+  "fundstelle_ids": [
+    "BGB_1478_T0001",
+    "BGB_1478_T0006"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "verfuegbares_gesamtgut: Nichtnegativer für Einbringungsrückerstattung verfügbarer Gesamtgutswert in EUR nach qualifizierter vorrangiger Berichtigung/Rückbehalten. einbringungswert_ehegatte: Nichtnegativer qualifizierter Einbringungswert des ersten Ehegatten, zum Zeitpunkt der Einbringung bewertet, EUR. einbringungswert_anderer: Entsprechender qualifizierter Einbringungswert des anderen Ehegatten, EUR. bewertungsnachweis: Nichtleerer Nachweis zu Anwendbarkeit§1478, Verlangen, verfügbarem Wert und qualifizierten Einbringungswerten.",
+  "rechenschritte": "Erstattungsmasse=min(verfügbares Gesamtgut,Summe Einbringungswerte); Erstattung proportional Einbringungswerten, Fehlbeträge als Differenz; überschüssiges Gesamtgut gesondert. Bei Summe0 Erstattung0.",
+  "ausnahmen": "Scheidung vor Abschluss der Auseinandersetzung und erforderliches Verlangen nach§1478I sind vorausgesetzt. Einbringungswerte nachAbsatz2 qualifiziert und nachAbsatz3 zum Zeitpunkt der jeweiligen Einbringung bewertet. Verfügbares Gesamtgut bereits nach vorrangiger Verbindlichkeitenberichtigung und erforderlichen Rückbehalten bestimmt. Ersatzforderungen/Anrechnung nach§1476II und anschließende Überschussverteilung sind gesonderte Berechnungen. Keine Bewertung von Gegenständen oder automatische Güterstandsprüfung. Bei beiden Einbringungswerten null keine Rückerstattung und keine Division durch null.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/guetergemeinschaftbetraege.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "verfuegbares_gesamtgut": "Nichtnegativer für Einbringungsrückerstattung verfügbarer Gesamtgutswert in EUR nach qualifizierter vorrangiger Berichtigung/Rückbehalten.",
+    "einbringungswert_ehegatte": "Nichtnegativer qualifizierter Einbringungswert des ersten Ehegatten, zum Zeitpunkt der Einbringung bewertet, EUR.",
+    "einbringungswert_anderer": "Entsprechender qualifizierter Einbringungswert des anderen Ehegatten, EUR.",
+    "bewertungsnachweis": "Nichtleerer Nachweis zu Anwendbarkeit§1478, Verlangen, verfügbarem Wert und qualifizierten Einbringungswerten."
+  },
+  "ergebnisvertrag": "wert enthält rueckerstattung_ehegatte, rueckerstattung_anderer, fehlbetrag_ehegatte, fehlbetrag_anderer und verbleibendes_gesamtgut als EUR-Brüche.",
+  "regelart": "BETRAGSOPERATION"
+}

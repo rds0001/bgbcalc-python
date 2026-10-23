@@ -1,0 +1,29 @@
+{
+  "regel_id": "BGB_LIEFERANTENREGRESS_VERJAEHRUNGSGRUNDFRIST",
+  "regelversion": "1",
+  "bezeichnung": "lieferantenregress_verjaehrungsgrundfrist",
+  "fundstelle_ids": [
+    "BGB_445b_T0001",
+    "BGB_445b_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "ablieferung_am: Rechtlich maßgebliches ISO-Datum0001..9999 des benannten Ereignisses; kein bloßes Kenntnis-/Anzeigedatum. kaeuferanspruch_erfuellt_am: Rechtlich maßgebliches ISO-Datum0001..9999 des benannten Ereignisses; kein bloßes Kenntnis-/Anzeigedatum. einordnungsnachweis: Nichtleerer Nachweis des gesetzlichen Anspruchsfalls und beider maßgeblicher Ereignisse; Hemmung/Korrekturen separat.",
+  "rechenschritte": "Späteres Ende aus Ablieferung plus zwei Jahre und Erfüllung des Käuferanspruchs plus zwei Monate",
+  "ausnahmen": "Nur§445b Absatz1/2 für qualifizierten Lieferantenregress beim Mangel einer neu hergestellten Sache. Keine historische Fünfjahreskappung. Käuferanspruchserfüllung muss rechtlich bestimmt sein; mehrere Ansprüche/Teilbefriedigungen separat qualifizieren. Nicht digitale Vertriebskette327u. Verjährung anderer437-Ansprüche kann andereGrundfrist haben: hier ausdrücklich zweijährige445a-Aufwendungsersatzgrundfrist. Nur Grundfristen vor Hemmung/Ablaufhemmung/Neubeginn/Feiertagskorrekturen.",
+  "rundung": "Keine.",
+  "wertebereich": "ISO-Daten und Ergebnisse0001..9999;852EntstehungnichtvorVerletzungsereignis.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/schuldrechtliche_verjaehrungskompositionen.json",
+  "gesamtabnahme": false,
+  "einheit": "daten",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "ablieferung_am": "Rechtlich maßgebliches ISO-Datum0001..9999 des benannten Ereignisses; kein bloßes Kenntnis-/Anzeigedatum.",
+    "kaeuferanspruch_erfuellt_am": "Rechtlich maßgebliches ISO-Datum0001..9999 des benannten Ereignisses; kein bloßes Kenntnis-/Anzeigedatum.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des gesetzlichen Anspruchsfalls und beider maßgeblicher Ereignisse; Hemmung/Korrekturen separat."
+  },
+  "ergebnisvertrag": "wert enthält beide Teilfristenden und verknüpftes Ende; bei Grundfristfunktionen verknuepftes_grundfristende, beim Nachlauf verknuepftes_fristende; alle letzten eingeschlossenen Tage bisTagesablauf.",
+  "regelart": "FRISTBERECHNUNG"
+}

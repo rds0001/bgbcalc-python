@@ -1,0 +1,31 @@
+{
+  "regel_id": "BGB_SACHSCHADEN_BETRAG",
+  "regelversion": "1",
+  "bezeichnung": "sachschaden_ersatzbetrag",
+  "fundstelle_ids": [
+    "BGB_249_T0001",
+    "BGB_249_T0002",
+    "BGB_249_T0003",
+    "BGB_254_T0001",
+    "BGB_254_T0002",
+    "BGB_254_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung. Entsprechender Sicherheitsleistungs- oder Sachschadensfall ist gewählt; keine Ermittlung einer nicht in dieser Betragsregel enthaltenen Anspruchsgrundlage.",
+  "eingabevertrag": "erforderlicher_nettobetrag, ersatzfaehige_angefallene_umsatzsteuer: nichtnegative Dezimalzeichenfolgen in EUR; mitverschuldensquote: Dezimalzeichenfolge von 0 bis 1 (nicht Prozentpunkte). Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+  "rechenschritte": "(erforderlicher_nettobetrag + ersatzfaehige_angefallene_umsatzsteuer) * (1-mitverschuldensquote). Nettobetrag und Umsatzsteuer müssen überschneidungsfrei sein; Steuer nur soweit tatsächlich angefallen und vom erforderlichen Herstellungsaufwand umfasst. Quote als rechtlich bewertete Eingabe, keine eigene Abwägungsformel.",
+  "ausnahmen": "Keine pauschale Bewertung oder Gleichsetzung von Nutzereingabe mit gerichtlich festgestelltem Sachverhalt. NICHT_ANWENDBAR hat wert=null, nicht 0 EUR.",
+  "rundung": "Keine. Ausgabe exakter gekürzter Bruch mit dezimalen Ganzzahlzeichenfolgen zaehler und nenner; Geldbeträge nicht automatisch auf Cent runden.",
+  "wertebereich": "NUMERIK.md gilt; bool muss explizit sein; fehlend/null/NA -> EINGABE_FEHLT, ungültiges Format/Bereich/Überlauf -> EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/betraege.json",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "gesamtabnahme": false,
+  "exakte_bruchobjekte_als_dezimaleingaben": true,
+  "parameter_dokumentation": {
+    "erforderlicher_nettobetrag": "Nichtnegative Dezimalzeichenfolge in EUR des als erforderlich bewerteten Herstellungsaufwands ohne Umsatzsteuer, keine doppelte Erfassung derselben Position. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+    "ersatzfaehige_angefallene_umsatzsteuer": "Nichtnegative Dezimalzeichenfolge in EUR ausschließlich der tatsächlich angefallenen und vom erforderlichen Herstellungsaufwand umfassten Umsatzsteuer; bei fiktiver Abrechnung null. Keine automatische Steuerermittlung. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+    "mitverschuldensquote": "Rechtlich bewertete Dezimalzeichenfolge von 0 bis 1. 0.25 bedeutet 25 Prozent; die Library führt keine eigene Abwägung nach § 254 durch. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt."
+  }
+}

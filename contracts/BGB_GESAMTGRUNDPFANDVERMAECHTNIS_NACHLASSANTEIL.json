@@ -1,0 +1,34 @@
+{
+  "regel_id": "BGB_GESAMTGRUNDPFANDVERMAECHTNIS_NACHLASSANTEIL",
+  "regelversion": "1",
+  "bezeichnung": "gesamtgrundpfandvermaechtnis_nachlassanteil",
+  "fundstelle_ids": [
+    "BGB_2168_T0001",
+    "BGB_2168_T0002",
+    "BGB_2166_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "gesamtbelastungsbetrag: Nichtnegativer exakter EUR-Bezugsbetrag der betrachteten Gesamtgrund-/Gesamtrentenschuld. Bei Rente rechtlich qualifizierter einheitlicher Zeitraum; keine automatische Kapitalisierung/Wahl der Ablösungssumme. Dieser Betrag wird proportional zugeordnet, nicht mit einer persönlichen Schuld verwechselt. grundpfandart: gesamtgrundschuld oder gesamtrentenschuld; keine Hypothek. grundstuecke: Vollständige Liste2..1000 mithaftender Grundstücke, je genau grundstueck_id (eindeutiger Text), grundstueckswert und vorrangige_belastungen (nichtnegative exakte EUR-Werte). Werte zum Eigentumsübergang auf Vermächtnisnehmer. Nur rangvorrangige Lasten, nicht die betrachtete Gesamtbelastung. Negative Wertdeckung wird null; Gesamtdeckung muss positiv sein. vermachtes_grundstueck_id: Nichtleere Kennung des einen vermachten Grundstücks in der vollständigen Liste. ausschliesslich_nachlassgrundstuecke: Expliziter Wahrheitswert: sämtliche mithaftenden Grundstücke gehören zum Nachlass. FALSE führt zu NICHT_ANWENDBAR, Absatz2 separat. zweifelsregel_anwendbar: Expliziter Wahrheitswert: keine abweichende maßgebliche Anordnung des Erblassers; rechtlich einschlägige Zweifelsregel. bewertungsnachweis: Nichtleerer Nachweis zu Eigentumsübergangszeitpunkt, Werten, Ranglasten, Grundpfandart und einheitlichem Betragsbezug.",
+  "rechenschritte": "Nichtnegative bereinigte Grundstückswerte bilden; Wertquote des vermachten Grundstücks an Summe bestimmen; Gesamtbelastung mit dieser Quote multiplizieren.",
+  "ausnahmen": "§2168I verweist allein auf Wertbestimmung§2166I2. Kein zusätzlicher Grundstückswert-/persönlicher Schulddeckel, kein Drittleistungsabzug2166II. Kein Fremdgrundstücksfall oder dingliches Außenhaftungslimit.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/gesamtgrundpfandvermaechtnis.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR_und_quote",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "gesamtbelastungsbetrag": "Nichtnegativer exakter EUR-Bezugsbetrag der betrachteten Gesamtgrund-/Gesamtrentenschuld. Bei Rente rechtlich qualifizierter einheitlicher Zeitraum; keine automatische Kapitalisierung/Wahl der Ablösungssumme. Dieser Betrag wird proportional zugeordnet, nicht mit einer persönlichen Schuld verwechselt.",
+    "grundpfandart": "gesamtgrundschuld oder gesamtrentenschuld; keine Hypothek.",
+    "grundstuecke": "Vollständige Liste2..1000 mithaftender Grundstücke, je genau grundstueck_id (eindeutiger Text), grundstueckswert und vorrangige_belastungen (nichtnegative exakte EUR-Werte). Werte zum Eigentumsübergang auf Vermächtnisnehmer. Nur rangvorrangige Lasten, nicht die betrachtete Gesamtbelastung. Negative Wertdeckung wird null; Gesamtdeckung muss positiv sein.",
+    "vermachtes_grundstueck_id": "Nichtleere Kennung des einen vermachten Grundstücks in der vollständigen Liste.",
+    "ausschliesslich_nachlassgrundstuecke": "Expliziter Wahrheitswert: sämtliche mithaftenden Grundstücke gehören zum Nachlass. FALSE führt zu NICHT_ANWENDBAR, Absatz2 separat.",
+    "zweifelsregel_anwendbar": "Expliziter Wahrheitswert: keine abweichende maßgebliche Anordnung des Erblassers; rechtlich einschlägige Zweifelsregel.",
+    "bewertungsnachweis": "Nichtleerer Nachweis zu Eigentumsübergangszeitpunkt, Werten, Ranglasten, Grundpfandart und einheitlichem Betragsbezug."
+  },
+  "ergebnisvertrag": "wert enthält bereinigter_wert_vermachtes_grundstueck, bereinigter_gesamtwert, wertquote und zugeordneter_belastungsteil als exakte Brüche; negative Anwendbarkeit NULL.",
+  "regelart": "BETRAGSOPERATION"
+}

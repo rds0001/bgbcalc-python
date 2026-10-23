@@ -1,0 +1,1582 @@
+"""BGB-Berechnungen mit deutschen Fachbezeichnern."""
+from .modernisierungsvereinfachung import modernisierung_vereinfachte_kostenbasis
+from .regelverjaehrung import regelverjaehrung_grundfrist
+from .verjaehrungshoechstfrist import verjaehrung_kenntnisunabhaengige_grundfrist
+from .verjaehrungshemmung import verjaehrung_gehemmte_kalendertage
+from .verjaehrungsverhandlungen import verjaehrung_verhandlungen_mindestablauf
+from .verjaehrungsrechtsverfolgung import verjaehrung_rechtsverfolgung_nachlauffrist
+from .verjaehrungsneubeginnfrist import verjaehrung_neubeginn_grundfrist
+from .verjaehrungsablaufhemmung import verjaehrung_ablaufhemmung_mindestablauf
+from .mitverschulden import vermoegensschaden_mitverschulden
+from .gleichanteile import teilbare_leistung_gleichanteil
+from .gleichanteile import gesamtglaeubiger_innenanteil
+from .modernisierungshaerte import modernisierung_haerteberuecksichtigung
+from .modernisierungsbeginn import modernisierung_erhoehungsbeginn
+from .baugrenzen import verbraucherbau_abschlagsgrenze, verbraucherbau_sicherungsgrenze
+from .abzinsung import vorzeitiger_befriedigungsbetrag
+from .werkkuendigung import werk_bestellerkuendigung_verguetung
+from .maengeleinbehalt import werk_maengeleinbehalt
+from .sicherungskosten import bau_sicherungskosten_erstattung
+from .erbausgleich import erb_zuwendungen_ausgleichen
+from .gemeinschaft import gemeinschaft_lastenanteile
+from .mietsicherheit import mietsicherheit_hoechstbetrag, mietsicherheit_raten
+from .modernisierung import modernisierung_kappungsgrenze
+from .zinsermaessigung import modernisierung_zinsermaessigung
+from .drittmittel import modernisierung_drittmittel_aufteilen
+from .modernisierungsbetrag import modernisierung_regulaerer_zwischenbetrag
+from .pflichtteil import pflichtteil_betrag, zusatzpflichtteil_betrag, pflichtteil_vermaechtnisrest
+from .ehegattenerbrecht import ehegatten_erbquote
+from .fernere_erbfolge import fernere_erbquoten
+from .grosselternlinien import grosselternlinien_erbquoten
+from .elternlinien import elternlinien_erbquoten
+from .erbstaemme import abkoemmlings_erbquoten
+from .unterhalt import (
+    unterhaltsaltersstufe,
+    mindestunterhalt_aus_existenzminimum,
+    dynamischer_kindesunterhalt,
+    kindbezogene_leistung_anrechnen,
+)
+from .zugewinn import zugewinn_betrag, zugewinnausgleich_grundbetrag
+from .bausicherheit import bau_sicherungsbetrag, verbraucherbau_herstellungssicherheit
+from .vorfaelligkeit import vorfaelligkeitsentschaedigung_betrag
+from .minderung import minderung_betrag
+from .tilgung import zahlung_anrechnen, verbraucherdarlehen_zahlung_anrechnen
+from .betraege import (
+    buchforderung_sicherheitswert,
+    sach_sicherheitswert,
+    sachschaden_ersatzbetrag,
+    sicherheit_ergaenzungsbetrag,
+    wertpapier_sicherheitswert,
+)
+from .fund_gast import finderlohn_betrag, gastwirt_haftungsbetrag
+from .zinsen import (
+    basiszinssatz_fortschreibung,
+    gesetzliche_zinsen,
+    verzug_nebenkosten,
+    verzugszinsen,
+)
+from .kalender import (
+    Berechnungsfehler,
+    fristende,
+    fristende_monate_halb,
+    fristverlaengerung,
+    lebensalter_beginn,
+    monatstermin,
+    volljaehrigkeitsbeginn,
+    werktagsverschiebung,
+    zeitraum_tage,
+)
+
+from .mehrschuld import faellige_geldschulden_gesetzlich_tilgen
+from .indexmiete import indexmiete_betrag
+from .indexmiete import indexmiete_aenderungstermin_pruefen
+from .vergleichsmietzeit import vergleichsmiete_zeitvoraussetzungen
+
+from .gesamtschuld import gesamtschuld_gleichanteile_mit_ausfall
+
+from .altersvoraussetzungen import geschaeftsfaehigkeit_altersvoraussetzungen
+
+from .altersvoraussetzungen import delikt_altersvoraussetzungen
+
+from .darlehensrueckstand import verbraucherdarlehen_verzugsschwelle
+
+from .darlehensnachfrist import verbraucherdarlehen_kuendigungsnachfrist
+
+from .waermepumpe import waermepumpe_kostenansatz
+
+from .modernisierungsvermutung import modernisierung_pflichtverletzungsvermutung
+
+from .schenkungsauflage import schenkungsauflage_fehlbetrag
+
+from .mietpreis import mietpreisbegrenzung_ausnahmen
+
+from .mietpreis import mietpreisbegrenzung_grundbetrag
+
+from .mietpreis import mietpreisbegrenzung_vormietgrenze
+
+from .staffelmietzeit import staffelmiete_mindestabstaende
+
+from .arbeitskuendigung import arbeitsverhaeltnis_kuendigungstermin
+
+from .arbeitnehmerzahl import arbeitnehmerzahl_kuendigungsfrist
+
+from .reisepreis import pauschalreise_preiserhoehungsgrenze
+
+from .reisepreis import pauschalreise_preissenkung_erstattung
+
+from .reisehaftung import pauschalreise_ruecktrittsentschaedigung
+
+from .reisehaftung import pauschalreise_haftungsbegrenzung
+
+
+
+
+from .gegenleistung import gegenleistung_behaltensbetrag
+
+from .gegenleistung import gegenleistung_bei_ersatzverlangen
+
+from .vereinsmehrheiten import vorstand_vertretungsmehrheit
+
+from .vereinsmehrheiten import vereinsbeschluss_stimmenmehrheit
+
+from .vereinsmehrheiten import vereinsbeschluss_zustimmung_aller
+
+from .vereinszahlen import vereins_minderheitenverlangen
+
+from .vereinszahlen import vereins_mitgliederschwellen
+
+from .vereinshaftung import vereins_haftungsprivileg
+
+from .vereinsliquidation import vereins_liquidationsueberschuss
+
+from .vereinsliquidation import vereins_liquidationssperrjahr
+
+from .vereinsliquidation import vereinsvermoegen_mitgliederanteil
+
+from .vertrauensschaden import vertrauensschaden_nichtigkeit_anfechtung
+
+from .vertrauensschaden import vertrauensschaden_vertretungsmangel
+
+from .fruechte_lasten import fruechte_lasten_betragszuordnung
+
+from .fruechte_lasten import fruechte_gewinnungskostenersatz
+
+from .sonderverjaehrung import verjaehrung_besondere_grundfrist
+
+from .hemmungsschutz import verjaehrung_familienhemmung
+
+from .hemmungsschutz import verjaehrung_sexuelle_selbstbestimmung_hemmung
+
+
+from .vertragsstrafe import vertragsstrafe_schadensmindestbetrag
+
+from .ruecktrittskosten import ruecktritt_aufwendungsersatz
+
+from .widerrufsdienstleistung import widerruf_dienstleistungswertersatz
+
+from .widerrufsdarlehen import widerruf_verbraucherdarlehen_betrag
+
+from .pflichtteilsergaenzung import pflichtteil_schenkungswert
+
+from .pflichtteilsergaenzung import pflichtteilsergaenzung_mehrhinterlassung
+
+from .schenkungsabschmelzung import pflichtteil_schenkungsabschmelzung
+
+from .pflichtteilsergaenzungsbetrag import pflichtteilsergaenzung_grundbetrag
+
+from .sachenverbindung import sachenverbindung_eigentumsquoten
+
+from .nachbarkosten import nachbarrecht_kostengleichanteil
+
+from .nachbarkosten import grenzbaum_beseitigungskosten
+
+from .vergleichsmietkappung import vergleichsmiete_kappungsrahmen
+
+from .vereinfachungssperre import modernisierung_vereinfachung_sperrfrist
+
+from .betriebskostenpauschale import betriebskostenpauschale_aenderungsbetrag
+
+from .dienstverguetung import dienstverguetung_annahmeverzug
+
+from .dienstverguetung import dienstverguetung_persoenliche_verhinderung
+
+from .teilverguetung import dienstkuendigung_teilverguetung
+
+from .teilverguetung import werk_teilverguetung_und_auslagen
+
+from .teilverguetung import werkkuendigung_wichtiger_grund_verguetung
+
+
+
+from .aufrechnung import aufrechnung_betragswirkung
+
+from .verjaehrungsfolgen import verjaehrung_aufrechnung_zurueckbehaltung
+
+from .verjaehrungsfolgen import verjaehrung_abhaengige_nebenleistung
+
+
+
+from .betriebskostenzeit import betriebskostenpauschale_erhoehungsbeginn
+
+from .kaufnacherfuellung import nachbesserung_fehlgeschlagen
+
+
+from .kaufbeweislast import kauf_beweislastvermutung
+
+from .kaufbeweislast import kauf_digitale_beweislastvermutung
+
+from .kaufverjaehrungsnachlauf import verbrauchsgueterkauf_verjaehrungsnachlauf
+
+from .kaufverjaehrungsnachlauf import verbrauchsgueterkauf_nachbesserungsverlaengerung
+
+from .maengelgrundfrist import maengel_verjaehrungsgrundfrist
+
+from .modernisierungsverzoegerung import modernisierung_beginnverzoegerung
+
+from .modernisierungsverzoegerung import modernisierung_arbeitsruhe
+
+from .genehmigungsfrist import genehmigung_aufforderungsfrist
+
+
+from .anfechtungsfrist import anfechtung_fristpruefung
+
+from .erbrechtserklaerungsfrist import erbausschlagung_grundfrist
+
+from .erbrechtserklaerungsfrist import erbrecht_anfechtungsgrundfrist
+
+from .dienstkrankheit import dienst_krankenfuersorge_zeitraum
+
+from .dienstkrankheit import dienst_krankheitskosten_anrechnung
+
+from .dienstlangzeit import dienst_langzeitkuendigungsrahmen
+
+from .schenkungsrueckforderung import schenkungsauflage_rueckforderungsbetrag
+
+from .schenkungsrueckforderung import schenkung_verarmungsrueckforderung_ausschluss
+
+from .schenkungswiderruf import schenkung_widerrufsausschluss
+
+from .sachenfundanteile import bienenschwarm_eigentumsquoten
+
+from .sachenfundanteile import schatzfund_eigentumsquoten
+
+from .verwendungsersatz import besitzer_nuetzlicher_verwendungsersatz
+
+from .verwendungsersatz import besitzer_landwirtschaftlicher_verwendungsersatz
+
+from .verwendungsfrist import verwendungsersatz_erloeschensfrist
+
+from .vererbteausschlagung import vererbte_ausschlagungsfrist
+
+from .testamentsquoten import testament_erbquoten
+
+from .vermaechtniskuerzung import untervermaechtnis_verweigerungsbetrag
+
+from .vermaechtniskuerzung import vermaechtnis_beschwerungskuerzung
+
+from .vermaechtnislasten import vermaechtnis_lastenanteile
+
+from .pflichtteilseigenbedarf import pflichtteilsergaenzung_eigenpflichtteilsschutz
+
+from .dienstkuendigung import dienstverhaeltnis_kuendigungstermin
+
+from .dienstwichtigergrund import dienst_ausserordentliche_kuendigungsfrist
+
+from .beschenktenrang import pflichtteilsergaenzung_beschenktenrang
+
+from .leistungsausgleich import erbteilung_leistungsausgleich
+
+from .inventarfristen import inventarfrist_grundrahmen
+
+from .inventarfristen import inventarfrist_neubestimmungsantrag
+
+from .nachlasseinrede import nachlass_dreimonatseinrede
+
+from .aufgebotseinrede import nachlass_aufgebotseinrede
+
+from .nachlassdreissigster import nachlass_dreissigster_zeitraum
+
+from .spaetglaeubiger import nachlass_spaetglaeubiger
+
+from .inventarehegatten import inventarfrist_ehegatten
+
+from .ersitzungbeweglich import ersitzung_bewegliche_sache
+
+from .buchersitzung import buchersitzung_dreissigjahresfrist
+
+from .ersitzungsbesitzverlust import ersitzung_besitzverlust_nichtunterbrechung
+
+from .grundstuecksaufgebot import grundstuecksaufgebot_voraussetzungen
+
+from .ersatzerbquoten import ersatzerben_quoten
+
+from .anwachsung import erbteil_anwachsungsquoten
+
+from .gesamtgutszuwendung import gesamtgutszuwendung_anteile
+
+from .testamentsanfechtung import testament_anfechtungsfrist
+
+from .vermaechtnisaufschub import vermaechtnis_dreissigjahresgrenze
+
+from .nacherbfrist import nacherbeneinsetzung_dreissigjahresgrenze
+
+from .erbrechtsonderverjaehrung import erbrecht_sonderverjaehrungsfrist
+
+from .erbvertragsanfechtung import erbvertrag_anfechtungsfrist
+
+from .dauertestamentsvollstreckung import dauervollstreckung_zeitgrenze
+
+from .erbauseinandersetzungsfrist import erbauseinandersetzung_dreissigjahresgrenze
+
+from .hypothekenvermaechtnis import hypothekenvermaechtnis_befriedigungsbetrag
+
+from .gesamthypothekenvermaechtnis import gesamthypothekenvermaechtnis_befriedigungsbetrag
+
+from .gesamtgrundpfandvermaechtnis import gesamtgrundpfandvermaechtnis_nachlassanteil
+
+from .gesamtgrundpfandvermaechtnis import gesamtgrundpfandvermaechtnis_fremdgrundstueck
+
+from .schuldverschreibungsfristen import schuldverschreibung_vorlegungsfrist
+
+from .zinsscheinrueckbehalt import zinsscheine_zurueckbehaltungsbetrag
+
+from .zugewinnvorausempfang import zugewinnausgleich_vorausempfang_standardfall
+
+from .pflichtteilseigengeschenk import pflichtteilsergaenzung_eigengeschenk
+
+from .schuldrechtbetragsregeln import fremdwaehrung_eurobetrag
+
+from .schuldrechtbetragsregeln import gelduebermittlung_umzugsmehrkosten
+
+from .schuldrechtbetragsregeln import schadensersatz_nach_ersatzherausgabe
+
+from .schuldrechtbetragsregeln import leistungsbestimmung_durchschnittssumme
+
+from .allgemeine_sonderfristen import verein_mitgliederschwund_antragsfrist
+
+from .allgemeine_sonderfristen import vollmachtsurkunde_kraftlosigkeitsfrist
+
+from .allgemeine_sonderfristen import verbrauchsstiftung_mindestdauer
+
+from .erbfristenrest import erbrecht_weitere_grundfrist
+
+from .erbfristenrest import inventarfrist_erbentod_mindestende
+
+from .erbfristenrest import totgeglaubter_verjaehrung_mindestende
+
+from .erbrecht_ersatzbetraege import erbschaftsbesitzer_verwendungsrest
+
+from .erbrecht_ersatzbetraege import erbauflage_herausgabebegrenzung
+
+from .schuldrechtzeitgrenzen import schuldrechtliche_zeitgrenze
+
+from .schuldrechtzeitgrenzen import digitale_produkte_verjaehrungsgrundfrist
+
+from .stiftungszahlenfristen import stiftung_uebergang_bekanntmachungsfristen
+
+from .stiftungszahlenfristen import stiftung_zusammenlegung_mindestzahl
+
+from .erbschaftskauf_ersatz import erbschaftskauf_belastungswertminderung
+
+from .erbschaftskauf_ersatz import erbschaftskauf_verwendungsersatz
+
+from .betreuerpauschale import betreuer_aufwandspauschale
+
+from .betreuerpauschale import betreuer_pauschalenfristen
+
+from .verbraucherkosten import verbraucher_informierte_nebenkosten
+
+from .verbraucherkosten import verbraucher_entgeltkostenvergleich
+
+from .sachenrechtliche_betragsgrenzen import grundbuch_wertersatzgrenze
+
+from .sachenrechtliche_betragsgrenzen import hoechstbetragshypothek_forderung_und_zinsen
+
+from .sachenrechtliche_betragsgrenzen import pfand_edelmetall_mindestpreis
+
+from .unterhaltsbetraege import unterhalt_unterschiedsbetrag
+
+from .unterhaltsbetraege import unterhalt_beerdigungskostenrest
+
+from .unterhaltsbetraege import ausstattung_schenkungsmehrbetrag
+
+from .unterhaltsbetraege import unterhalt_monatsgesamtbetrag
+
+from .unternehmensschwellen import grossunternehmen_zweijahresschwelle
+
+from .gesetzliche_obergrenzen import verjaehrung_vereinbarungsobergrenze
+
+from .gesetzliche_obergrenzen import hypothek_zinserweiterungsrahmen
+
+from .kindeseinkuenfte import kindeseinkuenfte_verwendungsbetraege
+
+from .pflichtteilsbemessung import pflichtteilsnachlass_positionssumme
+
+from .pflichtteilsbemessung import pflichtteil_bemessungsausgleich
+
+from .guetergemeinschaftbetraege import guetergemeinschaft_einbringungsrueckerstattung
+
+from .guetergemeinschaftbetraege import guetergemeinschaft_freistellungsbetrag
+
+from .erbauseinandersetzungsbetraege import erbnachlass_ueberschussanteil
+
+from .erbauseinandersetzungsbetraege import ausgleichung_zuschuss_mehrbetrag
+
+from .familiengrundfristen import familienrecht_grundfrist
+
+from .familiengrundfristen import ehefaehigkeitszeugnis_geltungsende
+
+from .vermaechtnisvorrang import vermaechtnis_vorrangverteilung
+
+from .nottestamentsfrist import nottestament_grundfrist
+
+from .nottestamentsfrist import seetestament_reise_neustart
+
+from .zahlungsverzugfrist import entgeltforderung_dreissigtagefrist
+
+from .adoptionsfristen import adoption_ersetzungswartefrist
+
+from .adoptionsfristen import adoption_aufhebungsgrundfrist
+
+from .pflichtteilsausgleich import pflichtteil_nach_ausgleichung
+
+from .sachenrecht_ersatzbetraege import besitzhaftung_verantwortungsgrenze
+
+from .sachenrecht_ersatzbetraege import niessbrauch_uebermassfruechte_ersatz
+
+from .sachenrecht_ersatzbetraege import niessbrauch_einloesungskapital
+
+from .sachenrecht_ersatzbetraege import hypothek_schuldneruebergangsbetrag
+
+from .sachenrecht_ersatzbetraege import hypothek_schuldbefreiung_nach_regressverlust
+
+from .sachenrecht_ersatzbetraege import hypothek_ausfall_nach_benachrichtigungsschaden
+
+from .sachenrecht_ersatzbetraege import pfandrecht_einziehungsgrenze
+
+from .pfandabrechnung import pfand_verwertungsabrechnung
+
+from .vorkaufsabrechnung import dinglicher_vorkauf_preisabrechnung
+
+from .fortsetzungsanteile import fortgesetzte_guetergemeinschaft_grundanteile
+
+from .familienvermoegensbetraege import verwaltungsanlagebetrag
+
+from .familienvermoegensbetraege import unterhalt_sicherheitsregelbetrag
+
+from .geburtszeitraeume import empfaengniszeit_gesetzlicher_zeitraum
+
+from .geburtszeitraeume import geburtsunterhalt_zeitgrenzen
+
+from .pflichtteilslast import pflichtteil_miterbe_eigenbedarf
+
+from .pflichtteilslast import pflichtteil_vorteilslast
+
+from .pflichtteilslast import pflichtteil_deckung_beschwerungskuerzung
+
+from .pflichtteilsvermaechtniskuerzung import vermaechtnis_pflichtteilskuerzung
+
+from .schuldrechtliche_sonderfristen import schuldrechtliche_sondergrundfrist
+
+from .verbraucher_betragsgrenzen import verbraucher_betragsschwelle
+
+from .sachenrechtgrundfristen import sachenrechtliche_grundfrist
+
+from .sachenrechtgrundfristen import hypothek_folgequartalsgrenze
+
+from .unterhaltsanteile import unterhalt_anteilsbetraege
+
+from .gesamtgutdeckung import gesamtgut_vorzeitiger_berichtigungsbetrag
+
+from .gesamtgutdeckung import familienunterhalt_mittelvorrang
+
+from .vorerbenfruechte import vorerbe_fruchtwertgrenze
+
+from .verbraucher_fristgrenzen import verbraucher_vertragsfristgrenze
+
+from .kauf_sonderbetraege import neuverkauf_kosten_und_mindererloes
+
+from .kauf_sonderbetraege import wiederkauf_verwendungsersatz
+
+from .kauf_sonderbetraege import vorkauf_preis_mit_nebenleistungswert
+
+from .kauf_sonderbetraege import vorkauf_gesamtpreisanteil
+
+from .kauf_sonderbetraege import vorkauf_stundungssicherheit
+
+from .miterbenhaftung import miterbe_nachlassschuld_quotenbetrag
+
+from .unterhaltserbenhaftung import unterhalt_erbenhaftungsbetrag
+
+from .digitale_vertragsfristen import digitale_vertragsgrundfrist
+
+from .verwandtschaftsgrad import verwandtschaftsgrad_geburtsschritte
+
+from .nachlassrestbetraege import nachlass_zulaenglichkeitsbetrag
+
+from .nachlassrestbetraege import erbteil_individuelle_schuldendeckung
+
+from .nachlassrestbetraege import vertragsvermaechtnis_subsidiaerer_fehlbetrag
+
+from .ueberlassung_ersatzfristen import ueberlassung_ersatzverjaehrungsgrundfrist
+
+from .reallastanteile import reallast_flaechenanteile
+
+from .sachenrecht_gleichanteile import sachenrecht_gleichanteil
+
+from .nachlasshaftungsreste import nachlassglaeubiger_restdeckung
+
+from .nachlasshaftungsreste import nacherbe_haftungsmasse
+
+from .nachlasshaftungsreste import vorerbe_verbleibende_haftung
+
+from .schuldrechtliche_verjaehrungskompositionen import lieferantenregress_verjaehrungsgrundfrist
+
+from .schuldrechtliche_verjaehrungskompositionen import delikt_restbereicherung_verjaehrungsgrundfrist
+
+from .schuldrechtliche_verjaehrungskompositionen import lieferantenregress_verjaehrungsnachlauf
+
+from .familienrestbetraege import zugewinnausgleich_sachanrechnungsrest
+
+from .familienrestbetraege import minderjaehrigen_unterhaltsfehlbetrag
+
+from .familienrestbetraege import betreuer_staatskassen_anspruchsuebergang
+
+from .ausstattungsinnenlast import ausstattung_persoenliche_innenlast
+
+from .gemeinschaftsquoten import gemeinschaftsquoten_aufloesen
+
+from .vermaechtnisanwachsung import vermaechtnis_anwachsungsanteile
+
+from .dinglicher_haftungsumfang import dinglicher_haftungsumfang
+
+from .digitalbeendigung_betraege import digitalbeendigung_zeitanteilige_betraege
+
+from .gesamthypothekanteile import gesamthypothek_wertanteile
+
+from .heizungsmodernisierung_betrag import heizungsmodernisierung_gefoerderter_betrag
+
+from .hypothekenkalender import hypothek_beschlagnahme_monatsgrenze
+
+from .hypothekenkalender import hypothek_hinterlegung_zeitgrenzen
+
+from .gemischter_erbausgleich import erbteilung_gemischter_ausgleich
+
+from .gemischter_erbausgleich import pflichtteil_gemischte_ausgleichung
+
+from .schenkungsunterhaltsbetraege import schenkung_unterhaltsrueckforderung
+
+from .stiftungsvermoegen import stiftung_vermoegenszusammensetzung
+
+from .stiftungsvermoegen import stiftung_wiederaufstockungsrest
+
+from .unterhaltsrueckwirkung import unterhalt_rueckwirkungsbeginn
+
+from .ausbildungsviertel import zusatzviertel_ausbildungsrahmen
+
+from .gesamtgutteilungsbilanz import gesamtgut_teilungsbilanz
+
+from .erbschaftskauf_abrechnung import erbschaftskauf_zahlungsausgleich
+
+from .pflichtteilseigengeschenke import pflichtteilsergaenzung_mehrere_eigengeschenke
+
+from .leistungsrestbetraege import miete_nach_ersparnis_und_verwertung
+
+from .leistungsrestbetraege import pacht_vorenthaltung_nutzungsanteil
+
+from .leistungsrestbetraege import werk_abschlagsrestbetrag
+
+from .baunachtragsbetraege import bau_nachtragsverguetung_differenz
+
+from .baunachtragsbetraege import bau_nachtrag_vorlaeufiger_abschlagsansatz
+
+from .baunachtragsbetraege import bau_nachtrag_ueberzahlungsbetrag
+
+from .familienhemmungsintervalle import verjaehrung_familienzeitraeume
+
+from .reiseabsicherungsquote import pauschalreise_absicherungsanteil
+
+from .zahlungsmissbrauch import zahlungsmissbrauch_zahlerhaftungsbetrag
+
+from .schenkungsversprechen import schenkungsversprechen_deckungsverteilung
+
+from .fortsetzungsabfindung import fortgesetzte_guetergemeinschaft_abfindungsbilanz
+
+from .beschenktenschenkungsrang import pflichtteilsergaenzung_schenkungsvorgaenge
+
+from .betreuungsrechnung import betreuungsrechnung_summen
+
+from .gesellschaftsanteilswechsel import gesellschaft_anteil_nach_bestandswechsel
+
+from .selbstbestimmungshemmung import verjaehrung_selbstbestimmungszeitraum
+
+from .gesellschaftsgrundquoten import gesellschaft_gewinn_verlust_stimmquoten
+
+from .gesellschaftsfehlbetrag import gesellschaft_ausscheidensfehlbetrag
+
+from .verfahrenshemmungskette import verjaehrung_verfahrenshemmungskette
+
+from .betreuungsvermoegenswert import betreuung_vermoegenswert_ohne_immobilien
+
+from .sachenrecht_restbetraege import fund_herausgabebetrag_nach_kosten
+
+from .sachenrecht_restbetraege import abtrennung_abwendungsfehlbetrag
+
+from .zugewinnpositionen import zugewinn_anfangsvermoegen_positionssumme
+
+from .zugewinnpositionen import zugewinn_endvermoegen_positionssumme
+
+from .gesellschaftsliquidation import gesellschaft_liquidationsgrundbetraege
+
+from .gesellschaftsliquidation import gesellschaft_liquidationsfehlbetrag_verteilen
+
+from .gesetzliche_zahlengrenzen import fund_anzeigewertgrenze
+
+from .gesetzliche_zahlengrenzen import liquidatoren_einstimmigkeitsgrenze
+
+from .maklerbetragsgrenzen import makler_anderer_partei_hoechstbelastung
+
+from .maklerbetragsgrenzen import makler_gleichwirkender_erlass_restbetrag
+
+from .gemeinschaftsaufhebungsbetrag import gemeinschaft_aufhebungsanteil
+
+from .pflichtteilsschutzkonkurrenz import vermaechtniskuerzung_bei_qualifiziertem_erbenvorrang
+
+from .besitzverwendungsersatz import besitz_notwendiger_verwendungsersatz
+
+from .fortsetzungslasten import fortgesetzte_guetergemeinschaft_altlasten
+
+from .darlehenszinsundwaehrung import verbraucherdarlehen_sollzinskorrektur
+
+from .darlehenszinsundwaehrung import immobiliardarlehen_wechselkursrechnung
+
+from .rueckbeziehungssaldo import rueckbeziehung_leistungssaldo
+
+from .mehrfachanwachsung import erbteile_gleichzeitige_anwachsung
+
+from .fortsetzungsausgleich import fortgesetzte_guetergemeinschaft_vorempfangsausgleich
+
+from .ueberziehungsdurchschnitt import ueberziehung_durchschnittsvergleich
+
+from .darlehenssonderbetraege import darlehen_wertbeteiligungsbetrag
+
+from .darlehenssonderbetraege import darlehensvermittlung_auslagenobergrenze
+
+from .darlehenssonderbetraege import teilzahlung_gesamtbetragskorrektur
+
+from .wechselkurswarnschwelle import immobiliardarlehen_wechselkurswarnschwelle
+
+from .vaterschaftsgrundfrist import vaterschaftsanfechtung_grundfrist
+
+from .darlehenszinsschaden import verbraucherdarlehen_zinsschadensgrenze
+
+from .mietzeitbetraege import miete_zeitanteiliger_minderungsbetrag
+
+from .mietzeitbetraege import mietvorauszahlung_zeitanteilige_rueckerstattung
+
+from .leibrentenvorauszahlung import leibrente_geldvorauszahlung
+
+from .darlehenskostenermaessigung import verbraucherdarlehen_kostenabschnitte_ermaessigen
+
+from .gesamtgrundpfandnachlassgruppe import gesamtgrundpfandvermaechtnis_nachlassgruppe_mit_fremdhaftung
+
+from .getrennter_erbausgleich import erbteilung_getrennter_zuwendungs_leistungsausgleich
+
+from .betriebskostenverteilung import betriebskosten_wohnungsanteile
+
+from .betriebskostenverteilung import betriebskosten_umstellung_mietherabsetzung
+
+from .pflichtteil_getrennter_ausgleich import pflichtteil_getrennter_zuwendungs_leistungsausgleich
+
+from .pfandauswahl import pfand_verwertungsbedarf
+
+from .pachtsonderbetraege import pacht_inventar_ausgleichsdifferenz
+
+from .pachtsonderbetraege import pacht_holzmehrnutzung_wertersatz
+
+from .reallastzeitbetrag import reallast_persoenlicher_faelligkeitsbetrag
+
+from .reiseabrechnungsbetraege import gastschulaufenthalt_kuendigungsbetrag
+
+from .reiseabrechnungsbetraege import pauschalreise_ereignisentschaedigung_anrechnen
+
+from .reisebeendigungsabrechnung import pauschalreise_beendigung_preisabrechnung
+
+from .schuldrechtliche_betragsreste import entgangener_gewinn_nettobetrag
+
+from .schuldrechtliche_betragsreste import zahlung_empfaengerentgelt_restbetrag
+
+from .schuldrechtliche_betragsreste import buergschaft_regressverlust_restbetrag
+
+from .schuldrechtliche_betragsreste import annahmeverzug_mehraufwendungsbetrag
+
+from .schuldrechtliche_betragsreste import anweisung_schuldrest_nach_leistung
+
+from .mietkuendigung import wohnraummiete_kuendigungstermin
+
+from .mietzahlengrenzen import waermelieferung_kosten_und_nutzungsgradgrenzen
+
+from .mietzahlengrenzen import mietspiegel_spanneneinordnung
+
+from .mietzahlengrenzen import vergleichswohnungen_mindestzahl
+
+from .mietzahlengrenzen import mietspiegel_einwohnerschwelle
+
+from .sonstigemietkuendigung import sonstige_miete_kuendigungstermin
+
+from .schuldrechtliche_betragsreste import zahlungsinstrument_ersatzentgelt_grenze
+
+from .schuldrechtliche_betragsreste import buergschaft_forderungsuebergang_betrag
+
+from .architektenverguetung import architekten_sonderkuendigung_verguetung
+
+from .aufwendungssummen import schuldrecht_aufwendungssumme
+
+from .mietspiegelfortschreibung import mietspiegel_indexfortschreibung
+
+from .mietspiegelfortschreibung import mietspiegel_folgestichtage
+
+from .schuldrechtliche_betragsreste import mietsicherheit_mit_anlageertraegen
+
+from .schuldrechtliche_betragsreste import landpacht_verbesserungsmassnahme_ersatzbetrag
+
+from .schuldrechtliche_betragsreste import landpacht_verwendungsersatz_mehrwertgrenze
+
+from .schuldrechtliche_betragsreste import billigkeitshaftung_mittelbegrenzter_betrag
+
+from .verwahrungsverguetung import verwahrung_vorzeitige_teilverguetung
+
+from .belohnungsanteile import auslobung_belohnungsanteil
+
+from .vertragsdauergrenzen import schuldrecht_vertragsdauergrenze
+
+from .mietmonatsendfristen import miete_erklaerungs_monatsendtermin
+
+from .bankgeschaeftstage import zahlungsauftrag_zugangstage
+
+from .bankgeschaeftstage import zahlung_ausfuehrungsfristende
+
+from .bankgeschaeftstage import zahlung_geschaeftstags_grenztermin
+
+from .zahlungsbetragsgrenzen import kleinbetragsinstrument_betragsgrenze
+
+from .zahlungsbetragsgrenzen import zahlung_sonstiger_schadenbetrag
+
+from .zahlungsbetragsgrenzen import zahlung_kontoberichtigung
+
+from .reisezeitschwellen import reise_stundengrenze
+
+from .reisewertgrenzen import reiseleistungsarten_mindestzahl
+
+from .reisewertgrenzen import touristische_leistung_wertanteil
+
+from .reisewertgrenzen import tagesreise_reisepreisgrenze
+
+from .reisekostenpositionen import pauschalreise_zusatzkosten_informationsgrenze
+
+from .reisekostenpositionen import pauschalreise_notbeherbergungskosten
+
+from .gesellschaftsquoten import gesellschaft_vererbter_anteil
+
+from .gesellschaftsquoten import stimmgewichts_mehrheitsgrenze
+
+from .gesellschaftsquoten import gesellschaft_zustimmungsanzahl
+
+from .gemeinschaftsfruchtanteile import gemeinschaft_fruchtanteil
+
+from .buergschaftsbestand import buergschaft_schuldkomponenten
+
+from .mietverzugsschwellen import miete_rueckstandsbetragsgrenze
+
+from .vorenthaltungsbetrag import vorenthaltung_abschnittsentschaedigung
+
+from .schuldrechtliche_zeitvergleiche import miete_schonfrist_wiederholungszeitraum
+
+from .schuldrechtliche_zeitvergleiche import kauf_digitale_mindesthaftungsdauer
+
+from .verbraucherbauwertersatz import verbraucherbau_widerruf_wertersatz
+
+from .baukuendigung import bau_sicherheitskuendigung_verguetung
+
+from .schuldrechtliche_betragsreste import landpacht_beschreibung_kostenhaelfte
+
+from .schuldrechtliche_betragsreste import landpacht_erzeugnisse_mehrwert
+
+from .mieterwerber_monatsgrenze import miete_erwerber_monatsgrenze
+
+from .mietaufrechnungszeiten import miete_gegenforderung_zeitvergleich
+
+from .mietpacht_langzeitgrenzen import wohnraum_umwandlung_sperrfrist
+
+from .mietpacht_langzeitgrenzen import landpacht_fortsetzungsdauergrenze
+
+from .gegenleistung_teilbefreiung import gegenleistung_teilbefreiung_betraege
+
+from .geldpositionssummen import schuldrecht_geldpositionssumme
+
+from .schuldrechtliche_betragsreste import werk_annahmeverzug_entschaedigungsbetrag
+
+from .schuldrechtliche_betragsreste import bereicherung_entreicherungsrest
+
+from .ratenlieferungssumme import ratenlieferung_massgebliche_teilzahlungssumme
+
+from .widerrufsfristen import widerruf_regelfristende
+
+from .widerrufsfristen import widerruf_hoechstfristende
+
+from .widerrufsfristen import widerruf_fristenden_zusammenfuehren
+
+from .widerruf_lieferkosten import widerruf_rueckzahlung_lieferkosten
+
+from .finanzwiderrufswertersatz import finanzwiderruf_leistungswertersatz
+
+from .zinsausschlusszeiten import zinskalendertage_nach_ausschluss
+
+from .prozesszinsbeginn import prozesszins_erster_zinstag
+
+from .gesellschaftsergebnis import gesellschaft_gewinn_verlust_betraege
+
+from .betriebskostenfristen import betriebskosten_grundfristende
+
+from .mietwerktage import miete_werktagstermin
+
+from .gesamthypothekenbilanz import gesamthypothek_verteilungsrahmen
+
+from .gesamthypothekenbilanz import gesamthypothek_glaeubigerrest
+
+from .hypothekausschlussfristen import hypothek_glaeubigerausschluss_grenze
+
+from .betreuererbenhaftung import betreuer_erbenhaftungsbetrag
+
+from .rechtsverfolgung_sonderfristen import rechtsverfolgung_sondergrundfrist
+
+from .rechtsverfolgung_sonderfristen import verbandsklage_hemmungsnachlauf
+
+from .betreuung_ablaufhemmung import betreuung_genehmigung_ablaufgrenze
+
+from .vereinsaustritt import verein_austrittskalender
+
+from .dienstvorausverguetung import dienstkuendigung_vorausverguetungsrueckzahlung
+
+from .unterhaltsvorausleistung import unterhalt_vorausleistung_zeitgrenze
+
+from .mieterbe_vorauszahlung import mieterbe_vorauszahlungsersparnis
+
+from .pachtanpassung import landpacht_anpassung_zeitgrenzen
+
+from .kreditwuerdigkeit_zinsen import kreditwuerdigkeit_zinsermaessigung
+
+from .gesellschaft_erbenfrist import gesellschaft_erbenrechtsfrist
+
+from .gesellschaft_fuenfjahresfrist import gesellschaft_fuenfjahresgrundfrist
+
+from .pachtkuendigung import pacht_kuendigungstermin
+
+from .reiseuebertragung import reiseuebertragung_siebentagevergleich
+
+from .reiseuebertragung import reiseuebertragung_mehrkostenbetrag
+
+from .hoehere_gewalt_fenster import verjaehrung_hoehere_gewalt_fenster
+
+from .ersitzungszeitkette import ersitzung_anrechenbare_zeitkette
+
+from .aufgebotszeitgrenze import grundstuecksaufgebot_kombinierte_zeitgrenze
+
+from .beschenktenpersonenrahmen import pflichtteilsergaenzung_personenbegrenzte_schenkungen
+
+from .gesamtschuld_teilweise_ausfaelle import gesamtschuld_quoten_mit_teilausfaellen
+
+from .unterhalt_leistungsgrenzen import unterhalt_anteile_mit_leistungsgrenzen
+
+from .schadenspauschale import schadenspauschale_betragsvergleich
+
+from .draufgabe import draufgabe_geldanrechnung
+
+from .anerkennungshemmung import anerkennung_fuenfjahresfrist_mit_hemmung
+
+from .werkwohnung import werkwohnung_kuendigungstermin
+
+from .staffelmietbetrag import staffelmiete_aufsteigende_betragsgrenzen
+
+from .stiftungsbestaende import stiftung_grundstock_soll_ist_vergleich
+
+from .stiftungsbestaende import stiftung_uebertragene_vermoegensbestaende
+
+from .pfandbestellungsrang import pfandrechte_bestellungsrang
+
+from .grundbuch_rangvergleich import grundbuch_rangpaarvergleich
+
+from .hinterlegungsbetrag import hypothek_hinterlegung_forderung_und_zinsen
+
+from .gleichzeitige_schenkungen import pflichtteilsergaenzung_gleichzeitige_schenkungen
+
+from .besitznutzungen import besitz_nutzungswerte_im_haftungszeitraum
+
+from .hypothekenmietzuordnung import hypothek_mietverfuegung_zeitzuordnung
+
+from .mehrschuld_faelligkeit import geldschulden_nach_bestimmung_oder_rang_tilgen
+
+from .mietpreisrueckzahlung import mietpreisbremse_rueckzahlungsbetraege
+
+from .vereinfachter_modernisierungsbetrag import modernisierung_vereinfachter_foerderfreier_betrag
+
+from .landpachtverzug import landpacht_verzug_zeit_und_terminvergleich
+
+from .betreuungswertgrenzen import betreuung_numerische_wertgrenze
+
+from .gesamtgut_anordnungsgrenzen import gesamtgut_anteilsherabsetzung_halbgrenze
+
+from .gesamtgut_anordnungsgrenzen import gesamtgut_landgut_uebernahmepreisgrenze
+
+from .landpacht_restlaufzeit import landpacht_dreijahres_restlaufzeit
+
+from .betreuungsanzahl import betreuungen_im_qualifizierten_zweijahresfenster
+
+from .glasfaser_angebotszahl import glasfaserbereitstellung_angebotszahl
+
+from .darlehen_zehnjahresfrist import darlehen_zehnjahresfrist_nach_vereinbarungen
+
+from .darlehen_rueckzahlung import darlehen_rueckzahlung_im_zweiwochenfenster
+
+from .darlehen_bindungsende import darlehen_kuendigung_zum_sollzinsbindungsende
+
+from .landpacht_erbenkuendigung import landpacht_erbenkuendigung_quartalstermin
+
+from .betriebsuebergang_haftungsanteil import betriebsuebergang_bisheriger_arbeitgeber_haftungsbetrag
+
+from .landpacht_drittletztes_jahr import landpacht_anfrage_im_drittletzten_pachtjahr
+
+from .hypothek_erklaerungsfrist import hypothek_widerspruchs_und_meldungsfrist
+
+from .mehrschuld_betragsbestimmung import geldschulden_nach_betragsbestimmung_tilgen
+
+from .fortsetzung_fremdabkoemmlinge import fortsetzung_nichtgemeinsame_abkoemmlinge_gesamtgut
+
+from .ankuendigung_vorlauf import ankuendigung_vorlaufvergleich
+
+from .zeitraumende_vorlauf import erklaerung_vorlauf_zum_zeitraumende
+
+from .vormund_monatsbesuche import vormund_monatliche_besuchszahlen
+
+from .digitalprodukt_beweiszeit import digitalprodukt_beweislastzeitvergleich
+
+from .grundstuecksrente_jahresabrechnung import grundstuecksrente_jahresabrechnung
+
+from .modernisierung_foerderkappung import modernisierung_kappung_mit_laufenden_abzuegen
+
+from .mieterhoehung_sonderkuendigungsfenster import mieterhoehung_sonderkuendigungsfenster
+
+from .digitalbeendigung_kalenderabschnitt import digitalbeendigung_kalenderabschnitt
+
+from .darlehen_normwertvergleich import darlehen_normwertvergleich
+
+from .zahlungsdienste_entgeltabschnitt import zahlungsdienste_entgeltabschnitt
+
+from .fortsetzung_beguenstigtenbezogene_lasten import fortsetzung_beguenstigtenbezogene_lasten
+
+from .fortsetzung_rechnerische_schlussbilanz import fortsetzung_rechnerische_schlussbilanz
+
+from .fortsetzung_interne_schuldanteile import fortsetzung_interne_schuldanteile
+
+from .miete_formmangel_beendigungsgrenze import miete_formmangel_beendigungsgrenze
+
+from .modernisierung_haerteeinwand_beginnvergleich import modernisierung_haerteeinwand_beginnvergleich
+
+from .teilzahlung_fehlangaben_zinsbetrag import teilzahlung_fehlangaben_zinsbetrag
+
+from .darlehen_verzugshemmungszeitraum import darlehen_verzugshemmungszeitraum
+
+from .ueberziehung_kalenderabschnitte import ueberziehung_kalenderabschnitte
+
+from .zahlung_wertstellung import zahlung_gutschrift_wertstellung
+
+from .zahlung_wertstellung import zahlung_belastungszeitgrenzen
+
+from .zahlung_beanstandungsfrist import zahlung_beanstandungsfrist
+
+from .erbteile_qualifizierte_uebertragungskette import erbteile_qualifizierte_uebertragungskette
+
+from .unterhalt_rangweise_mittelverteilung import unterhalt_rangweise_mittelverteilung
+
+from .vaterschaftsanfechtung_vertretergrundfrist import vaterschaftsanfechtung_vertretergrundfrist
+
+from .mietpreis556e import mietpreisbegrenzung_vormiete_bereinigen
+
+from .mietpreis556e import mietpreisbegrenzung_modernisierungsalternative
+
+from .mietpreisbremse_ruegezeitliche_beschraenkung import mietpreisbremse_ruegezeitliche_beschraenkung
+
+from .rueckwaertsfrist_kalendergrenze import rueckwaertsfrist_kalendergrenze
+
+from .verjaehrung_hoehere_gewalt_festes_ablauffenster import verjaehrung_hoehere_gewalt_festes_ablauffenster
+
+from .besitzschutz_jahresereignisse import besitzschutz_jahresereignisse
+
+from .gesellschaft_jahresendkuendigung import gesellschaft_jahresendkuendigung
+
+from .reise_veranstalterruecktritt_zeitgrenzen import reise_veranstalterruecktritt_zeitgrenzen
+
+from .gesellschaft_nachhaftung_fristsicherung import gesellschaft_nachhaftung_fristsicherung
+
+from .schuldverschreibung_zahlungssperre_intervall import schuldverschreibung_zahlungssperre_intervall
+
+from .hypothek_wiederkehrende_faelligkeitsgrenze import hypothek_wiederkehrende_faelligkeitsgrenze
+
+from .modernisierung_vereinfachte_foerderkostenbasis import modernisierung_vereinfachte_foerderkostenbasis
+
+from .bereicherung_haftungszeitpunkte import bereicherung_haftungszeitpunkte
+
+from .vermaechtnis_rangweise_beschwerungsverteilung import vermaechtnis_rangweise_beschwerungsverteilung
+
+from .mieterhoehung_sonderkuendigung_beendigungsmodell import mieterhoehung_sonderkuendigung_beendigungsmodell
+
+from .staffelmiete_flexible_betragsfolge import staffelmiete_flexible_betragsfolge
+
+from .vergleichsmiete_ausgleich_und_drittmittel import vergleichsmiete_ausgleich_und_drittmittel
+
+from .heizungsmodernisierung_mit_jahresfoerderung import heizungsmodernisierung_mit_jahresfoerderung
+
+from .erbteilung_gemischter_ausgleich_mit_ueberempfang import erbteilung_gemischter_ausgleich_mit_ueberempfang
+
+from .pflichtteil_gemischter_ausgleich_mit_anrechnung import pflichtteil_gemischter_ausgleich_mit_anrechnung
+
+from .pflichtteil_mehrvermaechtnisse_schutzverteilung import pflichtteil_mehrvermaechtnisse_schutzverteilung
+
+from .grundbuch_betraglicher_rangumfang import grundbuch_betraglicher_rangumfang
+
+from .gesamthypothek_nichtnegative_nettowertanteile import gesamthypothek_nichtnegative_nettowertanteile
+
+from .gesamthypothek_regressanrechnung import gesamthypothek_regressanrechnung
+
+from .verbraucherdarlehen_feste_tilgung_neuberechnen import verbraucherdarlehen_feste_tilgung_neuberechnen
+
+from .verbraucherdarlehen_centannuitaet_neuberechnen import verbraucherdarlehen_centannuitaet_neuberechnen
+
+from .verbraucherdarlehen_fehlangaben_sollzinssatz import verbraucherdarlehen_fehlangaben_sollzinssatz
+
+from .pflichtteilsergaenzung_ranggruppen_mit_personenrahmen import pflichtteilsergaenzung_ranggruppen_mit_personenrahmen
+
+from .gesamthypothek_regress_restverteilung import gesamthypothek_regress_restverteilung
+
+from .gesamthypothekenvermaechtnis_drittleistungsmodell import gesamthypothekenvermaechtnis_drittleistungsmodell
+
+from .zugewinnausgleich_vorausempfang_rechenmodell import zugewinnausgleich_vorausempfang_rechenmodell
+
+from .zugewinnausgleich_drittersatz_mit_gesamtschuld import zugewinnausgleich_drittersatz_mit_gesamtschuld
+
+from .pflichtteilsergaenzung_getrennte_bewertungen import pflichtteilsergaenzung_getrennte_bewertungen
+
+__all__ = [
+    "pflichtteilsergaenzung_getrennte_bewertungen",
+    "zugewinnausgleich_drittersatz_mit_gesamtschuld",
+    "zugewinnausgleich_vorausempfang_rechenmodell",
+    "gesamthypothekenvermaechtnis_drittleistungsmodell",
+    "gesamthypothek_regress_restverteilung",
+    "pflichtteilsergaenzung_ranggruppen_mit_personenrahmen",
+    "verbraucherdarlehen_fehlangaben_sollzinssatz",
+    "verbraucherdarlehen_centannuitaet_neuberechnen",
+    "verbraucherdarlehen_feste_tilgung_neuberechnen",
+    "gesamthypothek_regressanrechnung",
+    "gesamthypothek_nichtnegative_nettowertanteile",
+    "grundbuch_betraglicher_rangumfang",
+    "pflichtteil_mehrvermaechtnisse_schutzverteilung",
+    "pflichtteil_gemischter_ausgleich_mit_anrechnung",
+    "erbteilung_gemischter_ausgleich_mit_ueberempfang",
+    "heizungsmodernisierung_mit_jahresfoerderung",
+    "vergleichsmiete_ausgleich_und_drittmittel",
+    "staffelmiete_flexible_betragsfolge",
+    "mieterhoehung_sonderkuendigung_beendigungsmodell",
+    "vermaechtnis_rangweise_beschwerungsverteilung",
+    "bereicherung_haftungszeitpunkte",
+    "modernisierung_vereinfachte_foerderkostenbasis",
+    "hypothek_wiederkehrende_faelligkeitsgrenze",
+    "schuldverschreibung_zahlungssperre_intervall",
+    "gesellschaft_nachhaftung_fristsicherung",
+    "reise_veranstalterruecktritt_zeitgrenzen",
+    "gesellschaft_jahresendkuendigung",
+    "besitzschutz_jahresereignisse",
+    "verjaehrung_hoehere_gewalt_festes_ablauffenster",
+    "rueckwaertsfrist_kalendergrenze",
+    "mietpreisbremse_ruegezeitliche_beschraenkung",
+    "mietpreisbegrenzung_modernisierungsalternative",
+    "mietpreisbegrenzung_vormiete_bereinigen",
+    "vaterschaftsanfechtung_vertretergrundfrist",
+    "unterhalt_rangweise_mittelverteilung",
+    "erbteile_qualifizierte_uebertragungskette",
+    "zahlung_beanstandungsfrist",
+    "zahlung_belastungszeitgrenzen",
+    "zahlung_gutschrift_wertstellung",
+    "ueberziehung_kalenderabschnitte",
+    "darlehen_verzugshemmungszeitraum",
+    "teilzahlung_fehlangaben_zinsbetrag",
+    "modernisierung_haerteeinwand_beginnvergleich",
+    "miete_formmangel_beendigungsgrenze",
+    "fortsetzung_interne_schuldanteile",
+    "fortsetzung_rechnerische_schlussbilanz",
+    "fortsetzung_beguenstigtenbezogene_lasten",
+    "zahlungsdienste_entgeltabschnitt",
+    "darlehen_normwertvergleich",
+    "digitalbeendigung_kalenderabschnitt",
+    "mieterhoehung_sonderkuendigungsfenster",
+    "modernisierung_kappung_mit_laufenden_abzuegen",
+    "grundstuecksrente_jahresabrechnung",
+    "digitalprodukt_beweislastzeitvergleich",
+    "vormund_monatliche_besuchszahlen",
+    "erklaerung_vorlauf_zum_zeitraumende",
+    "ankuendigung_vorlaufvergleich",
+    "fortsetzung_nichtgemeinsame_abkoemmlinge_gesamtgut",
+    "geldschulden_nach_betragsbestimmung_tilgen",
+    "hypothek_widerspruchs_und_meldungsfrist",
+    "landpacht_anfrage_im_drittletzten_pachtjahr",
+    "betriebsuebergang_bisheriger_arbeitgeber_haftungsbetrag",
+    "landpacht_erbenkuendigung_quartalstermin",
+    "darlehen_kuendigung_zum_sollzinsbindungsende",
+    "darlehen_rueckzahlung_im_zweiwochenfenster",
+    "darlehen_zehnjahresfrist_nach_vereinbarungen",
+    "glasfaserbereitstellung_angebotszahl",
+    "betreuungen_im_qualifizierten_zweijahresfenster",
+    "landpacht_dreijahres_restlaufzeit",
+    "gesamtgut_landgut_uebernahmepreisgrenze",
+    "gesamtgut_anteilsherabsetzung_halbgrenze",
+    "betreuung_numerische_wertgrenze",
+    "landpacht_verzug_zeit_und_terminvergleich",
+    "modernisierung_vereinfachter_foerderfreier_betrag",
+    "mietpreisbremse_rueckzahlungsbetraege",
+    "geldschulden_nach_bestimmung_oder_rang_tilgen",
+    "hypothek_mietverfuegung_zeitzuordnung",
+    "besitz_nutzungswerte_im_haftungszeitraum",
+    "pflichtteilsergaenzung_gleichzeitige_schenkungen",
+    "hypothek_hinterlegung_forderung_und_zinsen",
+    "grundbuch_rangpaarvergleich",
+    "pfandrechte_bestellungsrang",
+    "stiftung_uebertragene_vermoegensbestaende",
+    "stiftung_grundstock_soll_ist_vergleich",
+    "staffelmiete_aufsteigende_betragsgrenzen",
+    "werkwohnung_kuendigungstermin",
+    "anerkennung_fuenfjahresfrist_mit_hemmung",
+    "draufgabe_geldanrechnung",
+    "schadenspauschale_betragsvergleich",
+    "unterhalt_anteile_mit_leistungsgrenzen",
+    "gesamtschuld_quoten_mit_teilausfaellen",
+    "pflichtteilsergaenzung_personenbegrenzte_schenkungen",
+    "grundstuecksaufgebot_kombinierte_zeitgrenze",
+    "ersitzung_anrechenbare_zeitkette",
+    "verjaehrung_hoehere_gewalt_fenster",
+    "reiseuebertragung_mehrkostenbetrag",
+    "reiseuebertragung_siebentagevergleich",
+    "pacht_kuendigungstermin",
+    "gesellschaft_fuenfjahresgrundfrist",
+    "gesellschaft_erbenrechtsfrist",
+    "kreditwuerdigkeit_zinsermaessigung",
+    "landpacht_anpassung_zeitgrenzen",
+    "mieterbe_vorauszahlungsersparnis",
+    "unterhalt_vorausleistung_zeitgrenze",
+    "dienstkuendigung_vorausverguetungsrueckzahlung",
+    "verein_austrittskalender",
+    "betreuung_genehmigung_ablaufgrenze",
+    "verbandsklage_hemmungsnachlauf",
+    "rechtsverfolgung_sondergrundfrist",
+    "betreuer_erbenhaftungsbetrag",
+    "hypothek_glaeubigerausschluss_grenze",
+    "gesamthypothek_glaeubigerrest",
+    "gesamthypothek_verteilungsrahmen",
+    "miete_werktagstermin",
+    "betriebskosten_grundfristende",
+    "gesellschaft_gewinn_verlust_betraege",
+    "prozesszins_erster_zinstag",
+    "zinskalendertage_nach_ausschluss",
+    "finanzwiderruf_leistungswertersatz",
+    "widerruf_rueckzahlung_lieferkosten",
+    "widerruf_fristenden_zusammenfuehren",
+    "widerruf_hoechstfristende",
+    "widerruf_regelfristende",
+    "ratenlieferung_massgebliche_teilzahlungssumme",
+    "bereicherung_entreicherungsrest",
+    "werk_annahmeverzug_entschaedigungsbetrag",
+    "schuldrecht_geldpositionssumme",
+    "gegenleistung_teilbefreiung_betraege",
+    "landpacht_fortsetzungsdauergrenze",
+    "wohnraum_umwandlung_sperrfrist",
+    "miete_gegenforderung_zeitvergleich",
+    "miete_erwerber_monatsgrenze",
+    "landpacht_erzeugnisse_mehrwert",
+    "landpacht_beschreibung_kostenhaelfte",
+    "bau_sicherheitskuendigung_verguetung",
+    "verbraucherbau_widerruf_wertersatz",
+    "kauf_digitale_mindesthaftungsdauer",
+    "miete_schonfrist_wiederholungszeitraum",
+    "vorenthaltung_abschnittsentschaedigung",
+    "miete_rueckstandsbetragsgrenze",
+    "buergschaft_schuldkomponenten",
+    "gemeinschaft_fruchtanteil",
+    "gesellschaft_zustimmungsanzahl",
+    "stimmgewichts_mehrheitsgrenze",
+    "gesellschaft_vererbter_anteil",
+    "pauschalreise_notbeherbergungskosten",
+    "pauschalreise_zusatzkosten_informationsgrenze",
+    "tagesreise_reisepreisgrenze",
+    "touristische_leistung_wertanteil",
+    "reiseleistungsarten_mindestzahl",
+    "reise_stundengrenze",
+    "zahlung_kontoberichtigung",
+    "zahlung_sonstiger_schadenbetrag",
+    "kleinbetragsinstrument_betragsgrenze",
+    "zahlung_geschaeftstags_grenztermin",
+    "zahlung_ausfuehrungsfristende",
+    "zahlungsauftrag_zugangstage",
+    "miete_erklaerungs_monatsendtermin",
+    "schuldrecht_vertragsdauergrenze",
+    "auslobung_belohnungsanteil",
+    "verwahrung_vorzeitige_teilverguetung",
+    "billigkeitshaftung_mittelbegrenzter_betrag",
+    "landpacht_verwendungsersatz_mehrwertgrenze",
+    "landpacht_verbesserungsmassnahme_ersatzbetrag",
+    "mietsicherheit_mit_anlageertraegen",
+    "mietspiegel_folgestichtage",
+    "mietspiegel_indexfortschreibung",
+    "schuldrecht_aufwendungssumme",
+    "architekten_sonderkuendigung_verguetung",
+    "buergschaft_forderungsuebergang_betrag",
+    "zahlungsinstrument_ersatzentgelt_grenze",
+    "sonstige_miete_kuendigungstermin",
+    "mietspiegel_einwohnerschwelle",
+    "vergleichswohnungen_mindestzahl",
+    "mietspiegel_spanneneinordnung",
+    "waermelieferung_kosten_und_nutzungsgradgrenzen",
+    "wohnraummiete_kuendigungstermin",
+    "anweisung_schuldrest_nach_leistung",
+    "annahmeverzug_mehraufwendungsbetrag",
+    "buergschaft_regressverlust_restbetrag",
+    "zahlung_empfaengerentgelt_restbetrag",
+    "entgangener_gewinn_nettobetrag",
+    "pauschalreise_beendigung_preisabrechnung",
+    "pauschalreise_ereignisentschaedigung_anrechnen",
+    "gastschulaufenthalt_kuendigungsbetrag",
+    "reallast_persoenlicher_faelligkeitsbetrag",
+    "pacht_holzmehrnutzung_wertersatz",
+    "pacht_inventar_ausgleichsdifferenz",
+    "pfand_verwertungsbedarf",
+    "pflichtteil_getrennter_zuwendungs_leistungsausgleich",
+    "betriebskosten_umstellung_mietherabsetzung",
+    "betriebskosten_wohnungsanteile",
+    "erbteilung_getrennter_zuwendungs_leistungsausgleich",
+    "gesamtgrundpfandvermaechtnis_nachlassgruppe_mit_fremdhaftung",
+    "verbraucherdarlehen_kostenabschnitte_ermaessigen",
+    "leibrente_geldvorauszahlung",
+    "mietvorauszahlung_zeitanteilige_rueckerstattung",
+    "miete_zeitanteiliger_minderungsbetrag",
+    "verbraucherdarlehen_zinsschadensgrenze",
+    "vaterschaftsanfechtung_grundfrist",
+    "immobiliardarlehen_wechselkurswarnschwelle",
+    "teilzahlung_gesamtbetragskorrektur",
+    "darlehensvermittlung_auslagenobergrenze",
+    "darlehen_wertbeteiligungsbetrag",
+    "ueberziehung_durchschnittsvergleich",
+    "fortgesetzte_guetergemeinschaft_vorempfangsausgleich",
+    "erbteile_gleichzeitige_anwachsung",
+    "rueckbeziehung_leistungssaldo",
+    "immobiliardarlehen_wechselkursrechnung",
+    "verbraucherdarlehen_sollzinskorrektur",
+    "fortgesetzte_guetergemeinschaft_altlasten",
+    "besitz_notwendiger_verwendungsersatz",
+    "vermaechtniskuerzung_bei_qualifiziertem_erbenvorrang",
+    "gemeinschaft_aufhebungsanteil",
+    "makler_gleichwirkender_erlass_restbetrag",
+    "makler_anderer_partei_hoechstbelastung",
+    "liquidatoren_einstimmigkeitsgrenze",
+    "fund_anzeigewertgrenze",
+    "gesellschaft_liquidationsfehlbetrag_verteilen",
+    "gesellschaft_liquidationsgrundbetraege",
+    "zugewinn_endvermoegen_positionssumme",
+    "zugewinn_anfangsvermoegen_positionssumme",
+    "abtrennung_abwendungsfehlbetrag",
+    "fund_herausgabebetrag_nach_kosten",
+    "betreuung_vermoegenswert_ohne_immobilien",
+    "verjaehrung_verfahrenshemmungskette",
+    "gesellschaft_ausscheidensfehlbetrag",
+    "gesellschaft_gewinn_verlust_stimmquoten",
+    "verjaehrung_selbstbestimmungszeitraum",
+    "gesellschaft_anteil_nach_bestandswechsel",
+    "betreuungsrechnung_summen",
+    "pflichtteilsergaenzung_schenkungsvorgaenge",
+    "fortgesetzte_guetergemeinschaft_abfindungsbilanz",
+    "schenkungsversprechen_deckungsverteilung",
+    "zahlungsmissbrauch_zahlerhaftungsbetrag",
+    "pauschalreise_absicherungsanteil",
+    "verjaehrung_familienzeitraeume",
+    "bau_nachtrag_ueberzahlungsbetrag",
+    "bau_nachtrag_vorlaeufiger_abschlagsansatz",
+    "bau_nachtragsverguetung_differenz",
+    "werk_abschlagsrestbetrag",
+    "pacht_vorenthaltung_nutzungsanteil",
+    "miete_nach_ersparnis_und_verwertung",
+    "pflichtteilsergaenzung_mehrere_eigengeschenke",
+    "erbschaftskauf_zahlungsausgleich",
+    "gesamtgut_teilungsbilanz",
+    "zusatzviertel_ausbildungsrahmen",
+    "unterhalt_rueckwirkungsbeginn",
+    "stiftung_wiederaufstockungsrest",
+    "stiftung_vermoegenszusammensetzung",
+    "schenkung_unterhaltsrueckforderung",
+    "pflichtteil_gemischte_ausgleichung",
+    "erbteilung_gemischter_ausgleich",
+    "hypothek_hinterlegung_zeitgrenzen",
+    "hypothek_beschlagnahme_monatsgrenze",
+    "heizungsmodernisierung_gefoerderter_betrag",
+    "gesamthypothek_wertanteile",
+    "digitalbeendigung_zeitanteilige_betraege",
+    "dinglicher_haftungsumfang",
+    "vermaechtnis_anwachsungsanteile",
+    "gemeinschaftsquoten_aufloesen",
+    "ausstattung_persoenliche_innenlast",
+    "betreuer_staatskassen_anspruchsuebergang",
+    "minderjaehrigen_unterhaltsfehlbetrag",
+    "zugewinnausgleich_sachanrechnungsrest",
+    "lieferantenregress_verjaehrungsnachlauf",
+    "delikt_restbereicherung_verjaehrungsgrundfrist",
+    "lieferantenregress_verjaehrungsgrundfrist",
+    "vorerbe_verbleibende_haftung",
+    "nacherbe_haftungsmasse",
+    "nachlassglaeubiger_restdeckung",
+    "sachenrecht_gleichanteil",
+    "reallast_flaechenanteile",
+    "ueberlassung_ersatzverjaehrungsgrundfrist",
+    "vertragsvermaechtnis_subsidiaerer_fehlbetrag",
+    "erbteil_individuelle_schuldendeckung",
+    "nachlass_zulaenglichkeitsbetrag",
+    "verwandtschaftsgrad_geburtsschritte",
+    "digitale_vertragsgrundfrist",
+    "unterhalt_erbenhaftungsbetrag",
+    "miterbe_nachlassschuld_quotenbetrag",
+    "vorkauf_stundungssicherheit",
+    "vorkauf_gesamtpreisanteil",
+    "vorkauf_preis_mit_nebenleistungswert",
+    "wiederkauf_verwendungsersatz",
+    "neuverkauf_kosten_und_mindererloes",
+    "verbraucher_vertragsfristgrenze",
+    "vorerbe_fruchtwertgrenze",
+    "familienunterhalt_mittelvorrang",
+    "gesamtgut_vorzeitiger_berichtigungsbetrag",
+    "unterhalt_anteilsbetraege",
+    "hypothek_folgequartalsgrenze",
+    "sachenrechtliche_grundfrist",
+    "verbraucher_betragsschwelle",
+    "schuldrechtliche_sondergrundfrist",
+    "vermaechtnis_pflichtteilskuerzung",
+    "pflichtteil_deckung_beschwerungskuerzung",
+    "pflichtteil_vorteilslast",
+    "pflichtteil_miterbe_eigenbedarf",
+    "geburtsunterhalt_zeitgrenzen",
+    "empfaengniszeit_gesetzlicher_zeitraum",
+    "unterhalt_sicherheitsregelbetrag",
+    "verwaltungsanlagebetrag",
+    "fortgesetzte_guetergemeinschaft_grundanteile",
+    "dinglicher_vorkauf_preisabrechnung",
+    "pfand_verwertungsabrechnung",
+    "pfandrecht_einziehungsgrenze",
+    "hypothek_ausfall_nach_benachrichtigungsschaden",
+    "hypothek_schuldbefreiung_nach_regressverlust",
+    "hypothek_schuldneruebergangsbetrag",
+    "niessbrauch_einloesungskapital",
+    "niessbrauch_uebermassfruechte_ersatz",
+    "besitzhaftung_verantwortungsgrenze",
+    "pflichtteil_nach_ausgleichung",
+    "adoption_aufhebungsgrundfrist",
+    "adoption_ersetzungswartefrist",
+    "entgeltforderung_dreissigtagefrist",
+    "seetestament_reise_neustart",
+    "nottestament_grundfrist",
+    "vermaechtnis_vorrangverteilung",
+    "ehefaehigkeitszeugnis_geltungsende",
+    "familienrecht_grundfrist",
+    "ausgleichung_zuschuss_mehrbetrag",
+    "erbnachlass_ueberschussanteil",
+    "guetergemeinschaft_freistellungsbetrag",
+    "guetergemeinschaft_einbringungsrueckerstattung",
+    "pflichtteil_bemessungsausgleich",
+    "pflichtteilsnachlass_positionssumme",
+    "kindeseinkuenfte_verwendungsbetraege",
+    "hypothek_zinserweiterungsrahmen",
+    "verjaehrung_vereinbarungsobergrenze",
+    "grossunternehmen_zweijahresschwelle",
+    "unterhalt_monatsgesamtbetrag",
+    "ausstattung_schenkungsmehrbetrag",
+    "unterhalt_beerdigungskostenrest",
+    "unterhalt_unterschiedsbetrag",
+    "pfand_edelmetall_mindestpreis",
+    "hoechstbetragshypothek_forderung_und_zinsen",
+    "grundbuch_wertersatzgrenze",
+    "verbraucher_entgeltkostenvergleich",
+    "verbraucher_informierte_nebenkosten",
+    "betreuer_pauschalenfristen",
+    "betreuer_aufwandspauschale",
+    "erbschaftskauf_verwendungsersatz",
+    "erbschaftskauf_belastungswertminderung",
+    "stiftung_zusammenlegung_mindestzahl",
+    "stiftung_uebergang_bekanntmachungsfristen",
+    "digitale_produkte_verjaehrungsgrundfrist",
+    "schuldrechtliche_zeitgrenze",
+    "erbauflage_herausgabebegrenzung",
+    "erbschaftsbesitzer_verwendungsrest",
+    "totgeglaubter_verjaehrung_mindestende",
+    "inventarfrist_erbentod_mindestende",
+    "erbrecht_weitere_grundfrist",
+    "verbrauchsstiftung_mindestdauer",
+    "vollmachtsurkunde_kraftlosigkeitsfrist",
+    "verein_mitgliederschwund_antragsfrist",
+    "leistungsbestimmung_durchschnittssumme",
+    "schadensersatz_nach_ersatzherausgabe",
+    "gelduebermittlung_umzugsmehrkosten",
+    "fremdwaehrung_eurobetrag",
+    "pflichtteilsergaenzung_eigengeschenk",
+    "zugewinnausgleich_vorausempfang_standardfall",
+    "zinsscheine_zurueckbehaltungsbetrag",
+    "schuldverschreibung_vorlegungsfrist",
+    "gesamtgrundpfandvermaechtnis_fremdgrundstueck",
+    "gesamtgrundpfandvermaechtnis_nachlassanteil",
+    "gesamthypothekenvermaechtnis_befriedigungsbetrag",
+    "hypothekenvermaechtnis_befriedigungsbetrag",
+    "erbauseinandersetzung_dreissigjahresgrenze",
+    "dauervollstreckung_zeitgrenze",
+    "erbvertrag_anfechtungsfrist",
+    "erbrecht_sonderverjaehrungsfrist",
+    "nacherbeneinsetzung_dreissigjahresgrenze",
+    "vermaechtnis_dreissigjahresgrenze",
+    "testament_anfechtungsfrist",
+    "gesamtgutszuwendung_anteile",
+    "erbteil_anwachsungsquoten",
+    "ersatzerben_quoten",
+    "grundstuecksaufgebot_voraussetzungen",
+    "ersitzung_besitzverlust_nichtunterbrechung",
+    "buchersitzung_dreissigjahresfrist",
+    "ersitzung_bewegliche_sache",
+    "inventarfrist_ehegatten",
+    "nachlass_spaetglaeubiger",
+    "nachlass_dreissigster_zeitraum",
+    "nachlass_aufgebotseinrede",
+    "nachlass_dreimonatseinrede",
+    "inventarfrist_neubestimmungsantrag",
+    "inventarfrist_grundrahmen",
+    "erbteilung_leistungsausgleich",
+    "pflichtteilsergaenzung_beschenktenrang",
+    "dienst_ausserordentliche_kuendigungsfrist",
+    "dienstverhaeltnis_kuendigungstermin",
+    "pflichtteilsergaenzung_eigenpflichtteilsschutz",
+    "vermaechtnis_lastenanteile",
+    "vermaechtnis_beschwerungskuerzung",
+    "untervermaechtnis_verweigerungsbetrag",
+    "testament_erbquoten",
+    "vererbte_ausschlagungsfrist",
+    "verwendungsersatz_erloeschensfrist",
+    "besitzer_landwirtschaftlicher_verwendungsersatz",
+    "besitzer_nuetzlicher_verwendungsersatz",
+    "schatzfund_eigentumsquoten",
+    "bienenschwarm_eigentumsquoten",
+    "schenkung_widerrufsausschluss",
+    "schenkung_verarmungsrueckforderung_ausschluss",
+    "schenkungsauflage_rueckforderungsbetrag",
+    "dienst_langzeitkuendigungsrahmen",
+    "dienst_krankheitskosten_anrechnung",
+    "dienst_krankenfuersorge_zeitraum",
+    "erbrecht_anfechtungsgrundfrist",
+    "erbausschlagung_grundfrist",
+    "anfechtung_fristpruefung",
+    "genehmigung_aufforderungsfrist",
+    "modernisierung_arbeitsruhe",
+    "modernisierung_beginnverzoegerung",
+    "maengel_verjaehrungsgrundfrist",
+    "verbrauchsgueterkauf_nachbesserungsverlaengerung",
+    "verbrauchsgueterkauf_verjaehrungsnachlauf",
+    "kauf_digitale_beweislastvermutung",
+    "kauf_beweislastvermutung",
+    "nachbesserung_fehlgeschlagen",
+    "betriebskostenpauschale_erhoehungsbeginn",
+    "verjaehrung_abhaengige_nebenleistung",
+    "verjaehrung_aufrechnung_zurueckbehaltung",
+    "aufrechnung_betragswirkung",
+    "werkkuendigung_wichtiger_grund_verguetung",
+    "werk_teilverguetung_und_auslagen",
+    "dienstkuendigung_teilverguetung",
+    "dienstverguetung_persoenliche_verhinderung",
+    "dienstverguetung_annahmeverzug",
+    "betriebskostenpauschale_aenderungsbetrag",
+    "modernisierung_vereinfachung_sperrfrist",
+    "vergleichsmiete_kappungsrahmen",
+    "grenzbaum_beseitigungskosten",
+    "nachbarrecht_kostengleichanteil",
+    "sachenverbindung_eigentumsquoten",
+    "pflichtteilsergaenzung_grundbetrag",
+    "pflichtteil_schenkungsabschmelzung",
+    "pflichtteilsergaenzung_mehrhinterlassung",
+    "pflichtteil_schenkungswert",
+    "widerruf_verbraucherdarlehen_betrag",
+    "widerruf_dienstleistungswertersatz",
+    "ruecktritt_aufwendungsersatz",
+    "vertragsstrafe_schadensmindestbetrag",
+    "verjaehrung_sexuelle_selbstbestimmung_hemmung",
+    "verjaehrung_familienhemmung",
+    "verjaehrung_besondere_grundfrist",
+    "fruechte_gewinnungskostenersatz",
+    "fruechte_lasten_betragszuordnung",
+    "vertrauensschaden_vertretungsmangel",
+    "vertrauensschaden_nichtigkeit_anfechtung",
+    "vereinsvermoegen_mitgliederanteil",
+    "vereins_liquidationssperrjahr",
+    "vereins_liquidationsueberschuss",
+    "vereins_haftungsprivileg",
+    "vereins_mitgliederschwellen",
+    "vereins_minderheitenverlangen",
+    "vereinsbeschluss_zustimmung_aller",
+    "vereinsbeschluss_stimmenmehrheit",
+    "vorstand_vertretungsmehrheit",
+    "gegenleistung_bei_ersatzverlangen",
+    "gegenleistung_behaltensbetrag",
+    "pauschalreise_haftungsbegrenzung",
+    "pauschalreise_ruecktrittsentschaedigung",
+    "pauschalreise_preissenkung_erstattung",
+    "pauschalreise_preiserhoehungsgrenze",
+    "arbeitnehmerzahl_kuendigungsfrist",
+    "arbeitsverhaeltnis_kuendigungstermin",
+    "staffelmiete_mindestabstaende",
+    "mietpreisbegrenzung_vormietgrenze",
+    "mietpreisbegrenzung_grundbetrag",
+    "mietpreisbegrenzung_ausnahmen",
+    "schenkungsauflage_fehlbetrag",
+    "modernisierung_pflichtverletzungsvermutung",
+    "waermepumpe_kostenansatz",
+    "verbraucherdarlehen_kuendigungsnachfrist",
+    "verbraucherdarlehen_verzugsschwelle",
+    "delikt_altersvoraussetzungen",
+    "geschaeftsfaehigkeit_altersvoraussetzungen",
+    "gesamtschuld_gleichanteile_mit_ausfall",
+    "faellige_geldschulden_gesetzlich_tilgen",
+    "indexmiete_betrag",
+    "indexmiete_aenderungstermin_pruefen",
+    "vergleichsmiete_zeitvoraussetzungen",
+
+    "gesamtglaeubiger_innenanteil",
+    "teilbare_leistung_gleichanteil",
+    "vermoegensschaden_mitverschulden",
+    "verjaehrung_ablaufhemmung_mindestablauf",
+    "verjaehrung_neubeginn_grundfrist",
+    "verjaehrung_rechtsverfolgung_nachlauffrist",
+    "verjaehrung_verhandlungen_mindestablauf",
+    "verjaehrung_gehemmte_kalendertage",
+    "verjaehrung_kenntnisunabhaengige_grundfrist",
+    "regelverjaehrung_grundfrist",
+    "modernisierung_vereinfachte_kostenbasis",
+    "modernisierung_haerteberuecksichtigung",
+    "modernisierung_erhoehungsbeginn",
+    "modernisierung_regulaerer_zwischenbetrag",
+    "modernisierung_drittmittel_aufteilen",
+    "modernisierung_zinsermaessigung",
+    "modernisierung_kappungsgrenze",
+    "mietsicherheit_hoechstbetrag", "mietsicherheit_raten",
+    "gemeinschaft_lastenanteile",
+    "erb_zuwendungen_ausgleichen",
+    "bau_sicherungskosten_erstattung",
+    "werk_maengeleinbehalt",
+    "werk_bestellerkuendigung_verguetung",
+    "verbraucherbau_abschlagsgrenze", "verbraucherbau_sicherungsgrenze",
+    "pflichtteil_betrag", "zusatzpflichtteil_betrag", "pflichtteil_vermaechtnisrest",
+    "ehegatten_erbquote",
+    "fernere_erbquoten",
+    "grosselternlinien_erbquoten",
+    "elternlinien_erbquoten",
+    "abkoemmlings_erbquoten",
+    "unterhaltsaltersstufe", "mindestunterhalt_aus_existenzminimum",
+    "dynamischer_kindesunterhalt", "kindbezogene_leistung_anrechnen",
+    "zugewinn_betrag", "zugewinnausgleich_grundbetrag",
+    "bau_sicherungsbetrag", "verbraucherbau_herstellungssicherheit",
+    "vorfaelligkeitsentschaedigung_betrag",
+    "minderung_betrag",
+    "zahlung_anrechnen", "verbraucherdarlehen_zahlung_anrechnen",
+    "vorzeitiger_befriedigungsbetrag",
+    "basiszinssatz_fortschreibung", "gesetzliche_zinsen", "verzug_nebenkosten", "verzugszinsen",
+    "finderlohn_betrag", "gastwirt_haftungsbetrag",
+    "buchforderung_sicherheitswert", "sach_sicherheitswert", "sachschaden_ersatzbetrag",
+    "sicherheit_ergaenzungsbetrag", "wertpapier_sicherheitswert",
+    "Berechnungsfehler", "fristende", "fristende_monate_halb",
+    "fristverlaengerung", "lebensalter_beginn", "monatstermin",
+    "volljaehrigkeitsbeginn", "werktagsverschiebung", "zeitraum_tage",
+]

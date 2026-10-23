@@ -1,0 +1,27 @@
+{
+  "regel_id": "BGB_GELDSCHULDEN_NACH_BETRAGSBESTIMMUNG_TILGEN",
+  "regelversion": "1",
+  "bezeichnung": "geldschulden_nach_betragsbestimmung_tilgen",
+  "fundstelle_ids": [
+    "BGB_366_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "zahlung: Nichtnegativer tatsächlich verfügbarer ZahlungsbetragEUR. betragsbestimmungen: Liste1..1000 eindeutiger Schulden mit genau schuld_id,offener_betrag,bestimmter_zahlungsbetrag. Rechtlich wirksame ausdrückliche Betragszuordnung bei Leistung; Summe aller bestimmten Beträge darf Zahlung nicht überschreiten. Nur gleiche Währung und gleichartige Geldforderungen desselben Gläubigers. einordnungsnachweis: Nichtleerer Nachweis366I: eindeutige rechtlich wirksame Mehrfach-/Betragsbestimmung, bestehende Forderungen, Erfüllbarkeit und vollständige Zuordnung. Fehlende/unklare Bestimmung nicht als Nullzuordnung ausgeben.",
+  "rechenschritte": "Ausdrückliche Betragszuordnung je Geldschuld begrenzt anrechnen und verbleibende Beträge berechnen.",
+  "ausnahmen": "§366I: rechtlich vorgegebene Betragsbestimmung je Schuld bis zur Höhe des offenen Betrags ausführen; verbleibende Forderungen und nicht zugeordneten Teil der Gesamtzahlung ausweisen. Keine zusätzliche Verwendung von Überhängen für andere Schulden entgegen der qualifizierten Bestimmung. Summe der erklärten Betragsbestimmungen größer als Zahlung ist widersprüchliche Eingabe, keine erfundene anteilige Kürzung. Gesetzliche Ersatzreihenfolge366II nur bei fehlender Bestimmung in eigener Funktion;367Bestandteile einer Schuld separat. Nicht zugeordnete Zahlung ist keine automatische Rückforderung. Abweichende Vereinbarungen nur als zuvor rechtlich festgelegte Betragszuordnung, keine freie Vertragsauslegung.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/mehrschuld_betragsbestimmung.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "zahlung": "Nichtnegativer tatsächlich verfügbarer ZahlungsbetragEUR.",
+    "betragsbestimmungen": "Liste1..1000 eindeutiger Schulden mit genau schuld_id,offener_betrag,bestimmter_zahlungsbetrag. Rechtlich wirksame ausdrückliche Betragszuordnung bei Leistung; Summe aller bestimmten Beträge darf Zahlung nicht überschreiten. Nur gleiche Währung und gleichartige Geldforderungen desselben Gläubigers.",
+    "einordnungsnachweis": "Nichtleerer Nachweis366I: eindeutige rechtlich wirksame Mehrfach-/Betragsbestimmung, bestehende Forderungen, Erfüllbarkeit und vollständige Zuordnung. Fehlende/unklare Bestimmung nicht als Nullzuordnung ausgeben."
+  },
+  "ergebnisvertrag": "wert.zuordnungen enthält schuld_id,angerechneter_betrag,restforderung; wert.nicht_zugeordnet enthält unverteilten Gesamtzahlungsrest. Beträge alsEurobrüche."
+}

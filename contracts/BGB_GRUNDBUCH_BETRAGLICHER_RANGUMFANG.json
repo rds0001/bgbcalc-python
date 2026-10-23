@@ -1,0 +1,43 @@
+{
+  "regel_id": "BGB_GRUNDBUCH_BETRAGLICHER_RANGUMFANG",
+  "regelversion": "1",
+  "bezeichnung": "grundbuch_betraglicher_rangumfang",
+  "fundstelle_ids": [
+    "BGB_880_T0001",
+    "BGB_880_T0002",
+    "BGB_880_T0003",
+    "BGB_880_T0004",
+    "BGB_880_T0005",
+    "BGB_880_T0006",
+    "BGB_880_T0007",
+    "BGB_881_T0001",
+    "BGB_881_T0002",
+    "BGB_881_T0003",
+    "BGB_881_T0004",
+    "BGB_883_T0001",
+    "BGB_883_T0002",
+    "BGB_883_T0003",
+    "BGB_883_T0004",
+    "BGB_883_T0005"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "rechtsbetrag: Gesamter bewerteter Betrag des betroffenen Rechts auf derselben Grundlage wie Rangumfang. bezifferter_rangumfang: Rechtlich bezifferter Umfang der Rangänderung/des Vorbehalts oder des vormerkungsgesicherten Anspruchs; keine ungeprüfte Nominaladdition von Hauptforderung/Zinsen/Kosten. rangfall: rangvereinbarung_880, rangvorbehalt_881 oder vormerkungsumfang_883. einordnungsnachweis: Wirksamkeit, betragsgleiche Komponenten und gesetzlicher Schutz anderer Rechte vorqualifizieren. Dieser Baustein verteilt keinen Versteigerungserlös und legt keine Rangvereinbarung aus.",
+  "rechenschritte": "Bezifferten Rangumfang auf Rechtsbetrag begrenzen und beide nicht erfassten Restgrößen getrennt ausweisen.",
+  "ausnahmen": "Nur numerische Aufteilung eines ausdrücklich bezifferten Rangumfangs: erfasster Teil=min(Rechtsbetrag,Rangumfang), übriger Rechtsteil=Rechtsbetrag-erfassterTeil, ungenutzter Rahmen=Rangumfang-erfassterTeil.880Vschützt Zwischenrechte;881IVschränkt den Vorbehalt bei zusätzlicher Beeinträchtigung ein;883IIbegrenzt relative Unwirksamkeit auf Anspruchsbeeinträchtigung. Diese Vorschriften liefern keine allgemeine gesetzliche Geldverteilungsformel allein aus Nominalbeträgen. Rechtliche Eintragung/Auslegung und Wirkungen auf fremde Rechte sind vorqualifiziert, kein automatischer vollständiger Rangtausch oder selbst erfundene ZVG-Erlösverteilung.883IIImaßgeblicheVormerkungseintragung mit vorhandenem879-Paarvergleich verwendbar. Rechte mit nicht vergleichbaren Zins-/Nebenleistungsbestandteilen nicht in eine einzige Zahl pressen, sondern rechtlich sachgerechte Komponenten getrennt rechnen. Keine künstliche transitive Gesamtranggruppe aus einzelnen879-Vergleichen.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/grundbuch_betraglicher_rangumfang.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "rechtsbetrag": "Gesamter bewerteter Betrag des betroffenen Rechts auf derselben Grundlage wie Rangumfang.",
+    "bezifferter_rangumfang": "Rechtlich bezifferter Umfang der Rangänderung/des Vorbehalts oder des vormerkungsgesicherten Anspruchs; keine ungeprüfte Nominaladdition von Hauptforderung/Zinsen/Kosten.",
+    "rangfall": "rangvereinbarung_880, rangvorbehalt_881 oder vormerkungsumfang_883.",
+    "einordnungsnachweis": "Wirksamkeit, betragsgleiche Komponenten und gesetzlicher Schutz anderer Rechte vorqualifizieren. Dieser Baustein verteilt keinen Versteigerungserlös und legt keine Rangvereinbarung aus."
+  },
+  "ergebnisvertrag": "Erfasster/nicht erfasster Rechtsteil und ungenutzter Rangrahmen; kein Erlösverteilungsplan."
+}

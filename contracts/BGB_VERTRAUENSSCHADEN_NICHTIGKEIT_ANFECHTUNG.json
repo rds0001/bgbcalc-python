@@ -1,0 +1,32 @@
+{
+  "regel_id": "BGB_VERTRAUENSSCHADEN_NICHTIGKEIT_ANFECHTUNG",
+  "regelversion": "1",
+  "bezeichnung": "vertrauensschaden_nichtigkeit_anfechtung",
+  "fundstelle_ids": [
+    "BGB_122_T0001",
+    "BGB_122_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "vertrauensschaden: Nichtnegativer kausal durch Vertrauen auf Gültigkeit entstandener Schaden des geschützten Empfängers/Dritten in EUR (negatives Interesse). Rechtlich bestimmt, nicht ungeprüft der gesamte Geschäftswert. gueltigkeitsinteresse: Nichtnegatives rechtlich bewertetes Interesse an Gültigkeit der Erklärung in EUR als Höchstbetrag (positives Interesse). Gleichen Bezugsfall und Bewertungsmaßstab verwenden. nichtigkeit_nach_118: Expliziter Wahrheitswert einer Nichtigkeit gerade nach§118. Andere Nichtigkeitsgründe eröffnen§122 nicht automatisch. anfechtung_nach_119_120: Expliziter Wahrheitswert einer wirksamen Anfechtung gerade aufgrund§119 oder§120. Rechtzeitigkeit, Erklärung, Anfechtungsgrund und Wirksamkeit vorab prüfen;§123 nicht gleichsetzen. grund_bekannt_oder_kennen_muessen: Wahrheitswert, ob der Beschädigte den Grund der Nichtigkeit/Anfechtbarkeit kannte oder infolge Fahrlässigkeit nicht kannte. TRUE schließt Ersatz nach§122 Absatz2 aus. bewertungsnachweis: Nichtleere Beschreibung des gesetzlichen Ausgangsfalls, geschützten Empfängers/Dritten, Kausalität, Kenntnislage und beider Schadens-/Interessenwerte.",
+  "rechenschritte": "Anwendbarkeit durch Nichtigkeit§118 oder Anfechtung§119/§120. Im Anwendungsfall bei Kenntnis/Kennenmüssen0, sonst min(Vertrauensschaden,Gültigkeitsinteresse). Ohne Ausgangsfall NICHT_ANWENDBAR.",
+  "ausnahmen": "Keine automatische Haftung für jede Nichtigkeit oder Anfechtung, insbesondere nicht bloß§123. Schadenwerte und geschützter Personenkreis extern bestimmt; mögliche andere Anspruchsgrundlagen nicht ausgeschlossen.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/vertrauensschaden.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "vertrauensschaden": "Nichtnegativer kausal durch Vertrauen auf Gültigkeit entstandener Schaden des geschützten Empfängers/Dritten in EUR (negatives Interesse). Rechtlich bestimmt, nicht ungeprüft der gesamte Geschäftswert.",
+    "gueltigkeitsinteresse": "Nichtnegatives rechtlich bewertetes Interesse an Gültigkeit der Erklärung in EUR als Höchstbetrag (positives Interesse). Gleichen Bezugsfall und Bewertungsmaßstab verwenden.",
+    "nichtigkeit_nach_118": "Expliziter Wahrheitswert einer Nichtigkeit gerade nach§118. Andere Nichtigkeitsgründe eröffnen§122 nicht automatisch.",
+    "anfechtung_nach_119_120": "Expliziter Wahrheitswert einer wirksamen Anfechtung gerade aufgrund§119 oder§120. Rechtzeitigkeit, Erklärung, Anfechtungsgrund und Wirksamkeit vorab prüfen;§123 nicht gleichsetzen.",
+    "grund_bekannt_oder_kennen_muessen": "Wahrheitswert, ob der Beschädigte den Grund der Nichtigkeit/Anfechtbarkeit kannte oder infolge Fahrlässigkeit nicht kannte. TRUE schließt Ersatz nach§122 Absatz2 aus.",
+    "bewertungsnachweis": "Nichtleere Beschreibung des gesetzlichen Ausgangsfalls, geschützten Empfängers/Dritten, Kausalität, Kenntnislage und beider Schadens-/Interessenwerte."
+  },
+  "ergebnisvertrag": "wert ist exakter EUR-Schadenersatz; gesetzlicher Kenntnisausschluss ergibt BERECHNET mit0/1. Fehlender Anwendungsfall ergibt NICHT_ANWENDBAR mit null.",
+  "regelart": "BETRAGSOPERATION"
+}

@@ -1,0 +1,36 @@
+{
+  "regel_id": "BGB_WOHNRAUM_UMWANDLUNG_SPERRFRIST",
+  "regelversion": "1",
+  "bezeichnung": "wohnraum_umwandlung_sperrfrist",
+  "fundstelle_ids": [
+    "BGB_577a_T0001",
+    "BGB_577a_T0002",
+    "BGB_577a_T0003",
+    "BGB_577a_T0004",
+    "BGB_577a_T0005",
+    "BGB_577a_T0006",
+    "BGB_577a_T0007",
+    "BGB_577a_T0008",
+    "BGB_577a_T0009"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "massgeblicher_erwerb_am: Rechtlich maßgeblicher Tag der Veräußerung beziehungsweise Belastung577aI/IaYYYY-MM-DD. Nicht ungeprüft Datum des Kaufvertrags; maßgeblichen Erwerbsvorgang extern bestimmen. sperrfrist_monate: Ganze Zahl36..120: gesetzliche Grunddauer36Monate oder tatsächlich einschlägige längere landesrechtliche Dauer bis120Monate. Keine automatische Suche einer örtlichen Rechtsverordnung. einordnungsnachweis: Nichtleerer Nachweis des qualifizierten577a-Falls, maßgeblichen Erwerbsvorgangs und einschlägiger Dauer. Ausnahmen und räumlich/zeitlich geltende Verordnung vorqualifizieren.",
+  "rechenschritte": "Qualifizierte Sperrfrist von36bis120Monaten ab maßgeblichem Erwerb berechnen und ersten Tag nach Fristablauf ausweisen.",
+  "ausnahmen": "§577aI/Ia/II/IIa: nur Ende der qualifizierten Kündigungsbeschränkung. Bei späterer Begründung von Wohnungseigentum nachVeräußerung/BelastungIa läuft die Frist bereits ab dem VorgangIa, nicht erneut ab Umwandlung. Nach Ablauf kann erst diese Sperre entfallen; keine automatische Kündigungsberechtigung, kein Mietende und keine Verkürzung gesetzlicher Kündigungsfristen. Einschlägige verlängerte Dauer ausdrücklich eingeben; nicht pauschal zehn Jahre für sämtliche Orte. Keine193Verschiebung, da Schutzzeitraum.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Kalenderbereich0001..9999 und ausdrücklich qualifizierte Dauer; keine automatische Feiertagsverschiebung.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/mietpacht_langzeitgrenzen.json",
+  "gesamtabnahme": false,
+  "einheit": "daten_und_zahlen",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "massgeblicher_erwerb_am": "Rechtlich maßgeblicher Tag der Veräußerung beziehungsweise Belastung577aI/IaYYYY-MM-DD. Nicht ungeprüft Datum des Kaufvertrags; maßgeblichen Erwerbsvorgang extern bestimmen.",
+    "sperrfrist_monate": "Ganze Zahl36..120: gesetzliche Grunddauer36Monate oder tatsächlich einschlägige längere landesrechtliche Dauer bis120Monate. Keine automatische Suche einer örtlichen Rechtsverordnung.",
+    "einordnungsnachweis": "Nichtleerer Nachweis des qualifizierten577a-Falls, maßgeblichen Erwerbsvorgangs und einschlägiger Dauer. Ausnahmen und räumlich/zeitlich geltende Verordnung vorqualifizieren."
+  },
+  "ergebnisvertrag": "wert: sperrfristende und erster_tag_nach_sperrfrist alsYYYY-MM-DD.",
+  "regelart": "BETRAGSOPERATION"
+}

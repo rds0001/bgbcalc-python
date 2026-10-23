@@ -1,0 +1,40 @@
+{
+  "regel_id": "BGB_MODERNISIERUNG_VEREINFACHTER_FOERDERFREIER_BETRAG",
+  "regelversion": "1",
+  "bezeichnung": "modernisierung_vereinfachter_foerderfreier_betrag",
+  "fundstelle_ids": [
+    "BGB_559c_T0001",
+    "BGB_559c_T0002",
+    "BGB_559c_T0003",
+    "BGB_559c_T0004",
+    "BGB_559_T0001",
+    "BGB_559_T0002",
+    "BGB_559_T0006",
+    "BGB_559_T0007",
+    "BGB_559_T0008"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "geltend_gemachte_kosten: Nach559c geltend gemachte Kosten der Wohnung vor30%-Pauschale in Euro; gültige verbleibende10000EUR-Grenze muss eingehalten sein. frueher_geltend_gemachte_kosten: Nach559cII in den letzten fünf Jahren maßgeblich geltend gemachte Kosten in Euro, rechtlich zeitlich korrekt zusammengestellt. wohnflaeche: Positive qualifizierte Wohnfläche in Quadratmetern. monatliche_miete_je_quadratmeter: Für559IIIa maßgebliche monatliche Ausgangsmiete je Quadratmeter in Euro. bisherige_monatliche_erhoehung_gesamt: Für Sechsjahreskappung qualifizierte bisherige monatliche Erhöhungen insgesamt in Euro. bisherige_monatliche_heizungserhoehung: Darin enthaltene qualifizierte bisherige monatliche Heizungserhöhungen in Euro. erhoehungsart: allgemein oder heizung_559; kein geförderter559e-Fall. einordnungsnachweis: Nichtleerer Nachweis gültig gewähltem559c-Verfahren, Modernisierungsvoraussetzungen, Kostengrenze, Kappungsgrößen und fehlenden abzuziehenden Kostenbeiträgen/laufenden Zuschüssen nach559a. Keine offenen Förderabzüge.",
+  "rechenschritte": "Förderfreie559c-Kostenbasis mit8%-Jahresumlage und einschlägiger monatlicher Restkappung kombinieren.",
+  "ausnahmen": "§559cI/II mit559I/IIIa: qualifizierte Kosten minus30%Erhaltungspauschale;8%jährliche Umlage, durch12zumMonat, anschließend einschlägige Restkappung. Nur förderfreier Grundfall ohne abzuziehende559a-Beiträge/laufende Zuschüsse; dadurch keine ungeklärte Reihenfolge laufender Förderabzüge gegenüber Kappung. Keine zusätzliche tatsächliche Erhaltungskostenkürzung neben30%Pauschale. Heizungsfall559 zusätzlich50Cent je Quadratmeter;559e nicht hier. Schonzeit, Auskunft/Erklärung559b, Sperre559cIV und gegebenenfalls verbleibende Härteprüfung559cI3 separat. Überschrittene Kostengrenze ist ungültige Eingabe für diesen vorqualifizierten vereinfachten Ablauf, keine automatische Umstellung auf Regelverfahren.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/vereinfachter_modernisierungsbetrag.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "geltend_gemachte_kosten": "Nach559c geltend gemachte Kosten der Wohnung vor30%-Pauschale in Euro; gültige verbleibende10000EUR-Grenze muss eingehalten sein.",
+    "frueher_geltend_gemachte_kosten": "Nach559cII in den letzten fünf Jahren maßgeblich geltend gemachte Kosten in Euro, rechtlich zeitlich korrekt zusammengestellt.",
+    "wohnflaeche": "Positive qualifizierte Wohnfläche in Quadratmetern.",
+    "monatliche_miete_je_quadratmeter": "Für559IIIa maßgebliche monatliche Ausgangsmiete je Quadratmeter in Euro.",
+    "bisherige_monatliche_erhoehung_gesamt": "Für Sechsjahreskappung qualifizierte bisherige monatliche Erhöhungen insgesamt in Euro.",
+    "bisherige_monatliche_heizungserhoehung": "Darin enthaltene qualifizierte bisherige monatliche Heizungserhöhungen in Euro.",
+    "erhoehungsart": "allgemein oder heizung_559; kein geförderter559e-Fall.",
+    "einordnungsnachweis": "Nichtleerer Nachweis gültig gewähltem559c-Verfahren, Modernisierungsvoraussetzungen, Kostengrenze, Kappungsgrößen und fehlenden abzuziehenden Kostenbeiträgen/laufenden Zuschüssen nach559a. Keine offenen Förderabzüge."
+  },
+  "ergebnisvertrag": "wert enthält erhaltungspauschale,kostenbasis,jaehrlicher_betrag_vor_kappung,monatlicher_betrag_vor_kappung,monatliche_restkappung,monatlicher_betrag_nach_kappung,jaehrlicher_betrag_nach_kappung als exakte Eurobrüche."
+}

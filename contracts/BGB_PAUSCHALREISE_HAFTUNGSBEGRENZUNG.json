@@ -1,0 +1,33 @@
+{
+  "regel_id": "BGB_PAUSCHALREISE_HAFTUNGSBEGRENZUNG",
+  "regelversion": "1",
+  "bezeichnung": "pauschalreise_haftungsbegrenzung",
+  "fundstelle_ids": [
+    "BGB_651p_T0001",
+    "BGB_651p_T0002",
+    "BGB_651p_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "reisepreis: Nichtnegativer rechtlich maßgeblicher Reisepreis in EUR als Basis der Dreifachgrenze. ersatzfaehiger_schaden: Nichtnegative bereits dem Grunde und der Höhe nach bestimmte Schadenersatzposition in EUR vor dieser Haftungsbegrenzung. Keine bloß behauptete Schadenssumme; gemischte Körper-/Vermögenspositionen separat prüfen. haftungsbeschraenkung_vereinbart: Wahrheitswert einer im Übrigen wirksamen Vereinbarung, die Haftung nach§651p Absatz1 auf den dreifachen Reisepreis zu begrenzen. Keine automatische gesetzliche Begrenzung ohne Vereinbarung. Körper-/Verschuldensvoraussetzungen werden zusätzlich hier verknüpft. koerperschaden: Wahrheitswert, ob die konkrete Position ein Körperschaden ist. TRUE verhindert die Begrenzung nach Absatz1. schuldhaft_herbeigefuehrt: Wahrheitswert zur rechtlich zurechenbaren schuldhaften Herbeiführung des konkreten Schadens im Sinne§651p Absatz1 Nummer2. TRUE verhindert die Dreifachgrenze; Zurechnung und Verschuldensmaßstab extern prüfen. bewertungsnachweis: Nichtleere Beschreibung von ersatzfähigem Schaden, Vereinbarung, Schadensart und Verschuldenseinordnung. Andere Haftungsvoraussetzungen nicht durch diesen Nachweis automatisch bestätigt.",
+  "rechenschritte": "Bei Vereinbarung UND keinem Körperschaden UND keiner schuldhaften Herbeiführung: min(ersatzfähiger Schaden,3×Reisepreis). Sonst wird dieser Begrenzungstatbestand nicht angewandt und der vorgegebene Schaden ausgegeben.",
+  "ausnahmen": "Absatz1 allein. Internationale Beschränkungen nach Absatz2 und wechselseitige Anrechnung nach Absatz3 nicht enthalten. Ungekürzter Betrag ist kein neu festgestellter Haftungsanspruch.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/reisehaftung.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "reisepreis": "Nichtnegativer rechtlich maßgeblicher Reisepreis in EUR als Basis der Dreifachgrenze.",
+    "ersatzfaehiger_schaden": "Nichtnegative bereits dem Grunde und der Höhe nach bestimmte Schadenersatzposition in EUR vor dieser Haftungsbegrenzung. Keine bloß behauptete Schadenssumme; gemischte Körper-/Vermögenspositionen separat prüfen.",
+    "haftungsbeschraenkung_vereinbart": "Wahrheitswert einer im Übrigen wirksamen Vereinbarung, die Haftung nach§651p Absatz1 auf den dreifachen Reisepreis zu begrenzen. Keine automatische gesetzliche Begrenzung ohne Vereinbarung. Körper-/Verschuldensvoraussetzungen werden zusätzlich hier verknüpft.",
+    "koerperschaden": "Wahrheitswert, ob die konkrete Position ein Körperschaden ist. TRUE verhindert die Begrenzung nach Absatz1.",
+    "schuldhaft_herbeigefuehrt": "Wahrheitswert zur rechtlich zurechenbaren schuldhaften Herbeiführung des konkreten Schadens im Sinne§651p Absatz1 Nummer2. TRUE verhindert die Dreifachgrenze; Zurechnung und Verschuldensmaßstab extern prüfen.",
+    "bewertungsnachweis": "Nichtleere Beschreibung von ersatzfähigem Schaden, Vereinbarung, Schadensart und Verschuldenseinordnung. Andere Haftungsvoraussetzungen nicht durch diesen Nachweis automatisch bestätigt."
+  },
+  "ergebnisvertrag": "wert ist exakter EUR-Betrag nach Prüfung der Dreifachgrenze, immer BERECHNET bei gültigen Eingaben.",
+  "regelart": "BETRAGSOPERATION"
+}

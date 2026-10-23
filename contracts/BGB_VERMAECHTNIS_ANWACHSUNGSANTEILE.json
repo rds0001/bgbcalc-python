@@ -1,0 +1,35 @@
+{
+  "regel_id": "BGB_VERMAECHTNIS_ANWACHSUNGSANTEILE",
+  "regelversion": "1",
+  "bezeichnung": "vermaechtnis_anwachsungsanteile",
+  "fundstelle_ids": [
+    "BGB_2158_T0001",
+    "BGB_2158_T0002",
+    "BGB_2158_T0003",
+    "BGB_2158_T0004",
+    "BGB_2159_T0001",
+    "BGB_2190_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "bedachte: Liste2..1000 Bedachter desselben Gegenstands. Genau bedachter_id,vermaechtnisanteil (positive exakte Quote≤1),gemeinschaft_id (nichtleere Gruppenkennung oder NULL). Originalanteile summieren sich auf1 am vermachten Gegenstand; Kennungen eindeutig. weggefallener_bedachter_id: Nichtleere ID eines rechtlich weggefallenen Bedachten aus der Originalliste. anwachsung_testamentarisch_ausgeschlossen: Pflichtwahrheitswert zum Ausschluss der gesamten untersuchten Anwachsung2158II. vorrangiges_ersatzvermaechtnis: Pflichtwahrheitswert zu rechtlich vorrangigem Ersatzvermächtnis2190/2099. einordnungsnachweis: Nichtleerer Nachweis desselben Gegenstands, Wegfalls, Originalquoten und einfacher Gruppenzuordnung. Keine Voraussetzung ausgeschlossener gesetzlicher Erbfolge.",
+  "rechenschritte": "Wegfallquote proportional unter verbleibenden Gruppenmitgliedern, sonst allen übrigen Bedachten verteilen; Ausschluss/Ersatzvorrang beachten; Sonderanteil getrennt.",
+  "ausnahmen": "Ein Wegfall, einfache Gruppe. Kein gesetzlicher Erbfolgeausschluss nötig; vollständige Anteile nur am vermachten Gegenstand. Keine Kaskaden oder Gleichsetzung Tod nach Erwerb mit Wegfall.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/vermaechtnisanwachsung.json",
+  "gesamtabnahme": false,
+  "einheit": "vermaechtnisquoten",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "bedachte": "Liste2..1000 Bedachter desselben Gegenstands. Genau bedachter_id,vermaechtnisanteil (positive exakte Quote≤1),gemeinschaft_id (nichtleere Gruppenkennung oder NULL). Originalanteile summieren sich auf1 am vermachten Gegenstand; Kennungen eindeutig.",
+    "weggefallener_bedachter_id": "Nichtleere ID eines rechtlich weggefallenen Bedachten aus der Originalliste.",
+    "anwachsung_testamentarisch_ausgeschlossen": "Pflichtwahrheitswert zum Ausschluss der gesamten untersuchten Anwachsung2158II.",
+    "vorrangiges_ersatzvermaechtnis": "Pflichtwahrheitswert zu rechtlich vorrangigem Ersatzvermächtnis2190/2099.",
+    "einordnungsnachweis": "Nichtleerer Nachweis desselben Gegenstands, Wegfalls, Originalquoten und einfacher Gruppenzuordnung. Keine Voraussetzung ausgeschlossener gesetzlicher Erbfolge."
+  },
+  "ergebnisvertrag": "wert enthält anwachsung_erfolgt, vermaechtnisanteile mit ursprünglichem/angewachsenem/gesamtem Anteil und nicht_angewachsener_wegfallender_anteil.",
+  "regelart": "QUOTENOPERATION"
+}

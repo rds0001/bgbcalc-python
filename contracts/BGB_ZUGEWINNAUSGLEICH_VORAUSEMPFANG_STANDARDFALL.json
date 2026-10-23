@@ -1,0 +1,60 @@
+{
+  "regel_id": "BGB_ZUGEWINNAUSGLEICH_VORAUSEMPFANG_STANDARDFALL",
+  "regelversion": "1",
+  "bezeichnung": "zugewinnausgleich_vorausempfang_standardfall",
+  "fundstelle_ids": [
+    "BGB_1380_T0001",
+    "BGB_1380_T0003",
+    "BGB_1380_T0004"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "zugewinn_zuwendender: Nichtnegativer Zugewinn des ausschließlich zuwendenden Ehegatten vor§1380. Standardfall verlangt tatsächliche nichtnegative Vermögensdifferenz, nicht auf null abgeschnittenen Verlust. zugewinn_empfaenger: Nichtnegativer Zugewinn des ausschließlich empfangenden Ehegatten vor§1380; Empfang darf verbraucht sein oder Zugewinn unterschreiten; nach Herausrechnung Mindestwert null. vorausempfang: Nichtnegative Summe einseitiger wirksam zur Anrechnung bestimmter Zuwendungen, rechtlich maßgeblicher Zuwendungszeitwert einschließlich gebotener Wertanpassung. Keine gegenläufigen Empfänge oder unterschiedlichen Empfängerbereinigungswerte. haftungsgrenze_zuwendender: Nichtnegative rechtlich bestimmte Haftungsgrenze§1378 Absatz2 des Zuwendenden. Muss selbst vor Anrechnung errechnete Empfängerforderung decken, sonst NICHT_ANWENDBAR; keine ungeprüfte Kappungsreihenfolge. haftungsgrenze_empfaenger: Nichtnegative rechtlich bestimmte Haftungsgrenze§1378 Absatz2 des Empfängers. Muss gegebenenfalls separat errechnete Gegenforderung decken, sonst NICHT_ANWENDBAR. standardfall_bestaetigt: Explizite fachliche Bestätigung ausschließlich einseitiger Empfänge mit wirksamer Anrechnung, nichtnegativen tatsächlichen Vermögensdifferenzen, qualifiziert gleichem Zuwendungs- und Herausrechnungswert und ohne negative tatsächliche Vermögensdifferenz oder unterschiedliche Zuwendungs-/Herausrechnungswerte. FALSE ergibt NICHT_ANWENDBAR; keine eigenständige qualitative API. bewertungsnachweis: Nichtleere Herkunft und Begründung von Zugewinnen vor§1380, Zuwendungswerten, Anrechnungsbestimmung, Standardfall und Haftungsgrenzen.",
+  "rechenschritte": "Geberzugewinn plus Vorausempfang, Empfängerzugewinn minus Vorausempfang, mindestens null. Hälfte positiven Überschusses als Empfängerforderung, darauf Empfang maximal bis null anrechnen. Gegenforderung separat aus ursprünglichen Zugewinnen ohne§1380. Nur wenn Haftungsgrenzen beide relevanten Forderungen ohne Kürzung decken.",
+  "ausnahmen": "Ausdrücklich begrenzter Standardfall; keine Freigabe negativer tatsächlicher Vermögensdifferenzen, verschiedener Bereinigungswerte, gegenseitiger Vorausempfänge oder eingreifender Haftungsbegrenzung. Keine Schenkungsteuerberechnung; sonstige Anspruchsmodifikationen offen.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/zugewinnvorausempfang.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "zugewinn_zuwendender": "Nichtnegativer Zugewinn des ausschließlich zuwendenden Ehegatten vor§1380. Standardfall verlangt tatsächliche nichtnegative Vermögensdifferenz, nicht auf null abgeschnittenen Verlust.",
+    "zugewinn_empfaenger": "Nichtnegativer Zugewinn des ausschließlich empfangenden Ehegatten vor§1380; Empfang darf verbraucht sein oder Zugewinn unterschreiten; nach Herausrechnung Mindestwert null.",
+    "vorausempfang": "Nichtnegative Summe einseitiger wirksam zur Anrechnung bestimmter Zuwendungen, rechtlich maßgeblicher Zuwendungszeitwert einschließlich gebotener Wertanpassung. Keine gegenläufigen Empfänge oder unterschiedlichen Empfängerbereinigungswerte.",
+    "haftungsgrenze_zuwendender": "Nichtnegative rechtlich bestimmte Haftungsgrenze§1378 Absatz2 des Zuwendenden. Muss selbst vor Anrechnung errechnete Empfängerforderung decken, sonst NICHT_ANWENDBAR; keine ungeprüfte Kappungsreihenfolge.",
+    "haftungsgrenze_empfaenger": "Nichtnegative rechtlich bestimmte Haftungsgrenze§1378 Absatz2 des Empfängers. Muss gegebenenfalls separat errechnete Gegenforderung decken, sonst NICHT_ANWENDBAR.",
+    "standardfall_bestaetigt": "Explizite fachliche Bestätigung ausschließlich einseitiger Empfänge mit wirksamer Anrechnung, nichtnegativen tatsächlichen Vermögensdifferenzen, qualifiziert gleichem Zuwendungs- und Herausrechnungswert und ohne negative tatsächliche Vermögensdifferenz oder unterschiedliche Zuwendungs-/Herausrechnungswerte. FALSE ergibt NICHT_ANWENDBAR; keine eigenständige qualitative API.",
+    "bewertungsnachweis": "Nichtleere Herkunft und Begründung von Zugewinnen vor§1380, Zuwendungswerten, Anrechnungsbestimmung, Standardfall und Haftungsgrenzen."
+  },
+  "ergebnisvertrag": "wert enthält bereinigte Zugewinne, ausgleichsforderung_vor_anrechnung, angerechneter_vorausempfang, restforderung_empfaenger, gegenforderung_ohne_1380, richtung und zahlbetrag. Eingrenzungsfälle außerhalb Standardmodells NICHT_ANWENDBAR.",
+  "regelart": "BETRAGSOPERATION",
+  "auslegungsnachweise": [
+    {
+      "gericht": "FG Köln",
+      "aktenzeichen": "7 K 513/16",
+      "datum": "2018-01-18",
+      "url": "https://nrwe.justiz.nrw.de/fgs/koeln/j2018/7_K_513_16_Urteil_20180118.html",
+      "randnummern": "56,64ff.",
+      "begrenzung": "Rechenschritte für Standardfall; steuerrechtliche Entscheidung rechtfertigt keine Freigabe offener zivilrechtlicher Verlust-/Haftungsgrenzenfälle."
+    },
+    {
+      "gericht": "BGH",
+      "aktenzeichen": "IVb ZR 62/86",
+      "datum": "1987-05-20",
+      "url": "https://www.prinz.law/static/urteile/pdf/bgh/IVb_ZR__62-86-ok.pdf",
+      "fundstelle": "Gedruckte Seiten9/10, Gründe2c/d",
+      "befund": "Verbrauchter Empfang/Schulden bei Empfänger-Endvermögen0: Anspruch vermindert sich um halben Empfang."
+    },
+    {
+      "gericht": "OLG Hamburg",
+      "aktenzeichen": "2 UF 61/01",
+      "datum": "2001-10-09",
+      "url": "https://judicialis.de/Oberlandesgericht%20Hamburg_2-UF-61-01_Urteil_09.10.2001.html",
+      "fundstelle": "GründeII/III/IX",
+      "befund": "Herausrechnung unter null, korrigierter Zugewinn mindestens0. Keine Aussage zur eingreifenden Haftungsgrenze."
+    }
+  ]
+}

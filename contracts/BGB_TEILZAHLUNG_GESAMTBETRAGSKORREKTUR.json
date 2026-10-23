@@ -1,0 +1,29 @@
+{
+  "regel_id": "BGB_TEILZAHLUNG_GESAMTBETRAGSKORREKTUR",
+  "regelversion": "1",
+  "bezeichnung": "teilzahlung_gesamtbetragskorrektur",
+  "fundstelle_ids": [
+    "BGB_507_T0007"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "vertraglicher_gesamtbetrag: Nichtnegativer exakter qualifizierter Dezimalwert/Bruch; Beträge in EUR, vertragliche Wertbeteiligung/Zinsen als Quote (0.05=5Prozent). angegebener_effektiver_jahreszins: Nichtnegativer exakter qualifizierter Dezimalwert/Bruch; Beträge in EUR, vertragliche Wertbeteiligung/Zinsen als Quote (0.05=5Prozent). tatsaechlicher_effektiver_jahreszins: Nichtnegativer exakter qualifizierter Dezimalwert/Bruch; Beträge in EUR, vertragliche Wertbeteiligung/Zinsen als Quote (0.05=5Prozent). einordnungsnachweis: Nichtleerer Nachweis des jeweiligen Darlehens-/Vermittlungs-/Teilzahlungsfalls und rechtlich qualifizierter Wert-, Kosten- oder Zinsgrundlage.",
+  "rechenschritte": "Gesamtbetrag mit eins minus der absoluten Effektivzins-Unterangabe als Zinsquote multiplizieren",
+  "ausnahmen": "Nur §507 Absatz2 letzter Satz bei qualifiziertem Teilzahlungsgeschäft und zu niedrig angegebenem Effektivzins. Eingaben als Jahresquoten,0.05=5Prozent. Beispielsweise Unterangabe8%-6%=2Prozentpunkte vermindert Gesamtbetrag um2Prozent. Nicht §494III-Sollzinskorrektur; nicht fehlende Zins-/Gesamtbetragsangabe. Sichere Rechendomäne: Unterangabe zwischen0und1 einschließlich; größere Differenzen erfordern gesonderte rechtliche Behandlung und werden nicht automatisch zu negativem Zahlungsanspruch. Tatsächlicher Effektivzins/Vertragsgesamtbetrag extern bestimmen; keine automatische Ratenneuberechnung.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/darlehenssonderbetraege.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "vertraglicher_gesamtbetrag": "Nichtnegativer exakter qualifizierter Dezimalwert/Bruch; Beträge in EUR, vertragliche Wertbeteiligung/Zinsen als Quote (0.05=5Prozent).",
+    "angegebener_effektiver_jahreszins": "Nichtnegativer exakter qualifizierter Dezimalwert/Bruch; Beträge in EUR, vertragliche Wertbeteiligung/Zinsen als Quote (0.05=5Prozent).",
+    "tatsaechlicher_effektiver_jahreszins": "Nichtnegativer exakter qualifizierter Dezimalwert/Bruch; Beträge in EUR, vertragliche Wertbeteiligung/Zinsen als Quote (0.05=5Prozent).",
+    "einordnungsnachweis": "Nichtleerer Nachweis des jeweiligen Darlehens-/Vermittlungs-/Teilzahlungsfalls und rechtlich qualifizierter Wert-, Kosten- oder Zinsgrundlage."
+  },
+  "ergebnisvertrag": "wert ist der exakt berechnete EUR-Betrag als Bruchobjekt.",
+  "regelart": "BETRAGSOPERATION"
+}

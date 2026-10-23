@@ -1,0 +1,29 @@
+{
+  "regel_id": "BGB_GELDUEBERMITTLUNG_UMZUGSMEHRKOSTEN",
+  "regelversion": "1",
+  "bezeichnung": "gelduebermittlung_umzugsmehrkosten",
+  "fundstelle_ids": [
+    "BGB_270_T0003"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "kosten_vor_verlegung: Nichtnegativer exakt eingegebener Betrag; gemäß rechtlich qualifizierter Vergleichsbasis. kosten_nach_verlegung: Nichtnegativer exakt eingegebener Betrag; gleiche Vergleichs- und Bewertungsbasis. kostenvergleich_nach_270_absatz_3_anwendbar: Explizite rechtliche Bestätigung des in der Abgrenzung beschriebenen Anwendungsfalls. FALSE ergibt NICHT_ANWENDBAR. bewertungsnachweis: Nichtleere Beschreibung von Herkunft, Zeitpunkt und rechtlicher Zuordnung aller Werte.",
+  "rechenschritte": "Kosten nach Verlegung minus vergleichbare Kosten ohne Verlegung, mindestens null.",
+  "ausnahmen": "Nur kausale Mehrkosten der nach Entstehung des Schuldverhältnisses erfolgten Verlegung von Gläubigerwohnsitz oder maßgeblicher Niederlassung. Beträge unter ansonsten gleichen Bedingungen bestimmen; keine Übernahme der gesamten Übermittlungskosten oder Berechnung der Gefahrtragung.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/schuldrechtbetragsregeln.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "kosten_vor_verlegung": "Nichtnegativer exakt eingegebener Betrag; gemäß rechtlich qualifizierter Vergleichsbasis.",
+    "kosten_nach_verlegung": "Nichtnegativer exakt eingegebener Betrag; gleiche Vergleichs- und Bewertungsbasis.",
+    "kostenvergleich_nach_270_absatz_3_anwendbar": "Explizite rechtliche Bestätigung des in der Abgrenzung beschriebenen Anwendungsfalls. FALSE ergibt NICHT_ANWENDBAR.",
+    "bewertungsnachweis": "Nichtleere Beschreibung von Herkunft, Zeitpunkt und rechtlicher Zuordnung aller Werte."
+  },
+  "ergebnisvertrag": "wert ist der exakte Ergebnisbetrag in EUR, keine automatische Cent-Rundung.",
+  "regelart": "BETRAGSOPERATION"
+}

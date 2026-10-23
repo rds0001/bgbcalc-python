@@ -1,0 +1,41 @@
+{
+  "regel_id": "BGB_VERZUG_NEBENKOSTEN",
+  "regelversion": "1",
+  "bezeichnung": "verzug_nebenkosten",
+  "fundstelle_ids": [
+    "BGB_288_T0001",
+    "BGB_288_T0002",
+    "BGB_288_T0003",
+    "BGB_288_T0004",
+    "BGB_288_T0005",
+    "BGB_288_T0006",
+    "BGB_288_T0007",
+    "BGB_288_T0008",
+    "BGB_288_T0009",
+    "BGB_288_T0010",
+    "BGB_288_T0011",
+    "BGB_288_T0012",
+    "BGB_288_T0013",
+    "BGB_288_T0014"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlich ausgewählter Fall und ausdrücklich belegte externe Parameter.",
+  "eingabevertrag": "rechtsverfolgungsschaden: nichtnegative EUR-Dezimalzeichenfolge eines unabhängig bestehenden Schadensersatzanspruchs; entgeltforderung, schuldner_verbraucher, schuldnerverzug: bool. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+  "rechenschritte": "Bei Entgeltforderung, Schuldner kein Verbraucher und Verzug: Pauschale 40 EUR plus max(ersatzfähiger Rechtsverfolgungsschaden-40,0). Anrechnung=min(40,Rechtsverfolgungsschaden) gesondert ausweisen. Sonst NICHT_ANWENDBAR für diesen Pauschalenverbund; keine Aussage zum separat bestehenden Kostenerstattungsanspruch.",
+  "ausnahmen": "Nur eine konkret ausgewählte Entgeltforderung einschließlich Abschlags-/Ratenforderung. Keine automatische Vervielfachung mit Mahnungen oder Schuldnerzahl. Wirksame Vereinbarungs- und Übergangsfragen nach § 288 Abs. 6/EGBGB vorab prüfen; sonstiger Schaden wird nicht auf Pauschale angerechnet.",
+  "rundung": "Keine. Ausgabe exakter Bruch als Ganzzahlzeichenfolgen; Jahreszinssätze in Prozent, Geldbeträge in EUR.",
+  "wertebereich": "Gemeinsamer Zahlenvertrag NUMERIK.md; fehlend EINGABE_FEHLT, falscher Typ/Bereich EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/zinsen.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "exakte_bruchobjekte_als_dezimaleingaben": true,
+  "parameter_dokumentation": {
+    "rechtsverfolgungsschaden": "Nichtnegative Dezimalzeichenfolge des ersatzfähigen Rechtsverfolgungsschadens in EUR; bereits rechtlich bewertet. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+    "entgeltforderung": "Expliziter Wahrheitswert zur rechtlich eingeordneten Entgeltforderung.",
+    "schuldner_verbraucher": "Expliziter Wahrheitswert zur Verbrauchereigenschaft des Schuldners.",
+    "schuldnerverzug": "Expliziter Wahrheitswert zum festgestellten Schuldnerverzug."
+  }
+}

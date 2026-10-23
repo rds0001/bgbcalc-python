@@ -1,0 +1,28 @@
+{
+  "regel_id": "BGB_LEISTUNGSBESTIMMUNG_DURCHSCHNITTSSUMME",
+  "regelversion": "1",
+  "bezeichnung": "leistungsbestimmung_durchschnittssumme",
+  "fundstelle_ids": [
+    "BGB_317_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "bestimmte_summen: Liste von2 bis1000 Objekten mit eindeutigem dritter_id und nichtnegativer summe in EUR. Sämtliche rechtlich maßgeblichen Bestimmungen vollständig angeben. zweifelsregel_nach_317_anwendbar: Fachlich geprüfte Anwendung der gesetzlichen Durchschnittsregel; FALSE ergibt NICHT_ANWENDBAR. bewertungsnachweis: Nichtleerer Nachweis der vollständigen Bestimmungen, ihrer Gültigkeit und einheitlichen Währung.",
+  "rechenschritte": "Summen sämtlicher bestimmender Dritter gleichgewichtet addieren und durch deren Anzahl teilen.",
+  "ausnahmen": "Nur die Zweifelsregel für eine durch mehrere Dritte bestimmte Geldsumme in einheitlicher Währung EUR. Abweichende Vereinbarungen, rechtlich unwirksame Bestimmungen oder nichtmonetäre Leistungen nicht erfasst. Jede Person genau einmal einbeziehen; keine Mehrheitsabstimmung und keine Entfernung von Ausreißern.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/schuldrechtbetragsregeln.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "bestimmte_summen": "Liste von2 bis1000 Objekten mit eindeutigem dritter_id und nichtnegativer summe in EUR. Sämtliche rechtlich maßgeblichen Bestimmungen vollständig angeben.",
+    "zweifelsregel_nach_317_anwendbar": "Fachlich geprüfte Anwendung der gesetzlichen Durchschnittsregel; FALSE ergibt NICHT_ANWENDBAR.",
+    "bewertungsnachweis": "Nichtleerer Nachweis der vollständigen Bestimmungen, ihrer Gültigkeit und einheitlichen Währung."
+  },
+  "ergebnisvertrag": "wert ist gleichgewichteter Durchschnitt als exakter EUR-Bruch, ohne Cent-Rundung.",
+  "regelart": "BETRAGSOPERATION"
+}

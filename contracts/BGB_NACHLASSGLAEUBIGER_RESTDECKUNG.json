@@ -1,0 +1,39 @@
+{
+  "regel_id": "BGB_NACHLASSGLAEUBIGER_RESTDECKUNG",
+  "regelversion": "1",
+  "bezeichnung": "nachlassglaeubiger_restdeckung",
+  "fundstelle_ids": [
+    "BGB_1973_T0001",
+    "BGB_1973_T0002",
+    "BGB_1973_T0003",
+    "BGB_1973_T0005",
+    "BGB_1974_T0003",
+    "BGB_1990_T0001",
+    "BGB_1991_T0003",
+    "BGB_1991_T0004",
+    "BGB_1992_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "haftungsmasse_vor_bindungen: Nichtnegativer rechtlich bewerteter EUR-Haftungswert vor angegebenen Bindungen;1973II bereicherungsrechtlich korrigiert,1991 Verantwortlichkeitskorrekturen berücksichtigt. vorrangig_gebundener_betrag: Nichtnegative Summe rechtlich vorrangiger Bindungen, einschließlich ggf.bereits befriedigter oder gleichstehend rechtskräftig zuerkannter Beträge. Nicht doppelt von bereits bereinigter Masse abziehen. Keine willkürliche Gleichrangpräferenz. forderungsbetrag: Nichtnegative rechtlich festgestellte einzelne Forderung. haftungsfall: ausgeschlossener_glaeubiger_1973, spaetglaeubiger_1974, duerftigkeit_1990 oder vermaechtnisueberschuldung_1992. rang_und_einrede_qualifiziert: Pflichtwahrheitswert: einschlägige Einrede und Rang/Bindung rechtlich vorqualifiziert.1973I2-Grundvorrang samt Vorleistungs-Ausnahme,1974II/1991IV-Insolvenzrang ausdrücklich berücksichtigen. FALSE NICHT_ANWENDBAR. bewertungsnachweis: Nichtleerer Nachweis der Masse, Bindungen, individuellen Forderung und Rangqualifikation.",
+  "rechenschritte": "FreieMasse=max(Masse−vorrangigeBindungen,0);Deckung=min(Forderung,freieMasse);Restforderung=Forderung−Deckung.",
+  "ausnahmen": "Keine automatische InsO-Rangordnung oder Gleichrangquote. Forderung erlischt nicht, keine automatische Sachherausgabe-Geldpflicht.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/nachlasshaftungsreste.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "haftungsmasse_vor_bindungen": "Nichtnegativer rechtlich bewerteter EUR-Haftungswert vor angegebenen Bindungen;1973II bereicherungsrechtlich korrigiert,1991 Verantwortlichkeitskorrekturen berücksichtigt.",
+    "vorrangig_gebundener_betrag": "Nichtnegative Summe rechtlich vorrangiger Bindungen, einschließlich ggf.bereits befriedigter oder gleichstehend rechtskräftig zuerkannter Beträge. Nicht doppelt von bereits bereinigter Masse abziehen. Keine willkürliche Gleichrangpräferenz.",
+    "forderungsbetrag": "Nichtnegative rechtlich festgestellte einzelne Forderung.",
+    "haftungsfall": "ausgeschlossener_glaeubiger_1973, spaetglaeubiger_1974, duerftigkeit_1990 oder vermaechtnisueberschuldung_1992.",
+    "rang_und_einrede_qualifiziert": "Pflichtwahrheitswert: einschlägige Einrede und Rang/Bindung rechtlich vorqualifiziert.1973I2-Grundvorrang samt Vorleistungs-Ausnahme,1974II/1991IV-Insolvenzrang ausdrücklich berücksichtigen. FALSE NICHT_ANWENDBAR.",
+    "bewertungsnachweis": "Nichtleerer Nachweis der Masse, Bindungen, individuellen Forderung und Rangqualifikation."
+  },
+  "ergebnisvertrag": "wert enthält freie_haftungsmasse, gedeckter_forderungsteil und nicht_gedeckter_forderungsteil als exakte EUR-Brüche.",
+  "regelart": "BETRAGSOPERATION"
+}

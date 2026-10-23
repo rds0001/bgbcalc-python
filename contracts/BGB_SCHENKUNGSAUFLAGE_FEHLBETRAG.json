@@ -1,0 +1,29 @@
+{
+  "regel_id": "BGB_SCHENKUNGSAUFLAGE_FEHLBETRAG",
+  "regelversion": "1",
+  "bezeichnung": "schenkungsauflage_fehlbetrag",
+  "fundstelle_ids": [
+    "BGB_526_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "erforderliche_aufwendungen: Nichtnegativer rechtlich bewerteter erforderlicher Aufwand zur Vollziehung der Auflage in EUR; nicht automatisch ein tatsächlicher Aufwand oder ein beliebiger Kostenvoranschlag. wert_der_mangelhaften_zuwendung: Nichtnegativer rechtlich bestimmter Wert der Zuwendung in ihrem mangelhaften Zustand in EUR, konsistent zum Bewertungszeitpunkt des Auflagenaufwands. Keine automatische Sachverständigenbewertung. unterdeckung_vollstaendig_mangelbedingt: Expliziter Wahrheitswert, dass eine etwaige Unterdeckung vollständig infolge eines Rechts- oder Sachmangels der verschenkten Sache entstanden ist. Insbesondere keine schon unabhängig vom Mangel bestehende Unterdeckung einbeziehen. FALSE ergibt NICHT_ANWENDBAR; teilweise mangelbedingte Unterdeckung nicht durch diese vereinfachte Differenz ersetzen. bewertungsnachweis: Nichtleere Beschreibung der Bewertung von erforderlichem Aufwand, Zuwendungswert und Mangelursächlichkeit. Bei fehlender Unterdeckung kann TRUE die erfolgte Ursachen-/Wertprüfung bezeichnen; Ergebnis dann null EUR.",
+  "rechenschritte": "Bei vollständig mangelbedingter Unterdeckung: Fehlbetrag=max(erforderliche Aufwendungen minus Wert der mangelhaften Zuwendung,0). Andernfalls keine Berechnung in diesem eingeschränkten Modell.",
+  "ausnahmen": "Nur Fehlbetrag nach §526 Satz1 vor etwaigem Ausgleich. Keine abschließende Feststellung des noch bestehenden Verweigerungsrechts. Satz2 verlangt andere Aufwendungs-/Kenntnisvoraussetzungen und wird hier nicht mitberechnet. Teilweise anderweitig verursachte Unterdeckung bleibt offen.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/schenkungsauflage.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "erforderliche_aufwendungen": "Nichtnegativer rechtlich bewerteter erforderlicher Aufwand zur Vollziehung der Auflage in EUR; nicht automatisch ein tatsächlicher Aufwand oder ein beliebiger Kostenvoranschlag.",
+    "wert_der_mangelhaften_zuwendung": "Nichtnegativer rechtlich bestimmter Wert der Zuwendung in ihrem mangelhaften Zustand in EUR, konsistent zum Bewertungszeitpunkt des Auflagenaufwands. Keine automatische Sachverständigenbewertung.",
+    "unterdeckung_vollstaendig_mangelbedingt": "Expliziter Wahrheitswert, dass eine etwaige Unterdeckung vollständig infolge eines Rechts- oder Sachmangels der verschenkten Sache entstanden ist. Insbesondere keine schon unabhängig vom Mangel bestehende Unterdeckung einbeziehen. FALSE ergibt NICHT_ANWENDBAR; teilweise mangelbedingte Unterdeckung nicht durch diese vereinfachte Differenz ersetzen.",
+    "bewertungsnachweis": "Nichtleere Beschreibung der Bewertung von erforderlichem Aufwand, Zuwendungswert und Mangelursächlichkeit. Bei fehlender Unterdeckung kann TRUE die erfolgte Ursachen-/Wertprüfung bezeichnen; Ergebnis dann null EUR."
+  },
+  "ergebnisvertrag": "wert ist der exakte Fehlbetrag in EUR als zaehler/nenner-Zeichenfolgen. Bei fehlender Anwendbarkeit wert=null und NICHT_ANWENDBAR, bei fehlendem Fehlbetrag BERECHNET mit 0/1.",
+  "regelart": "BETRAGSOPERATION"
+}

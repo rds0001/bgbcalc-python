@@ -1,0 +1,41 @@
+{
+  "regel_id": "BGB_GESAMTHYPOTHEKENVERMAECHTNIS_DRITTLEISTUNGSMODELL",
+  "regelversion": "1",
+  "bezeichnung": "gesamthypothekenvermaechtnis_drittleistungsmodell",
+  "fundstelle_ids": [
+    "BGB_2166_T0001",
+    "BGB_2166_T0002",
+    "BGB_2166_T0003",
+    "BGB_2166_T0004",
+    "BGB_2167_T0001",
+    "BGB_2167_T0002",
+    "BGB_2168_T0001",
+    "BGB_2168_T0002",
+    "BGB_2168_T0003",
+    "BGB_2168a_T0001"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlicher Anwendungsbereich und externe Bewertungen ausdrücklich vorqualifiziert.",
+  "eingabevertrag": "gesicherter_schuldbetrag: Gesamte betrachtete gesicherte Schuld, nicht Grundstückswert. interne_berichtigungspflicht: Rechtlich bestimmter Betrag der Schuld, für den der Erblasser intern einzustehen hatte; höchstens gesicherte Schuld. Keine pauschale Gleichteilung bei ungleichen Innenpflichten. vom_dritten_erlangbarer_betrag: Nach2166IIgegenüber Erblasser verpflichteter Dritter: erlangbare Berichtigung des betrachteten internen Schuldteils, höchstens interne Pflicht. grundstuecke: Vollständige mithaftende Nachlassgruppe mit grundstueck_id, grundstueckswert, vorrangige_belastungen; fremde Grundstücke nicht quotenbildend. vermachtes_grundstueck_id: Kennung des vermachten Grundstücks in der Nachlassgruppe. quotierungsbasis: Zwingend rechtlich bestimmen: gesicherte_schuld oder interne_berichtigungspflicht. drittleistungsreihenfolge: Zwingend rechtlich bestimmen: vor_wertquote oder nur_innenrestgrenze. methodennachweis: 2166/2167-Zweifelsregel, keine Höchstbetragshypothek, rechtliche Innenpflicht/Basis und Drittleistungsreihenfolge ausdrücklich belegen; keine automatische Entscheidung.",
+  "rechenschritte": "Gewählte Schuld-/Innenpflichtbasis und Drittleistungsreihenfolge mit vorhandener Grundstückswertquote verbinden; Betrag auf Innenrest und Nettodeckung begrenzen.",
+  "ausnahmen": "Bedingte2166II/2167-Rechnung: bestehender Grundstücksquotenkern liefert Nettodeckung und Wertquote. Innenrest=interneBerichtigungspflicht-erlangbareDrittberichtigung. Ausdrücklich gewählte Quotierungsbasis ist Gesamtschuld oder internePflicht. Bei vor_wertquote Drittbetrag von dieser Basis vor Quotierung abziehen; bei nur_innenrestgrenze bleibt die Quote ungekürzt und Drittberichtigung wirkt nur durch den Innenrestdeckel. Betrag=min(quotierterBasis,Innenrest,Nettodeckung). Vier arithmetische Kombinationen sind keine vier als rechtlich zulässig bestätigten Alternativen: keine Standardwahl, zwingende fallbezogene rechtliche Begründung. Modellwahl und ihre allgemeine rechtliche Geltung bleiben getrennt von getesteter Arithmetik.2168IIrechtliche Verweisung nur im qualifizierten Nachlassgruppenfall; Fremdgrundstückswerte nicht aufnehmen.2168Iohne2166II-Verweisung ist kein Anwendungsfall.2168aSchiffshypotheken nur bei qualifizierter entsprechender Anwendung.",
+  "rundung": "Keine automatische Rundung. Gemeinsamer Zahlenvertrag NUMERIK.md; Datumsbereich0001..9999.",
+  "wertebereich": "Gemeinsame exakte Zahlengrenzen nach NUMERIK.md. Fehlende Pflichteingaben EINGABE_FEHLT, unzulässige Typen/Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/gesamthypothekenvermaechtnis_drittleistungsmodell.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR_und_Quote",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "gesicherter_schuldbetrag": "Gesamte betrachtete gesicherte Schuld, nicht Grundstückswert.",
+    "interne_berichtigungspflicht": "Rechtlich bestimmter Betrag der Schuld, für den der Erblasser intern einzustehen hatte; höchstens gesicherte Schuld. Keine pauschale Gleichteilung bei ungleichen Innenpflichten.",
+    "vom_dritten_erlangbarer_betrag": "Nach2166IIgegenüber Erblasser verpflichteter Dritter: erlangbare Berichtigung des betrachteten internen Schuldteils, höchstens interne Pflicht.",
+    "grundstuecke": "Vollständige mithaftende Nachlassgruppe mit grundstueck_id, grundstueckswert, vorrangige_belastungen; fremde Grundstücke nicht quotenbildend.",
+    "vermachtes_grundstueck_id": "Kennung des vermachten Grundstücks in der Nachlassgruppe.",
+    "quotierungsbasis": "Zwingend rechtlich bestimmen: gesicherte_schuld oder interne_berichtigungspflicht.",
+    "drittleistungsreihenfolge": "Zwingend rechtlich bestimmen: vor_wertquote oder nur_innenrestgrenze.",
+    "methodennachweis": "2166/2167-Zweifelsregel, keine Höchstbetragshypothek, rechtliche Innenpflicht/Basis und Drittleistungsreihenfolge ausdrücklich belegen; keine automatische Entscheidung."
+  },
+  "ergebnisvertrag": "Wertquote, Nettodeckung, verbleibende Innenpflicht, Quotierungsbasis, quotierter Betrag und bedingter Befriedigungsbetrag."
+}

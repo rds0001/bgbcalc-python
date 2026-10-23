@@ -1,0 +1,28 @@
+{
+  "regel_id": "BGB_UNTERHALT_BEERDIGUNGSKOSTENREST",
+  "regelversion": "1",
+  "bezeichnung": "unterhalt_beerdigungskostenrest",
+  "fundstelle_ids": [
+    "BGB_1615_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "beerdigungskosten: Rechtlich zu tragende Beerdigungskosten in EUR. Nichtnegative exakte EUR-Zahl. vom_erben_erlangbar: Von dem Erben für genau diese Kosten rechtlich und tatsächlich erlangbarer Betrag, nicht bloß bereits gezahlter Betrag. Nichtnegative exakte EUR-Zahl. bewertungsnachweis: Nichtleerer Nachweis der rechtlichen Qualifikation, Bewertung und gegebenenfalls identischen Bezugsperiode.",
+  "rechenschritte": "max(erster Betrag−zweiter Betrag,0)",
+  "ausnahmen": "§1615II: Kosten abzüglich vom Erben erlangbarem Betrag, mindestens null. Unterhaltspflicht und Umfang der Beerdigungskosten vorqualifiziert; keine automatische Erbenhaftungsprüfung.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/unterhaltsbetraege.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "beerdigungskosten": "Rechtlich zu tragende Beerdigungskosten in EUR. Nichtnegative exakte EUR-Zahl.",
+    "vom_erben_erlangbar": "Von dem Erben für genau diese Kosten rechtlich und tatsächlich erlangbarer Betrag, nicht bloß bereits gezahlter Betrag. Nichtnegative exakte EUR-Zahl.",
+    "bewertungsnachweis": "Nichtleerer Nachweis der rechtlichen Qualifikation, Bewertung und gegebenenfalls identischen Bezugsperiode."
+  },
+  "ergebnisvertrag": "wert ist exakter nichtnegativer EUR-Bruch.",
+  "regelart": "BETRAGSOPERATION"
+}

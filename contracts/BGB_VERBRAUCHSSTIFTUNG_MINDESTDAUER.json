@@ -1,0 +1,30 @@
+{
+  "regel_id": "BGB_VERBRAUCHSSTIFTUNG_MINDESTDAUER",
+  "regelversion": "1",
+  "bezeichnung": "verbrauchsstiftung_mindestdauer",
+  "fundstelle_ids": [
+    "BGB_82_T0001",
+    "BGB_82_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "errichtungsbeginn_am: ISO-Datum des rechtlich bestimmten Beginns des Satzungszeitraums einer Verbrauchsstiftung. errichtungsende_am: ISO-Datum des letzten eingeschlossenen Tages der Errichtungszeit mit Ende am Tagesablauf; nicht vor Beginn. beginnart: ereignis oder tagesbeginn gemäß rechtlich qualifiziertem Satzungsbeginn. Zehn Kalenderjahre statt3650Tage. einordnungsnachweis: Nichtleere Begründung der Verbrauchsstiftung und Zeitbestimmung einschließlich Beginnart und einschließliches Ende.",
+  "rechenschritte": "Zehnjahresende nach qualifizierter Beginnart; festgelegtes einschließliches Ende mindestens so spät.",
+  "ausnahmen": "Nur numerische Voraussetzung§82 Satz2; keine Anerkennungsentscheidung, Prognose nachhaltiger Erfüllung oder automatische lineare Vermögensverbrauchsrate.",
+  "rundung": "Keine; Kalenderdaten taggenau.",
+  "wertebereich": "ISO-Daten und berechnete Grenzen0001..9999, explizite Beginnart/Wahrheitswerte soweit gefordert und nichtleerer Nachweis.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/allgemeine_sonderfristen.json",
+  "gesamtabnahme": false,
+  "einheit": "daten_und_wahrheitswerte",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "errichtungsbeginn_am": "ISO-Datum des rechtlich bestimmten Beginns des Satzungszeitraums einer Verbrauchsstiftung.",
+    "errichtungsende_am": "ISO-Datum des letzten eingeschlossenen Tages der Errichtungszeit mit Ende am Tagesablauf; nicht vor Beginn.",
+    "beginnart": "ereignis oder tagesbeginn gemäß rechtlich qualifiziertem Satzungsbeginn. Zehn Kalenderjahre statt3650Tage.",
+    "einordnungsnachweis": "Nichtleere Begründung der Verbrauchsstiftung und Zeitbestimmung einschließlich Beginnart und einschließliches Ende."
+  },
+  "ergebnisvertrag": "wert enthält zehnjahres_mindestende und mindestdauer_erreicht.",
+  "regelart": "FRISTBERECHNUNG"
+}

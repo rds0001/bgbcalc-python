@@ -1,0 +1,42 @@
+{
+  "regel_id": "BGB_DARLEHEN_ZAHLUNG_ANRECHNUNG",
+  "regelversion": "1",
+  "bezeichnung": "verbraucherdarlehen_zahlung_anrechnen",
+  "fundstelle_ids": [
+    "BGB_497_T0001",
+    "BGB_497_T0002",
+    "BGB_497_T0003",
+    "BGB_497_T0004",
+    "BGB_497_T0005",
+    "BGB_497_T0006",
+    "BGB_497_T0007",
+    "BGB_497_T0008",
+    "BGB_497_T0009",
+    "BGB_497_T0010",
+    "BGB_497_T0011"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; gesetzlich ausgewählter Fall und ausdrücklich belegte externe Parameter.",
+  "eingabevertrag": "zahlung, rechtsverfolgungskosten, uebriger_geschuldeter_betrag, verzugszinsen: nichtnegative EUR-Dezimalzeichenfolgen; immobiliar_verbraucherdarlehen, titel_hauptforderung_zinsen, schuldnerverzug: explizite Wahrheitswerte. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+  "rechenschritte": "Zuerst Rechtsverfolgungskosten, dann übriger geschuldeter Betrag nach § 497 Abs. 1, zuletzt gesonderte Zinsen nach Abs. 2. Teilzahlungen werden rechnerisch vollständig in dieser Reihenfolge eingesetzt.",
+  "ausnahmen": "Verbraucherdarlehensrechtliche Zuordnung einschließlich § 513 vorausgesetzt. Übriger geschuldeter Betrag umfasst insbesondere die geschuldeten Vertragsleistungen, nicht nur ursprüngliches Kapital; keine Doppelzählung der gesonderten Verzugszinsen. Bei Immobiliar-Verbraucherdarlehen, Titel mit Zinsen als Hauptforderung oder fehlendem Verzug NICHT_ANWENDBAR. Teilzahlungen dürfen im Anwendungsbereich nicht zurückgewiesen werden. Verjährung und Schadensersatz wegen Zinsverzugs sind gesonderte Regeln.",
+  "rundung": "Keine. Ausgabe exakter Bruch als Ganzzahlzeichenfolgen; Jahreszinssätze in Prozent, Geldbeträge in EUR.",
+  "wertebereich": "Gemeinsamer Zahlenvertrag NUMERIK.md; fehlend EINGABE_FEHLT, falscher Typ/Bereich EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/tilgung.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "ergebnisvertrag": "wert: zuordnungen als geordnete Liste mit position, betrag, restforderung; nicht_zugeordnet als Überschuss. Alle Beträge exakte EUR-Brüche. Keine implizite Erstattung des Überschusses.",
+  "exakte_bruchobjekte_als_dezimaleingaben": true,
+  "parameter_dokumentation": {
+    "zahlung": "Nichtnegative Dezimalzeichenfolge der geleisteten Zahlung in EUR. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+    "rechtsverfolgungskosten": "Nichtnegative Dezimalzeichenfolge der geschuldeten Rechtsverfolgungskosten in EUR. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+    "uebriger_geschuldeter_betrag": "Nichtnegative Dezimalzeichenfolge des übrigen fälligen geschuldeten Betrags nach § 497 Abs. 1. Einschließlich einschlägiger Vertragsleistungen; gesonderte Verzugszinsen nicht doppelt erfassen. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+    "verzugszinsen": "Nichtnegative Dezimalzeichenfolge der gesondert erfassten Zinsen nach § 497 Abs. 2. Als Alternative zu den hier beschriebenen Dezimaltexten sind exakte Bruchobjekte mit genau den Zeichenfolgenfeldern zaehler und nenner zulässig, auch für solche Dezimalfelder innerhalb einer Listenstruktur. Kanonische Ganzzahlzeichenfolgen ohne Pluszeichen oder führende Nullen verwenden; Nenner positiv. Fachliche Wertebereiche bleiben unverändert. Der gemeinsame Zahlenvertrag NUMERIK.md gilt.",
+    "immobiliar_verbraucherdarlehen": "Expliziter Wahrheitswert zur rechtlichen Einordnung als Immobiliar-Verbraucherdarlehen.",
+    "titel_hauptforderung_zinsen": "Expliziter Wahrheitswert, ob die Zahlung auf einen Vollstreckungstitel erfolgt, dessen Hauptforderung auf Zinsen lautet.",
+    "schuldnerverzug": "Expliziter Wahrheitswert zum Schuldnerverzug im Anwendungsbereich des § 497."
+  }
+}

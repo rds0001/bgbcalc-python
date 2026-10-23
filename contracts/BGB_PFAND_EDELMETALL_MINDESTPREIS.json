@@ -1,0 +1,30 @@
+{
+  "regel_id": "BGB_PFAND_EDELMETALL_MINDESTPREIS",
+  "regelversion": "1",
+  "bezeichnung": "pfand_edelmetall_mindestpreis",
+  "fundstelle_ids": [
+    "BGB_1240_T0001",
+    "BGB_1240_T0002"
+  ],
+  "voraussetzungen": "Feste lokale BGB-Fassung; rechtlichen Anwendungsbereich und Bewertungen ausdrücklich bestimmen.",
+  "eingabevertrag": "angebotener_preis: Nichtnegatives Gebot beziehungsweise angebotener Preis des freihändigen Ersatzverkaufs in EUR. gold_oder_silberwert: Nichtnegativer rechtlich maßgeblicher Gold-/Silberwert des Pfandes in EUR; keine automatische Marktpreis- oder Feingehaltsbewertung. gold_oder_silbersache: Expliziter Wahrheitswert des qualifizierten Edelmetallpfands im einschlägigen Verkaufsregime§1240; FALSE NICHT_ANWENDBAR. bewertungsnachweis: Nichtleere Begründung der Sache, Bewertung und des Verkaufsregimes einschließlich zulässiger Abweichungen.",
+  "rechenschritte": "Angebotener Preis>=Gold-/Silberwert; denselben Mindestwert für Zuschlag und freihändigen Ersatzverkauf anwenden.",
+  "ausnahmen": "Nur Preisuntergrenze, keine Gesamtzulässigkeit des Verkaufs, kein Preisabschlag bei fehlenden Geboten.",
+  "rundung": "Keine automatische Rundung; Beträge und dimensionslose Zahlen exakt als Brüche.",
+  "wertebereich": "Geldbeträge als nichtnegative Dezimalzeichenfolge oder Bruchobjekt mit Zeichenfolgen zaehler/nenner. Exakte Ganzzahl-Zwischenwerte höchstens 2^53-1. Fehlende Pflichteingabe EINGABE_FEHLT, unzulässige Typen oder Bereiche EINGABE_UNGUELTIG.",
+  "quellenfassung": "BGB_PDF_SHA256_9b5a99536e7b00756e9fa5f20082bd9ad3951b37c381fc0f5d52aa5a556839eb",
+  "status": "IMPLEMENTIERT_REFERENZFAELLE_BESTANDEN",
+  "referenzdatei": "pruefungen/referenzfaelle/sachenrechtliche_betragsgrenzen.json",
+  "gesamtabnahme": false,
+  "einheit": "EUR_und_wahrheitswert",
+  "python_implementiert": true,
+  "r_implementiert": true,
+  "parameter_dokumentation": {
+    "angebotener_preis": "Nichtnegatives Gebot beziehungsweise angebotener Preis des freihändigen Ersatzverkaufs in EUR.",
+    "gold_oder_silberwert": "Nichtnegativer rechtlich maßgeblicher Gold-/Silberwert des Pfandes in EUR; keine automatische Marktpreis- oder Feingehaltsbewertung.",
+    "gold_oder_silbersache": "Expliziter Wahrheitswert des qualifizierten Edelmetallpfands im einschlägigen Verkaufsregime§1240; FALSE NICHT_ANWENDBAR.",
+    "bewertungsnachweis": "Nichtleere Begründung der Sache, Bewertung und des Verkaufsregimes einschließlich zulässiger Abweichungen."
+  },
+  "ergebnisvertrag": "wert enthält mindestpreis als EUR-Bruch und mindestpreis_erreicht.",
+  "regelart": "BETRAGSOPERATION"
+}
